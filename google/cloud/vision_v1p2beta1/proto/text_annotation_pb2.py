@@ -1042,8 +1042,7 @@ Paragraph = _reflection.GeneratedProtocolMessageType(
     dict(
         DESCRIPTOR=_PARAGRAPH,
         __module__="google.cloud.vision_v1p2beta1.proto.text_annotation_pb2",
-        __doc__="""Structural unit of text representing a number of words in
-  certain order.
+        __doc__="""Structural unit of text representing a number of words in certain order.
   
   
   Attributes:
