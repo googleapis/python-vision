@@ -4334,8 +4334,7 @@ AnnotateFileRequest = _reflection.GeneratedProtocolMessageType(
     dict(
         DESCRIPTOR=_ANNOTATEFILEREQUEST,
         __module__="google.cloud.vision_v1p4beta1.proto.image_annotator_pb2",
-        __doc__="""A request to annotate one single file, e.g. a PDF, TIFF or
-  GIF file.
+        __doc__="""A request to annotate one single file, e.g. a PDF, TIFF or GIF file.
   
   
   Attributes:
