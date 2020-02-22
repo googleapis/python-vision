@@ -3314,9 +3314,9 @@ SafeSearchAnnotation = _reflection.GeneratedProtocolMessageType(
     dict(
         DESCRIPTOR=_SAFESEARCHANNOTATION,
         __module__="google.cloud.vision_v1p2beta1.proto.image_annotator_pb2",
-        __doc__="""Set of features pertaining to the image, computed by computer vision
-  methods over safe-search verticals (for example, adult, spoof, medical,
-  violence).
+        __doc__="""Set of features pertaining to the image, computed by
+  computer vision methods over safe-search verticals (for example, adult,
+  spoof, medical, violence).
   
   
   Attributes:

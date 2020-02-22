@@ -72,6 +72,7 @@ def default(session):
     session.run(
         "py.test",
         "--quiet",
+        "--cov=google.cloud.vision",
         "--cov=google.cloud",
         "--cov=tests.unit",
         "--cov-append",
@@ -111,8 +112,7 @@ def system(session):
     # virtualenv's dist-packages.
     session.install("mock", "pytest")
 
-    session.install("google-cloud-storage")
-    session.install("-e", "test_utils")
+    session.install("-e", "../storage")
     session.install("-e", ".")
 
     # Run py.test against the system tests.
@@ -130,7 +130,7 @@ def cover(session):
     test runs (not system test runs), and then erases coverage data.
     """
     session.install("coverage", "pytest-cov")
-    session.run("coverage", "report", "--show-missing", "--fail-under=99")
+    session.run("coverage", "report", "--show-missing", "--fail-under=100")
 
     session.run("coverage", "erase")
 

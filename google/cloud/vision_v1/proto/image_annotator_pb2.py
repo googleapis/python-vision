@@ -4511,8 +4511,8 @@ AnnotateFileResponse = _reflection.GeneratedProtocolMessageType(
     dict(
         DESCRIPTOR=_ANNOTATEFILERESPONSE,
         __module__="google.cloud.vision_v1.proto.image_annotator_pb2",
-        __doc__="""Response to a single file annotation request. A file may
-  contain one or more images, which individually have their own responses.
+        __doc__="""Response to a single file annotation request. A file may contain one or
+  more images, which individually have their own responses.
   
   
   Attributes:
