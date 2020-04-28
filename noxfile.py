@@ -110,8 +110,7 @@ def system(session):
 
     # Install all test dependencies, then install this package into the
     # virtualenv's dist-packages.
-    session.install("mock", "pytest", "google-cloud-testutils")
-    session.install("-e", "../storage")
+    session.install("mock", "pytest", "google-cloud-testutils", "google-cloud-storage")
     session.install("-e", ".")
 
     # Run py.test against the system tests.
