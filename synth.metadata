@@ -10,23 +10,23 @@
     {
       "git": {
         "name": ".",
-        "remote": "https://github.com/googleapis/python-vision.git",
-        "sha": "634c1106536c474db1f8845cc0170c593622480a"
+        "remote": "git@github.com:googleapis/python-vision",
+        "sha": "e067d8a283aaba44d9da7147c9ded5c8ab0e536c"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "862cd840dbb0101a0630913217bf8b6d4101c84c",
-        "internalRef": "307739946"
+        "sha": "756b174de4a122461993c1c583345533d819936d",
+        "internalRef": "308824110"
       }
     },
     {
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "716f741f2d307b48cbe8a5bc3bc883571212344a"
+        "sha": "01b6f23d24b27878b48667ce597876d66b59780e"
       }
     }
   ],
