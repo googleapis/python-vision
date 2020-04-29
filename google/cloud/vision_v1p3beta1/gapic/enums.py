@@ -61,10 +61,13 @@ class ProductSearchResultsView(enum.IntEnum):
     Specifies the fields to include in product search results.
 
     Attributes:
-      BASIC (int): Product search results contain only ``product_category`` and
-      ``product_id``. Default value.
-      FULL (int): Product search results contain ``product_category``, ``product_id``,
-      ``image_uri``, and ``score``.
+      BASIC (int): The resource has one pattern, but the API owner expects to add more
+      later. (This is the inverse of ORIGINALLY_SINGLE_PATTERN, and prevents
+      that from being necessary once there are multiple patterns.)
+      FULL (int): Required. Resource name of the product in which to create the
+      reference image.
+
+      Format is ``projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID``.
     """
 
     BASIC = 0
@@ -120,10 +123,8 @@ class FaceAnnotation(object):
     class Landmark(object):
         class Type(enum.IntEnum):
             """
-            Face landmark (feature) type. Left and right are defined from the
-            vantage of the viewer of the image without considering mirror
-            projections typical of photos. So, ``LEFT_EYE``, typically, is the
-            person's right eye.
+            The time when the batch request is finished and
+            ``google.longrunning.Operation.done`` is set to true.
 
             Attributes:
               UNKNOWN_LANDMARK (int): Unknown face landmark detected. Should not be filled.
@@ -211,11 +212,21 @@ class Feature(object):
           LANDMARK_DETECTION (int): Run landmark detection.
           LOGO_DETECTION (int): Run logo detection.
           LABEL_DETECTION (int): Run label detection.
-          TEXT_DETECTION (int): Run text detection / optical character recognition (OCR). Text detection
-          is optimized for areas of text within a larger image; if the image is a
-          document, use ``DOCUMENT_TEXT_DETECTION`` instead.
-          DOCUMENT_TEXT_DETECTION (int): Run dense text document OCR. Takes precedence when both
-          ``DOCUMENT_TEXT_DETECTION`` and ``TEXT_DETECTION`` are present.
+          TEXT_DETECTION (int): Run asynchronous image detection and annotation for a list of
+          generic files, such as PDF files, which may contain multiple pages and
+          multiple images per page. Progress and results can be retrieved through
+          the ``google.longrunning.Operations`` interface. ``Operation.metadata``
+          contains ``OperationMetadata`` (metadata). ``Operation.response``
+          contains ``AsyncBatchAnnotateFilesResponse`` (results).
+          DOCUMENT_TEXT_DETECTION (int): Required. The message name of the primary return type for this
+          long-running operation. This type will be used to deserialize the LRO's
+          response.
+
+          If the response is in a different package from the rpc, a
+          fully-qualified message name must be used (e.g.
+          ``google.protobuf.Struct``).
+
+          Note: Altering this value constitutes a breaking change.
           SAFE_SEARCH_DETECTION (int): Run Safe Search to detect potentially unsafe
           or undesirable content.
           IMAGE_PROPERTIES (int): Compute a set of image properties, such as the
@@ -272,8 +283,7 @@ class TextAnnotation(object):
               SPACE (int): Regular space.
               SURE_SPACE (int): Sure space (very wide).
               EOL_SURE_SPACE (int): Line-wrapping break.
-              HYPHEN (int): End-line hyphen that is not present in text; does not co-occur with
-              ``SPACE``, ``LEADER_SPACE``, or ``LINE_BREAK``.
+              HYPHEN (int): The response message for ``Operations.ListOperations``.
               LINE_BREAK (int): Line break that ends a paragraph.
             """
 

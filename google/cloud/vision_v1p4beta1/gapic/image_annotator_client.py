@@ -329,16 +329,10 @@ class ImageAnnotatorClient(object):
         metadata=None,
     ):
         """
-        Run asynchronous image detection and annotation for a list of images.
-
-        Progress and results can be retrieved through the
-        ``google.longrunning.Operations`` interface. ``Operation.metadata``
-        contains ``OperationMetadata`` (metadata). ``Operation.response``
-        contains ``AsyncBatchAnnotateImagesResponse`` (results).
-
-        This service will write image annotation outputs to json files in
-        customer GCS bucket, each json file containing
-        BatchAnnotateImagesResponse proto.
+        **Deprecated. Use ``score`` instead.** The accuracy of the entity
+        detection in an image. For example, for an image in which the "Eiffel
+        Tower" entity is detected, this field represents the confidence that
+        there is a tower in the query image. Range [0, 1].
 
         Example:
             >>> from google.cloud import vision_v1p4beta1
@@ -424,12 +418,10 @@ class ImageAnnotatorClient(object):
         metadata=None,
     ):
         """
-        Run asynchronous image detection and annotation for a list of generic
-        files, such as PDF files, which may contain multiple pages and multiple
-        images per page. Progress and results can be retrieved through the
-        ``google.longrunning.Operations`` interface. ``Operation.metadata``
-        contains ``OperationMetadata`` (metadata). ``Operation.response``
-        contains ``AsyncBatchAnnotateFilesResponse`` (results).
+        Required. Resource name of the ProductSet to get.
+
+        Format is:
+        ``projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID``
 
         Example:
             >>> from google.cloud import vision_v1p4beta1

@@ -90,10 +90,7 @@ class FaceAnnotation(object):
     class Landmark(object):
         class Type(enum.IntEnum):
             """
-            Face landmark (feature) type. Left and right are defined from the
-            vantage of the viewer of the image without considering mirror
-            projections typical of photos. So, ``LEFT_EYE``, typically, is the
-            person's right eye.
+            javalite_serializable
 
             Attributes:
               UNKNOWN_LANDMARK (int): Unknown face landmark detected. Should not be filled.
@@ -181,11 +178,20 @@ class Feature(object):
           LANDMARK_DETECTION (int): Run landmark detection.
           LOGO_DETECTION (int): Run logo detection.
           LABEL_DETECTION (int): Run label detection.
-          TEXT_DETECTION (int): Run text detection / optical character recognition (OCR). Text detection
-          is optimized for areas of text within a larger image; if the image is a
-          document, use ``DOCUMENT_TEXT_DETECTION`` instead.
-          DOCUMENT_TEXT_DETECTION (int): Run dense text document OCR. Takes precedence when both
-          ``DOCUMENT_TEXT_DETECTION`` and ``TEXT_DETECTION`` are present.
+          TEXT_DETECTION (int): The BCP-47 language code, such as "en-US" or "sr-Latn". For more
+          information, see
+          http://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+          DOCUMENT_TEXT_DETECTION (int): The resource type that the annotated field references.
+
+          Example:
+
+          ::
+
+              message Subscription {
+                string topic = 2 [(google.api.resource_reference) = {
+                  type: "pubsub.googleapis.com/Topic"
+                }];
+              }
           SAFE_SEARCH_DETECTION (int): Run Safe Search to detect potentially unsafe
           or undesirable content.
           IMAGE_PROPERTIES (int): Compute a set of image properties, such as the
@@ -242,8 +248,7 @@ class TextAnnotation(object):
               SPACE (int): Regular space.
               SURE_SPACE (int): Sure space (very wide).
               EOL_SURE_SPACE (int): Line-wrapping break.
-              HYPHEN (int): End-line hyphen that is not present in text; does not co-occur with
-              ``SPACE``, ``LEADER_SPACE``, or ``LINE_BREAK``.
+              HYPHEN (int): Confidence of the OCR results for the paragraph. Range [0, 1].
               LINE_BREAK (int): Line break that ends a paragraph.
             """
 

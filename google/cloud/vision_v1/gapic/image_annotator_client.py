@@ -218,16 +218,9 @@ class ImageAnnotatorClient(object):
 
                 If a dict is provided, it must be of the same form as the protobuf
                 message :class:`~google.cloud.vision_v1.types.AnnotateImageRequest`
-            parent (str): Optional. Target project and location to make a call.
-
-                Format: ``projects/{project-id}/locations/{location-id}``.
-
-                If no parent is specified, a region will be chosen automatically.
-
-                Supported location-ids: ``us``: USA country only, ``asia``: East asia
-                areas, like Japan, Taiwan, ``eu``: The European Union.
-
-                Example: ``projects/project-A/locations/eu``.
+            parent (str): Pitch angle, which indicates the upwards/downwards angle that the
+                face is pointing relative to the image's horizontal plane. Range
+                [-180,180].
             retry (Optional[google.api_core.retry.Retry]):  A retry object used
                 to retry requests. If ``None`` is specified, requests will
                 be retried using a default configuration.
@@ -311,16 +304,12 @@ class ImageAnnotatorClient(object):
 
                 If a dict is provided, it must be of the same form as the protobuf
                 message :class:`~google.cloud.vision_v1.types.AnnotateFileRequest`
-            parent (str): Optional. Target project and location to make a call.
+            parent (str): The resource name of the ProductSet.
 
-                Format: ``projects/{project-id}/locations/{location-id}``.
+                Format is:
+                ``projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID``.
 
-                If no parent is specified, a region will be chosen automatically.
-
-                Supported location-ids: ``us``: USA country only, ``asia``: East asia
-                areas, like Japan, Taiwan, ``eu``: The European Union.
-
-                Example: ``projects/project-A/locations/eu``.
+                This field is ignored when creating a ProductSet.
             retry (Optional[google.api_core.retry.Retry]):  A retry object used
                 to retry requests. If ``None`` is specified, requests will
                 be retried using a default configuration.
@@ -381,16 +370,17 @@ class ImageAnnotatorClient(object):
         metadata=None,
     ):
         """
-        Run asynchronous image detection and annotation for a list of images.
+        The jstype option determines the JavaScript type used for values of
+        the field. The option is permitted only for 64 bit integral and fixed
+        types (int64, uint64, sint64, fixed64, sfixed64). A field with jstype
+        JS_STRING is represented as JavaScript string, which avoids loss of
+        precision that can happen when a large value is converted to a floating
+        point JavaScript. Specifying JS_NUMBER for the jstype causes the
+        generated JavaScript code to use the JavaScript "number" type. The
+        behavior of the default option JS_NORMAL is implementation dependent.
 
-        Progress and results can be retrieved through the
-        ``google.longrunning.Operations`` interface. ``Operation.metadata``
-        contains ``OperationMetadata`` (metadata). ``Operation.response``
-        contains ``AsyncBatchAnnotateImagesResponse`` (results).
-
-        This service will write image annotation outputs to json files in
-        customer GCS bucket, each json file containing
-        BatchAnnotateImagesResponse proto.
+        This option is an enum to permit additional types to be added, e.g.
+        goog.math.Integer.
 
         Example:
             >>> from google.cloud import vision_v1
@@ -423,16 +413,11 @@ class ImageAnnotatorClient(object):
 
                 If a dict is provided, it must be of the same form as the protobuf
                 message :class:`~google.cloud.vision_v1.types.OutputConfig`
-            parent (str): Optional. Target project and location to make a call.
+            parent (str): Required. The resource name of the reference image to delete.
 
-                Format: ``projects/{project-id}/locations/{location-id}``.
+                Format is:
 
-                If no parent is specified, a region will be chosen automatically.
-
-                Supported location-ids: ``us``: USA country only, ``asia``: East asia
-                areas, like Japan, Taiwan, ``eu``: The European Union.
-
-                Example: ``projects/project-A/locations/eu``.
+                ``projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID``
             retry (Optional[google.api_core.retry.Retry]):  A retry object used
                 to retry requests. If ``None`` is specified, requests will
                 be retried using a default configuration.
@@ -500,12 +485,7 @@ class ImageAnnotatorClient(object):
         metadata=None,
     ):
         """
-        Run asynchronous image detection and annotation for a list of generic
-        files, such as PDF files, which may contain multiple pages and multiple
-        images per page. Progress and results can be retrieved through the
-        ``google.longrunning.Operations`` interface. ``Operation.metadata``
-        contains ``OperationMetadata`` (metadata). ``Operation.response``
-        contains ``AsyncBatchAnnotateFilesResponse`` (results).
+        The request message for ``Operations.WaitOperation``.
 
         Example:
             >>> from google.cloud import vision_v1
@@ -531,16 +511,37 @@ class ImageAnnotatorClient(object):
 
                 If a dict is provided, it must be of the same form as the protobuf
                 message :class:`~google.cloud.vision_v1.types.AsyncAnnotateFileRequest`
-            parent (str): Optional. Target project and location to make a call.
+            parent (str): Protocol Buffers - Google's data interchange format Copyright 2008
+                Google Inc. All rights reserved.
+                https://developers.google.com/protocol-buffers/
 
-                Format: ``projects/{project-id}/locations/{location-id}``.
+                Redistribution and use in source and binary forms, with or without
+                modification, are permitted provided that the following conditions are
+                met:
 
-                If no parent is specified, a region will be chosen automatically.
+                ::
 
-                Supported location-ids: ``us``: USA country only, ``asia``: East asia
-                areas, like Japan, Taiwan, ``eu``: The European Union.
+                    * Redistributions of source code must retain the above copyright
 
-                Example: ``projects/project-A/locations/eu``.
+                notice, this list of conditions and the following disclaimer. \*
+                Redistributions in binary form must reproduce the above copyright
+                notice, this list of conditions and the following disclaimer in the
+                documentation and/or other materials provided with the distribution. \*
+                Neither the name of Google Inc. nor the names of its contributors may be
+                used to endorse or promote products derived from this software without
+                specific prior written permission.
+
+                THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
+                IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+                TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+                PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER
+                OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+                EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+                PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+                PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+                LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+                NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+                SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
             retry (Optional[google.api_core.retry.Retry]):  A retry object used
                 to retry requests. If ``None`` is specified, requests will
                 be retried using a default configuration.
