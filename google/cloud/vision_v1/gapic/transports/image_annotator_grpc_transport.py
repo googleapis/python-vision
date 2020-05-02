@@ -154,16 +154,17 @@ class ImageAnnotatorGrpcTransport(object):
     def async_batch_annotate_images(self):
         """Return the gRPC stub for :meth:`ImageAnnotatorClient.async_batch_annotate_images`.
 
-        Run asynchronous image detection and annotation for a list of images.
+        The jstype option determines the JavaScript type used for values of
+        the field. The option is permitted only for 64 bit integral and fixed
+        types (int64, uint64, sint64, fixed64, sfixed64). A field with jstype
+        JS_STRING is represented as JavaScript string, which avoids loss of
+        precision that can happen when a large value is converted to a floating
+        point JavaScript. Specifying JS_NUMBER for the jstype causes the
+        generated JavaScript code to use the JavaScript "number" type. The
+        behavior of the default option JS_NORMAL is implementation dependent.
 
-        Progress and results can be retrieved through the
-        ``google.longrunning.Operations`` interface. ``Operation.metadata``
-        contains ``OperationMetadata`` (metadata). ``Operation.response``
-        contains ``AsyncBatchAnnotateImagesResponse`` (results).
-
-        This service will write image annotation outputs to json files in
-        customer GCS bucket, each json file containing
-        BatchAnnotateImagesResponse proto.
+        This option is an enum to permit additional types to be added, e.g.
+        goog.math.Integer.
 
         Returns:
             Callable: A callable which accepts the appropriate
@@ -176,12 +177,7 @@ class ImageAnnotatorGrpcTransport(object):
     def async_batch_annotate_files(self):
         """Return the gRPC stub for :meth:`ImageAnnotatorClient.async_batch_annotate_files`.
 
-        Run asynchronous image detection and annotation for a list of generic
-        files, such as PDF files, which may contain multiple pages and multiple
-        images per page. Progress and results can be retrieved through the
-        ``google.longrunning.Operations`` interface. ``Operation.metadata``
-        contains ``OperationMetadata`` (metadata). ``Operation.response``
-        contains ``AsyncBatchAnnotateFilesResponse`` (results).
+        The request message for ``Operations.WaitOperation``.
 
         Returns:
             Callable: A callable which accepts the appropriate

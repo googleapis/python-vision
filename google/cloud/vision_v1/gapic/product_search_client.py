@@ -49,20 +49,9 @@ _GAPIC_LIBRARY_VERSION = pkg_resources.get_distribution("google-cloud-vision").v
 
 class ProductSearchClient(object):
     """
-    Manages Products and ProductSets of reference images for use in product
-    search. It uses the following resource model:
-
-    -  The API has a collection of ``ProductSet`` resources, named
-       ``projects/*/locations/*/productSets/*``, which acts as a way to put
-       different products into groups to limit identification.
-
-    In parallel,
-
-    -  The API has a collection of ``Product`` resources, named
-       ``projects/*/locations/*/products/*``
-
-    -  Each ``Product`` has a collection of ``ReferenceImage`` resources,
-       named ``projects/*/locations/*/products/*/referenceImages/*``
+    If type_name is set, this need not be set. If both this and
+    type_name are set, this must be one of TYPE_ENUM, TYPE_MESSAGE or
+    TYPE_GROUP.
     """
 
     SERVICE_ADDRESS = "vision.googleapis.com:443"
@@ -255,12 +244,9 @@ class ProductSearchClient(object):
         metadata=None,
     ):
         """
-        Creates and returns a new ProductSet resource.
+        Wrapper message for ``float``.
 
-        Possible errors:
-
-        -  Returns INVALID\_ARGUMENT if display\_name is missing, or is longer
-           than 4096 characters.
+        The JSON representation for ``FloatValue`` is JSON number.
 
         Example:
             >>> from google.cloud import vision_v1
@@ -275,17 +261,17 @@ class ProductSearchClient(object):
             >>> response = client.create_product_set(parent, product_set)
 
         Args:
-            parent (str): Required. The project in which the ProductSet should be created.
-
-                Format is ``projects/PROJECT_ID/locations/LOC_ID``.
+            parent (str): Denotes a field as output only. This indicates that the field is
+                provided in responses, but including the field in a request does nothing
+                (the server *must* ignore it and *must not* throw an error as a result
+                of the field's presence).
             product_set (Union[dict, ~google.cloud.vision_v1.types.ProductSet]): Required. The ProductSet to create.
 
                 If a dict is provided, it must be of the same form as the protobuf
                 message :class:`~google.cloud.vision_v1.types.ProductSet`
-            product_set_id (str): A user-supplied resource id for this ProductSet. If set, the server will
-                attempt to use this value as the resource id. If it is already in use,
-                an error is returned with code ALREADY\_EXISTS. Must be at most 128
-                characters long. It cannot contain the character ``/``.
+            product_set_id (str): Wrapper message for ``string``.
+
+                The JSON representation for ``StringValue`` is JSON string.
             retry (Optional[google.api_core.retry.Retry]):  A retry object used
                 to retry requests. If ``None`` is specified, requests will
                 be retried using a default configuration.
@@ -345,12 +331,12 @@ class ProductSearchClient(object):
         metadata=None,
     ):
         """
-        Lists ProductSets in an unspecified order.
+        Additional information regarding long-running operations. In
+        particular, this specifies the types that are returned from long-running
+        operations.
 
-        Possible errors:
-
-        -  Returns INVALID\_ARGUMENT if page\_size is greater than 100, or less
-           than 1.
+        Required for methods that return ``google.longrunning.Operation``;
+        invalid otherwise.
 
         Example:
             >>> from google.cloud import vision_v1
@@ -374,9 +360,10 @@ class ProductSearchClient(object):
             ...         pass
 
         Args:
-            parent (str): Required. The project from which ProductSets should be listed.
-
-                Format is ``projects/PROJECT_ID/locations/LOC_ID``.
+            parent (str): A user-supplied resource id for this ProductSet. If set, the server
+                will attempt to use this value as the resource id. If it is already in
+                use, an error is returned with code ALREADY_EXISTS. Must be at most 128
+                characters long. It cannot contain the character ``/``.
             page_size (int): The maximum number of resources contained in the
                 underlying API response. If page streaming is performed per-
                 resource, this parameter does not affect the return value. If page
@@ -454,11 +441,7 @@ class ProductSearchClient(object):
         metadata=None,
     ):
         """
-        Gets information associated with a ProductSet.
-
-        Possible errors:
-
-        -  Returns NOT\_FOUND if the ProductSet does not exist.
+        Request message for the ``UpdateProduct`` method.
 
         Example:
             >>> from google.cloud import vision_v1
@@ -470,10 +453,8 @@ class ProductSearchClient(object):
             >>> response = client.get_product_set(name)
 
         Args:
-            name (str): Required. Resource name of the ProductSet to get.
-
-                Format is:
-                ``projects/PROJECT_ID/locations/LOG_ID/productSets/PRODUCT_SET_ID``
+            name (str): Confidence of medical_score. Range [0, 1]. 0 means not confident, 1
+                means very confident.
             retry (Optional[google.api_core.retry.Retry]):  A retry object used
                 to retry requests. If ``None`` is specified, requests will
                 be retried using a default configuration.
@@ -531,14 +512,7 @@ class ProductSearchClient(object):
         metadata=None,
     ):
         """
-        Makes changes to a ProductSet resource. Only display\_name can be
-        updated currently.
-
-        Possible errors:
-
-        -  Returns NOT\_FOUND if the ProductSet does not exist.
-        -  Returns INVALID\_ARGUMENT if display\_name is present in update\_mask
-           but missing from the request or longer than 4096 characters.
+        The list of reference_images that are imported successfully.
 
         Example:
             >>> from google.cloud import vision_v1
@@ -555,9 +529,12 @@ class ProductSearchClient(object):
 
                 If a dict is provided, it must be of the same form as the protobuf
                 message :class:`~google.cloud.vision_v1.types.ProductSet`
-            update_mask (Union[dict, ~google.cloud.vision_v1.types.FieldMask]): The ``FieldMask`` that specifies which fields to update. If update\_mask
-                isn't specified, all mutable fields are to be updated. Valid mask path
-                is ``display_name``.
+            update_mask (Union[dict, ~google.cloud.vision_v1.types.FieldMask]): Run asynchronous image detection and annotation for a list of
+                generic files, such as PDF files, which may contain multiple pages and
+                multiple images per page. Progress and results can be retrieved through
+                the ``google.longrunning.Operations`` interface. ``Operation.metadata``
+                contains ``OperationMetadata`` (metadata). ``Operation.response``
+                contains ``AsyncBatchAnnotateFilesResponse`` (results).
 
                 If a dict is provided, it must be of the same form as the protobuf
                 message :class:`~google.cloud.vision_v1.types.FieldMask`
@@ -634,10 +611,10 @@ class ProductSearchClient(object):
             >>> client.delete_product_set(name)
 
         Args:
-            name (str): Required. Resource name of the ProductSet to delete.
-
-                Format is:
-                ``projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID``
+            name (str): The server-assigned name, which is only unique within the same
+                service that originally returns it. If you use the default HTTP mapping,
+                the ``name`` should be a resource name ending with
+                ``operations/{unique_id}``.
             retry (Optional[google.api_core.retry.Retry]):  A retry object used
                 to retry requests. If ``None`` is specified, requests will
                 be retried using a default configuration.
@@ -693,15 +670,16 @@ class ProductSearchClient(object):
         metadata=None,
     ):
         """
-        Creates and returns a new product resource.
+        Manages long-running operations with an API service.
 
-        Possible errors:
-
-        -  Returns INVALID\_ARGUMENT if display\_name is missing or longer than
-           4096 characters.
-        -  Returns INVALID\_ARGUMENT if description is longer than 4096
-           characters.
-        -  Returns INVALID\_ARGUMENT if product\_category is missing or invalid.
+        When an API method normally takes long time to complete, it can be
+        designed to return ``Operation`` to the client, and the client can use
+        this interface to receive the real response asynchronously by polling
+        the operation resource, or pass the operation resource to another API
+        (such as Google Cloud Pub/Sub API) to receive the response. Any API
+        service that returns long-running operations should implement the
+        ``Operations`` interface so developers can have a consistent client
+        experience.
 
         Example:
             >>> from google.cloud import vision_v1
@@ -716,17 +694,15 @@ class ProductSearchClient(object):
             >>> response = client.create_product(parent, product)
 
         Args:
-            parent (str): Required. The project in which the Product should be created.
-
-                Format is ``projects/PROJECT_ID/locations/LOC_ID``.
+            parent (str): Face landmark (feature) type. Left and right are defined from the
+                vantage of the viewer of the image without considering mirror
+                projections typical of photos. So, ``LEFT_EYE``, typically, is the
+                person's right eye.
             product (Union[dict, ~google.cloud.vision_v1.types.Product]): Required. The product to create.
 
                 If a dict is provided, it must be of the same form as the protobuf
                 message :class:`~google.cloud.vision_v1.types.Product`
-            product_id (str): A user-supplied resource id for this Product. If set, the server will
-                attempt to use this value as the resource id. If it is already in use,
-                an error is returned with code ALREADY\_EXISTS. Must be at most 128
-                characters long. It cannot contain the character ``/``.
+            product_id (str): Request message for the ``RemoveProductFromProductSet`` method.
             retry (Optional[google.api_core.retry.Retry]):  A retry object used
                 to retry requests. If ``None`` is specified, requests will
                 be retried using a default configuration.
@@ -786,12 +762,8 @@ class ProductSearchClient(object):
         metadata=None,
     ):
         """
-        Lists products in an unspecified order.
-
-        Possible errors:
-
-        -  Returns INVALID\_ARGUMENT if page\_size is greater than 100 or less
-           than 1.
+        End-line hyphen that is not present in text; does not co-occur with
+        ``SPACE``, ``LEADER_SPACE``, or ``LINE_BREAK``.
 
         Example:
             >>> from google.cloud import vision_v1
@@ -815,10 +787,13 @@ class ProductSearchClient(object):
             ...         pass
 
         Args:
-            parent (str): Required. The project OR ProductSet from which Products should be
-                listed.
+            parent (str): An indicator of the behavior of a given field (for example, that a
+                field is required in requests, or given as output but ignored as input).
+                This **does not** change the behavior in protocol buffers itself; it
+                only denotes the behavior and may affect how API tooling handles the
+                field.
 
-                Format: ``projects/PROJECT_ID/locations/LOC_ID``
+                Note: This enum **may** receive new values in the future.
             page_size (int): The maximum number of resources contained in the
                 underlying API response. If page streaming is performed per-
                 resource, this parameter does not affect the return value. If page
@@ -896,11 +871,16 @@ class ProductSearchClient(object):
         metadata=None,
     ):
         """
-        Gets information associated with a Product.
+        Optional. Target project and location to make a call.
 
-        Possible errors:
+        Format: ``projects/{project-id}/locations/{location-id}``.
 
-        -  Returns NOT\_FOUND if the Product does not exist.
+        If no parent is specified, a region will be chosen automatically.
+
+        Supported location-ids: ``us``: USA country only, ``asia``: East asia
+        areas, like Japan, Taiwan, ``eu``: The European Union.
+
+        Example: ``projects/project-A/locations/eu``.
 
         Example:
             >>> from google.cloud import vision_v1
@@ -912,9 +892,21 @@ class ProductSearchClient(object):
             >>> response = client.get_product(name)
 
         Args:
-            name (str): Required. Resource name of the Product to get.
+            name (str): Makes changes to a Product resource. Only the ``display_name``,
+                ``description``, and ``labels`` fields can be updated right now.
 
-                Format is: ``projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID``
+                If labels are updated, the change will not be reflected in queries until
+                the next index time.
+
+                Possible errors:
+
+                -  Returns NOT_FOUND if the Product does not exist.
+                -  Returns INVALID_ARGUMENT if display_name is present in update_mask
+                   but is missing from the request or longer than 4096 characters.
+                -  Returns INVALID_ARGUMENT if description is present in update_mask but
+                   is longer than 4096 characters.
+                -  Returns INVALID_ARGUMENT if product_category is present in
+                   update_mask.
             retry (Optional[google.api_core.retry.Retry]):  A retry object used
                 to retry requests. If ``None`` is specified, requests will
                 be retried using a default configuration.
@@ -972,21 +964,12 @@ class ProductSearchClient(object):
         metadata=None,
     ):
         """
-        Makes changes to a Product resource. Only the ``display_name``,
-        ``description``, and ``labels`` fields can be updated right now.
+        The rpc status for each ImportProductSet request, including both
+        successes and errors.
 
-        If labels are updated, the change will not be reflected in queries until
-        the next index time.
-
-        Possible errors:
-
-        -  Returns NOT\_FOUND if the Product does not exist.
-        -  Returns INVALID\_ARGUMENT if display\_name is present in update\_mask
-           but is missing from the request or longer than 4096 characters.
-        -  Returns INVALID\_ARGUMENT if description is present in update\_mask
-           but is longer than 4096 characters.
-        -  Returns INVALID\_ARGUMENT if product\_category is present in
-           update\_mask.
+        The number of statuses here matches the number of lines in the csv file,
+        and statuses[i] stores the success or failure status of processing the
+        i-th line of the csv, starting from line 0.
 
         Example:
             >>> from google.cloud import vision_v1
@@ -1004,9 +987,9 @@ class ProductSearchClient(object):
 
                 If a dict is provided, it must be of the same form as the protobuf
                 message :class:`~google.cloud.vision_v1.types.Product`
-            update_mask (Union[dict, ~google.cloud.vision_v1.types.FieldMask]): The ``FieldMask`` that specifies which fields to update. If update\_mask
-                isn't specified, all mutable fields are to be updated. Valid mask paths
-                include ``product_labels``, ``display_name``, and ``description``.
+            update_mask (Union[dict, ~google.cloud.vision_v1.types.FieldMask]): Wrapper message for ``int64``.
+
+                The JSON representation for ``Int64Value`` is JSON string.
 
                 If a dict is provided, it must be of the same form as the protobuf
                 message :class:`~google.cloud.vision_v1.types.FieldMask`
@@ -1084,9 +1067,15 @@ class ProductSearchClient(object):
             >>> client.delete_product(name)
 
         Args:
-            name (str): Required. Resource name of product to delete.
-
-                Format is: ``projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID``
+            name (str): Starts asynchronous cancellation on a long-running operation. The
+                server makes a best effort to cancel the operation, but success is not
+                guaranteed. If the server doesn't support this method, it returns
+                ``google.rpc.Code.UNIMPLEMENTED``. Clients can use
+                ``Operations.GetOperation`` or other methods to check whether the
+                cancellation succeeded or whether the operation completed despite
+                cancellation. On successful cancellation, the operation is not deleted;
+                instead, it becomes an operation with an ``Operation.error`` value with
+                a ``google.rpc.Status.code`` of 1, corresponding to ``Code.CANCELLED``.
             retry (Optional[google.api_core.retry.Retry]):  A retry object used
                 to retry requests. If ``None`` is specified, requests will
                 be retried using a default configuration.
@@ -1142,27 +1131,16 @@ class ProductSearchClient(object):
         metadata=None,
     ):
         """
-        Creates and returns a new ReferenceImage resource.
+        Lists operations that match the specified filter in the request. If
+        the server doesn't support this method, it returns ``UNIMPLEMENTED``.
 
-        The ``bounding_poly`` field is optional. If ``bounding_poly`` is not
-        specified, the system will try to detect regions of interest in the
-        image that are compatible with the product\_category on the parent
-        product. If it is specified, detection is ALWAYS skipped. The system
-        converts polygons into non-rotated rectangles.
-
-        Note that the pipeline will resize the image if the image resolution is
-        too large to process (above 50MP).
-
-        Possible errors:
-
-        -  Returns INVALID\_ARGUMENT if the image\_uri is missing or longer than
-           4096 characters.
-        -  Returns INVALID\_ARGUMENT if the product does not exist.
-        -  Returns INVALID\_ARGUMENT if bounding\_poly is not provided, and
-           nothing compatible with the parent product's product\_category is
-           detected.
-        -  Returns INVALID\_ARGUMENT if bounding\_poly contains more than 10
-           polygons.
+        NOTE: the ``name`` binding allows API services to override the binding
+        to use different resource name schemes, such as ``users/*/operations``.
+        To override the binding, API services can add a binding such as
+        ``"/v1/{name=users/*}/operations"`` to their service configuration. For
+        backwards compatibility, the default name includes the operations
+        collection id, however overriding users must ensure the name binding is
+        the parent resource, without the operations collection id.
 
         Example:
             >>> from google.cloud import vision_v1
@@ -1177,19 +1155,35 @@ class ProductSearchClient(object):
             >>> response = client.create_reference_image(parent, reference_image)
 
         Args:
-            parent (str): Required. Resource name of the product in which to create the reference
-                image.
-
-                Format is ``projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID``.
+            parent (str): Request message for the ``PurgeProducts`` method.
             reference_image (Union[dict, ~google.cloud.vision_v1.types.ReferenceImage]): Required. The reference image to create.
                 If an image ID is specified, it is ignored.
 
                 If a dict is provided, it must be of the same form as the protobuf
                 message :class:`~google.cloud.vision_v1.types.ReferenceImage`
-            reference_image_id (str): A user-supplied resource id for the ReferenceImage to be added. If set,
-                the server will attempt to use this value as the resource id. If it is
-                already in use, an error is returned with code ALREADY\_EXISTS. Must be
-                at most 128 characters long. It cannot contain the character ``/``.
+            reference_image_id (str): The bounding box for the block. The vertices are in the order of
+                top-left, top-right, bottom-right, bottom-left. When a rotation of the
+                bounding box is detected the rotation is represented as around the
+                top-left corner as defined when the text is read in the 'natural'
+                orientation. For example:
+
+                -  when the text is horizontal it might look like:
+
+                   ::
+
+                        0----1
+                        |    |
+                        3----2
+
+                -  when it's rotated 180 degrees around the top-left corner it becomes:
+
+                   ::
+
+                        2----3
+                        |    |
+                        1----0
+
+                   and the vertex order will still be (0, 1, 2, 3).
             retry (Optional[google.api_core.retry.Retry]):  A retry object used
                 to retry requests. If ``None`` is specified, requests will
                 be retried using a default configuration.
@@ -1268,11 +1262,10 @@ class ProductSearchClient(object):
             >>> client.delete_reference_image(name)
 
         Args:
-            name (str): Required. The resource name of the reference image to delete.
-
-                Format is:
-
-                ``projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID``
+            name (str): The operation result, which can be either an ``error`` or a valid
+                ``response``. If ``done`` == ``false``, neither ``error`` nor
+                ``response`` is set. If ``done`` == ``true``, exactly one of ``error``
+                or ``response`` is set.
             retry (Optional[google.api_core.retry.Retry]):  A retry object used
                 to retry requests. If ``None`` is specified, requests will
                 be retried using a default configuration.
@@ -1327,13 +1320,10 @@ class ProductSearchClient(object):
         metadata=None,
     ):
         """
-        Lists reference images.
-
-        Possible errors:
-
-        -  Returns NOT\_FOUND if the parent product does not exist.
-        -  Returns INVALID\_ARGUMENT if the page\_size is greater than 100, or
-           less than 1.
+        The ``FieldMask`` that specifies which fields to update. If
+        update_mask isn't specified, all mutable fields are to be updated. Valid
+        mask paths include ``product_labels``, ``display_name``, and
+        ``description``.
 
         Example:
             >>> from google.cloud import vision_v1
@@ -1357,9 +1347,9 @@ class ProductSearchClient(object):
             ...         pass
 
         Args:
-            parent (str): Required. Resource name of the product containing the reference images.
-
-                Format is ``projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID``.
+            parent (str): Image content, represented as a stream of bytes. Note: As with all
+                ``bytes`` fields, protobuffers use a pure binary representation, whereas
+                JSON representations use base64.
             page_size (int): The maximum number of resources contained in the
                 underlying API response. If page streaming is performed per-
                 resource, this parameter does not affect the return value. If page
@@ -1437,11 +1427,13 @@ class ProductSearchClient(object):
         metadata=None,
     ):
         """
-        Gets information associated with a ReferenceImage.
+        **Use ``image_uri`` instead.**
 
-        Possible errors:
-
-        -  Returns NOT\_FOUND if the specified image does not exist.
+        The Google Cloud Storage URI of the form
+        ``gs://bucket_name/object_name``. Object versioning is not supported.
+        See `Google Cloud Storage Request
+        URIs <https://cloud.google.com/storage/docs/reference-uris>`__ for more
+        info.
 
         Example:
             >>> from google.cloud import vision_v1
@@ -1453,11 +1445,8 @@ class ProductSearchClient(object):
             >>> response = client.get_reference_image(name)
 
         Args:
-            name (str): Required. The resource name of the ReferenceImage to get.
-
-                Format is:
-
-                ``projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID``.
+            name (str): Confidence of racy_score. Range [0, 1]. 0 means not confident, 1
+                means very confident.
             retry (Optional[google.api_core.retry.Retry]):  A retry object used
                 to retry requests. If ``None`` is specified, requests will
                 be retried using a default configuration.
@@ -1515,14 +1504,9 @@ class ProductSearchClient(object):
         metadata=None,
     ):
         """
-        Adds a Product to the specified ProductSet. If the Product is already
-        present, no change is made.
+        Wrapper message for ``uint64``.
 
-        One Product can be added to at most 100 ProductSets.
-
-        Possible errors:
-
-        -  Returns NOT\_FOUND if the Product or the ProductSet doesn't exist.
+        The JSON representation for ``UInt64Value`` is JSON string.
 
         Example:
             >>> from google.cloud import vision_v1
@@ -1535,14 +1519,11 @@ class ProductSearchClient(object):
             >>> client.add_product_to_product_set(name, product)
 
         Args:
-            name (str): Required. The resource name for the ProductSet to modify.
-
-                Format is:
-                ``projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID``
-            product (str): Required. The resource name for the Product to be added to this
-                ProductSet.
-
-                Format is: ``projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID``
+            name (str): An annotation that describes a resource reference, see
+                ``ResourceReference``.
+            product (str): Roll angle, which indicates the amount of clockwise/anti-clockwise
+                rotation of the face relative to the image vertical about the axis
+                perpendicular to the face. Range [-180,180].
             retry (Optional[google.api_core.retry.Retry]):  A retry object used
                 to retry requests. If ``None`` is specified, requests will
                 be retried using a default configuration.
@@ -1612,14 +1593,136 @@ class ProductSearchClient(object):
             >>> client.remove_product_from_product_set(name, product)
 
         Args:
-            name (str): Required. The resource name for the ProductSet to modify.
+            name (str): Required. The project and location in which the Products should be
+                deleted.
 
-                Format is:
-                ``projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID``
-            product (str): Required. The resource name for the Product to be removed from this
-                ProductSet.
+                Format is ``projects/PROJECT_ID/locations/LOC_ID``.
+            product (str): Represents a color in the RGBA color space. This representation is
+                designed for simplicity of conversion to/from color representations in
+                various languages over compactness; for example, the fields of this
+                representation can be trivially provided to the constructor of
+                "java.awt.Color" in Java; it can also be trivially provided to UIColor's
+                "+colorWithRed:green:blue:alpha" method in iOS; and, with just a little
+                work, it can be easily formatted into a CSS "rgba()" string in
+                JavaScript, as well.
 
-                Format is: ``projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID``
+                Note: this proto does not carry information about the absolute color
+                space that should be used to interpret the RGB value (e.g. sRGB, Adobe
+                RGB, DCI-P3, BT.2020, etc.). By default, applications SHOULD assume the
+                sRGB color space.
+
+                Example (Java):
+
+                ::
+
+                     import com.google.type.Color;
+
+                     // ...
+                     public static java.awt.Color fromProto(Color protocolor) {
+                       float alpha = protocolor.hasAlpha()
+                           ? protocolor.getAlpha().getValue()
+                           : 1.0;
+
+                       return new java.awt.Color(
+                           protocolor.getRed(),
+                           protocolor.getGreen(),
+                           protocolor.getBlue(),
+                           alpha);
+                     }
+
+                     public static Color toProto(java.awt.Color color) {
+                       float red = (float) color.getRed();
+                       float green = (float) color.getGreen();
+                       float blue = (float) color.getBlue();
+                       float denominator = 255.0;
+                       Color.Builder resultBuilder =
+                           Color
+                               .newBuilder()
+                               .setRed(red / denominator)
+                               .setGreen(green / denominator)
+                               .setBlue(blue / denominator);
+                       int alpha = color.getAlpha();
+                       if (alpha != 255) {
+                         result.setAlpha(
+                             FloatValue
+                                 .newBuilder()
+                                 .setValue(((float) alpha) / denominator)
+                                 .build());
+                       }
+                       return resultBuilder.build();
+                     }
+                     // ...
+
+                Example (iOS / Obj-C):
+
+                ::
+
+                     // ...
+                     static UIColor* fromProto(Color* protocolor) {
+                        float red = [protocolor red];
+                        float green = [protocolor green];
+                        float blue = [protocolor blue];
+                        FloatValue* alpha_wrapper = [protocolor alpha];
+                        float alpha = 1.0;
+                        if (alpha_wrapper != nil) {
+                          alpha = [alpha_wrapper value];
+                        }
+                        return [UIColor colorWithRed:red green:green blue:blue alpha:alpha];
+                     }
+
+                     static Color* toProto(UIColor* color) {
+                         CGFloat red, green, blue, alpha;
+                         if (![color getRed:&red green:&green blue:&blue alpha:&alpha]) {
+                           return nil;
+                         }
+                         Color* result = [[Color alloc] init];
+                         [result setRed:red];
+                         [result setGreen:green];
+                         [result setBlue:blue];
+                         if (alpha <= 0.9999) {
+                           [result setAlpha:floatWrapperWithValue(alpha)];
+                         }
+                         [result autorelease];
+                         return result;
+                    }
+                    // ...
+
+                Example (JavaScript):
+
+                ::
+
+                    // ...
+
+                    var protoToCssColor = function(rgb_color) {
+                       var redFrac = rgb_color.red || 0.0;
+                       var greenFrac = rgb_color.green || 0.0;
+                       var blueFrac = rgb_color.blue || 0.0;
+                       var red = Math.floor(redFrac * 255);
+                       var green = Math.floor(greenFrac * 255);
+                       var blue = Math.floor(blueFrac * 255);
+
+                       if (!('alpha' in rgb_color)) {
+                          return rgbToCssColor_(red, green, blue);
+                       }
+
+                       var alphaFrac = rgb_color.alpha.value || 0.0;
+                       var rgbParams = [red, green, blue].join(',');
+                       return ['rgba(', rgbParams, ',', alphaFrac, ')'].join('');
+                    };
+
+                    var rgbToCssColor_ = function(red, green, blue) {
+                      var rgbNumber = new Number((red << 16) | (green << 8) | blue);
+                      var hexString = rgbNumber.toString(16);
+                      var missingZeros = 6 - hexString.length;
+                      var resultBuilder = ['#'];
+                      for (var i = 0; i < missingZeros; i++) {
+                         resultBuilder.push('0');
+                      }
+                      resultBuilder.push(hexString);
+                      return resultBuilder.join('');
+                    };
+
+                    // ...
             retry (Optional[google.api_core.retry.Retry]):  A retry object used
                 to retry requests. If ``None`` is specified, requests will
                 be retried using a default configuration.
@@ -1678,13 +1781,11 @@ class ProductSearchClient(object):
         metadata=None,
     ):
         """
-        Lists the Products in a ProductSet, in an unspecified order. If the
-        ProductSet does not exist, the products field of the response will be
-        empty.
+        Lists products in an unspecified order.
 
         Possible errors:
 
-        -  Returns INVALID\_ARGUMENT if page\_size is greater than 100 or less
+        -  Returns INVALID_ARGUMENT if page_size is greater than 100 or less
            than 1.
 
         Example:
@@ -1709,10 +1810,14 @@ class ProductSearchClient(object):
             ...         pass
 
         Args:
-            name (str): Required. The ProductSet resource for which to retrieve Products.
-
-                Format is:
-                ``projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID``
+            name (str): The normal response of the operation in case of success. If the
+                original method returns no data on success, such as ``Delete``, the
+                response is ``google.protobuf.Empty``. If the original method is
+                standard ``Get``/``Create``/``Update``, the response should be the
+                resource. For other methods, the response should have the type
+                ``XxxResponse``, where ``Xxx`` is the original method name. For example,
+                if the original method name is ``TakeSnapshot()``, the inferred response
+                type is ``TakeSnapshotResponse``.
             page_size (int): The maximum number of resources contained in the
                 underlying API response. If page streaming is performed per-
                 resource, this parameter does not affect the return value. If page
@@ -1793,17 +1898,8 @@ class ProductSearchClient(object):
         metadata=None,
     ):
         """
-        Asynchronous API that imports a list of reference images to specified
-        product sets based on a list of image information.
-
-        The ``google.longrunning.Operation`` API can be used to keep track of
-        the progress and results of the request. ``Operation.metadata`` contains
-        ``BatchOperationMetadata``. (progress) ``Operation.response`` contains
-        ``ImportProductSetsResponse``. (results)
-
-        The input source of this method is a csv file on Google Cloud Storage.
-        For the format of the csv file please see
-        ``ImportProductSetsGcsSource.csv_file_uri``.
+        Confidence of adult_score. Range [0, 1]. 0 means not confident, 1
+        means very confident.
 
         Example:
             >>> from google.cloud import vision_v1
@@ -1827,9 +1923,7 @@ class ProductSearchClient(object):
             >>> metadata = response.metadata()
 
         Args:
-            parent (str): Required. The project in which the ProductSets should be imported.
-
-                Format is ``projects/PROJECT_ID/locations/LOC_ID``.
+            parent (str): Request message for the ``GetProductSet`` method.
             input_config (Union[dict, ~google.cloud.vision_v1.types.ImportProductSetsInputConfig]): Required. The input content for the list of requests.
 
                 If a dict is provided, it must be of the same form as the protobuf
@@ -1901,30 +1995,7 @@ class ProductSearchClient(object):
         metadata=None,
     ):
         """
-        Asynchronous API to delete all Products in a ProductSet or all Products
-        that are in no ProductSet.
-
-        If a Product is a member of the specified ProductSet in addition to
-        other ProductSets, the Product will still be deleted.
-
-        It is recommended to not delete the specified ProductSet until after
-        this operation has completed. It is also recommended to not add any of
-        the Products involved in the batch delete to a new ProductSet while this
-        operation is running because those Products may still end up deleted.
-
-        It's not possible to undo the PurgeProducts operation. Therefore, it is
-        recommended to keep the csv files used in ImportProductSets (if that was
-        how you originally built the Product Set) before starting PurgeProducts,
-        in case you need to re-import the data after deletion.
-
-        If the plan is to purge all of the Products from a ProductSet and then
-        re-use the empty ProductSet to re-import new Products into the empty
-        ProductSet, you must wait until the PurgeProducts operation has finished
-        for that ProductSet.
-
-        The ``google.longrunning.Operation`` API can be used to keep track of
-        the progress and results of the request. ``Operation.metadata`` contains
-        ``BatchOperationMetadata``. (progress)
+        Object name, expressed in its ``language_code`` language.
 
         Example:
             >>> from google.cloud import vision_v1
@@ -1945,16 +2016,21 @@ class ProductSearchClient(object):
             >>> metadata = response.metadata()
 
         Args:
-            parent (str): Required. The project and location in which the Products should be
-                deleted.
+            parent (str): Wrapper message for ``uint32``.
 
-                Format is ``projects/PROJECT_ID/locations/LOC_ID``.
+                The JSON representation for ``UInt32Value`` is JSON number.
             product_set_purge_config (Union[dict, ~google.cloud.vision_v1.types.ProductSetPurgeConfig]): Specify which ProductSet contains the Products to be deleted.
 
                 If a dict is provided, it must be of the same form as the protobuf
                 message :class:`~google.cloud.vision_v1.types.ProductSetPurgeConfig`
-            delete_orphan_products (bool): If delete\_orphan\_products is true, all Products that are not in any
-                ProductSet will be deleted.
+            delete_orphan_products (bool): Adds a Product to the specified ProductSet. If the Product is
+                already present, no change is made.
+
+                One Product can be added to at most 100 ProductSets.
+
+                Possible errors:
+
+                -  Returns NOT_FOUND if the Product or the ProductSet doesn't exist.
             force (bool): The default value is false. Override this value to true to actually perform
                 the purge.
             retry (Optional[google.api_core.retry.Retry]):  A retry object used

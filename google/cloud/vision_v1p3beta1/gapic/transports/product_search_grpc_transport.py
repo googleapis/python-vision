@@ -124,12 +124,7 @@ class ProductSearchGrpcTransport(object):
     def create_product_set(self):
         """Return the gRPC stub for :meth:`ProductSearchClient.create_product_set`.
 
-        Creates and returns a new ProductSet resource.
-
-        Possible errors:
-
-        -  Returns INVALID\_ARGUMENT if display\_name is missing, or is longer
-           than 4096 characters.
+        Image-specific score for this color. Value in range [0, 1].
 
         Returns:
             Callable: A callable which accepts the appropriate
@@ -142,12 +137,12 @@ class ProductSearchGrpcTransport(object):
     def list_product_sets(self):
         """Return the gRPC stub for :meth:`ProductSearchClient.list_product_sets`.
 
-        Lists ProductSets in an unspecified order.
+        Additional information regarding long-running operations. In
+        particular, this specifies the types that are returned from long-running
+        operations.
 
-        Possible errors:
-
-        -  Returns INVALID\_ARGUMENT if page\_size is greater than 100, or less
-           than 1.
+        Required for methods that return ``google.longrunning.Operation``;
+        invalid otherwise.
 
         Returns:
             Callable: A callable which accepts the appropriate
@@ -160,11 +155,9 @@ class ProductSearchGrpcTransport(object):
     def get_product_set(self):
         """Return the gRPC stub for :meth:`ProductSearchClient.get_product_set`.
 
-        Gets information associated with a ProductSet.
-
-        Possible errors:
-
-        -  Returns NOT\_FOUND if the ProductSet does not exist.
+        Yaw angle, which indicates the leftward/rightward angle that the
+        face is pointing relative to the vertical plane perpendicular to the
+        image. Range [-180,180].
 
         Returns:
             Callable: A callable which accepts the appropriate
@@ -177,14 +170,11 @@ class ProductSearchGrpcTransport(object):
     def update_product_set(self):
         """Return the gRPC stub for :meth:`ProductSearchClient.update_product_set`.
 
-        Makes changes to a ProductSet resource. Only display\_name can be
-        updated currently.
+        Metadata for the batch operations such as the current state.
 
-        Possible errors:
-
-        -  Returns NOT\_FOUND if the ProductSet does not exist.
-        -  Returns INVALID\_ARGUMENT if display\_name is present in update\_mask
-           but missing from the request or longer than 4096 characters.
+        This is included in the ``metadata`` field of the ``Operation`` returned
+        by the ``GetOperation`` call of the ``google::longrunning::Operations``
+        service.
 
         Returns:
             Callable: A callable which accepts the appropriate
@@ -197,14 +187,7 @@ class ProductSearchGrpcTransport(object):
     def delete_product_set(self):
         """Return the gRPC stub for :meth:`ProductSearchClient.delete_product_set`.
 
-        Permanently deletes a ProductSet. All Products and ReferenceImages in
-        the ProductSet will be deleted.
-
-        The actual image files are not deleted from Google Cloud Storage.
-
-        Possible errors:
-
-        -  Returns NOT\_FOUND if the ProductSet does not exist.
+        The next_page_token returned from a previous List request, if any.
 
         Returns:
             Callable: A callable which accepts the appropriate
@@ -217,15 +200,9 @@ class ProductSearchGrpcTransport(object):
     def create_product(self):
         """Return the gRPC stub for :meth:`ProductSearchClient.create_product`.
 
-        Creates and returns a new product resource.
+        Wrapper message for ``uint32``.
 
-        Possible errors:
-
-        -  Returns INVALID\_ARGUMENT if display\_name is missing or longer than
-           4096 characters.
-        -  Returns INVALID\_ARGUMENT if description is longer than 4096
-           characters.
-        -  Returns INVALID\_ARGUMENT if product\_category is missing or invalid.
+        The JSON representation for ``UInt32Value`` is JSON number.
 
         Returns:
             Callable: A callable which accepts the appropriate
@@ -238,12 +215,9 @@ class ProductSearchGrpcTransport(object):
     def list_products(self):
         """Return the gRPC stub for :meth:`ProductSearchClient.list_products`.
 
-        Lists products in an unspecified order.
+        Required. Resource name of product to delete.
 
-        Possible errors:
-
-        -  Returns INVALID\_ARGUMENT if page\_size is greater than 100 or less
-           than 1.
+        Format is: ``projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID``
 
         Returns:
             Callable: A callable which accepts the appropriate
@@ -256,11 +230,7 @@ class ProductSearchGrpcTransport(object):
     def get_product(self):
         """Return the gRPC stub for :meth:`ProductSearchClient.get_product`.
 
-        Gets information associated with a Product.
-
-        Possible errors:
-
-        -  Returns NOT\_FOUND if the Product does not exist.
+        The amount of green in the color as a value in the interval [0, 1].
 
         Returns:
             Callable: A callable which accepts the appropriate
@@ -273,21 +243,16 @@ class ProductSearchGrpcTransport(object):
     def update_product(self):
         """Return the gRPC stub for :meth:`ProductSearchClient.update_product`.
 
-        Makes changes to a Product resource. Only display\_name, description and
-        labels can be updated right now.
+        Manages long-running operations with an API service.
 
-        If labels are updated, the change will not be reflected in queries until
-        the next index time.
-
-        Possible errors:
-
-        -  Returns NOT\_FOUND if the Product does not exist.
-        -  Returns INVALID\_ARGUMENT if display\_name is present in update\_mask
-           but is missing from the request or longer than 4096 characters.
-        -  Returns INVALID\_ARGUMENT if description is present in update\_mask
-           but is longer than 4096 characters.
-        -  Returns INVALID\_ARGUMENT if product\_category is present in
-           update\_mask.
+        When an API method normally takes long time to complete, it can be
+        designed to return ``Operation`` to the client, and the client can use
+        this interface to receive the real response asynchronously by polling
+        the operation resource, or pass the operation resource to another API
+        (such as Google Cloud Pub/Sub API) to receive the response. Any API
+        service that returns long-running operations should implement the
+        ``Operations`` interface so developers can have a consistent client
+        experience.
 
         Returns:
             Callable: A callable which accepts the appropriate
@@ -300,15 +265,11 @@ class ProductSearchGrpcTransport(object):
     def delete_product(self):
         """Return the gRPC stub for :meth:`ProductSearchClient.delete_product`.
 
-        Permanently deletes a product and its reference images.
-
-        Metadata of the product and all its images will be deleted right away,
-        but search queries against ProductSets containing the product may still
-        work until all related caches are refreshed.
+        Gets information associated with a Product.
 
         Possible errors:
 
-        -  Returns NOT\_FOUND if the product does not exist.
+        -  Returns NOT_FOUND if the Product does not exist.
 
         Returns:
             Callable: A callable which accepts the appropriate
@@ -321,27 +282,10 @@ class ProductSearchGrpcTransport(object):
     def create_reference_image(self):
         """Return the gRPC stub for :meth:`ProductSearchClient.create_reference_image`.
 
-        Creates and returns a new ReferenceImage resource.
-
-        The ``bounding_poly`` field is optional. If ``bounding_poly`` is not
-        specified, the system will try to detect regions of interest in the
-        image that are compatible with the product\_category on the parent
-        product. If it is specified, detection is ALWAYS skipped. The system
-        converts polygons into non-rotated rectangles.
-
-        Note that the pipeline will resize the image if the image resolution is
-        too large to process (above 50MP).
-
-        Possible errors:
-
-        -  Returns INVALID\_ARGUMENT if the image\_uri is missing or longer than
-           4096 characters.
-        -  Returns INVALID\_ARGUMENT if the product does not exist.
-        -  Returns INVALID\_ARGUMENT if bounding\_poly is not provided, and
-           nothing compatible with the parent product's product\_category is
-           detected.
-        -  Returns INVALID\_ARGUMENT if bounding\_poly contains more than 10
-           polygons.
+        A user-supplied resource id for the ReferenceImage to be added. If
+        set, the server will attempt to use this value as the resource id. If it
+        is already in use, an error is returned with code ALREADY_EXISTS. Must
+        be at most 128 characters long. It cannot contain the character ``/``.
 
         Returns:
             Callable: A callable which accepts the appropriate
@@ -354,17 +298,10 @@ class ProductSearchGrpcTransport(object):
     def delete_reference_image(self):
         """Return the gRPC stub for :meth:`ProductSearchClient.delete_reference_image`.
 
-        Permanently deletes a reference image.
-
-        The image metadata will be deleted right away, but search queries
-        against ProductSets containing the image may still work until all
-        related caches are refreshed.
-
-        The actual image files are not deleted from Google Cloud Storage.
-
-        Possible errors:
-
-        -  Returns NOT\_FOUND if the reference image does not exist.
+        The custom pattern is used for specifying an HTTP method that is not
+        included in the ``pattern`` field, such as HEAD, or "*" to leave the
+        HTTP method unspecified for this rule. The wild-card rule is useful for
+        services that provide content to Web (HTML) clients.
 
         Returns:
             Callable: A callable which accepts the appropriate
@@ -377,13 +314,7 @@ class ProductSearchGrpcTransport(object):
     def list_reference_images(self):
         """Return the gRPC stub for :meth:`ProductSearchClient.list_reference_images`.
 
-        Lists reference images.
-
-        Possible errors:
-
-        -  Returns NOT\_FOUND if the parent product does not exist.
-        -  Returns INVALID\_ARGUMENT if the page\_size is greater than 100, or
-           less than 1.
+        The request message for ``Operations.GetOperation``.
 
         Returns:
             Callable: A callable which accepts the appropriate
@@ -396,11 +327,12 @@ class ProductSearchGrpcTransport(object):
     def get_reference_image(self):
         """Return the gRPC stub for :meth:`ProductSearchClient.get_reference_image`.
 
-        Gets information associated with a ReferenceImage.
+        Lists products in an unspecified order.
 
         Possible errors:
 
-        -  Returns NOT\_FOUND if the specified image does not exist.
+        -  Returns INVALID_ARGUMENT if page_size is greater than 100 or less
+           than 1.
 
         Returns:
             Callable: A callable which accepts the appropriate
@@ -413,14 +345,7 @@ class ProductSearchGrpcTransport(object):
     def add_product_to_product_set(self):
         """Return the gRPC stub for :meth:`ProductSearchClient.add_product_to_product_set`.
 
-        Adds a Product to the specified ProductSet. If the Product is already
-        present, no change is made.
-
-        One Product can be added to at most 100 ProductSets.
-
-        Possible errors:
-
-        -  Returns NOT\_FOUND if the Product or the ProductSet doesn't exist.
+        Request message for the ``CreateProductSet`` method.
 
         Returns:
             Callable: A callable which accepts the appropriate
@@ -433,11 +358,7 @@ class ProductSearchGrpcTransport(object):
     def remove_product_from_product_set(self):
         """Return the gRPC stub for :meth:`ProductSearchClient.remove_product_from_product_set`.
 
-        Removes a Product from the specified ProductSet.
-
-        Possible errors:
-
-        -  Returns NOT\_FOUND If the Product is not found under the ProductSet.
+        Request message for the ``ImportProductSets`` method.
 
         Returns:
             Callable: A callable which accepts the appropriate
@@ -450,14 +371,9 @@ class ProductSearchGrpcTransport(object):
     def list_products_in_product_set(self):
         """Return the gRPC stub for :meth:`ProductSearchClient.list_products_in_product_set`.
 
-        Lists the Products in a ProductSet, in an unspecified order. If the
-        ProductSet does not exist, the products field of the response will be
-        empty.
+        Required. The project in which the ProductSet should be created.
 
-        Possible errors:
-
-        -  Returns INVALID\_ARGUMENT if page\_size is greater than 100 or less
-           than 1.
+        Format is ``projects/PROJECT_ID/locations/LOC_ID``.
 
         Returns:
             Callable: A callable which accepts the appropriate
@@ -470,17 +386,13 @@ class ProductSearchGrpcTransport(object):
     def import_product_sets(self):
         """Return the gRPC stub for :meth:`ProductSearchClient.import_product_sets`.
 
-        Asynchronous API that imports a list of reference images to specified
-        product sets based on a list of image information.
+        The hostname for this service. This should be specified with no
+        prefix or protocol.
 
-        The ``google.longrunning.Operation`` API can be used to keep track of
-        the progress and results of the request. ``Operation.metadata`` contains
-        ``BatchOperationMetadata``. (progress) ``Operation.response`` contains
-        ``ImportProductSetsResponse``. (results)
+        Example:
 
-        The input source of this method is a csv file on Google Cloud Storage.
-        For the format of the csv file please see
-        ``ImportProductSetsGcsSource.csv_file_uri``.
+        service Foo { option (google.api.default_host) = "foo.googleapi.com";
+        ... }
 
         Returns:
             Callable: A callable which accepts the appropriate
