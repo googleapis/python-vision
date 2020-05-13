@@ -121,79 +121,6 @@ class ProductSearchGrpcTransport(object):
         return self._channel
 
     @property
-    def create_product_set(self):
-        """Return the gRPC stub for :meth:`ProductSearchClient.create_product_set`.
-
-        Creates and returns a new ProductSet resource.
-
-        Possible errors:
-
-        -  Returns INVALID\_ARGUMENT if display\_name is missing, or is longer
-           than 4096 characters.
-
-        Returns:
-            Callable: A callable which accepts the appropriate
-                deserialized request object and returns a
-                deserialized response object.
-        """
-        return self._stubs["product_search_stub"].CreateProductSet
-
-    @property
-    def list_product_sets(self):
-        """Return the gRPC stub for :meth:`ProductSearchClient.list_product_sets`.
-
-        Lists ProductSets in an unspecified order.
-
-        Possible errors:
-
-        -  Returns INVALID\_ARGUMENT if page\_size is greater than 100, or less
-           than 1.
-
-        Returns:
-            Callable: A callable which accepts the appropriate
-                deserialized request object and returns a
-                deserialized response object.
-        """
-        return self._stubs["product_search_stub"].ListProductSets
-
-    @property
-    def get_product_set(self):
-        """Return the gRPC stub for :meth:`ProductSearchClient.get_product_set`.
-
-        Gets information associated with a ProductSet.
-
-        Possible errors:
-
-        -  Returns NOT\_FOUND if the ProductSet does not exist.
-
-        Returns:
-            Callable: A callable which accepts the appropriate
-                deserialized request object and returns a
-                deserialized response object.
-        """
-        return self._stubs["product_search_stub"].GetProductSet
-
-    @property
-    def update_product_set(self):
-        """Return the gRPC stub for :meth:`ProductSearchClient.update_product_set`.
-
-        Makes changes to a ProductSet resource. Only display\_name can be
-        updated currently.
-
-        Possible errors:
-
-        -  Returns NOT\_FOUND if the ProductSet does not exist.
-        -  Returns INVALID\_ARGUMENT if display\_name is present in update\_mask
-           but missing from the request or longer than 4096 characters.
-
-        Returns:
-            Callable: A callable which accepts the appropriate
-                deserialized request object and returns a
-                deserialized response object.
-        """
-        return self._stubs["product_search_stub"].UpdateProductSet
-
-    @property
     def delete_product_set(self):
         """Return the gRPC stub for :meth:`ProductSearchClient.delete_product_set`.
 
@@ -208,89 +135,6 @@ class ProductSearchGrpcTransport(object):
                 deserialized response object.
         """
         return self._stubs["product_search_stub"].DeleteProductSet
-
-    @property
-    def create_product(self):
-        """Return the gRPC stub for :meth:`ProductSearchClient.create_product`.
-
-        Creates and returns a new product resource.
-
-        Possible errors:
-
-        -  Returns INVALID\_ARGUMENT if display\_name is missing or longer than
-           4096 characters.
-        -  Returns INVALID\_ARGUMENT if description is longer than 4096
-           characters.
-        -  Returns INVALID\_ARGUMENT if product\_category is missing or invalid.
-
-        Returns:
-            Callable: A callable which accepts the appropriate
-                deserialized request object and returns a
-                deserialized response object.
-        """
-        return self._stubs["product_search_stub"].CreateProduct
-
-    @property
-    def list_products(self):
-        """Return the gRPC stub for :meth:`ProductSearchClient.list_products`.
-
-        Lists products in an unspecified order.
-
-        Possible errors:
-
-        -  Returns INVALID\_ARGUMENT if page\_size is greater than 100 or less
-           than 1.
-
-        Returns:
-            Callable: A callable which accepts the appropriate
-                deserialized request object and returns a
-                deserialized response object.
-        """
-        return self._stubs["product_search_stub"].ListProducts
-
-    @property
-    def get_product(self):
-        """Return the gRPC stub for :meth:`ProductSearchClient.get_product`.
-
-        Gets information associated with a Product.
-
-        Possible errors:
-
-        -  Returns NOT\_FOUND if the Product does not exist.
-
-        Returns:
-            Callable: A callable which accepts the appropriate
-                deserialized request object and returns a
-                deserialized response object.
-        """
-        return self._stubs["product_search_stub"].GetProduct
-
-    @property
-    def update_product(self):
-        """Return the gRPC stub for :meth:`ProductSearchClient.update_product`.
-
-        Makes changes to a Product resource. Only the ``display_name``,
-        ``description``, and ``labels`` fields can be updated right now.
-
-        If labels are updated, the change will not be reflected in queries until
-        the next index time.
-
-        Possible errors:
-
-        -  Returns NOT\_FOUND if the Product does not exist.
-        -  Returns INVALID\_ARGUMENT if display\_name is present in update\_mask
-           but is missing from the request or longer than 4096 characters.
-        -  Returns INVALID\_ARGUMENT if description is present in update\_mask
-           but is longer than 4096 characters.
-        -  Returns INVALID\_ARGUMENT if product\_category is present in
-           update\_mask.
-
-        Returns:
-            Callable: A callable which accepts the appropriate
-                deserialized request object and returns a
-                deserialized response object.
-        """
-        return self._stubs["product_search_stub"].UpdateProduct
 
     @property
     def delete_product(self):
@@ -308,39 +152,6 @@ class ProductSearchGrpcTransport(object):
                 deserialized response object.
         """
         return self._stubs["product_search_stub"].DeleteProduct
-
-    @property
-    def create_reference_image(self):
-        """Return the gRPC stub for :meth:`ProductSearchClient.create_reference_image`.
-
-        Creates and returns a new ReferenceImage resource.
-
-        The ``bounding_poly`` field is optional. If ``bounding_poly`` is not
-        specified, the system will try to detect regions of interest in the
-        image that are compatible with the product\_category on the parent
-        product. If it is specified, detection is ALWAYS skipped. The system
-        converts polygons into non-rotated rectangles.
-
-        Note that the pipeline will resize the image if the image resolution is
-        too large to process (above 50MP).
-
-        Possible errors:
-
-        -  Returns INVALID\_ARGUMENT if the image\_uri is missing or longer than
-           4096 characters.
-        -  Returns INVALID\_ARGUMENT if the product does not exist.
-        -  Returns INVALID\_ARGUMENT if bounding\_poly is not provided, and
-           nothing compatible with the parent product's product\_category is
-           detected.
-        -  Returns INVALID\_ARGUMENT if bounding\_poly contains more than 10
-           polygons.
-
-        Returns:
-            Callable: A callable which accepts the appropriate
-                deserialized request object and returns a
-                deserialized response object.
-        """
-        return self._stubs["product_search_stub"].CreateReferenceImage
 
     @property
     def delete_reference_image(self):
@@ -362,6 +173,218 @@ class ProductSearchGrpcTransport(object):
         return self._stubs["product_search_stub"].DeleteReferenceImage
 
     @property
+    def import_product_sets(self):
+        """Return the gRPC stub for :meth:`ProductSearchClient.import_product_sets`.
+
+        Asynchronous API that imports a list of reference images to
+        specified product sets based on a list of image information.
+
+        The ``google.longrunning.Operation`` API can be used to keep track of
+        the progress and results of the request. ``Operation.metadata`` contains
+        ``BatchOperationMetadata``. (progress) ``Operation.response`` contains
+        ``ImportProductSetsResponse``. (results)
+
+        The input source of this method is a csv file on Google Cloud Storage.
+        For the format of the csv file please see
+        ``ImportProductSetsGcsSource.csv_file_uri``.
+
+        Returns:
+            Callable: A callable which accepts the appropriate
+                deserialized request object and returns a
+                deserialized response object.
+        """
+        return self._stubs["product_search_stub"].ImportProductSets
+
+    @property
+    def create_product_set(self):
+        """Return the gRPC stub for :meth:`ProductSearchClient.create_product_set`.
+
+        Creates and returns a new ProductSet resource.
+
+        Possible errors:
+
+        -  Returns INVALID_ARGUMENT if display_name is missing, or is longer
+           than 4096 characters.
+
+        Returns:
+            Callable: A callable which accepts the appropriate
+                deserialized request object and returns a
+                deserialized response object.
+        """
+        return self._stubs["product_search_stub"].CreateProductSet
+
+    @property
+    def list_product_sets(self):
+        """Return the gRPC stub for :meth:`ProductSearchClient.list_product_sets`.
+
+        Lists ProductSets in an unspecified order.
+
+        Possible errors:
+
+        -  Returns INVALID_ARGUMENT if page_size is greater than 100, or less
+           than 1.
+
+        Returns:
+            Callable: A callable which accepts the appropriate
+                deserialized request object and returns a
+                deserialized response object.
+        """
+        return self._stubs["product_search_stub"].ListProductSets
+
+    @property
+    def get_product_set(self):
+        """Return the gRPC stub for :meth:`ProductSearchClient.get_product_set`.
+
+        Gets information associated with a ProductSet.
+
+        Possible errors:
+
+        -  Returns NOT_FOUND if the ProductSet does not exist.
+
+        Returns:
+            Callable: A callable which accepts the appropriate
+                deserialized request object and returns a
+                deserialized response object.
+        """
+        return self._stubs["product_search_stub"].GetProductSet
+
+    @property
+    def update_product_set(self):
+        """Return the gRPC stub for :meth:`ProductSearchClient.update_product_set`.
+
+        Makes changes to a ProductSet resource. Only display_name can be
+        updated currently.
+
+        Possible errors:
+
+        -  Returns NOT_FOUND if the ProductSet does not exist.
+        -  Returns INVALID_ARGUMENT if display_name is present in update_mask
+           but missing from the request or longer than 4096 characters.
+
+        Returns:
+            Callable: A callable which accepts the appropriate
+                deserialized request object and returns a
+                deserialized response object.
+        """
+        return self._stubs["product_search_stub"].UpdateProductSet
+
+    @property
+    def create_product(self):
+        """Return the gRPC stub for :meth:`ProductSearchClient.create_product`.
+
+        Creates and returns a new product resource.
+
+        Possible errors:
+
+        -  Returns INVALID_ARGUMENT if display_name is missing or longer than
+           4096 characters.
+        -  Returns INVALID_ARGUMENT if description is longer than 4096
+           characters.
+        -  Returns INVALID_ARGUMENT if product_category is missing or invalid.
+
+        Returns:
+            Callable: A callable which accepts the appropriate
+                deserialized request object and returns a
+                deserialized response object.
+        """
+        return self._stubs["product_search_stub"].CreateProduct
+
+    @property
+    def list_products(self):
+        """Return the gRPC stub for :meth:`ProductSearchClient.list_products`.
+
+        Lists products in an unspecified order.
+
+        Possible errors:
+
+        -  Returns INVALID_ARGUMENT if page_size is greater than 100 or less
+           than 1.
+
+        Returns:
+            Callable: A callable which accepts the appropriate
+                deserialized request object and returns a
+                deserialized response object.
+        """
+        return self._stubs["product_search_stub"].ListProducts
+
+    @property
+    def get_product(self):
+        """Return the gRPC stub for :meth:`ProductSearchClient.get_product`.
+
+        Gets information associated with a Product.
+
+        Possible errors:
+
+        -  Returns NOT_FOUND if the Product does not exist.
+
+        Returns:
+            Callable: A callable which accepts the appropriate
+                deserialized request object and returns a
+                deserialized response object.
+        """
+        return self._stubs["product_search_stub"].GetProduct
+
+    @property
+    def update_product(self):
+        """Return the gRPC stub for :meth:`ProductSearchClient.update_product`.
+
+        Makes changes to a Product resource. Only the ``display_name``,
+        ``description``, and ``labels`` fields can be updated right now.
+
+        If labels are updated, the change will not be reflected in queries until
+        the next index time.
+
+        Possible errors:
+
+        -  Returns NOT_FOUND if the Product does not exist.
+        -  Returns INVALID_ARGUMENT if display_name is present in update_mask
+           but is missing from the request or longer than 4096 characters.
+        -  Returns INVALID_ARGUMENT if description is present in update_mask but
+           is longer than 4096 characters.
+        -  Returns INVALID_ARGUMENT if product_category is present in
+           update_mask.
+
+        Returns:
+            Callable: A callable which accepts the appropriate
+                deserialized request object and returns a
+                deserialized response object.
+        """
+        return self._stubs["product_search_stub"].UpdateProduct
+
+    @property
+    def create_reference_image(self):
+        """Return the gRPC stub for :meth:`ProductSearchClient.create_reference_image`.
+
+        Creates and returns a new ReferenceImage resource.
+
+        The ``bounding_poly`` field is optional. If ``bounding_poly`` is not
+        specified, the system will try to detect regions of interest in the
+        image that are compatible with the product_category on the parent
+        product. If it is specified, detection is ALWAYS skipped. The system
+        converts polygons into non-rotated rectangles.
+
+        Note that the pipeline will resize the image if the image resolution is
+        too large to process (above 50MP).
+
+        Possible errors:
+
+        -  Returns INVALID_ARGUMENT if the image_uri is missing or longer than
+           4096 characters.
+        -  Returns INVALID_ARGUMENT if the product does not exist.
+        -  Returns INVALID_ARGUMENT if bounding_poly is not provided, and
+           nothing compatible with the parent product's product_category is
+           detected.
+        -  Returns INVALID_ARGUMENT if bounding_poly contains more than 10
+           polygons.
+
+        Returns:
+            Callable: A callable which accepts the appropriate
+                deserialized request object and returns a
+                deserialized response object.
+        """
+        return self._stubs["product_search_stub"].CreateReferenceImage
+
+    @property
     def list_reference_images(self):
         """Return the gRPC stub for :meth:`ProductSearchClient.list_reference_images`.
 
@@ -369,8 +392,8 @@ class ProductSearchGrpcTransport(object):
 
         Possible errors:
 
-        -  Returns NOT\_FOUND if the parent product does not exist.
-        -  Returns INVALID\_ARGUMENT if the page\_size is greater than 100, or
+        -  Returns NOT_FOUND if the parent product does not exist.
+        -  Returns INVALID_ARGUMENT if the page_size is greater than 100, or
            less than 1.
 
         Returns:
@@ -388,7 +411,7 @@ class ProductSearchGrpcTransport(object):
 
         Possible errors:
 
-        -  Returns NOT\_FOUND if the specified image does not exist.
+        -  Returns NOT_FOUND if the specified image does not exist.
 
         Returns:
             Callable: A callable which accepts the appropriate
@@ -401,14 +424,14 @@ class ProductSearchGrpcTransport(object):
     def add_product_to_product_set(self):
         """Return the gRPC stub for :meth:`ProductSearchClient.add_product_to_product_set`.
 
-        Adds a Product to the specified ProductSet. If the Product is already
-        present, no change is made.
+        Adds a Product to the specified ProductSet. If the Product is
+        already present, no change is made.
 
         One Product can be added to at most 100 ProductSets.
 
         Possible errors:
 
-        -  Returns NOT\_FOUND if the Product or the ProductSet doesn't exist.
+        -  Returns NOT_FOUND if the Product or the ProductSet doesn't exist.
 
         Returns:
             Callable: A callable which accepts the appropriate
@@ -440,7 +463,7 @@ class ProductSearchGrpcTransport(object):
 
         Possible errors:
 
-        -  Returns INVALID\_ARGUMENT if page\_size is greater than 100 or less
+        -  Returns INVALID_ARGUMENT if page_size is greater than 100 or less
            than 1.
 
         Returns:
@@ -451,34 +474,11 @@ class ProductSearchGrpcTransport(object):
         return self._stubs["product_search_stub"].ListProductsInProductSet
 
     @property
-    def import_product_sets(self):
-        """Return the gRPC stub for :meth:`ProductSearchClient.import_product_sets`.
-
-        Asynchronous API that imports a list of reference images to specified
-        product sets based on a list of image information.
-
-        The ``google.longrunning.Operation`` API can be used to keep track of
-        the progress and results of the request. ``Operation.metadata`` contains
-        ``BatchOperationMetadata``. (progress) ``Operation.response`` contains
-        ``ImportProductSetsResponse``. (results)
-
-        The input source of this method is a csv file on Google Cloud Storage.
-        For the format of the csv file please see
-        ``ImportProductSetsGcsSource.csv_file_uri``.
-
-        Returns:
-            Callable: A callable which accepts the appropriate
-                deserialized request object and returns a
-                deserialized response object.
-        """
-        return self._stubs["product_search_stub"].ImportProductSets
-
-    @property
     def purge_products(self):
         """Return the gRPC stub for :meth:`ProductSearchClient.purge_products`.
 
-        Asynchronous API to delete all Products in a ProductSet or all Products
-        that are in no ProductSet.
+        Asynchronous API to delete all Products in a ProductSet or all
+        Products that are in no ProductSet.
 
         If a Product is a member of the specified ProductSet in addition to
         other ProductSets, the Product will still be deleted.
