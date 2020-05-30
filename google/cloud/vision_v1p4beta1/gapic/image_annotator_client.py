@@ -329,7 +329,8 @@ class ImageAnnotatorClient(object):
         metadata=None,
     ):
         """
-        Run asynchronous image detection and annotation for a list of images.
+        Run asynchronous image detection and annotation for a list of
+        images.
 
         Progress and results can be retrieved through the
         ``google.longrunning.Operations`` interface. ``Operation.metadata``
@@ -424,10 +425,10 @@ class ImageAnnotatorClient(object):
         metadata=None,
     ):
         """
-        Run asynchronous image detection and annotation for a list of generic
-        files, such as PDF files, which may contain multiple pages and multiple
-        images per page. Progress and results can be retrieved through the
-        ``google.longrunning.Operations`` interface. ``Operation.metadata``
+        Run asynchronous image detection and annotation for a list of
+        generic files, such as PDF files, which may contain multiple pages and
+        multiple images per page. Progress and results can be retrieved through
+        the ``google.longrunning.Operations`` interface. ``Operation.metadata``
         contains ``OperationMetadata`` (metadata). ``Operation.response``
         contains ``AsyncBatchAnnotateFilesResponse`` (results).
 

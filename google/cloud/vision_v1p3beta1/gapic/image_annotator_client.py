@@ -195,7 +195,7 @@ class ImageAnnotatorClient(object):
     # Service calls
     def batch_annotate_images(
         self,
-        requests,
+        requests=None,
         retry=google.api_core.gapic_v1.method.DEFAULT,
         timeout=google.api_core.gapic_v1.method.DEFAULT,
         metadata=None,
@@ -208,10 +208,7 @@ class ImageAnnotatorClient(object):
             >>>
             >>> client = vision_v1p3beta1.ImageAnnotatorClient()
             >>>
-            >>> # TODO: Initialize `requests`:
-            >>> requests = []
-            >>>
-            >>> response = client.batch_annotate_images(requests)
+            >>> response = client.batch_annotate_images()
 
         Args:
             requests (list[Union[dict, ~google.cloud.vision_v1p3beta1.types.AnnotateImageRequest]]): Individual image annotation requests for this batch.
@@ -261,10 +258,10 @@ class ImageAnnotatorClient(object):
         metadata=None,
     ):
         """
-        Run asynchronous image detection and annotation for a list of generic
-        files, such as PDF files, which may contain multiple pages and multiple
-        images per page. Progress and results can be retrieved through the
-        ``google.longrunning.Operations`` interface. ``Operation.metadata``
+        Run asynchronous image detection and annotation for a list of
+        generic files, such as PDF files, which may contain multiple pages and
+        multiple images per page. Progress and results can be retrieved through
+        the ``google.longrunning.Operations`` interface. ``Operation.metadata``
         contains ``OperationMetadata`` (metadata). ``Operation.response``
         contains ``AsyncBatchAnnotateFilesResponse`` (results).
 
