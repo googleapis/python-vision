@@ -20,6 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
     package="google.cloud.vision.v1p4beta1",
     syntax="proto3",
     serialized_options=b"\n!com.google.cloud.vision.v1p4beta1B\021WebDetectionProtoP\001ZCgoogle.golang.org/genproto/googleapis/cloud/vision/v1p4beta1;vision\370\001\001\242\002\004GCVN",
+    create_key=_descriptor._internal_create_key,
     serialized_pb=b'\n7google/cloud/vision_v1p4beta1/proto/web_detection.proto\x12\x1dgoogle.cloud.vision.v1p4beta1\x1a\x1cgoogle/api/annotations.proto"\x8c\x07\n\x0cWebDetection\x12K\n\x0cweb_entities\x18\x01 \x03(\x0b\x32\x35.google.cloud.vision.v1p4beta1.WebDetection.WebEntity\x12R\n\x14\x66ull_matching_images\x18\x02 \x03(\x0b\x32\x34.google.cloud.vision.v1p4beta1.WebDetection.WebImage\x12U\n\x17partial_matching_images\x18\x03 \x03(\x0b\x32\x34.google.cloud.vision.v1p4beta1.WebDetection.WebImage\x12W\n\x1apages_with_matching_images\x18\x04 \x03(\x0b\x32\x33.google.cloud.vision.v1p4beta1.WebDetection.WebPage\x12U\n\x17visually_similar_images\x18\x06 \x03(\x0b\x32\x34.google.cloud.vision.v1p4beta1.WebDetection.WebImage\x12O\n\x11\x62\x65st_guess_labels\x18\x08 \x03(\x0b\x32\x34.google.cloud.vision.v1p4beta1.WebDetection.WebLabel\x1a\x42\n\tWebEntity\x12\x11\n\tentity_id\x18\x01 \x01(\t\x12\r\n\x05score\x18\x02 \x01(\x02\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x1a&\n\x08WebImage\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\r\n\x05score\x18\x02 \x01(\x02\x1a\xe4\x01\n\x07WebPage\x12\x0b\n\x03url\x18\x01 \x01(\t\x12\r\n\x05score\x18\x02 \x01(\x02\x12\x12\n\npage_title\x18\x03 \x01(\t\x12R\n\x14\x66ull_matching_images\x18\x04 \x03(\x0b\x32\x34.google.cloud.vision.v1p4beta1.WebDetection.WebImage\x12U\n\x17partial_matching_images\x18\x05 \x03(\x0b\x32\x34.google.cloud.vision.v1p4beta1.WebDetection.WebImage\x1a\x30\n\x08WebLabel\x12\r\n\x05label\x18\x01 \x01(\t\x12\x15\n\rlanguage_code\x18\x02 \x01(\tB\x87\x01\n!com.google.cloud.vision.v1p4beta1B\x11WebDetectionProtoP\x01ZCgoogle.golang.org/genproto/googleapis/cloud/vision/v1p4beta1;vision\xf8\x01\x01\xa2\x02\x04GCVNb\x06proto3',
     dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR],
 )
@@ -31,6 +32,7 @@ _WEBDETECTION_WEBENTITY = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="entity_id",
@@ -49,6 +51,7 @@ _WEBDETECTION_WEBENTITY = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="score",
@@ -67,6 +70,7 @@ _WEBDETECTION_WEBENTITY = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="description",
@@ -85,6 +89,7 @@ _WEBDETECTION_WEBENTITY = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -105,6 +110,7 @@ _WEBDETECTION_WEBIMAGE = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="url",
@@ -123,6 +129,7 @@ _WEBDETECTION_WEBIMAGE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="score",
@@ -141,6 +148,7 @@ _WEBDETECTION_WEBIMAGE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -161,6 +169,7 @@ _WEBDETECTION_WEBPAGE = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="url",
@@ -179,6 +188,7 @@ _WEBDETECTION_WEBPAGE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="score",
@@ -197,6 +207,7 @@ _WEBDETECTION_WEBPAGE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="page_title",
@@ -215,6 +226,7 @@ _WEBDETECTION_WEBPAGE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="full_matching_images",
@@ -233,6 +245,7 @@ _WEBDETECTION_WEBPAGE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="partial_matching_images",
@@ -251,6 +264,7 @@ _WEBDETECTION_WEBPAGE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -271,6 +285,7 @@ _WEBDETECTION_WEBLABEL = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="label",
@@ -289,6 +304,7 @@ _WEBDETECTION_WEBLABEL = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="language_code",
@@ -307,6 +323,7 @@ _WEBDETECTION_WEBLABEL = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -327,6 +344,7 @@ _WEBDETECTION = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="web_entities",
@@ -345,6 +363,7 @@ _WEBDETECTION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="full_matching_images",
@@ -363,6 +382,7 @@ _WEBDETECTION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="partial_matching_images",
@@ -381,6 +401,7 @@ _WEBDETECTION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="pages_with_matching_images",
@@ -399,6 +420,7 @@ _WEBDETECTION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="visually_similar_images",
@@ -417,6 +439,7 @@ _WEBDETECTION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="best_guess_labels",
@@ -435,6 +458,7 @@ _WEBDETECTION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],

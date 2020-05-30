@@ -23,6 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
     package="google.cloud.vision.v1p4beta1",
     syntax="proto3",
     serialized_options=b"\n!com.google.cloud.vision.v1p4beta1B\016CelebrityProtoP\001ZCgoogle.golang.org/genproto/googleapis/cloud/vision/v1p4beta1;vision\370\001\001\242\002\004GCVN",
+    create_key=_descriptor._internal_create_key,
     serialized_pb=b'\n.google/cloud/vision_v1p4beta1/proto/face.proto\x12\x1dgoogle.cloud.vision.v1p4beta1\x1a\x1cgoogle/api/annotations.proto\x1a\x32google/cloud/vision_v1p4beta1/proto/geometry.proto".\n\x15\x46\x61\x63\x65RecognitionParams\x12\x15\n\rcelebrity_set\x18\x01 \x03(\t"D\n\tCelebrity\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x14\n\x0c\x64isplay_name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t"h\n\x15\x46\x61\x63\x65RecognitionResult\x12;\n\tcelebrity\x18\x01 \x01(\x0b\x32(.google.cloud.vision.v1p4beta1.Celebrity\x12\x12\n\nconfidence\x18\x02 \x01(\x02\x42\x84\x01\n!com.google.cloud.vision.v1p4beta1B\x0e\x43\x65lebrityProtoP\x01ZCgoogle.golang.org/genproto/googleapis/cloud/vision/v1p4beta1;vision\xf8\x01\x01\xa2\x02\x04GCVNb\x06proto3',
     dependencies=[
         google_dot_api_dot_annotations__pb2.DESCRIPTOR,
@@ -37,6 +38,7 @@ _FACERECOGNITIONPARAMS = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="celebrity_set",
@@ -55,6 +57,7 @@ _FACERECOGNITIONPARAMS = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -76,6 +79,7 @@ _CELEBRITY = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="name",
@@ -94,6 +98,7 @@ _CELEBRITY = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="display_name",
@@ -112,6 +117,7 @@ _CELEBRITY = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="description",
@@ -130,6 +136,7 @@ _CELEBRITY = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -151,6 +158,7 @@ _FACERECOGNITIONRESULT = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="celebrity",
@@ -169,6 +177,7 @@ _FACERECOGNITIONRESULT = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="confidence",
@@ -187,6 +196,7 @@ _FACERECOGNITIONRESULT = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],

@@ -29,6 +29,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
     package="google.cloud.vision.v1p3beta1",
     syntax="proto3",
     serialized_options=b"\n!com.google.cloud.vision.v1p3beta1B\022ProductSearchProtoP\001ZCgoogle.golang.org/genproto/googleapis/cloud/vision/v1p3beta1;vision\370\001\001",
+    create_key=_descriptor._internal_create_key,
     serialized_pb=b'\n8google/cloud/vision_v1p3beta1/proto/product_search.proto\x12\x1dgoogle.cloud.vision.v1p3beta1\x1a\x1cgoogle/api/annotations.proto\x1a\x19google/api/resource.proto\x1a\x32google/cloud/vision_v1p3beta1/proto/geometry.proto\x1a@google/cloud/vision_v1p3beta1/proto/product_search_service.proto\x1a\x1fgoogle/protobuf/timestamp.proto"\xd9\x03\n\x13ProductSearchParams\x12\x14\n\x0c\x63\x61talog_name\x18\x01 \x01(\t\x12\x46\n\x08\x63\x61tegory\x18\x02 \x01(\x0e\x32\x34.google.cloud.vision.v1p3beta1.ProductSearchCategory\x12\x18\n\x10product_category\x18\x05 \x01(\t\x12W\n\x18normalized_bounding_poly\x18\x03 \x01(\x0b\x32\x35.google.cloud.vision.v1p3beta1.NormalizedBoundingPoly\x12\x42\n\rbounding_poly\x18\t \x01(\x0b\x32+.google.cloud.vision.v1p3beta1.BoundingPoly\x12\x45\n\x04view\x18\x04 \x01(\x0e\x32\x37.google.cloud.vision.v1p3beta1.ProductSearchResultsView\x12:\n\x0bproduct_set\x18\x06 \x01(\tB%\xfa\x41"\n vision.googleapis.com/ProductSet\x12\x1a\n\x12product_categories\x18\x07 \x03(\t\x12\x0e\n\x06\x66ilter\x18\x08 \x01(\t"\xee\x03\n\x14ProductSearchResults\x12\x46\n\x08\x63\x61tegory\x18\x01 \x01(\x0e\x32\x34.google.cloud.vision.v1p3beta1.ProductSearchCategory\x12\x18\n\x10product_category\x18\x04 \x01(\t\x12.\n\nindex_time\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12Q\n\x08products\x18\x03 \x03(\x0b\x32?.google.cloud.vision.v1p3beta1.ProductSearchResults.ProductInfo\x12K\n\x07results\x18\x05 \x03(\x0b\x32:.google.cloud.vision.v1p3beta1.ProductSearchResults.Result\x1a\x43\n\x0bProductInfo\x12\x12\n\nproduct_id\x18\x01 \x01(\t\x12\x11\n\timage_uri\x18\x02 \x01(\t\x12\r\n\x05score\x18\x03 \x01(\x02\x1a_\n\x06Result\x12\x37\n\x07product\x18\x01 \x01(\x0b\x32&.google.cloud.vision.v1p3beta1.Product\x12\r\n\x05score\x18\x02 \x01(\x02\x12\r\n\x05image\x18\x03 \x01(\t*U\n\x15ProductSearchCategory\x12\'\n#PRODUCT_SEARCH_CATEGORY_UNSPECIFIED\x10\x00\x12\t\n\x05SHOES\x10\x01\x12\x08\n\x04\x42\x41GS\x10\x02*/\n\x18ProductSearchResultsView\x12\t\n\x05\x42\x41SIC\x10\x00\x12\x08\n\x04\x46ULL\x10\x01\x42\x81\x01\n!com.google.cloud.vision.v1p3beta1B\x12ProductSearchProtoP\x01ZCgoogle.golang.org/genproto/googleapis/cloud/vision/v1p3beta1;vision\xf8\x01\x01\x62\x06proto3',
     dependencies=[
         google_dot_api_dot_annotations__pb2.DESCRIPTOR,
@@ -44,6 +45,7 @@ _PRODUCTSEARCHCATEGORY = _descriptor.EnumDescriptor(
     full_name="google.cloud.vision.v1p3beta1.ProductSearchCategory",
     filename=None,
     file=DESCRIPTOR,
+    create_key=_descriptor._internal_create_key,
     values=[
         _descriptor.EnumValueDescriptor(
             name="PRODUCT_SEARCH_CATEGORY_UNSPECIFIED",
@@ -51,12 +53,23 @@ _PRODUCTSEARCHCATEGORY = _descriptor.EnumDescriptor(
             number=0,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="SHOES", index=1, number=1, serialized_options=None, type=None
+            name="SHOES",
+            index=1,
+            number=1,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="BAGS", index=2, number=2, serialized_options=None, type=None
+            name="BAGS",
+            index=2,
+            number=2,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     containing_type=None,
@@ -72,12 +85,23 @@ _PRODUCTSEARCHRESULTSVIEW = _descriptor.EnumDescriptor(
     full_name="google.cloud.vision.v1p3beta1.ProductSearchResultsView",
     filename=None,
     file=DESCRIPTOR,
+    create_key=_descriptor._internal_create_key,
     values=[
         _descriptor.EnumValueDescriptor(
-            name="BASIC", index=0, number=0, serialized_options=None, type=None
+            name="BASIC",
+            index=0,
+            number=0,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="FULL", index=1, number=1, serialized_options=None, type=None
+            name="FULL",
+            index=1,
+            number=1,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     containing_type=None,
@@ -101,6 +125,7 @@ _PRODUCTSEARCHPARAMS = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="catalog_name",
@@ -119,6 +144,7 @@ _PRODUCTSEARCHPARAMS = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="category",
@@ -137,6 +163,7 @@ _PRODUCTSEARCHPARAMS = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="product_category",
@@ -155,6 +182,7 @@ _PRODUCTSEARCHPARAMS = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="normalized_bounding_poly",
@@ -173,6 +201,7 @@ _PRODUCTSEARCHPARAMS = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="bounding_poly",
@@ -191,6 +220,7 @@ _PRODUCTSEARCHPARAMS = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="view",
@@ -209,6 +239,7 @@ _PRODUCTSEARCHPARAMS = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="product_set",
@@ -227,6 +258,7 @@ _PRODUCTSEARCHPARAMS = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b'\372A"\n vision.googleapis.com/ProductSet',
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="product_categories",
@@ -245,6 +277,7 @@ _PRODUCTSEARCHPARAMS = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="filter",
@@ -263,6 +296,7 @@ _PRODUCTSEARCHPARAMS = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -284,6 +318,7 @@ _PRODUCTSEARCHRESULTS_PRODUCTINFO = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="product_id",
@@ -302,6 +337,7 @@ _PRODUCTSEARCHRESULTS_PRODUCTINFO = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="image_uri",
@@ -320,6 +356,7 @@ _PRODUCTSEARCHRESULTS_PRODUCTINFO = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="score",
@@ -338,6 +375,7 @@ _PRODUCTSEARCHRESULTS_PRODUCTINFO = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -358,6 +396,7 @@ _PRODUCTSEARCHRESULTS_RESULT = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="product",
@@ -376,6 +415,7 @@ _PRODUCTSEARCHRESULTS_RESULT = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="score",
@@ -394,6 +434,7 @@ _PRODUCTSEARCHRESULTS_RESULT = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="image",
@@ -412,6 +453,7 @@ _PRODUCTSEARCHRESULTS_RESULT = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -432,6 +474,7 @@ _PRODUCTSEARCHRESULTS = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="category",
@@ -450,6 +493,7 @@ _PRODUCTSEARCHRESULTS = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="product_category",
@@ -468,6 +512,7 @@ _PRODUCTSEARCHRESULTS = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="index_time",
@@ -486,6 +531,7 @@ _PRODUCTSEARCHRESULTS = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="products",
@@ -504,6 +550,7 @@ _PRODUCTSEARCHRESULTS = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="results",
@@ -522,6 +569,7 @@ _PRODUCTSEARCHRESULTS = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
