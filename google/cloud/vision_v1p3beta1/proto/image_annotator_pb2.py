@@ -3533,6 +3533,7 @@ Feature = _reflection.GeneratedProtocolMessageType(
         "__doc__": """The type of Google Cloud Vision API detection to perform, and the
   maximum number of results to return for that type. Multiple
   ``Feature`` objects can be specified in the ``features`` list.
+  
   Attributes:
       type:
           The feature type.
@@ -3557,6 +3558,7 @@ ImageSource = _reflection.GeneratedProtocolMessageType(
         "__module__": "google.cloud.vision_v1p3beta1.proto.image_annotator_pb2",
         "__doc__": """External image source (Google Cloud Storage or web URL image
   location).
+  
   Attributes:
       gcs_image_uri:
           \ **Use ``image_uri`` instead.**  The Google Cloud Storage URI
@@ -3592,6 +3594,7 @@ Image = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _IMAGE,
         "__module__": "google.cloud.vision_v1p3beta1.proto.image_annotator_pb2",
         "__doc__": """Client image to perform Google Cloud Vision API tasks over.
+  
   Attributes:
       content:
           Image content, represented as a stream of bytes. Note: As with
@@ -3619,6 +3622,7 @@ FaceAnnotation = _reflection.GeneratedProtocolMessageType(
                 "DESCRIPTOR": _FACEANNOTATION_LANDMARK,
                 "__module__": "google.cloud.vision_v1p3beta1.proto.image_annotator_pb2",
                 "__doc__": """A face-specific landmark (for example, a face feature).
+    
     Attributes:
         type:
             Face landmark type.
@@ -3631,6 +3635,7 @@ FaceAnnotation = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _FACEANNOTATION,
         "__module__": "google.cloud.vision_v1p3beta1.proto.image_annotator_pb2",
         "__doc__": """A face annotation object contains the results of face detection.
+  
   Attributes:
       bounding_poly:
           The bounding polygon around the face. The coordinates of the
@@ -3694,6 +3699,7 @@ LocationInfo = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _LOCATIONINFO,
         "__module__": "google.cloud.vision_v1p3beta1.proto.image_annotator_pb2",
         "__doc__": """Detected entity location information.
+  
   Attributes:
       lat_lng:
           lat/long location coordinates.
@@ -3710,6 +3716,7 @@ Property = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _PROPERTY,
         "__module__": "google.cloud.vision_v1p3beta1.proto.image_annotator_pb2",
         "__doc__": """A ``Property`` consists of a user-supplied name/value pair.
+  
   Attributes:
       name:
           Name of the property.
@@ -3730,6 +3737,7 @@ EntityAnnotation = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _ENTITYANNOTATION,
         "__module__": "google.cloud.vision_v1p3beta1.proto.image_annotator_pb2",
         "__doc__": """Set of detected entity features.
+  
   Attributes:
       mid:
           Opaque entity ID. Some IDs may be available in `Google
@@ -3783,6 +3791,7 @@ LocalizedObjectAnnotation = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _LOCALIZEDOBJECTANNOTATION,
         "__module__": "google.cloud.vision_v1p3beta1.proto.image_annotator_pb2",
         "__doc__": """Set of detected objects with bounding boxes.
+  
   Attributes:
       mid:
           Object ID that should align with EntityAnnotation mid.
@@ -3812,6 +3821,7 @@ SafeSearchAnnotation = _reflection.GeneratedProtocolMessageType(
         "__doc__": """Set of features pertaining to the image, computed by computer vision
   methods over safe-search verticals (for example, adult, spoof,
   medical, violence).
+  
   Attributes:
       adult:
           Represents the adult content likelihood for the image. Adult
@@ -3843,6 +3853,7 @@ LatLongRect = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _LATLONGRECT,
         "__module__": "google.cloud.vision_v1p3beta1.proto.image_annotator_pb2",
         "__doc__": """Rectangle determined by min and max ``LatLng`` pairs.
+  
   Attributes:
       min_lat_lng:
           Min lat/long pair.
@@ -3862,6 +3873,7 @@ ColorInfo = _reflection.GeneratedProtocolMessageType(
         "__module__": "google.cloud.vision_v1p3beta1.proto.image_annotator_pb2",
         "__doc__": """Color information consists of RGB channels, score, and the fraction of
   the image that the color occupies in the image.
+  
   Attributes:
       color:
           RGB components of the color.
@@ -3883,6 +3895,7 @@ DominantColorsAnnotation = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _DOMINANTCOLORSANNOTATION,
         "__module__": "google.cloud.vision_v1p3beta1.proto.image_annotator_pb2",
         "__doc__": """Set of dominant colors and their corresponding scores.
+  
   Attributes:
       colors:
           RGB color values with their score and pixel fraction.
@@ -3899,6 +3912,7 @@ ImageProperties = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _IMAGEPROPERTIES,
         "__module__": "google.cloud.vision_v1p3beta1.proto.image_annotator_pb2",
         "__doc__": """Stores image properties, such as dominant colors.
+  
   Attributes:
       dominant_colors:
           If present, dominant colors completed successfully.
@@ -3916,6 +3930,7 @@ CropHint = _reflection.GeneratedProtocolMessageType(
         "__module__": "google.cloud.vision_v1p3beta1.proto.image_annotator_pb2",
         "__doc__": """Single crop hint that is used to generate a new crop when serving an
   image.
+  
   Attributes:
       bounding_poly:
           The bounding polygon for the crop region. The coordinates of
@@ -3940,6 +3955,7 @@ CropHintsAnnotation = _reflection.GeneratedProtocolMessageType(
         "__module__": "google.cloud.vision_v1p3beta1.proto.image_annotator_pb2",
         "__doc__": """Set of crop hints that are used to generate new crops when serving
   images.
+  
   Attributes:
       crop_hints:
           Crop hint results.
@@ -3956,6 +3972,7 @@ CropHintsParams = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _CROPHINTSPARAMS,
         "__module__": "google.cloud.vision_v1p3beta1.proto.image_annotator_pb2",
         "__doc__": """Parameters for crop hints annotation request.
+  
   Attributes:
       aspect_ratios:
           Aspect ratios in floats, representing the ratio of the width
@@ -3977,6 +3994,7 @@ WebDetectionParams = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _WEBDETECTIONPARAMS,
         "__module__": "google.cloud.vision_v1p3beta1.proto.image_annotator_pb2",
         "__doc__": """Parameters for web detection request.
+  
   Attributes:
       include_geo_results:
           Whether to include results derived from the geo information in
@@ -3994,6 +4012,7 @@ ImageContext = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _IMAGECONTEXT,
         "__module__": "google.cloud.vision_v1p3beta1.proto.image_annotator_pb2",
         "__doc__": """Image context and/or feature-specific parameters.
+  
   Attributes:
       lat_long_rect:
           Not used.
@@ -4028,6 +4047,7 @@ AnnotateImageRequest = _reflection.GeneratedProtocolMessageType(
         "__module__": "google.cloud.vision_v1p3beta1.proto.image_annotator_pb2",
         "__doc__": """Request for performing Google Cloud Vision API tasks over a user-
   provided image, with user-requested features.
+  
   Attributes:
       image:
           The image to be processed.
@@ -4049,6 +4069,7 @@ ImageAnnotationContext = _reflection.GeneratedProtocolMessageType(
         "__module__": "google.cloud.vision_v1p3beta1.proto.image_annotator_pb2",
         "__doc__": """If an image was produced from a file (e.g. a PDF), this message gives
   information about the source of that image.
+  
   Attributes:
       uri:
           The URI of the file used to produce the image.
@@ -4068,6 +4089,7 @@ AnnotateImageResponse = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _ANNOTATEIMAGERESPONSE,
         "__module__": "google.cloud.vision_v1p3beta1.proto.image_annotator_pb2",
         "__doc__": """Response to an image annotation request.
+  
   Attributes:
       face_annotations:
           If present, face detection has completed successfully.
@@ -4118,6 +4140,7 @@ AnnotateFileResponse = _reflection.GeneratedProtocolMessageType(
         "__module__": "google.cloud.vision_v1p3beta1.proto.image_annotator_pb2",
         "__doc__": """Response to a single file annotation request. A file may contain one
   or more images, which individually have their own responses.
+  
   Attributes:
       input_config:
           Information about the file for which this response is
@@ -4138,6 +4161,7 @@ BatchAnnotateImagesRequest = _reflection.GeneratedProtocolMessageType(
         "__module__": "google.cloud.vision_v1p3beta1.proto.image_annotator_pb2",
         "__doc__": """Multiple image annotation requests are batched into a single service
   call.
+  
   Attributes:
       requests:
           Individual image annotation requests for this batch.
@@ -4154,6 +4178,7 @@ BatchAnnotateImagesResponse = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _BATCHANNOTATEIMAGESRESPONSE,
         "__module__": "google.cloud.vision_v1p3beta1.proto.image_annotator_pb2",
         "__doc__": """Response to a batch image annotation request.
+  
   Attributes:
       responses:
           Individual responses to image annotation requests within the
@@ -4171,6 +4196,7 @@ AsyncAnnotateFileRequest = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _ASYNCANNOTATEFILEREQUEST,
         "__module__": "google.cloud.vision_v1p3beta1.proto.image_annotator_pb2",
         "__doc__": """An offline file annotation request.
+  
   Attributes:
       input_config:
           Required. Information about the input file.
@@ -4195,6 +4221,7 @@ AsyncAnnotateFileResponse = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _ASYNCANNOTATEFILERESPONSE,
         "__module__": "google.cloud.vision_v1p3beta1.proto.image_annotator_pb2",
         "__doc__": """The response for a single offline file annotation request.
+  
   Attributes:
       output_config:
           The output location and metadata from
@@ -4213,6 +4240,7 @@ AsyncBatchAnnotateFilesRequest = _reflection.GeneratedProtocolMessageType(
         "__module__": "google.cloud.vision_v1p3beta1.proto.image_annotator_pb2",
         "__doc__": """Multiple async file annotation requests are batched into a single
   service call.
+  
   Attributes:
       requests:
           Required. Individual async file annotation requests for this
@@ -4230,6 +4258,7 @@ AsyncBatchAnnotateFilesResponse = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _ASYNCBATCHANNOTATEFILESRESPONSE,
         "__module__": "google.cloud.vision_v1p3beta1.proto.image_annotator_pb2",
         "__doc__": """Response to an async batch file annotation request.
+  
   Attributes:
       responses:
           The list of file annotation responses, one for each request in
@@ -4247,6 +4276,7 @@ InputConfig = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _INPUTCONFIG,
         "__module__": "google.cloud.vision_v1p3beta1.proto.image_annotator_pb2",
         "__doc__": """The desired input location and metadata.
+  
   Attributes:
       gcs_source:
           The Google Cloud Storage location to read the input from.
@@ -4266,6 +4296,7 @@ OutputConfig = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _OUTPUTCONFIG,
         "__module__": "google.cloud.vision_v1p3beta1.proto.image_annotator_pb2",
         "__doc__": """The desired output location and metadata.
+  
   Attributes:
       gcs_destination:
           The Google Cloud Storage location to write the output(s) to.
@@ -4292,6 +4323,7 @@ GcsSource = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _GCSSOURCE,
         "__module__": "google.cloud.vision_v1p3beta1.proto.image_annotator_pb2",
         "__doc__": """The Google Cloud Storage location where the input will be read from.
+  
   Attributes:
       uri:
           Google Cloud Storage URI for the input file. This must only be
@@ -4310,6 +4342,7 @@ GcsDestination = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _GCSDESTINATION,
         "__module__": "google.cloud.vision_v1p3beta1.proto.image_annotator_pb2",
         "__doc__": """The Google Cloud Storage location where the output will be written to.
+  
   Attributes:
       uri:
           Google Cloud Storage URI where the results will be stored.
@@ -4336,6 +4369,7 @@ OperationMetadata = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _OPERATIONMETADATA,
         "__module__": "google.cloud.vision_v1p3beta1.proto.image_annotator_pb2",
         "__doc__": """Contains metadata for the BatchAnnotateImages operation.
+  
   Attributes:
       state:
           Current state of the batch operation.

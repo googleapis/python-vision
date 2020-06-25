@@ -2335,6 +2335,7 @@ Product = _reflection.GeneratedProtocolMessageType(
                 "DESCRIPTOR": _PRODUCT_KEYVALUE,
                 "__module__": "google.cloud.vision_v1p4beta1.proto.product_search_service_pb2",
                 "__doc__": """A product label represented as a key-value pair.
+    
     Attributes:
         key:
             The key of the label attached to the product. Cannot be empty
@@ -2349,6 +2350,7 @@ Product = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _PRODUCT,
         "__module__": "google.cloud.vision_v1p4beta1.proto.product_search_service_pb2",
         "__doc__": """A Product contains ReferenceImages.
+  
   Attributes:
       name:
           The resource name of the product.  Format is:
@@ -2393,6 +2395,7 @@ ProductSet = _reflection.GeneratedProtocolMessageType(
         "__doc__": """A ProductSet contains Products. A ProductSet can contain a maximum of
   1 million reference images. If the limit is exceeded, periodic
   indexing will fail.
+  
   Attributes:
       name:
           The resource name of the ProductSet.  Format is: ``projects/PR
@@ -2425,6 +2428,7 @@ ReferenceImage = _reflection.GeneratedProtocolMessageType(
         "__module__": "google.cloud.vision_v1p4beta1.proto.product_search_service_pb2",
         "__doc__": """A ``ReferenceImage`` represents a product image and its associated
   metadata, such as bounding boxes.
+  
   Attributes:
       name:
           The resource name of the reference image.  Format is:  ``proje
@@ -2455,6 +2459,7 @@ CreateProductRequest = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _CREATEPRODUCTREQUEST,
         "__module__": "google.cloud.vision_v1p4beta1.proto.product_search_service_pb2",
         "__doc__": """Request message for the ``CreateProduct`` method.
+  
   Attributes:
       parent:
           Required. The project in which the Product should be created.
@@ -2480,6 +2485,7 @@ ListProductsRequest = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _LISTPRODUCTSREQUEST,
         "__module__": "google.cloud.vision_v1p4beta1.proto.product_search_service_pb2",
         "__doc__": """Request message for the ``ListProducts`` method.
+  
   Attributes:
       parent:
           Required. The project OR ProductSet from which Products should
@@ -2503,6 +2509,7 @@ ListProductsResponse = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _LISTPRODUCTSRESPONSE,
         "__module__": "google.cloud.vision_v1p4beta1.proto.product_search_service_pb2",
         "__doc__": """Response message for the ``ListProducts`` method.
+  
   Attributes:
       products:
           List of products.
@@ -2522,6 +2529,7 @@ GetProductRequest = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _GETPRODUCTREQUEST,
         "__module__": "google.cloud.vision_v1p4beta1.proto.product_search_service_pb2",
         "__doc__": """Request message for the ``GetProduct`` method.
+  
   Attributes:
       name:
           Required. Resource name of the Product to get.  Format is:
@@ -2539,6 +2547,7 @@ UpdateProductRequest = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _UPDATEPRODUCTREQUEST,
         "__module__": "google.cloud.vision_v1p4beta1.proto.product_search_service_pb2",
         "__doc__": """Request message for the ``UpdateProduct`` method.
+  
   Attributes:
       product:
           Required. The Product resource which replaces the one on the
@@ -2561,6 +2570,7 @@ DeleteProductRequest = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _DELETEPRODUCTREQUEST,
         "__module__": "google.cloud.vision_v1p4beta1.proto.product_search_service_pb2",
         "__doc__": """Request message for the ``DeleteProduct`` method.
+  
   Attributes:
       name:
           Required. Resource name of product to delete.  Format is:
@@ -2578,6 +2588,7 @@ CreateProductSetRequest = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _CREATEPRODUCTSETREQUEST,
         "__module__": "google.cloud.vision_v1p4beta1.proto.product_search_service_pb2",
         "__doc__": """Request message for the ``CreateProductSet`` method.
+  
   Attributes:
       parent:
           Required. The project in which the ProductSet should be
@@ -2603,6 +2614,7 @@ ListProductSetsRequest = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _LISTPRODUCTSETSREQUEST,
         "__module__": "google.cloud.vision_v1p4beta1.proto.product_search_service_pb2",
         "__doc__": """Request message for the ``ListProductSets`` method.
+  
   Attributes:
       parent:
           Required. The project from which ProductSets should be listed.
@@ -2626,6 +2638,7 @@ ListProductSetsResponse = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _LISTPRODUCTSETSRESPONSE,
         "__module__": "google.cloud.vision_v1p4beta1.proto.product_search_service_pb2",
         "__doc__": """Response message for the ``ListProductSets`` method.
+  
   Attributes:
       product_sets:
           List of ProductSets.
@@ -2645,6 +2658,7 @@ GetProductSetRequest = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _GETPRODUCTSETREQUEST,
         "__module__": "google.cloud.vision_v1p4beta1.proto.product_search_service_pb2",
         "__doc__": """Request message for the ``GetProductSet`` method.
+  
   Attributes:
       name:
           Required. Resource name of the ProductSet to get.  Format is: 
@@ -2663,6 +2677,7 @@ UpdateProductSetRequest = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _UPDATEPRODUCTSETREQUEST,
         "__module__": "google.cloud.vision_v1p4beta1.proto.product_search_service_pb2",
         "__doc__": """Request message for the ``UpdateProductSet`` method.
+  
   Attributes:
       product_set:
           Required. The ProductSet resource which replaces the one on
@@ -2685,6 +2700,7 @@ DeleteProductSetRequest = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _DELETEPRODUCTSETREQUEST,
         "__module__": "google.cloud.vision_v1p4beta1.proto.product_search_service_pb2",
         "__doc__": """Request message for the ``DeleteProductSet`` method.
+  
   Attributes:
       name:
           Required. Resource name of the ProductSet to delete.  Format
@@ -2703,6 +2719,7 @@ CreateReferenceImageRequest = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _CREATEREFERENCEIMAGEREQUEST,
         "__module__": "google.cloud.vision_v1p4beta1.proto.product_search_service_pb2",
         "__doc__": """Request message for the ``CreateReferenceImage`` method.
+  
   Attributes:
       parent:
           Required. Resource name of the product in which to create the
@@ -2730,6 +2747,7 @@ ListReferenceImagesRequest = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _LISTREFERENCEIMAGESREQUEST,
         "__module__": "google.cloud.vision_v1p4beta1.proto.product_search_service_pb2",
         "__doc__": """Request message for the ``ListReferenceImages`` method.
+  
   Attributes:
       parent:
           Required. Resource name of the product containing the
@@ -2756,6 +2774,7 @@ ListReferenceImagesResponse = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _LISTREFERENCEIMAGESRESPONSE,
         "__module__": "google.cloud.vision_v1p4beta1.proto.product_search_service_pb2",
         "__doc__": """Response message for the ``ListReferenceImages`` method.
+  
   Attributes:
       reference_images:
           The list of reference images.
@@ -2778,6 +2797,7 @@ GetReferenceImageRequest = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _GETREFERENCEIMAGEREQUEST,
         "__module__": "google.cloud.vision_v1p4beta1.proto.product_search_service_pb2",
         "__doc__": """Request message for the ``GetReferenceImage`` method.
+  
   Attributes:
       name:
           Required. The resource name of the ReferenceImage to get.
@@ -2796,6 +2816,7 @@ DeleteReferenceImageRequest = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _DELETEREFERENCEIMAGEREQUEST,
         "__module__": "google.cloud.vision_v1p4beta1.proto.product_search_service_pb2",
         "__doc__": """Request message for the ``DeleteReferenceImage`` method.
+  
   Attributes:
       name:
           Required. The resource name of the reference image to delete.
@@ -2814,6 +2835,7 @@ AddProductToProductSetRequest = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _ADDPRODUCTTOPRODUCTSETREQUEST,
         "__module__": "google.cloud.vision_v1p4beta1.proto.product_search_service_pb2",
         "__doc__": """Request message for the ``AddProductToProductSet`` method.
+  
   Attributes:
       name:
           Required. The resource name for the ProductSet to modify.
@@ -2836,6 +2858,7 @@ RemoveProductFromProductSetRequest = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _REMOVEPRODUCTFROMPRODUCTSETREQUEST,
         "__module__": "google.cloud.vision_v1p4beta1.proto.product_search_service_pb2",
         "__doc__": """Request message for the ``RemoveProductFromProductSet`` method.
+  
   Attributes:
       name:
           Required. The resource name for the ProductSet to modify.
@@ -2858,6 +2881,7 @@ ListProductsInProductSetRequest = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _LISTPRODUCTSINPRODUCTSETREQUEST,
         "__module__": "google.cloud.vision_v1p4beta1.proto.product_search_service_pb2",
         "__doc__": """Request message for the ``ListProductsInProductSet`` method.
+  
   Attributes:
       name:
           Required. The ProductSet resource for which to retrieve
@@ -2882,6 +2906,7 @@ ListProductsInProductSetResponse = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _LISTPRODUCTSINPRODUCTSETRESPONSE,
         "__module__": "google.cloud.vision_v1p4beta1.proto.product_search_service_pb2",
         "__doc__": """Response message for the ``ListProductsInProductSet`` method.
+  
   Attributes:
       products:
           The list of Products.
@@ -2902,6 +2927,7 @@ ImportProductSetsGcsSource = _reflection.GeneratedProtocolMessageType(
         "__module__": "google.cloud.vision_v1p4beta1.proto.product_search_service_pb2",
         "__doc__": """The Google Cloud Storage location for a csv file which preserves a
   list of ImportProductSetRequests in each line.
+  
   Attributes:
       csv_file_uri:
           The Google Cloud Storage URI of the input csv file.  The URI
@@ -2961,6 +2987,7 @@ ImportProductSetsInputConfig = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _IMPORTPRODUCTSETSINPUTCONFIG,
         "__module__": "google.cloud.vision_v1p4beta1.proto.product_search_service_pb2",
         "__doc__": """The input content for the ``ImportProductSets`` method.
+  
   Attributes:
       source:
           The source of the input.
@@ -2980,6 +3007,7 @@ ImportProductSetsRequest = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _IMPORTPRODUCTSETSREQUEST,
         "__module__": "google.cloud.vision_v1p4beta1.proto.product_search_service_pb2",
         "__doc__": """Request message for the ``ImportProductSets`` method.
+  
   Attributes:
       parent:
           Required. The project in which the ProductSets should be
@@ -3003,6 +3031,7 @@ ImportProductSetsResponse = _reflection.GeneratedProtocolMessageType(
   .longrunning.Operations.GetOperation] method in the returned [google.l
   ongrunning.Operation.response][google.longrunning.Operation.response]
   field.
+  
   Attributes:
       reference_images:
           The list of reference_images that are imported successfully.
@@ -3028,6 +3057,7 @@ BatchOperationMetadata = _reflection.GeneratedProtocolMessageType(
   included in the ``metadata`` field of the ``Operation`` returned by
   the ``GetOperation`` call of the ``google::longrunning::Operations``
   service.
+  
   Attributes:
       state:
           The current state of the batch operation.
@@ -3051,6 +3081,7 @@ ProductSetPurgeConfig = _reflection.GeneratedProtocolMessageType(
         "__module__": "google.cloud.vision_v1p4beta1.proto.product_search_service_pb2",
         "__doc__": """Config to control which ProductSet contains the Products to be
   deleted.
+  
   Attributes:
       product_set_id:
           The ProductSet that contains the Products to delete. If a
@@ -3069,6 +3100,7 @@ PurgeProductsRequest = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _PURGEPRODUCTSREQUEST,
         "__module__": "google.cloud.vision_v1p4beta1.proto.product_search_service_pb2",
         "__doc__": """Request message for the ``PurgeProducts`` method.
+  
   Attributes:
       target:
           The Products to delete.

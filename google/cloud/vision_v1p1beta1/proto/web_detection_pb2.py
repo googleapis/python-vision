@@ -516,6 +516,7 @@ WebDetection = _reflection.GeneratedProtocolMessageType(
                 "DESCRIPTOR": _WEBDETECTION_WEBENTITY,
                 "__module__": "google.cloud.vision_v1p1beta1.proto.web_detection_pb2",
                 "__doc__": """Entity deduced from similar images on the Internet.
+    
     Attributes:
         entity_id:
             Opaque entity ID.
@@ -535,6 +536,7 @@ WebDetection = _reflection.GeneratedProtocolMessageType(
                 "DESCRIPTOR": _WEBDETECTION_WEBIMAGE,
                 "__module__": "google.cloud.vision_v1p1beta1.proto.web_detection_pb2",
                 "__doc__": """Metadata for online images.
+    
     Attributes:
         url:
             The result image URL.
@@ -551,6 +553,7 @@ WebDetection = _reflection.GeneratedProtocolMessageType(
                 "DESCRIPTOR": _WEBDETECTION_WEBPAGE,
                 "__module__": "google.cloud.vision_v1p1beta1.proto.web_detection_pb2",
                 "__doc__": """Metadata for web pages.
+    
     Attributes:
         url:
             The result web page URL.
@@ -577,6 +580,7 @@ WebDetection = _reflection.GeneratedProtocolMessageType(
                 "DESCRIPTOR": _WEBDETECTION_WEBLABEL,
                 "__module__": "google.cloud.vision_v1p1beta1.proto.web_detection_pb2",
                 "__doc__": """Label to provide extra metadata for the web detection.
+    
     Attributes:
         label:
             Label for extra metadata.
@@ -591,6 +595,7 @@ WebDetection = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _WEBDETECTION,
         "__module__": "google.cloud.vision_v1p1beta1.proto.web_detection_pb2",
         "__doc__": """Relevant information for the image from the Internet.
+  
   Attributes:
       web_entities:
           Deduced entities from similar images on the Internet.

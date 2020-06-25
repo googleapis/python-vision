@@ -517,6 +517,7 @@ ProductSearchParams = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _PRODUCTSEARCHPARAMS,
         "__module__": "google.cloud.vision_v1.proto.product_search_pb2",
         "__doc__": """Parameters for a product search request.
+  
   Attributes:
       bounding_poly:
           The bounding polygon around the area of interest in the image.
@@ -563,6 +564,7 @@ ProductSearchResults = _reflection.GeneratedProtocolMessageType(
                 "DESCRIPTOR": _PRODUCTSEARCHRESULTS_RESULT,
                 "__module__": "google.cloud.vision_v1.proto.product_search_pb2",
                 "__doc__": """Information about a product.
+    
     Attributes:
         product:
             The Product.
@@ -583,6 +585,7 @@ ProductSearchResults = _reflection.GeneratedProtocolMessageType(
                 "DESCRIPTOR": _PRODUCTSEARCHRESULTS_OBJECTANNOTATION,
                 "__module__": "google.cloud.vision_v1.proto.product_search_pb2",
                 "__doc__": """Prediction for what the object in the bounding box is.
+    
     Attributes:
         mid:
             Object ID that should align with EntityAnnotation mid.
@@ -606,6 +609,7 @@ ProductSearchResults = _reflection.GeneratedProtocolMessageType(
                 "__module__": "google.cloud.vision_v1.proto.product_search_pb2",
                 "__doc__": """Information about the products similar to a single product in a query
     image.
+    
     Attributes:
         bounding_poly:
             The bounding polygon around the product detected in the query
@@ -622,6 +626,7 @@ ProductSearchResults = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _PRODUCTSEARCHRESULTS,
         "__module__": "google.cloud.vision_v1.proto.product_search_pb2",
         "__doc__": """Results for a product search request.
+  
   Attributes:
       index_time:
           Timestamp of the index which provided these results. Products

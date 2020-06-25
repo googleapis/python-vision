@@ -991,6 +991,7 @@ TextAnnotation = _reflection.GeneratedProtocolMessageType(
                 "DESCRIPTOR": _TEXTANNOTATION_DETECTEDLANGUAGE,
                 "__module__": "google.cloud.vision_v1p1beta1.proto.text_annotation_pb2",
                 "__doc__": """Detected language for a structural component.
+    
     Attributes:
         language_code:
             The BCP-47 language code, such as “en-US” or “sr-Latn”. For
@@ -1009,6 +1010,7 @@ TextAnnotation = _reflection.GeneratedProtocolMessageType(
                 "DESCRIPTOR": _TEXTANNOTATION_DETECTEDBREAK,
                 "__module__": "google.cloud.vision_v1p1beta1.proto.text_annotation_pb2",
                 "__doc__": """Detected start or end of a structural component.
+    
     Attributes:
         type:
             Detected break type.
@@ -1025,6 +1027,7 @@ TextAnnotation = _reflection.GeneratedProtocolMessageType(
                 "DESCRIPTOR": _TEXTANNOTATION_TEXTPROPERTY,
                 "__module__": "google.cloud.vision_v1p1beta1.proto.text_annotation_pb2",
                 "__doc__": """Additional information detected on the structural component.
+    
     Attributes:
         detected_languages:
             A list of detected languages together with confidence.
@@ -1044,6 +1047,7 @@ TextAnnotation = _reflection.GeneratedProtocolMessageType(
   Please refer to the [TextAnnotation.TextProperty][google.cloud.vision.
   v1p1beta1.TextAnnotation.TextProperty] message definition below for
   more detail.
+  
   Attributes:
       pages:
           List of pages detected by OCR.
@@ -1065,6 +1069,7 @@ Page = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _PAGE,
         "__module__": "google.cloud.vision_v1p1beta1.proto.text_annotation_pb2",
         "__doc__": """Detected page from OCR.
+  
   Attributes:
       property:
           Additional information detected on the page.
@@ -1089,6 +1094,7 @@ Block = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _BLOCK,
         "__module__": "google.cloud.vision_v1p1beta1.proto.text_annotation_pb2",
         "__doc__": """Logical element on the page.
+  
   Attributes:
       property:
           Additional information detected for the block.
@@ -1123,6 +1129,7 @@ Paragraph = _reflection.GeneratedProtocolMessageType(
         "__module__": "google.cloud.vision_v1p1beta1.proto.text_annotation_pb2",
         "__doc__": """Structural unit of text representing a number of words in certain
   order.
+  
   Attributes:
       property:
           Additional information detected for the paragraph.
@@ -1153,6 +1160,7 @@ Word = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _WORD,
         "__module__": "google.cloud.vision_v1p1beta1.proto.text_annotation_pb2",
         "__doc__": """A word representation.
+  
   Attributes:
       property:
           Additional information detected for the word.
@@ -1184,6 +1192,7 @@ Symbol = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _SYMBOL,
         "__module__": "google.cloud.vision_v1p1beta1.proto.text_annotation_pb2",
         "__doc__": """A single symbol representation.
+  
   Attributes:
       property:
           Additional information detected for the symbol.

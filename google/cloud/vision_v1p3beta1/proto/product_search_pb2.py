@@ -626,6 +626,7 @@ ProductSearchParams = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _PRODUCTSEARCHPARAMS,
         "__module__": "google.cloud.vision_v1p3beta1.proto.product_search_pb2",
         "__doc__": """Parameters for a product search request.
+  
   Attributes:
       catalog_name:
           The resource name of the catalog to search.  Format is:
@@ -683,6 +684,7 @@ ProductSearchResults = _reflection.GeneratedProtocolMessageType(
                 "DESCRIPTOR": _PRODUCTSEARCHRESULTS_PRODUCTINFO,
                 "__module__": "google.cloud.vision_v1p3beta1.proto.product_search_pb2",
                 "__doc__": """Information about a product.
+    
     Attributes:
         product_id:
             Product ID.
@@ -705,6 +707,7 @@ ProductSearchResults = _reflection.GeneratedProtocolMessageType(
                 "DESCRIPTOR": _PRODUCTSEARCHRESULTS_RESULT,
                 "__module__": "google.cloud.vision_v1p3beta1.proto.product_search_pb2",
                 "__doc__": """Information about a product.
+    
     Attributes:
         product:
             The Product.
@@ -722,6 +725,7 @@ ProductSearchResults = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _PRODUCTSEARCHRESULTS,
         "__module__": "google.cloud.vision_v1p3beta1.proto.product_search_pb2",
         "__doc__": """Results for a product search request.
+  
   Attributes:
       category:
           Product category. [Deprecated] Use ``product_category``.
