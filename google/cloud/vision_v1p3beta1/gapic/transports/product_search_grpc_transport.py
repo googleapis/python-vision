@@ -121,70 +121,6 @@ class ProductSearchGrpcTransport(object):
         return self._channel
 
     @property
-    def delete_product_set(self):
-        """Return the gRPC stub for :meth:`ProductSearchClient.delete_product_set`.
-
-        Permanently deletes a ProductSet. All Products and ReferenceImages
-        in the ProductSet will be deleted.
-
-        The actual image files are not deleted from Google Cloud Storage.
-
-        Possible errors:
-
-        -  Returns NOT_FOUND if the ProductSet does not exist.
-
-        Returns:
-            Callable: A callable which accepts the appropriate
-                deserialized request object and returns a
-                deserialized response object.
-        """
-        return self._stubs["product_search_stub"].DeleteProductSet
-
-    @property
-    def delete_product(self):
-        """Return the gRPC stub for :meth:`ProductSearchClient.delete_product`.
-
-        Permanently deletes a product and its reference images.
-
-        Metadata of the product and all its images will be deleted right away,
-        but search queries against ProductSets containing the product may still
-        work until all related caches are refreshed.
-
-        Possible errors:
-
-        -  Returns NOT_FOUND if the product does not exist.
-
-        Returns:
-            Callable: A callable which accepts the appropriate
-                deserialized request object and returns a
-                deserialized response object.
-        """
-        return self._stubs["product_search_stub"].DeleteProduct
-
-    @property
-    def delete_reference_image(self):
-        """Return the gRPC stub for :meth:`ProductSearchClient.delete_reference_image`.
-
-        Permanently deletes a reference image.
-
-        The image metadata will be deleted right away, but search queries
-        against ProductSets containing the image may still work until all
-        related caches are refreshed.
-
-        The actual image files are not deleted from Google Cloud Storage.
-
-        Possible errors:
-
-        -  Returns NOT_FOUND if the reference image does not exist.
-
-        Returns:
-            Callable: A callable which accepts the appropriate
-                deserialized request object and returns a
-                deserialized response object.
-        """
-        return self._stubs["product_search_stub"].DeleteReferenceImage
-
-    @property
     def import_product_sets(self):
         """Return the gRPC stub for :meth:`ProductSearchClient.import_product_sets`.
 
@@ -281,6 +217,26 @@ class ProductSearchGrpcTransport(object):
         return self._stubs["product_search_stub"].UpdateProductSet
 
     @property
+    def delete_product_set(self):
+        """Return the gRPC stub for :meth:`ProductSearchClient.delete_product_set`.
+
+        Permanently deletes a ProductSet. All Products and ReferenceImages
+        in the ProductSet will be deleted.
+
+        The actual image files are not deleted from Google Cloud Storage.
+
+        Possible errors:
+
+        -  Returns NOT_FOUND if the ProductSet does not exist.
+
+        Returns:
+            Callable: A callable which accepts the appropriate
+                deserialized request object and returns a
+                deserialized response object.
+        """
+        return self._stubs["product_search_stub"].DeleteProductSet
+
+    @property
     def create_product(self):
         """Return the gRPC stub for :meth:`ProductSearchClient.create_product`.
 
@@ -364,6 +320,27 @@ class ProductSearchGrpcTransport(object):
         return self._stubs["product_search_stub"].UpdateProduct
 
     @property
+    def delete_product(self):
+        """Return the gRPC stub for :meth:`ProductSearchClient.delete_product`.
+
+        Permanently deletes a product and its reference images.
+
+        Metadata of the product and all its images will be deleted right away,
+        but search queries against ProductSets containing the product may still
+        work until all related caches are refreshed.
+
+        Possible errors:
+
+        -  Returns NOT_FOUND if the product does not exist.
+
+        Returns:
+            Callable: A callable which accepts the appropriate
+                deserialized request object and returns a
+                deserialized response object.
+        """
+        return self._stubs["product_search_stub"].DeleteProduct
+
+    @property
     def create_reference_image(self):
         """Return the gRPC stub for :meth:`ProductSearchClient.create_reference_image`.
 
@@ -395,6 +372,29 @@ class ProductSearchGrpcTransport(object):
                 deserialized response object.
         """
         return self._stubs["product_search_stub"].CreateReferenceImage
+
+    @property
+    def delete_reference_image(self):
+        """Return the gRPC stub for :meth:`ProductSearchClient.delete_reference_image`.
+
+        Permanently deletes a reference image.
+
+        The image metadata will be deleted right away, but search queries
+        against ProductSets containing the image may still work until all
+        related caches are refreshed.
+
+        The actual image files are not deleted from Google Cloud Storage.
+
+        Possible errors:
+
+        -  Returns NOT_FOUND if the reference image does not exist.
+
+        Returns:
+            Callable: A callable which accepts the appropriate
+                deserialized request object and returns a
+                deserialized response object.
+        """
+        return self._stubs["product_search_stub"].DeleteReferenceImage
 
     @property
     def list_reference_images(self):
