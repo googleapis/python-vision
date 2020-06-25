@@ -281,8 +281,6 @@ Vertex = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _VERTEX,
         "__module__": "google.cloud.vision_v1p2beta1.proto.geometry_pb2",
         "__doc__": """X coordinate.
-  
-  
   Attributes:
       y:
           Y coordinate.
@@ -299,8 +297,6 @@ NormalizedVertex = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _NORMALIZEDVERTEX,
         "__module__": "google.cloud.vision_v1p2beta1.proto.geometry_pb2",
         "__doc__": """X coordinate.
-  
-  
   Attributes:
       y:
           Y coordinate.
@@ -317,8 +313,6 @@ BoundingPoly = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _BOUNDINGPOLY,
         "__module__": "google.cloud.vision_v1p2beta1.proto.geometry_pb2",
         "__doc__": """A bounding polygon for the detected image annotation.
-  
-  
   Attributes:
       vertices:
           The bounding polygon vertices.
@@ -336,12 +330,9 @@ Position = _reflection.GeneratedProtocolMessageType(
     {
         "DESCRIPTOR": _POSITION,
         "__module__": "google.cloud.vision_v1p2beta1.proto.geometry_pb2",
-        "__doc__": """A 3D position in the image, used primarily for Face
-  detection landmarks. A valid Position must have both x and y
-  coordinates. The position coordinates are in the same scale as the
-  original image.
-  
-  
+        "__doc__": """A 3D position in the image, used primarily for Face detection
+  landmarks. A valid Position must have both x and y coordinates. The
+  position coordinates are in the same scale as the original image.
   Attributes:
       x:
           X coordinate.

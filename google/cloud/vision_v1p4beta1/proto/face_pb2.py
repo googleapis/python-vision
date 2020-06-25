@@ -214,8 +214,6 @@ FaceRecognitionParams = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _FACERECOGNITIONPARAMS,
         "__module__": "google.cloud.vision_v1p4beta1.proto.face_pb2",
         "__doc__": """Parameters for a celebrity recognition request.
-  
-  
   Attributes:
       celebrity_set:
           The resource names for one or more
@@ -237,8 +235,6 @@ Celebrity = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _CELEBRITY,
         "__module__": "google.cloud.vision_v1p4beta1.proto.face_pb2",
         "__doc__": """A Celebrity is a group of Faces with an identity.
-  
-  
   Attributes:
       name:
           The resource name of the preloaded Celebrity. Has the format
@@ -260,8 +256,6 @@ FaceRecognitionResult = _reflection.GeneratedProtocolMessageType(
         "DESCRIPTOR": _FACERECOGNITIONRESULT,
         "__module__": "google.cloud.vision_v1p4beta1.proto.face_pb2",
         "__doc__": """Information about a face’s identity.
-  
-  
   Attributes:
       celebrity:
           The [Celebrity][google.cloud.vision.v1p4beta1.Celebrity] that
