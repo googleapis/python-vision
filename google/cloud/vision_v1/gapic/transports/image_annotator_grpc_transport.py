@@ -119,19 +119,6 @@ class ImageAnnotatorGrpcTransport(object):
         return self._channel
 
     @property
-    def batch_annotate_images(self):
-        """Return the gRPC stub for :meth:`ImageAnnotatorClient.batch_annotate_images`.
-
-        Run image detection and annotation for a batch of images.
-
-        Returns:
-            Callable: A callable which accepts the appropriate
-                deserialized request object and returns a
-                deserialized response object.
-        """
-        return self._stubs["image_annotator_stub"].BatchAnnotateImages
-
-    @property
     def batch_annotate_files(self):
         """Return the gRPC stub for :meth:`ImageAnnotatorClient.batch_annotate_files`.
 
@@ -190,3 +177,16 @@ class ImageAnnotatorGrpcTransport(object):
                 deserialized response object.
         """
         return self._stubs["image_annotator_stub"].AsyncBatchAnnotateFiles
+
+    @property
+    def batch_annotate_images(self):
+        """Return the gRPC stub for :meth:`ImageAnnotatorClient.batch_annotate_images`.
+
+        Run image detection and annotation for a batch of images.
+
+        Returns:
+            Callable: A callable which accepts the appropriate
+                deserialized request object and returns a
+                deserialized response object.
+        """
+        return self._stubs["image_annotator_stub"].BatchAnnotateImages

@@ -192,92 +192,6 @@ class ImageAnnotatorClient(object):
         self._inner_api_calls = {}
 
     # Service calls
-    def batch_annotate_images(
-        self,
-        requests,
-        parent=None,
-        retry=google.api_core.gapic_v1.method.DEFAULT,
-        timeout=google.api_core.gapic_v1.method.DEFAULT,
-        metadata=None,
-    ):
-        """
-        Run image detection and annotation for a batch of images.
-
-        Example:
-            >>> from google.cloud import vision_v1
-            >>>
-            >>> client = vision_v1.ImageAnnotatorClient()
-            >>>
-            >>> # TODO: Initialize `requests`:
-            >>> requests = []
-            >>>
-            >>> response = client.batch_annotate_images(requests)
-
-        Args:
-            requests (list[Union[dict, ~google.cloud.vision_v1.types.AnnotateImageRequest]]): Required. Individual image annotation requests for this batch.
-
-                If a dict is provided, it must be of the same form as the protobuf
-                message :class:`~google.cloud.vision_v1.types.AnnotateImageRequest`
-            parent (str): Optional. Target project and location to make a call.
-
-                Format: ``projects/{project-id}/locations/{location-id}``.
-
-                If no parent is specified, a region will be chosen automatically.
-
-                Supported location-ids: ``us``: USA country only, ``asia``: East asia
-                areas, like Japan, Taiwan, ``eu``: The European Union.
-
-                Example: ``projects/project-A/locations/eu``.
-            retry (Optional[google.api_core.retry.Retry]):  A retry object used
-                to retry requests. If ``None`` is specified, requests will
-                be retried using a default configuration.
-            timeout (Optional[float]): The amount of time, in seconds, to wait
-                for the request to complete. Note that if ``retry`` is
-                specified, the timeout applies to each individual attempt.
-            metadata (Optional[Sequence[Tuple[str, str]]]): Additional metadata
-                that is provided to the method.
-
-        Returns:
-            A :class:`~google.cloud.vision_v1.types.BatchAnnotateImagesResponse` instance.
-
-        Raises:
-            google.api_core.exceptions.GoogleAPICallError: If the request
-                    failed for any reason.
-            google.api_core.exceptions.RetryError: If the request failed due
-                    to a retryable error and retry attempts failed.
-            ValueError: If the parameters are invalid.
-        """
-        # Wrap the transport method to add retry and timeout logic.
-        if "batch_annotate_images" not in self._inner_api_calls:
-            self._inner_api_calls[
-                "batch_annotate_images"
-            ] = google.api_core.gapic_v1.method.wrap_method(
-                self.transport.batch_annotate_images,
-                default_retry=self._method_configs["BatchAnnotateImages"].retry,
-                default_timeout=self._method_configs["BatchAnnotateImages"].timeout,
-                client_info=self._client_info,
-            )
-
-        request = image_annotator_pb2.BatchAnnotateImagesRequest(
-            requests=requests, parent=parent
-        )
-        if metadata is None:
-            metadata = []
-        metadata = list(metadata)
-        try:
-            routing_header = [("parent", parent)]
-        except AttributeError:
-            pass
-        else:
-            routing_metadata = google.api_core.gapic_v1.routing_header.to_grpc_metadata(
-                routing_header
-            )
-            metadata.append(routing_metadata)
-
-        return self._inner_api_calls["batch_annotate_images"](
-            request, retry=retry, timeout=timeout, metadata=metadata
-        )
-
     def batch_annotate_files(
         self,
         requests,
@@ -596,4 +510,90 @@ class ImageAnnotatorClient(object):
             self.transport._operations_client,
             image_annotator_pb2.AsyncBatchAnnotateFilesResponse,
             metadata_type=image_annotator_pb2.OperationMetadata,
+        )
+
+    def batch_annotate_images(
+        self,
+        requests,
+        parent=None,
+        retry=google.api_core.gapic_v1.method.DEFAULT,
+        timeout=google.api_core.gapic_v1.method.DEFAULT,
+        metadata=None,
+    ):
+        """
+        Run image detection and annotation for a batch of images.
+
+        Example:
+            >>> from google.cloud import vision_v1
+            >>>
+            >>> client = vision_v1.ImageAnnotatorClient()
+            >>>
+            >>> # TODO: Initialize `requests`:
+            >>> requests = []
+            >>>
+            >>> response = client.batch_annotate_images(requests)
+
+        Args:
+            requests (list[Union[dict, ~google.cloud.vision_v1.types.AnnotateImageRequest]]): Required. Individual image annotation requests for this batch.
+
+                If a dict is provided, it must be of the same form as the protobuf
+                message :class:`~google.cloud.vision_v1.types.AnnotateImageRequest`
+            parent (str): Optional. Target project and location to make a call.
+
+                Format: ``projects/{project-id}/locations/{location-id}``.
+
+                If no parent is specified, a region will be chosen automatically.
+
+                Supported location-ids: ``us``: USA country only, ``asia``: East asia
+                areas, like Japan, Taiwan, ``eu``: The European Union.
+
+                Example: ``projects/project-A/locations/eu``.
+            retry (Optional[google.api_core.retry.Retry]):  A retry object used
+                to retry requests. If ``None`` is specified, requests will
+                be retried using a default configuration.
+            timeout (Optional[float]): The amount of time, in seconds, to wait
+                for the request to complete. Note that if ``retry`` is
+                specified, the timeout applies to each individual attempt.
+            metadata (Optional[Sequence[Tuple[str, str]]]): Additional metadata
+                that is provided to the method.
+
+        Returns:
+            A :class:`~google.cloud.vision_v1.types.BatchAnnotateImagesResponse` instance.
+
+        Raises:
+            google.api_core.exceptions.GoogleAPICallError: If the request
+                    failed for any reason.
+            google.api_core.exceptions.RetryError: If the request failed due
+                    to a retryable error and retry attempts failed.
+            ValueError: If the parameters are invalid.
+        """
+        # Wrap the transport method to add retry and timeout logic.
+        if "batch_annotate_images" not in self._inner_api_calls:
+            self._inner_api_calls[
+                "batch_annotate_images"
+            ] = google.api_core.gapic_v1.method.wrap_method(
+                self.transport.batch_annotate_images,
+                default_retry=self._method_configs["BatchAnnotateImages"].retry,
+                default_timeout=self._method_configs["BatchAnnotateImages"].timeout,
+                client_info=self._client_info,
+            )
+
+        request = image_annotator_pb2.BatchAnnotateImagesRequest(
+            requests=requests, parent=parent
+        )
+        if metadata is None:
+            metadata = []
+        metadata = list(metadata)
+        try:
+            routing_header = [("parent", parent)]
+        except AttributeError:
+            pass
+        else:
+            routing_metadata = google.api_core.gapic_v1.routing_header.to_grpc_metadata(
+                routing_header
+            )
+            metadata.append(routing_metadata)
+
+        return self._inner_api_calls["batch_annotate_images"](
+            request, retry=retry, timeout=timeout, metadata=metadata
         )
