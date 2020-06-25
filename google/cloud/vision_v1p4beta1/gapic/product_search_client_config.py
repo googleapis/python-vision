@@ -17,6 +17,26 @@ config = {
                 }
             },
             "methods": {
+                "DeleteProductSet": {
+                    "timeout_millis": 60000,
+                    "retry_codes_name": "idempotent",
+                    "retry_params_name": "default",
+                },
+                "DeleteProduct": {
+                    "timeout_millis": 60000,
+                    "retry_codes_name": "idempotent",
+                    "retry_params_name": "default",
+                },
+                "DeleteReferenceImage": {
+                    "timeout_millis": 60000,
+                    "retry_codes_name": "idempotent",
+                    "retry_params_name": "default",
+                },
+                "ImportProductSets": {
+                    "timeout_millis": 60000,
+                    "retry_codes_name": "non_idempotent",
+                    "retry_params_name": "default",
+                },
                 "CreateProductSet": {
                     "timeout_millis": 60000,
                     "retry_codes_name": "non_idempotent",
@@ -35,11 +55,6 @@ config = {
                 "UpdateProductSet": {
                     "timeout_millis": 60000,
                     "retry_codes_name": "non_idempotent",
-                    "retry_params_name": "default",
-                },
-                "DeleteProductSet": {
-                    "timeout_millis": 60000,
-                    "retry_codes_name": "idempotent",
                     "retry_params_name": "default",
                 },
                 "CreateProduct": {
@@ -62,19 +77,9 @@ config = {
                     "retry_codes_name": "non_idempotent",
                     "retry_params_name": "default",
                 },
-                "DeleteProduct": {
-                    "timeout_millis": 60000,
-                    "retry_codes_name": "idempotent",
-                    "retry_params_name": "default",
-                },
                 "CreateReferenceImage": {
                     "timeout_millis": 60000,
                     "retry_codes_name": "non_idempotent",
-                    "retry_params_name": "default",
-                },
-                "DeleteReferenceImage": {
-                    "timeout_millis": 60000,
-                    "retry_codes_name": "idempotent",
                     "retry_params_name": "default",
                 },
                 "ListReferenceImages": {
@@ -100,11 +105,6 @@ config = {
                 "ListProductsInProductSet": {
                     "timeout_millis": 60000,
                     "retry_codes_name": "idempotent",
-                    "retry_params_name": "default",
-                },
-                "ImportProductSets": {
-                    "timeout_millis": 60000,
-                    "retry_codes_name": "non_idempotent",
                     "retry_params_name": "default",
                 },
                 "PurgeProducts": {
