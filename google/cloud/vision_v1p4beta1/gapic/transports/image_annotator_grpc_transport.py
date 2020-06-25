@@ -119,38 +119,6 @@ class ImageAnnotatorGrpcTransport(object):
         return self._channel
 
     @property
-    def batch_annotate_images(self):
-        """Return the gRPC stub for :meth:`ImageAnnotatorClient.batch_annotate_images`.
-
-        Run image detection and annotation for a batch of images.
-
-        Returns:
-            Callable: A callable which accepts the appropriate
-                deserialized request object and returns a
-                deserialized response object.
-        """
-        return self._stubs["image_annotator_stub"].BatchAnnotateImages
-
-    @property
-    def batch_annotate_files(self):
-        """Return the gRPC stub for :meth:`ImageAnnotatorClient.batch_annotate_files`.
-
-        Service that performs image detection and annotation for a batch of files.
-        Now only "application/pdf", "image/tiff" and "image/gif" are supported.
-
-        This service will extract at most 5 (customers can specify which 5 in
-        AnnotateFileRequest.pages) frames (gif) or pages (pdf or tiff) from each
-        file provided and perform detection and annotation for each image
-        extracted.
-
-        Returns:
-            Callable: A callable which accepts the appropriate
-                deserialized request object and returns a
-                deserialized response object.
-        """
-        return self._stubs["image_annotator_stub"].BatchAnnotateFiles
-
-    @property
     def async_batch_annotate_images(self):
         """Return the gRPC stub for :meth:`ImageAnnotatorClient.async_batch_annotate_images`.
 
@@ -190,3 +158,35 @@ class ImageAnnotatorGrpcTransport(object):
                 deserialized response object.
         """
         return self._stubs["image_annotator_stub"].AsyncBatchAnnotateFiles
+
+    @property
+    def batch_annotate_images(self):
+        """Return the gRPC stub for :meth:`ImageAnnotatorClient.batch_annotate_images`.
+
+        Run image detection and annotation for a batch of images.
+
+        Returns:
+            Callable: A callable which accepts the appropriate
+                deserialized request object and returns a
+                deserialized response object.
+        """
+        return self._stubs["image_annotator_stub"].BatchAnnotateImages
+
+    @property
+    def batch_annotate_files(self):
+        """Return the gRPC stub for :meth:`ImageAnnotatorClient.batch_annotate_files`.
+
+        Service that performs image detection and annotation for a batch of files.
+        Now only "application/pdf", "image/tiff" and "image/gif" are supported.
+
+        This service will extract at most 5 (customers can specify which 5 in
+        AnnotateFileRequest.pages) frames (gif) or pages (pdf or tiff) from each
+        file provided and perform detection and annotation for each image
+        extracted.
+
+        Returns:
+            Callable: A callable which accepts the appropriate
+                deserialized request object and returns a
+                deserialized response object.
+        """
+        return self._stubs["image_annotator_stub"].BatchAnnotateFiles

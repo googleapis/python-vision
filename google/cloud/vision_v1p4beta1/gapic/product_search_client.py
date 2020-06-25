@@ -245,226 +245,6 @@ class ProductSearchClient(object):
         self._inner_api_calls = {}
 
     # Service calls
-    def delete_product_set(
-        self,
-        name,
-        retry=google.api_core.gapic_v1.method.DEFAULT,
-        timeout=google.api_core.gapic_v1.method.DEFAULT,
-        metadata=None,
-    ):
-        """
-        Permanently deletes a ProductSet. Products and ReferenceImages in the
-        ProductSet are not deleted.
-
-        The actual image files are not deleted from Google Cloud Storage.
-
-        Example:
-            >>> from google.cloud import vision_v1p4beta1
-            >>>
-            >>> client = vision_v1p4beta1.ProductSearchClient()
-            >>>
-            >>> name = client.product_set_path('[PROJECT]', '[LOCATION]', '[PRODUCT_SET]')
-            >>>
-            >>> client.delete_product_set(name)
-
-        Args:
-            name (str): Required. Resource name of the ProductSet to delete.
-
-                Format is:
-                ``projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID``
-            retry (Optional[google.api_core.retry.Retry]):  A retry object used
-                to retry requests. If ``None`` is specified, requests will
-                be retried using a default configuration.
-            timeout (Optional[float]): The amount of time, in seconds, to wait
-                for the request to complete. Note that if ``retry`` is
-                specified, the timeout applies to each individual attempt.
-            metadata (Optional[Sequence[Tuple[str, str]]]): Additional metadata
-                that is provided to the method.
-
-        Raises:
-            google.api_core.exceptions.GoogleAPICallError: If the request
-                    failed for any reason.
-            google.api_core.exceptions.RetryError: If the request failed due
-                    to a retryable error and retry attempts failed.
-            ValueError: If the parameters are invalid.
-        """
-        # Wrap the transport method to add retry and timeout logic.
-        if "delete_product_set" not in self._inner_api_calls:
-            self._inner_api_calls[
-                "delete_product_set"
-            ] = google.api_core.gapic_v1.method.wrap_method(
-                self.transport.delete_product_set,
-                default_retry=self._method_configs["DeleteProductSet"].retry,
-                default_timeout=self._method_configs["DeleteProductSet"].timeout,
-                client_info=self._client_info,
-            )
-
-        request = product_search_service_pb2.DeleteProductSetRequest(name=name)
-        if metadata is None:
-            metadata = []
-        metadata = list(metadata)
-        try:
-            routing_header = [("name", name)]
-        except AttributeError:
-            pass
-        else:
-            routing_metadata = google.api_core.gapic_v1.routing_header.to_grpc_metadata(
-                routing_header
-            )
-            metadata.append(routing_metadata)
-
-        self._inner_api_calls["delete_product_set"](
-            request, retry=retry, timeout=timeout, metadata=metadata
-        )
-
-    def delete_product(
-        self,
-        name,
-        retry=google.api_core.gapic_v1.method.DEFAULT,
-        timeout=google.api_core.gapic_v1.method.DEFAULT,
-        metadata=None,
-    ):
-        """
-        Permanently deletes a product and its reference images.
-
-        Metadata of the product and all its images will be deleted right away, but
-        search queries against ProductSets containing the product may still work
-        until all related caches are refreshed.
-
-        Example:
-            >>> from google.cloud import vision_v1p4beta1
-            >>>
-            >>> client = vision_v1p4beta1.ProductSearchClient()
-            >>>
-            >>> name = client.product_path('[PROJECT]', '[LOCATION]', '[PRODUCT]')
-            >>>
-            >>> client.delete_product(name)
-
-        Args:
-            name (str): Required. Resource name of product to delete.
-
-                Format is: ``projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID``
-            retry (Optional[google.api_core.retry.Retry]):  A retry object used
-                to retry requests. If ``None`` is specified, requests will
-                be retried using a default configuration.
-            timeout (Optional[float]): The amount of time, in seconds, to wait
-                for the request to complete. Note that if ``retry`` is
-                specified, the timeout applies to each individual attempt.
-            metadata (Optional[Sequence[Tuple[str, str]]]): Additional metadata
-                that is provided to the method.
-
-        Raises:
-            google.api_core.exceptions.GoogleAPICallError: If the request
-                    failed for any reason.
-            google.api_core.exceptions.RetryError: If the request failed due
-                    to a retryable error and retry attempts failed.
-            ValueError: If the parameters are invalid.
-        """
-        # Wrap the transport method to add retry and timeout logic.
-        if "delete_product" not in self._inner_api_calls:
-            self._inner_api_calls[
-                "delete_product"
-            ] = google.api_core.gapic_v1.method.wrap_method(
-                self.transport.delete_product,
-                default_retry=self._method_configs["DeleteProduct"].retry,
-                default_timeout=self._method_configs["DeleteProduct"].timeout,
-                client_info=self._client_info,
-            )
-
-        request = product_search_service_pb2.DeleteProductRequest(name=name)
-        if metadata is None:
-            metadata = []
-        metadata = list(metadata)
-        try:
-            routing_header = [("name", name)]
-        except AttributeError:
-            pass
-        else:
-            routing_metadata = google.api_core.gapic_v1.routing_header.to_grpc_metadata(
-                routing_header
-            )
-            metadata.append(routing_metadata)
-
-        self._inner_api_calls["delete_product"](
-            request, retry=retry, timeout=timeout, metadata=metadata
-        )
-
-    def delete_reference_image(
-        self,
-        name,
-        retry=google.api_core.gapic_v1.method.DEFAULT,
-        timeout=google.api_core.gapic_v1.method.DEFAULT,
-        metadata=None,
-    ):
-        """
-        Permanently deletes a reference image.
-
-        The image metadata will be deleted right away, but search queries
-        against ProductSets containing the image may still work until all related
-        caches are refreshed.
-
-        The actual image files are not deleted from Google Cloud Storage.
-
-        Example:
-            >>> from google.cloud import vision_v1p4beta1
-            >>>
-            >>> client = vision_v1p4beta1.ProductSearchClient()
-            >>>
-            >>> name = client.reference_image_path('[PROJECT]', '[LOCATION]', '[PRODUCT]', '[REFERENCE_IMAGE]')
-            >>>
-            >>> client.delete_reference_image(name)
-
-        Args:
-            name (str): Required. The resource name of the reference image to delete.
-
-                Format is:
-
-                ``projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID``
-            retry (Optional[google.api_core.retry.Retry]):  A retry object used
-                to retry requests. If ``None`` is specified, requests will
-                be retried using a default configuration.
-            timeout (Optional[float]): The amount of time, in seconds, to wait
-                for the request to complete. Note that if ``retry`` is
-                specified, the timeout applies to each individual attempt.
-            metadata (Optional[Sequence[Tuple[str, str]]]): Additional metadata
-                that is provided to the method.
-
-        Raises:
-            google.api_core.exceptions.GoogleAPICallError: If the request
-                    failed for any reason.
-            google.api_core.exceptions.RetryError: If the request failed due
-                    to a retryable error and retry attempts failed.
-            ValueError: If the parameters are invalid.
-        """
-        # Wrap the transport method to add retry and timeout logic.
-        if "delete_reference_image" not in self._inner_api_calls:
-            self._inner_api_calls[
-                "delete_reference_image"
-            ] = google.api_core.gapic_v1.method.wrap_method(
-                self.transport.delete_reference_image,
-                default_retry=self._method_configs["DeleteReferenceImage"].retry,
-                default_timeout=self._method_configs["DeleteReferenceImage"].timeout,
-                client_info=self._client_info,
-            )
-
-        request = product_search_service_pb2.DeleteReferenceImageRequest(name=name)
-        if metadata is None:
-            metadata = []
-        metadata = list(metadata)
-        try:
-            routing_header = [("name", name)]
-        except AttributeError:
-            pass
-        else:
-            routing_metadata = google.api_core.gapic_v1.routing_header.to_grpc_metadata(
-                routing_header
-            )
-            metadata.append(routing_metadata)
-
-        self._inner_api_calls["delete_reference_image"](
-            request, retry=retry, timeout=timeout, metadata=metadata
-        )
-
     def import_product_sets(
         self,
         parent,
@@ -937,6 +717,78 @@ class ProductSearchClient(object):
             request, retry=retry, timeout=timeout, metadata=metadata
         )
 
+    def delete_product_set(
+        self,
+        name,
+        retry=google.api_core.gapic_v1.method.DEFAULT,
+        timeout=google.api_core.gapic_v1.method.DEFAULT,
+        metadata=None,
+    ):
+        """
+        Permanently deletes a ProductSet. Products and ReferenceImages in the
+        ProductSet are not deleted.
+
+        The actual image files are not deleted from Google Cloud Storage.
+
+        Example:
+            >>> from google.cloud import vision_v1p4beta1
+            >>>
+            >>> client = vision_v1p4beta1.ProductSearchClient()
+            >>>
+            >>> name = client.product_set_path('[PROJECT]', '[LOCATION]', '[PRODUCT_SET]')
+            >>>
+            >>> client.delete_product_set(name)
+
+        Args:
+            name (str): Required. Resource name of the ProductSet to delete.
+
+                Format is:
+                ``projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID``
+            retry (Optional[google.api_core.retry.Retry]):  A retry object used
+                to retry requests. If ``None`` is specified, requests will
+                be retried using a default configuration.
+            timeout (Optional[float]): The amount of time, in seconds, to wait
+                for the request to complete. Note that if ``retry`` is
+                specified, the timeout applies to each individual attempt.
+            metadata (Optional[Sequence[Tuple[str, str]]]): Additional metadata
+                that is provided to the method.
+
+        Raises:
+            google.api_core.exceptions.GoogleAPICallError: If the request
+                    failed for any reason.
+            google.api_core.exceptions.RetryError: If the request failed due
+                    to a retryable error and retry attempts failed.
+            ValueError: If the parameters are invalid.
+        """
+        # Wrap the transport method to add retry and timeout logic.
+        if "delete_product_set" not in self._inner_api_calls:
+            self._inner_api_calls[
+                "delete_product_set"
+            ] = google.api_core.gapic_v1.method.wrap_method(
+                self.transport.delete_product_set,
+                default_retry=self._method_configs["DeleteProductSet"].retry,
+                default_timeout=self._method_configs["DeleteProductSet"].timeout,
+                client_info=self._client_info,
+            )
+
+        request = product_search_service_pb2.DeleteProductSetRequest(name=name)
+        if metadata is None:
+            metadata = []
+        metadata = list(metadata)
+        try:
+            routing_header = [("name", name)]
+        except AttributeError:
+            pass
+        else:
+            routing_metadata = google.api_core.gapic_v1.routing_header.to_grpc_metadata(
+                routing_header
+            )
+            metadata.append(routing_metadata)
+
+        self._inner_api_calls["delete_product_set"](
+            request, retry=retry, timeout=timeout, metadata=metadata
+        )
+
     def create_product(
         self,
         parent,
@@ -1315,6 +1167,78 @@ class ProductSearchClient(object):
             request, retry=retry, timeout=timeout, metadata=metadata
         )
 
+    def delete_product(
+        self,
+        name,
+        retry=google.api_core.gapic_v1.method.DEFAULT,
+        timeout=google.api_core.gapic_v1.method.DEFAULT,
+        metadata=None,
+    ):
+        """
+        Permanently deletes a product and its reference images.
+
+        Metadata of the product and all its images will be deleted right away, but
+        search queries against ProductSets containing the product may still work
+        until all related caches are refreshed.
+
+        Example:
+            >>> from google.cloud import vision_v1p4beta1
+            >>>
+            >>> client = vision_v1p4beta1.ProductSearchClient()
+            >>>
+            >>> name = client.product_path('[PROJECT]', '[LOCATION]', '[PRODUCT]')
+            >>>
+            >>> client.delete_product(name)
+
+        Args:
+            name (str): Required. Resource name of product to delete.
+
+                Format is: ``projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID``
+            retry (Optional[google.api_core.retry.Retry]):  A retry object used
+                to retry requests. If ``None`` is specified, requests will
+                be retried using a default configuration.
+            timeout (Optional[float]): The amount of time, in seconds, to wait
+                for the request to complete. Note that if ``retry`` is
+                specified, the timeout applies to each individual attempt.
+            metadata (Optional[Sequence[Tuple[str, str]]]): Additional metadata
+                that is provided to the method.
+
+        Raises:
+            google.api_core.exceptions.GoogleAPICallError: If the request
+                    failed for any reason.
+            google.api_core.exceptions.RetryError: If the request failed due
+                    to a retryable error and retry attempts failed.
+            ValueError: If the parameters are invalid.
+        """
+        # Wrap the transport method to add retry and timeout logic.
+        if "delete_product" not in self._inner_api_calls:
+            self._inner_api_calls[
+                "delete_product"
+            ] = google.api_core.gapic_v1.method.wrap_method(
+                self.transport.delete_product,
+                default_retry=self._method_configs["DeleteProduct"].retry,
+                default_timeout=self._method_configs["DeleteProduct"].timeout,
+                client_info=self._client_info,
+            )
+
+        request = product_search_service_pb2.DeleteProductRequest(name=name)
+        if metadata is None:
+            metadata = []
+        metadata = list(metadata)
+        try:
+            routing_header = [("name", name)]
+        except AttributeError:
+            pass
+        else:
+            routing_metadata = google.api_core.gapic_v1.routing_header.to_grpc_metadata(
+                routing_header
+            )
+            metadata.append(routing_metadata)
+
+        self._inner_api_calls["delete_product"](
+            request, retry=retry, timeout=timeout, metadata=metadata
+        )
+
     def create_reference_image(
         self,
         parent,
@@ -1422,6 +1346,82 @@ class ProductSearchClient(object):
             metadata.append(routing_metadata)
 
         return self._inner_api_calls["create_reference_image"](
+            request, retry=retry, timeout=timeout, metadata=metadata
+        )
+
+    def delete_reference_image(
+        self,
+        name,
+        retry=google.api_core.gapic_v1.method.DEFAULT,
+        timeout=google.api_core.gapic_v1.method.DEFAULT,
+        metadata=None,
+    ):
+        """
+        Permanently deletes a reference image.
+
+        The image metadata will be deleted right away, but search queries
+        against ProductSets containing the image may still work until all related
+        caches are refreshed.
+
+        The actual image files are not deleted from Google Cloud Storage.
+
+        Example:
+            >>> from google.cloud import vision_v1p4beta1
+            >>>
+            >>> client = vision_v1p4beta1.ProductSearchClient()
+            >>>
+            >>> name = client.reference_image_path('[PROJECT]', '[LOCATION]', '[PRODUCT]', '[REFERENCE_IMAGE]')
+            >>>
+            >>> client.delete_reference_image(name)
+
+        Args:
+            name (str): Required. The resource name of the reference image to delete.
+
+                Format is:
+
+                ``projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID``
+            retry (Optional[google.api_core.retry.Retry]):  A retry object used
+                to retry requests. If ``None`` is specified, requests will
+                be retried using a default configuration.
+            timeout (Optional[float]): The amount of time, in seconds, to wait
+                for the request to complete. Note that if ``retry`` is
+                specified, the timeout applies to each individual attempt.
+            metadata (Optional[Sequence[Tuple[str, str]]]): Additional metadata
+                that is provided to the method.
+
+        Raises:
+            google.api_core.exceptions.GoogleAPICallError: If the request
+                    failed for any reason.
+            google.api_core.exceptions.RetryError: If the request failed due
+                    to a retryable error and retry attempts failed.
+            ValueError: If the parameters are invalid.
+        """
+        # Wrap the transport method to add retry and timeout logic.
+        if "delete_reference_image" not in self._inner_api_calls:
+            self._inner_api_calls[
+                "delete_reference_image"
+            ] = google.api_core.gapic_v1.method.wrap_method(
+                self.transport.delete_reference_image,
+                default_retry=self._method_configs["DeleteReferenceImage"].retry,
+                default_timeout=self._method_configs["DeleteReferenceImage"].timeout,
+                client_info=self._client_info,
+            )
+
+        request = product_search_service_pb2.DeleteReferenceImageRequest(name=name)
+        if metadata is None:
+            metadata = []
+        metadata = list(metadata)
+        try:
+            routing_header = [("name", name)]
+        except AttributeError:
+            pass
+        else:
+            routing_metadata = google.api_core.gapic_v1.routing_header.to_grpc_metadata(
+                routing_header
+            )
+            metadata.append(routing_metadata)
+
+        self._inner_api_calls["delete_reference_image"](
             request, retry=retry, timeout=timeout, metadata=metadata
         )
 
