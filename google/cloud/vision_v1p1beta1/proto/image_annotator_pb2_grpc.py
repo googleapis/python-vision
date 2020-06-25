@@ -45,7 +45,7 @@ def add_ImageAnnotatorServicer_to_server(servicer, server):
             servicer.BatchAnnotateImages,
             request_deserializer=google_dot_cloud_dot_vision__v1p1beta1_dot_proto_dot_image__annotator__pb2.BatchAnnotateImagesRequest.FromString,
             response_serializer=google_dot_cloud_dot_vision__v1p1beta1_dot_proto_dot_image__annotator__pb2.BatchAnnotateImagesResponse.SerializeToString,
-        )
+        ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
         "google.cloud.vision.v1p1beta1.ImageAnnotator", rpc_method_handlers

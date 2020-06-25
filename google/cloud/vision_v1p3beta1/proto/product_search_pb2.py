@@ -573,7 +573,7 @@ _PRODUCTSEARCHRESULTS = _descriptor.Descriptor(
         ),
     ],
     extensions=[],
-    nested_types=[_PRODUCTSEARCHRESULTS_PRODUCTINFO, _PRODUCTSEARCHRESULTS_RESULT],
+    nested_types=[_PRODUCTSEARCHRESULTS_PRODUCTINFO, _PRODUCTSEARCHRESULTS_RESULT,],
     enum_types=[],
     serialized_options=None,
     is_extendable=False,

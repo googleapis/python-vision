@@ -57,7 +57,7 @@ class ProductSearchGrpcTransport(object):
         # exception (channels come with credentials baked in already).
         if channel is not None and credentials is not None:
             raise ValueError(
-                "The `channel` and `credentials` arguments are mutually " "exclusive."
+                "The `channel` and `credentials` arguments are mutually " "exclusive.",
             )
 
         # Create the channel.
@@ -78,7 +78,7 @@ class ProductSearchGrpcTransport(object):
         self._stubs = {
             "product_search_stub": product_search_service_pb2_grpc.ProductSearchStub(
                 channel
-            )
+            ),
         }
 
         # Because this API includes a method that returns a

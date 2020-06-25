@@ -44,7 +44,7 @@ from google.protobuf import empty_pb2
 from google.protobuf import field_mask_pb2
 
 
-_GAPIC_LIBRARY_VERSION = pkg_resources.get_distribution("google-cloud-vision").version
+_GAPIC_LIBRARY_VERSION = pkg_resources.get_distribution("google-cloud-vision",).version
 
 
 class ProductSearchClient(object):
@@ -219,12 +219,12 @@ class ProductSearchClient(object):
                 self.transport = transport
         else:
             self.transport = product_search_grpc_transport.ProductSearchGrpcTransport(
-                address=api_endpoint, channel=channel, credentials=credentials
+                address=api_endpoint, channel=channel, credentials=credentials,
             )
 
         if client_info is None:
             client_info = google.api_core.gapic_v1.client_info.ClientInfo(
-                gapic_version=_GAPIC_LIBRARY_VERSION
+                gapic_version=_GAPIC_LIBRARY_VERSION,
             )
         else:
             client_info.gapic_version = _GAPIC_LIBRARY_VERSION
@@ -235,7 +235,7 @@ class ProductSearchClient(object):
         # (Ordinarily, these are the defaults specified in the `*_config.py`
         # file next to this one.)
         self._method_configs = google.api_core.gapic_v1.config.parse_method_configs(
-            client_config["interfaces"][self._INTERFACE_NAME]
+            client_config["interfaces"][self._INTERFACE_NAME],
         )
 
         # Save a dictionary of cached API call functions.
@@ -326,7 +326,7 @@ class ProductSearchClient(object):
             )
 
         request = product_search_service_pb2.ImportProductSetsRequest(
-            parent=parent, input_config=input_config
+            parent=parent, input_config=input_config,
         )
         if metadata is None:
             metadata = []
@@ -556,7 +556,7 @@ class ProductSearchClient(object):
             )
 
         request = product_search_service_pb2.CreateProductSetRequest(
-            parent=parent, product_set=product_set, product_set_id=product_set_id
+            parent=parent, product_set=product_set, product_set_id=product_set_id,
         )
         if metadata is None:
             metadata = []
@@ -655,7 +655,7 @@ class ProductSearchClient(object):
             )
 
         request = product_search_service_pb2.ListProductSetsRequest(
-            parent=parent, page_size=page_size
+            parent=parent, page_size=page_size,
         )
         if metadata is None:
             metadata = []
@@ -743,7 +743,7 @@ class ProductSearchClient(object):
                 client_info=self._client_info,
             )
 
-        request = product_search_service_pb2.GetProductSetRequest(name=name)
+        request = product_search_service_pb2.GetProductSetRequest(name=name,)
         if metadata is None:
             metadata = []
         metadata = list(metadata)
@@ -831,7 +831,7 @@ class ProductSearchClient(object):
             )
 
         request = product_search_service_pb2.UpdateProductSetRequest(
-            product_set=product_set, update_mask=update_mask
+            product_set=product_set, update_mask=update_mask,
         )
         if metadata is None:
             metadata = []
@@ -904,7 +904,7 @@ class ProductSearchClient(object):
                 client_info=self._client_info,
             )
 
-        request = product_search_service_pb2.DeleteProductSetRequest(name=name)
+        request = product_search_service_pb2.DeleteProductSetRequest(name=name,)
         if metadata is None:
             metadata = []
         metadata = list(metadata)
@@ -997,7 +997,7 @@ class ProductSearchClient(object):
             )
 
         request = product_search_service_pb2.CreateProductRequest(
-            parent=parent, product=product, product_id=product_id
+            parent=parent, product=product, product_id=product_id,
         )
         if metadata is None:
             metadata = []
@@ -1097,7 +1097,7 @@ class ProductSearchClient(object):
             )
 
         request = product_search_service_pb2.ListProductsRequest(
-            parent=parent, page_size=page_size
+            parent=parent, page_size=page_size,
         )
         if metadata is None:
             metadata = []
@@ -1184,7 +1184,7 @@ class ProductSearchClient(object):
                 client_info=self._client_info,
             )
 
-        request = product_search_service_pb2.GetProductRequest(name=name)
+        request = product_search_service_pb2.GetProductRequest(name=name,)
         if metadata is None:
             metadata = []
         metadata = list(metadata)
@@ -1281,7 +1281,7 @@ class ProductSearchClient(object):
             )
 
         request = product_search_service_pb2.UpdateProductRequest(
-            product=product, update_mask=update_mask
+            product=product, update_mask=update_mask,
         )
         if metadata is None:
             metadata = []
@@ -1354,7 +1354,7 @@ class ProductSearchClient(object):
                 client_info=self._client_info,
             )
 
-        request = product_search_service_pb2.DeleteProductRequest(name=name)
+        request = product_search_service_pb2.DeleteProductRequest(name=name,)
         if metadata is None:
             metadata = []
         metadata = list(metadata)
@@ -1540,7 +1540,7 @@ class ProductSearchClient(object):
                 client_info=self._client_info,
             )
 
-        request = product_search_service_pb2.DeleteReferenceImageRequest(name=name)
+        request = product_search_service_pb2.DeleteReferenceImageRequest(name=name,)
         if metadata is None:
             metadata = []
         metadata = list(metadata)
@@ -1640,7 +1640,7 @@ class ProductSearchClient(object):
             )
 
         request = product_search_service_pb2.ListReferenceImagesRequest(
-            parent=parent, page_size=page_size
+            parent=parent, page_size=page_size,
         )
         if metadata is None:
             metadata = []
@@ -1729,7 +1729,7 @@ class ProductSearchClient(object):
                 client_info=self._client_info,
             )
 
-        request = product_search_service_pb2.GetReferenceImageRequest(name=name)
+        request = product_search_service_pb2.GetReferenceImageRequest(name=name,)
         if metadata is None:
             metadata = []
         metadata = list(metadata)
@@ -1812,7 +1812,7 @@ class ProductSearchClient(object):
             )
 
         request = product_search_service_pb2.AddProductToProductSetRequest(
-            name=name, product=product
+            name=name, product=product,
         )
         if metadata is None:
             metadata = []
@@ -1891,7 +1891,7 @@ class ProductSearchClient(object):
             )
 
         request = product_search_service_pb2.RemoveProductFromProductSetRequest(
-            name=name, product=product
+            name=name, product=product,
         )
         if metadata is None:
             metadata = []
@@ -1995,7 +1995,7 @@ class ProductSearchClient(object):
             )
 
         request = product_search_service_pb2.ListProductsInProductSetRequest(
-            name=name, page_size=page_size
+            name=name, page_size=page_size,
         )
         if metadata is None:
             metadata = []

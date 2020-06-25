@@ -48,4 +48,9 @@ class ImageAnnotatorClient(VisionHelpers, iac.ImageAnnotatorClient):
     enums = enums
 
 
-__all__ = ("enums", "types", "ProductSearchClient", "ImageAnnotatorClient")
+__all__ = (
+    "enums",
+    "types",
+    "ProductSearchClient",
+    "ImageAnnotatorClient",
+)

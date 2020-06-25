@@ -650,7 +650,7 @@ _FEATURE = _descriptor.Descriptor(
     ],
     extensions=[],
     nested_types=[],
-    enum_types=[_FEATURE_TYPE],
+    enum_types=[_FEATURE_TYPE,],
     serialized_options=None,
     is_extendable=False,
     syntax="proto3",
@@ -830,7 +830,7 @@ _FACEANNOTATION_LANDMARK = _descriptor.Descriptor(
     ],
     extensions=[],
     nested_types=[],
-    enum_types=[_FACEANNOTATION_LANDMARK_TYPE],
+    enum_types=[_FACEANNOTATION_LANDMARK_TYPE,],
     serialized_options=None,
     is_extendable=False,
     syntax="proto3",
@@ -1135,7 +1135,7 @@ _FACEANNOTATION = _descriptor.Descriptor(
         ),
     ],
     extensions=[],
-    nested_types=[_FACEANNOTATION_LANDMARK],
+    nested_types=[_FACEANNOTATION_LANDMARK,],
     enum_types=[],
     serialized_options=None,
     is_extendable=False,
@@ -1173,7 +1173,7 @@ _LOCATIONINFO = _descriptor.Descriptor(
             serialized_options=None,
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -1742,7 +1742,7 @@ _DOMINANTCOLORSANNOTATION = _descriptor.Descriptor(
             serialized_options=None,
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -1783,7 +1783,7 @@ _IMAGEPROPERTIES = _descriptor.Descriptor(
             serialized_options=None,
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -1903,7 +1903,7 @@ _CROPHINTSANNOTATION = _descriptor.Descriptor(
             serialized_options=None,
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -1944,7 +1944,7 @@ _CROPHINTSPARAMS = _descriptor.Descriptor(
             serialized_options=None,
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -1985,7 +1985,7 @@ _WEBDETECTIONPARAMS = _descriptor.Descriptor(
             serialized_options=None,
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -2573,7 +2573,7 @@ _BATCHANNOTATEIMAGESREQUEST = _descriptor.Descriptor(
             serialized_options=b"\340A\002",
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -2614,7 +2614,7 @@ _BATCHANNOTATEIMAGESRESPONSE = _descriptor.Descriptor(
             serialized_options=None,
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -2753,7 +2753,7 @@ _ASYNCANNOTATEFILERESPONSE = _descriptor.Descriptor(
             serialized_options=None,
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -2794,7 +2794,7 @@ _ASYNCBATCHANNOTATEFILESREQUEST = _descriptor.Descriptor(
             serialized_options=b"\340A\002",
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -2835,7 +2835,7 @@ _ASYNCBATCHANNOTATEFILESRESPONSE = _descriptor.Descriptor(
             serialized_options=None,
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -2996,7 +2996,7 @@ _GCSSOURCE = _descriptor.Descriptor(
             serialized_options=None,
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -3037,7 +3037,7 @@ _GCSDESTINATION = _descriptor.Descriptor(
             serialized_options=None,
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -3120,7 +3120,7 @@ _OPERATIONMETADATA = _descriptor.Descriptor(
     ],
     extensions=[],
     nested_types=[],
-    enum_types=[_OPERATIONMETADATA_STATE],
+    enum_types=[_OPERATIONMETADATA_STATE,],
     serialized_options=None,
     is_extendable=False,
     syntax="proto3",

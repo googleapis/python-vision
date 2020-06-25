@@ -270,7 +270,7 @@ _PRODUCT = _descriptor.Descriptor(
         ),
     ],
     extensions=[],
-    nested_types=[_PRODUCT_KEYVALUE],
+    nested_types=[_PRODUCT_KEYVALUE,],
     enum_types=[],
     serialized_options=b"\352A[\n\035vision.googleapis.com/Product\022:projects/{project}/locations/{location}/products/{product}",
     is_extendable=False,
@@ -703,7 +703,7 @@ _GETPRODUCTREQUEST = _descriptor.Descriptor(
             serialized_options=b"\340A\002\372A\037\n\035vision.googleapis.com/Product",
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -804,7 +804,7 @@ _DELETEPRODUCTREQUEST = _descriptor.Descriptor(
             serialized_options=b"\340A\002\372A\037\n\035vision.googleapis.com/Product",
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -1063,7 +1063,7 @@ _GETPRODUCTSETREQUEST = _descriptor.Descriptor(
             serialized_options=b'\340A\002\372A"\n vision.googleapis.com/ProductSet',
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -1164,7 +1164,7 @@ _DELETEPRODUCTSETREQUEST = _descriptor.Descriptor(
             serialized_options=b'\340A\002\372A"\n vision.googleapis.com/ProductSet',
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -1442,7 +1442,7 @@ _GETREFERENCEIMAGEREQUEST = _descriptor.Descriptor(
             serialized_options=b"\340A\002\372A&\n$vision.googleapis.com/ReferenceImage",
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -1483,7 +1483,7 @@ _DELETEREFERENCEIMAGEREQUEST = _descriptor.Descriptor(
             serialized_options=b"\340A\002\372A&\n$vision.googleapis.com/ReferenceImage",
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -1783,7 +1783,7 @@ _IMPORTPRODUCTSETSGCSSOURCE = _descriptor.Descriptor(
             serialized_options=None,
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -1824,7 +1824,7 @@ _IMPORTPRODUCTSETSINPUTCONFIG = _descriptor.Descriptor(
             serialized_options=None,
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -1841,7 +1841,7 @@ _IMPORTPRODUCTSETSINPUTCONFIG = _descriptor.Descriptor(
             containing_type=None,
             create_key=_descriptor._internal_create_key,
             fields=[],
-        )
+        ),
     ],
     serialized_start=3907,
     serialized_end=4028,
@@ -2036,7 +2036,7 @@ _BATCHOPERATIONMETADATA = _descriptor.Descriptor(
     ],
     extensions=[],
     nested_types=[],
-    enum_types=[_BATCHOPERATIONMETADATA_STATE],
+    enum_types=[_BATCHOPERATIONMETADATA_STATE,],
     serialized_options=None,
     is_extendable=False,
     syntax="proto3",
@@ -2073,7 +2073,7 @@ _PRODUCTSETPURGECONFIG = _descriptor.Descriptor(
             serialized_options=None,
             file=DESCRIPTOR,
             create_key=_descriptor._internal_create_key,
-        )
+        ),
     ],
     extensions=[],
     nested_types=[],
@@ -2188,7 +2188,7 @@ _PURGEPRODUCTSREQUEST = _descriptor.Descriptor(
             containing_type=None,
             create_key=_descriptor._internal_create_key,
             fields=[],
-        )
+        ),
     ],
     serialized_start=4686,
     serialized_end=4916,
