@@ -23,6 +23,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
     package="google.cloud.vision.v1p1beta1",
     syntax="proto3",
     serialized_options=b"\n!com.google.cloud.vision.v1p1beta1B\023TextAnnotationProtoP\001ZCgoogle.golang.org/genproto/googleapis/cloud/vision/v1p1beta1;vision\370\001\001",
+    create_key=_descriptor._internal_create_key,
     serialized_pb=b'\n9google/cloud/vision_v1p1beta1/proto/text_annotation.proto\x12\x1dgoogle.cloud.vision.v1p1beta1\x1a\x1cgoogle/api/annotations.proto\x1a\x32google/cloud/vision_v1p1beta1/proto/geometry.proto"\xb2\x04\n\x0eTextAnnotation\x12\x32\n\x05pages\x18\x01 \x03(\x0b\x32#.google.cloud.vision.v1p1beta1.Page\x12\x0c\n\x04text\x18\x02 \x01(\t\x1a=\n\x10\x44\x65tectedLanguage\x12\x15\n\rlanguage_code\x18\x01 \x01(\t\x12\x12\n\nconfidence\x18\x02 \x01(\x02\x1a\xdc\x01\n\rDetectedBreak\x12S\n\x04type\x18\x01 \x01(\x0e\x32\x45.google.cloud.vision.v1p1beta1.TextAnnotation.DetectedBreak.BreakType\x12\x11\n\tis_prefix\x18\x02 \x01(\x08"c\n\tBreakType\x12\x0b\n\x07UNKNOWN\x10\x00\x12\t\n\x05SPACE\x10\x01\x12\x0e\n\nSURE_SPACE\x10\x02\x12\x12\n\x0e\x45OL_SURE_SPACE\x10\x03\x12\n\n\x06HYPHEN\x10\x04\x12\x0e\n\nLINE_BREAK\x10\x05\x1a\xbf\x01\n\x0cTextProperty\x12Z\n\x12\x64\x65tected_languages\x18\x01 \x03(\x0b\x32>.google.cloud.vision.v1p1beta1.TextAnnotation.DetectedLanguage\x12S\n\x0e\x64\x65tected_break\x18\x02 \x01(\x0b\x32;.google.cloud.vision.v1p1beta1.TextAnnotation.DetectedBreak"\xbd\x01\n\x04Page\x12L\n\x08property\x18\x01 \x01(\x0b\x32:.google.cloud.vision.v1p1beta1.TextAnnotation.TextProperty\x12\r\n\x05width\x18\x02 \x01(\x05\x12\x0e\n\x06height\x18\x03 \x01(\x05\x12\x34\n\x06\x62locks\x18\x04 \x03(\x0b\x32$.google.cloud.vision.v1p1beta1.Block\x12\x12\n\nconfidence\x18\x05 \x01(\x02"\x82\x03\n\x05\x42lock\x12L\n\x08property\x18\x01 \x01(\x0b\x32:.google.cloud.vision.v1p1beta1.TextAnnotation.TextProperty\x12\x41\n\x0c\x62ounding_box\x18\x02 \x01(\x0b\x32+.google.cloud.vision.v1p1beta1.BoundingPoly\x12<\n\nparagraphs\x18\x03 \x03(\x0b\x32(.google.cloud.vision.v1p1beta1.Paragraph\x12\x42\n\nblock_type\x18\x04 \x01(\x0e\x32..google.cloud.vision.v1p1beta1.Block.BlockType\x12\x12\n\nconfidence\x18\x05 \x01(\x02"R\n\tBlockType\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x08\n\x04TEXT\x10\x01\x12\t\n\x05TABLE\x10\x02\x12\x0b\n\x07PICTURE\x10\x03\x12\t\n\x05RULER\x10\x04\x12\x0b\n\x07\x42\x41RCODE\x10\x05"\xe4\x01\n\tParagraph\x12L\n\x08property\x18\x01 \x01(\x0b\x32:.google.cloud.vision.v1p1beta1.TextAnnotation.TextProperty\x12\x41\n\x0c\x62ounding_box\x18\x02 \x01(\x0b\x32+.google.cloud.vision.v1p1beta1.BoundingPoly\x12\x32\n\x05words\x18\x03 \x03(\x0b\x32#.google.cloud.vision.v1p1beta1.Word\x12\x12\n\nconfidence\x18\x04 \x01(\x02"\xe3\x01\n\x04Word\x12L\n\x08property\x18\x01 \x01(\x0b\x32:.google.cloud.vision.v1p1beta1.TextAnnotation.TextProperty\x12\x41\n\x0c\x62ounding_box\x18\x02 \x01(\x0b\x32+.google.cloud.vision.v1p1beta1.BoundingPoly\x12\x36\n\x07symbols\x18\x03 \x03(\x0b\x32%.google.cloud.vision.v1p1beta1.Symbol\x12\x12\n\nconfidence\x18\x04 \x01(\x02"\xbb\x01\n\x06Symbol\x12L\n\x08property\x18\x01 \x01(\x0b\x32:.google.cloud.vision.v1p1beta1.TextAnnotation.TextProperty\x12\x41\n\x0c\x62ounding_box\x18\x02 \x01(\x0b\x32+.google.cloud.vision.v1p1beta1.BoundingPoly\x12\x0c\n\x04text\x18\x03 \x01(\t\x12\x12\n\nconfidence\x18\x04 \x01(\x02\x42\x82\x01\n!com.google.cloud.vision.v1p1beta1B\x13TextAnnotationProtoP\x01ZCgoogle.golang.org/genproto/googleapis/cloud/vision/v1p1beta1;vision\xf8\x01\x01\x62\x06proto3',
     dependencies=[
         google_dot_api_dot_annotations__pb2.DESCRIPTOR,
@@ -36,24 +37,55 @@ _TEXTANNOTATION_DETECTEDBREAK_BREAKTYPE = _descriptor.EnumDescriptor(
     full_name="google.cloud.vision.v1p1beta1.TextAnnotation.DetectedBreak.BreakType",
     filename=None,
     file=DESCRIPTOR,
+    create_key=_descriptor._internal_create_key,
     values=[
         _descriptor.EnumValueDescriptor(
-            name="UNKNOWN", index=0, number=0, serialized_options=None, type=None
+            name="UNKNOWN",
+            index=0,
+            number=0,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="SPACE", index=1, number=1, serialized_options=None, type=None
+            name="SPACE",
+            index=1,
+            number=1,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="SURE_SPACE", index=2, number=2, serialized_options=None, type=None
+            name="SURE_SPACE",
+            index=2,
+            number=2,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="EOL_SURE_SPACE", index=3, number=3, serialized_options=None, type=None
+            name="EOL_SURE_SPACE",
+            index=3,
+            number=3,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="HYPHEN", index=4, number=4, serialized_options=None, type=None
+            name="HYPHEN",
+            index=4,
+            number=4,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="LINE_BREAK", index=5, number=5, serialized_options=None, type=None
+            name="LINE_BREAK",
+            index=5,
+            number=5,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     containing_type=None,
@@ -68,24 +100,55 @@ _BLOCK_BLOCKTYPE = _descriptor.EnumDescriptor(
     full_name="google.cloud.vision.v1p1beta1.Block.BlockType",
     filename=None,
     file=DESCRIPTOR,
+    create_key=_descriptor._internal_create_key,
     values=[
         _descriptor.EnumValueDescriptor(
-            name="UNKNOWN", index=0, number=0, serialized_options=None, type=None
+            name="UNKNOWN",
+            index=0,
+            number=0,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="TEXT", index=1, number=1, serialized_options=None, type=None
+            name="TEXT",
+            index=1,
+            number=1,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="TABLE", index=2, number=2, serialized_options=None, type=None
+            name="TABLE",
+            index=2,
+            number=2,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="PICTURE", index=3, number=3, serialized_options=None, type=None
+            name="PICTURE",
+            index=3,
+            number=3,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="RULER", index=4, number=4, serialized_options=None, type=None
+            name="RULER",
+            index=4,
+            number=4,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="BARCODE", index=5, number=5, serialized_options=None, type=None
+            name="BARCODE",
+            index=5,
+            number=5,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     containing_type=None,
@@ -102,6 +165,7 @@ _TEXTANNOTATION_DETECTEDLANGUAGE = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="language_code",
@@ -120,6 +184,7 @@ _TEXTANNOTATION_DETECTEDLANGUAGE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="confidence",
@@ -138,6 +203,7 @@ _TEXTANNOTATION_DETECTEDLANGUAGE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -158,6 +224,7 @@ _TEXTANNOTATION_DETECTEDBREAK = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="type",
@@ -176,6 +243,7 @@ _TEXTANNOTATION_DETECTEDBREAK = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="is_prefix",
@@ -194,6 +262,7 @@ _TEXTANNOTATION_DETECTEDBREAK = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -214,6 +283,7 @@ _TEXTANNOTATION_TEXTPROPERTY = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="detected_languages",
@@ -232,6 +302,7 @@ _TEXTANNOTATION_TEXTPROPERTY = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="detected_break",
@@ -250,6 +321,7 @@ _TEXTANNOTATION_TEXTPROPERTY = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -270,6 +342,7 @@ _TEXTANNOTATION = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="pages",
@@ -288,6 +361,7 @@ _TEXTANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="text",
@@ -306,6 +380,7 @@ _TEXTANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -331,6 +406,7 @@ _PAGE = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="property",
@@ -349,6 +425,7 @@ _PAGE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="width",
@@ -367,6 +444,7 @@ _PAGE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="height",
@@ -385,6 +463,7 @@ _PAGE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="blocks",
@@ -403,6 +482,7 @@ _PAGE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="confidence",
@@ -421,6 +501,7 @@ _PAGE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -442,6 +523,7 @@ _BLOCK = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="property",
@@ -460,6 +542,7 @@ _BLOCK = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="bounding_box",
@@ -478,6 +561,7 @@ _BLOCK = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="paragraphs",
@@ -496,6 +580,7 @@ _BLOCK = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="block_type",
@@ -514,6 +599,7 @@ _BLOCK = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="confidence",
@@ -532,6 +618,7 @@ _BLOCK = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -553,6 +640,7 @@ _PARAGRAPH = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="property",
@@ -571,6 +659,7 @@ _PARAGRAPH = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="bounding_box",
@@ -589,6 +678,7 @@ _PARAGRAPH = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="words",
@@ -607,6 +697,7 @@ _PARAGRAPH = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="confidence",
@@ -625,6 +716,7 @@ _PARAGRAPH = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -646,6 +738,7 @@ _WORD = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="property",
@@ -664,6 +757,7 @@ _WORD = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="bounding_box",
@@ -682,6 +776,7 @@ _WORD = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="symbols",
@@ -700,6 +795,7 @@ _WORD = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="confidence",
@@ -718,6 +814,7 @@ _WORD = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -739,6 +836,7 @@ _SYMBOL = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="property",
@@ -757,6 +855,7 @@ _SYMBOL = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="bounding_box",
@@ -775,6 +874,7 @@ _SYMBOL = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="text",
@@ -793,6 +893,7 @@ _SYMBOL = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="confidence",
@@ -811,6 +912,7 @@ _SYMBOL = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],

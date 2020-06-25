@@ -42,6 +42,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
     package="google.cloud.vision.v1p3beta1",
     syntax="proto3",
     serialized_options=b"\n!com.google.cloud.vision.v1p3beta1B\023ImageAnnotatorProtoP\001ZCgoogle.golang.org/genproto/googleapis/cloud/vision/v1p3beta1;vision\370\001\001",
+    create_key=_descriptor._internal_create_key,
     serialized_pb=b'\n9google/cloud/vision_v1p3beta1/proto/image_annotator.proto\x12\x1dgoogle.cloud.vision.v1p3beta1\x1a\x1cgoogle/api/annotations.proto\x1a\x17google/api/client.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a\x32google/cloud/vision_v1p3beta1/proto/geometry.proto\x1a\x38google/cloud/vision_v1p3beta1/proto/product_search.proto\x1a\x39google/cloud/vision_v1p3beta1/proto/text_annotation.proto\x1a\x37google/cloud/vision_v1p3beta1/proto/web_detection.proto\x1a#google/longrunning/operations.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x17google/rpc/status.proto\x1a\x17google/type/color.proto\x1a\x18google/type/latlng.proto"\x8e\x03\n\x07\x46\x65\x61ture\x12\x39\n\x04type\x18\x01 \x01(\x0e\x32+.google.cloud.vision.v1p3beta1.Feature.Type\x12\x13\n\x0bmax_results\x18\x02 \x01(\x05\x12\r\n\x05model\x18\x03 \x01(\t"\xa3\x02\n\x04Type\x12\x14\n\x10TYPE_UNSPECIFIED\x10\x00\x12\x12\n\x0e\x46\x41\x43\x45_DETECTION\x10\x01\x12\x16\n\x12LANDMARK_DETECTION\x10\x02\x12\x12\n\x0eLOGO_DETECTION\x10\x03\x12\x13\n\x0fLABEL_DETECTION\x10\x04\x12\x12\n\x0eTEXT_DETECTION\x10\x05\x12\x1b\n\x17\x44OCUMENT_TEXT_DETECTION\x10\x0b\x12\x19\n\x15SAFE_SEARCH_DETECTION\x10\x06\x12\x14\n\x10IMAGE_PROPERTIES\x10\x07\x12\x0e\n\nCROP_HINTS\x10\t\x12\x11\n\rWEB_DETECTION\x10\n\x12\x12\n\x0ePRODUCT_SEARCH\x10\x0c\x12\x17\n\x13OBJECT_LOCALIZATION\x10\x13"7\n\x0bImageSource\x12\x15\n\rgcs_image_uri\x18\x01 \x01(\t\x12\x11\n\timage_uri\x18\x02 \x01(\t"T\n\x05Image\x12\x0f\n\x07\x63ontent\x18\x01 \x01(\x0c\x12:\n\x06source\x18\x02 \x01(\x0b\x32*.google.cloud.vision.v1p3beta1.ImageSource"\x9b\x0e\n\x0e\x46\x61\x63\x65\x41nnotation\x12\x42\n\rbounding_poly\x18\x01 \x01(\x0b\x32+.google.cloud.vision.v1p3beta1.BoundingPoly\x12\x45\n\x10\x66\x64_bounding_poly\x18\x02 \x01(\x0b\x32+.google.cloud.vision.v1p3beta1.BoundingPoly\x12I\n\tlandmarks\x18\x03 \x03(\x0b\x32\x36.google.cloud.vision.v1p3beta1.FaceAnnotation.Landmark\x12\x12\n\nroll_angle\x18\x04 \x01(\x02\x12\x11\n\tpan_angle\x18\x05 \x01(\x02\x12\x12\n\ntilt_angle\x18\x06 \x01(\x02\x12\x1c\n\x14\x64\x65tection_confidence\x18\x07 \x01(\x02\x12\x1e\n\x16landmarking_confidence\x18\x08 \x01(\x02\x12\x41\n\x0ejoy_likelihood\x18\t \x01(\x0e\x32).google.cloud.vision.v1p3beta1.Likelihood\x12\x44\n\x11sorrow_likelihood\x18\n \x01(\x0e\x32).google.cloud.vision.v1p3beta1.Likelihood\x12\x43\n\x10\x61nger_likelihood\x18\x0b \x01(\x0e\x32).google.cloud.vision.v1p3beta1.Likelihood\x12\x46\n\x13surprise_likelihood\x18\x0c \x01(\x0e\x32).google.cloud.vision.v1p3beta1.Likelihood\x12K\n\x18under_exposed_likelihood\x18\r \x01(\x0e\x32).google.cloud.vision.v1p3beta1.Likelihood\x12\x45\n\x12\x62lurred_likelihood\x18\x0e \x01(\x0e\x32).google.cloud.vision.v1p3beta1.Likelihood\x12\x46\n\x13headwear_likelihood\x18\x0f \x01(\x0e\x32).google.cloud.vision.v1p3beta1.Likelihood\x1a\xc7\x07\n\x08Landmark\x12I\n\x04type\x18\x03 \x01(\x0e\x32;.google.cloud.vision.v1p3beta1.FaceAnnotation.Landmark.Type\x12\x39\n\x08position\x18\x04 \x01(\x0b\x32\'.google.cloud.vision.v1p3beta1.Position"\xb4\x06\n\x04Type\x12\x14\n\x10UNKNOWN_LANDMARK\x10\x00\x12\x0c\n\x08LEFT_EYE\x10\x01\x12\r\n\tRIGHT_EYE\x10\x02\x12\x18\n\x14LEFT_OF_LEFT_EYEBROW\x10\x03\x12\x19\n\x15RIGHT_OF_LEFT_EYEBROW\x10\x04\x12\x19\n\x15LEFT_OF_RIGHT_EYEBROW\x10\x05\x12\x1a\n\x16RIGHT_OF_RIGHT_EYEBROW\x10\x06\x12\x19\n\x15MIDPOINT_BETWEEN_EYES\x10\x07\x12\x0c\n\x08NOSE_TIP\x10\x08\x12\r\n\tUPPER_LIP\x10\t\x12\r\n\tLOWER_LIP\x10\n\x12\x0e\n\nMOUTH_LEFT\x10\x0b\x12\x0f\n\x0bMOUTH_RIGHT\x10\x0c\x12\x10\n\x0cMOUTH_CENTER\x10\r\x12\x15\n\x11NOSE_BOTTOM_RIGHT\x10\x0e\x12\x14\n\x10NOSE_BOTTOM_LEFT\x10\x0f\x12\x16\n\x12NOSE_BOTTOM_CENTER\x10\x10\x12\x19\n\x15LEFT_EYE_TOP_BOUNDARY\x10\x11\x12\x19\n\x15LEFT_EYE_RIGHT_CORNER\x10\x12\x12\x1c\n\x18LEFT_EYE_BOTTOM_BOUNDARY\x10\x13\x12\x18\n\x14LEFT_EYE_LEFT_CORNER\x10\x14\x12\x1a\n\x16RIGHT_EYE_TOP_BOUNDARY\x10\x15\x12\x1a\n\x16RIGHT_EYE_RIGHT_CORNER\x10\x16\x12\x1d\n\x19RIGHT_EYE_BOTTOM_BOUNDARY\x10\x17\x12\x19\n\x15RIGHT_EYE_LEFT_CORNER\x10\x18\x12\x1f\n\x1bLEFT_EYEBROW_UPPER_MIDPOINT\x10\x19\x12 \n\x1cRIGHT_EYEBROW_UPPER_MIDPOINT\x10\x1a\x12\x14\n\x10LEFT_EAR_TRAGION\x10\x1b\x12\x15\n\x11RIGHT_EAR_TRAGION\x10\x1c\x12\x12\n\x0eLEFT_EYE_PUPIL\x10\x1d\x12\x13\n\x0fRIGHT_EYE_PUPIL\x10\x1e\x12\x15\n\x11\x46OREHEAD_GLABELLA\x10\x1f\x12\x11\n\rCHIN_GNATHION\x10 \x12\x14\n\x10\x43HIN_LEFT_GONION\x10!\x12\x15\n\x11\x43HIN_RIGHT_GONION\x10""4\n\x0cLocationInfo\x12$\n\x07lat_lng\x18\x01 \x01(\x0b\x32\x13.google.type.LatLng"=\n\x08Property\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\x12\x14\n\x0cuint64_value\x18\x03 \x01(\x04"\xbc\x02\n\x10\x45ntityAnnotation\x12\x0b\n\x03mid\x18\x01 \x01(\t\x12\x0e\n\x06locale\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\r\n\x05score\x18\x04 \x01(\x02\x12\x12\n\nconfidence\x18\x05 \x01(\x02\x12\x12\n\ntopicality\x18\x06 \x01(\x02\x12\x42\n\rbounding_poly\x18\x07 \x01(\x0b\x32+.google.cloud.vision.v1p3beta1.BoundingPoly\x12>\n\tlocations\x18\x08 \x03(\x0b\x32+.google.cloud.vision.v1p3beta1.LocationInfo\x12;\n\nproperties\x18\t \x03(\x0b\x32\'.google.cloud.vision.v1p3beta1.Property"\xa0\x01\n\x19LocalizedObjectAnnotation\x12\x0b\n\x03mid\x18\x01 \x01(\t\x12\x15\n\rlanguage_code\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\r\n\x05score\x18\x04 \x01(\x02\x12\x42\n\rbounding_poly\x18\x05 \x01(\x0b\x32+.google.cloud.vision.v1p3beta1.BoundingPoly"\xbc\x02\n\x14SafeSearchAnnotation\x12\x38\n\x05\x61\x64ult\x18\x01 \x01(\x0e\x32).google.cloud.vision.v1p3beta1.Likelihood\x12\x38\n\x05spoof\x18\x02 \x01(\x0e\x32).google.cloud.vision.v1p3beta1.Likelihood\x12:\n\x07medical\x18\x03 \x01(\x0e\x32).google.cloud.vision.v1p3beta1.Likelihood\x12;\n\x08violence\x18\x04 \x01(\x0e\x32).google.cloud.vision.v1p3beta1.Likelihood\x12\x37\n\x04racy\x18\t \x01(\x0e\x32).google.cloud.vision.v1p3beta1.Likelihood"a\n\x0bLatLongRect\x12(\n\x0bmin_lat_lng\x18\x01 \x01(\x0b\x32\x13.google.type.LatLng\x12(\n\x0bmax_lat_lng\x18\x02 \x01(\x0b\x32\x13.google.type.LatLng"U\n\tColorInfo\x12!\n\x05\x63olor\x18\x01 \x01(\x0b\x32\x12.google.type.Color\x12\r\n\x05score\x18\x02 \x01(\x02\x12\x16\n\x0epixel_fraction\x18\x03 \x01(\x02"T\n\x18\x44ominantColorsAnnotation\x12\x38\n\x06\x63olors\x18\x01 \x03(\x0b\x32(.google.cloud.vision.v1p3beta1.ColorInfo"c\n\x0fImageProperties\x12P\n\x0f\x64ominant_colors\x18\x01 \x01(\x0b\x32\x37.google.cloud.vision.v1p3beta1.DominantColorsAnnotation"\x7f\n\x08\x43ropHint\x12\x42\n\rbounding_poly\x18\x01 \x01(\x0b\x32+.google.cloud.vision.v1p3beta1.BoundingPoly\x12\x12\n\nconfidence\x18\x02 \x01(\x02\x12\x1b\n\x13importance_fraction\x18\x03 \x01(\x02"R\n\x13\x43ropHintsAnnotation\x12;\n\ncrop_hints\x18\x01 \x03(\x0b\x32\'.google.cloud.vision.v1p3beta1.CropHint"(\n\x0f\x43ropHintsParams\x12\x15\n\raspect_ratios\x18\x01 \x03(\x02"1\n\x12WebDetectionParams\x12\x1b\n\x13include_geo_results\x18\x02 \x01(\x08"\xd8\x02\n\x0cImageContext\x12\x41\n\rlat_long_rect\x18\x01 \x01(\x0b\x32*.google.cloud.vision.v1p3beta1.LatLongRect\x12\x16\n\x0elanguage_hints\x18\x02 \x03(\t\x12I\n\x11\x63rop_hints_params\x18\x04 \x01(\x0b\x32..google.cloud.vision.v1p3beta1.CropHintsParams\x12Q\n\x15product_search_params\x18\x05 \x01(\x0b\x32\x32.google.cloud.vision.v1p3beta1.ProductSearchParams\x12O\n\x14web_detection_params\x18\x06 \x01(\x0b\x32\x31.google.cloud.vision.v1p3beta1.WebDetectionParams"\xc9\x01\n\x14\x41nnotateImageRequest\x12\x33\n\x05image\x18\x01 \x01(\x0b\x32$.google.cloud.vision.v1p3beta1.Image\x12\x38\n\x08\x66\x65\x61tures\x18\x02 \x03(\x0b\x32&.google.cloud.vision.v1p3beta1.Feature\x12\x42\n\rimage_context\x18\x03 \x01(\x0b\x32+.google.cloud.vision.v1p3beta1.ImageContext":\n\x16ImageAnnotationContext\x12\x0b\n\x03uri\x18\x01 \x01(\t\x12\x13\n\x0bpage_number\x18\x02 \x01(\x05"\xbf\x08\n\x15\x41nnotateImageResponse\x12G\n\x10\x66\x61\x63\x65_annotations\x18\x01 \x03(\x0b\x32-.google.cloud.vision.v1p3beta1.FaceAnnotation\x12M\n\x14landmark_annotations\x18\x02 \x03(\x0b\x32/.google.cloud.vision.v1p3beta1.EntityAnnotation\x12I\n\x10logo_annotations\x18\x03 \x03(\x0b\x32/.google.cloud.vision.v1p3beta1.EntityAnnotation\x12J\n\x11label_annotations\x18\x04 \x03(\x0b\x32/.google.cloud.vision.v1p3beta1.EntityAnnotation\x12^\n\x1clocalized_object_annotations\x18\x16 \x03(\x0b\x32\x38.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation\x12I\n\x10text_annotations\x18\x05 \x03(\x0b\x32/.google.cloud.vision.v1p3beta1.EntityAnnotation\x12K\n\x14\x66ull_text_annotation\x18\x0c \x01(\x0b\x32-.google.cloud.vision.v1p3beta1.TextAnnotation\x12S\n\x16safe_search_annotation\x18\x06 \x01(\x0b\x32\x33.google.cloud.vision.v1p3beta1.SafeSearchAnnotation\x12S\n\x1bimage_properties_annotation\x18\x08 \x01(\x0b\x32..google.cloud.vision.v1p3beta1.ImageProperties\x12Q\n\x15\x63rop_hints_annotation\x18\x0b \x01(\x0b\x32\x32.google.cloud.vision.v1p3beta1.CropHintsAnnotation\x12\x42\n\rweb_detection\x18\r \x01(\x0b\x32+.google.cloud.vision.v1p3beta1.WebDetection\x12S\n\x16product_search_results\x18\x0e \x01(\x0b\x32\x33.google.cloud.vision.v1p3beta1.ProductSearchResults\x12!\n\x05\x65rror\x18\t \x01(\x0b\x32\x12.google.rpc.Status\x12\x46\n\x07\x63ontext\x18\x15 \x01(\x0b\x32\x35.google.cloud.vision.v1p3beta1.ImageAnnotationContext"\xa1\x01\n\x14\x41nnotateFileResponse\x12@\n\x0cinput_config\x18\x01 \x01(\x0b\x32*.google.cloud.vision.v1p3beta1.InputConfig\x12G\n\tresponses\x18\x02 \x03(\x0b\x32\x34.google.cloud.vision.v1p3beta1.AnnotateImageResponse"c\n\x1a\x42\x61tchAnnotateImagesRequest\x12\x45\n\x08requests\x18\x01 \x03(\x0b\x32\x33.google.cloud.vision.v1p3beta1.AnnotateImageRequest"f\n\x1b\x42\x61tchAnnotateImagesResponse\x12G\n\tresponses\x18\x01 \x03(\x0b\x32\x34.google.cloud.vision.v1p3beta1.AnnotateImageResponse"\x9e\x02\n\x18\x41syncAnnotateFileRequest\x12@\n\x0cinput_config\x18\x01 \x01(\x0b\x32*.google.cloud.vision.v1p3beta1.InputConfig\x12\x38\n\x08\x66\x65\x61tures\x18\x02 \x03(\x0b\x32&.google.cloud.vision.v1p3beta1.Feature\x12\x42\n\rimage_context\x18\x03 \x01(\x0b\x32+.google.cloud.vision.v1p3beta1.ImageContext\x12\x42\n\routput_config\x18\x04 \x01(\x0b\x32+.google.cloud.vision.v1p3beta1.OutputConfig"_\n\x19\x41syncAnnotateFileResponse\x12\x42\n\routput_config\x18\x01 \x01(\x0b\x32+.google.cloud.vision.v1p3beta1.OutputConfig"p\n\x1e\x41syncBatchAnnotateFilesRequest\x12N\n\x08requests\x18\x01 \x03(\x0b\x32\x37.google.cloud.vision.v1p3beta1.AsyncAnnotateFileRequestB\x03\xe0\x41\x02"n\n\x1f\x41syncBatchAnnotateFilesResponse\x12K\n\tresponses\x18\x01 \x03(\x0b\x32\x38.google.cloud.vision.v1p3beta1.AsyncAnnotateFileResponse"^\n\x0bInputConfig\x12<\n\ngcs_source\x18\x01 \x01(\x0b\x32(.google.cloud.vision.v1p3beta1.GcsSource\x12\x11\n\tmime_type\x18\x02 \x01(\t"j\n\x0cOutputConfig\x12\x46\n\x0fgcs_destination\x18\x01 \x01(\x0b\x32-.google.cloud.vision.v1p3beta1.GcsDestination\x12\x12\n\nbatch_size\x18\x02 \x01(\x05"\x18\n\tGcsSource\x12\x0b\n\x03uri\x18\x01 \x01(\t"\x1d\n\x0eGcsDestination\x12\x0b\n\x03uri\x18\x01 \x01(\t"\x8f\x02\n\x11OperationMetadata\x12\x45\n\x05state\x18\x01 \x01(\x0e\x32\x36.google.cloud.vision.v1p3beta1.OperationMetadata.State\x12/\n\x0b\x63reate_time\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12/\n\x0bupdate_time\x18\x06 \x01(\x0b\x32\x1a.google.protobuf.Timestamp"Q\n\x05State\x12\x15\n\x11STATE_UNSPECIFIED\x10\x00\x12\x0b\n\x07\x43REATED\x10\x01\x12\x0b\n\x07RUNNING\x10\x02\x12\x08\n\x04\x44ONE\x10\x03\x12\r\n\tCANCELLED\x10\x04*e\n\nLikelihood\x12\x0b\n\x07UNKNOWN\x10\x00\x12\x11\n\rVERY_UNLIKELY\x10\x01\x12\x0c\n\x08UNLIKELY\x10\x02\x12\x0c\n\x08POSSIBLE\x10\x03\x12\n\n\x06LIKELY\x10\x04\x12\x0f\n\x0bVERY_LIKELY\x10\x05\x32\xb5\x04\n\x0eImageAnnotator\x12\xbe\x01\n\x13\x42\x61tchAnnotateImages\x12\x39.google.cloud.vision.v1p3beta1.BatchAnnotateImagesRequest\x1a:.google.cloud.vision.v1p3beta1.BatchAnnotateImagesResponse"0\x82\xd3\xe4\x93\x02\x1f"\x1a/v1p3beta1/images:annotate:\x01*\xda\x41\x08requests\x12\xe9\x01\n\x17\x41syncBatchAnnotateFiles\x12=.google.cloud.vision.v1p3beta1.AsyncBatchAnnotateFilesRequest\x1a\x1d.google.longrunning.Operation"p\x82\xd3\xe4\x93\x02("#/v1p3beta1/files:asyncBatchAnnotate:\x01*\xda\x41\x08requests\xca\x41\x34\n\x1f\x41syncBatchAnnotateFilesResponse\x12\x11OperationMetadata\x1av\xca\x41\x15vision.googleapis.com\xd2\x41[https://www.googleapis.com/auth/cloud-platform,https://www.googleapis.com/auth/cloud-visionB\x82\x01\n!com.google.cloud.vision.v1p3beta1B\x13ImageAnnotatorProtoP\x01ZCgoogle.golang.org/genproto/googleapis/cloud/vision/v1p3beta1;vision\xf8\x01\x01\x62\x06proto3',
     dependencies=[
         google_dot_api_dot_annotations__pb2.DESCRIPTOR,
@@ -64,24 +65,55 @@ _LIKELIHOOD = _descriptor.EnumDescriptor(
     full_name="google.cloud.vision.v1p3beta1.Likelihood",
     filename=None,
     file=DESCRIPTOR,
+    create_key=_descriptor._internal_create_key,
     values=[
         _descriptor.EnumValueDescriptor(
-            name="UNKNOWN", index=0, number=0, serialized_options=None, type=None
+            name="UNKNOWN",
+            index=0,
+            number=0,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="VERY_UNLIKELY", index=1, number=1, serialized_options=None, type=None
+            name="VERY_UNLIKELY",
+            index=1,
+            number=1,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="UNLIKELY", index=2, number=2, serialized_options=None, type=None
+            name="UNLIKELY",
+            index=2,
+            number=2,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="POSSIBLE", index=3, number=3, serialized_options=None, type=None
+            name="POSSIBLE",
+            index=3,
+            number=3,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="LIKELY", index=4, number=4, serialized_options=None, type=None
+            name="LIKELY",
+            index=4,
+            number=4,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="VERY_LIKELY", index=5, number=5, serialized_options=None, type=None
+            name="VERY_LIKELY",
+            index=5,
+            number=5,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     containing_type=None,
@@ -105,6 +137,7 @@ _FEATURE_TYPE = _descriptor.EnumDescriptor(
     full_name="google.cloud.vision.v1p3beta1.Feature.Type",
     filename=None,
     file=DESCRIPTOR,
+    create_key=_descriptor._internal_create_key,
     values=[
         _descriptor.EnumValueDescriptor(
             name="TYPE_UNSPECIFIED",
@@ -112,9 +145,15 @@ _FEATURE_TYPE = _descriptor.EnumDescriptor(
             number=0,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="FACE_DETECTION", index=1, number=1, serialized_options=None, type=None
+            name="FACE_DETECTION",
+            index=1,
+            number=1,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="LANDMARK_DETECTION",
@@ -122,9 +161,15 @@ _FEATURE_TYPE = _descriptor.EnumDescriptor(
             number=2,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="LOGO_DETECTION", index=3, number=3, serialized_options=None, type=None
+            name="LOGO_DETECTION",
+            index=3,
+            number=3,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="LABEL_DETECTION",
@@ -132,9 +177,15 @@ _FEATURE_TYPE = _descriptor.EnumDescriptor(
             number=4,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="TEXT_DETECTION", index=5, number=5, serialized_options=None, type=None
+            name="TEXT_DETECTION",
+            index=5,
+            number=5,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="DOCUMENT_TEXT_DETECTION",
@@ -142,6 +193,7 @@ _FEATURE_TYPE = _descriptor.EnumDescriptor(
             number=11,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="SAFE_SEARCH_DETECTION",
@@ -149,6 +201,7 @@ _FEATURE_TYPE = _descriptor.EnumDescriptor(
             number=6,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="IMAGE_PROPERTIES",
@@ -156,9 +209,15 @@ _FEATURE_TYPE = _descriptor.EnumDescriptor(
             number=7,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="CROP_HINTS", index=9, number=9, serialized_options=None, type=None
+            name="CROP_HINTS",
+            index=9,
+            number=9,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="WEB_DETECTION",
@@ -166,6 +225,7 @@ _FEATURE_TYPE = _descriptor.EnumDescriptor(
             number=10,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="PRODUCT_SEARCH",
@@ -173,6 +233,7 @@ _FEATURE_TYPE = _descriptor.EnumDescriptor(
             number=12,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="OBJECT_LOCALIZATION",
@@ -180,6 +241,7 @@ _FEATURE_TYPE = _descriptor.EnumDescriptor(
             number=19,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     containing_type=None,
@@ -194,6 +256,7 @@ _FACEANNOTATION_LANDMARK_TYPE = _descriptor.EnumDescriptor(
     full_name="google.cloud.vision.v1p3beta1.FaceAnnotation.Landmark.Type",
     filename=None,
     file=DESCRIPTOR,
+    create_key=_descriptor._internal_create_key,
     values=[
         _descriptor.EnumValueDescriptor(
             name="UNKNOWN_LANDMARK",
@@ -201,12 +264,23 @@ _FACEANNOTATION_LANDMARK_TYPE = _descriptor.EnumDescriptor(
             number=0,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="LEFT_EYE", index=1, number=1, serialized_options=None, type=None
+            name="LEFT_EYE",
+            index=1,
+            number=1,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="RIGHT_EYE", index=2, number=2, serialized_options=None, type=None
+            name="RIGHT_EYE",
+            index=2,
+            number=2,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="LEFT_OF_LEFT_EYEBROW",
@@ -214,6 +288,7 @@ _FACEANNOTATION_LANDMARK_TYPE = _descriptor.EnumDescriptor(
             number=3,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="RIGHT_OF_LEFT_EYEBROW",
@@ -221,6 +296,7 @@ _FACEANNOTATION_LANDMARK_TYPE = _descriptor.EnumDescriptor(
             number=4,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="LEFT_OF_RIGHT_EYEBROW",
@@ -228,6 +304,7 @@ _FACEANNOTATION_LANDMARK_TYPE = _descriptor.EnumDescriptor(
             number=5,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="RIGHT_OF_RIGHT_EYEBROW",
@@ -235,6 +312,7 @@ _FACEANNOTATION_LANDMARK_TYPE = _descriptor.EnumDescriptor(
             number=6,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="MIDPOINT_BETWEEN_EYES",
@@ -242,24 +320,55 @@ _FACEANNOTATION_LANDMARK_TYPE = _descriptor.EnumDescriptor(
             number=7,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="NOSE_TIP", index=8, number=8, serialized_options=None, type=None
+            name="NOSE_TIP",
+            index=8,
+            number=8,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="UPPER_LIP", index=9, number=9, serialized_options=None, type=None
+            name="UPPER_LIP",
+            index=9,
+            number=9,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="LOWER_LIP", index=10, number=10, serialized_options=None, type=None
+            name="LOWER_LIP",
+            index=10,
+            number=10,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="MOUTH_LEFT", index=11, number=11, serialized_options=None, type=None
+            name="MOUTH_LEFT",
+            index=11,
+            number=11,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="MOUTH_RIGHT", index=12, number=12, serialized_options=None, type=None
+            name="MOUTH_RIGHT",
+            index=12,
+            number=12,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="MOUTH_CENTER", index=13, number=13, serialized_options=None, type=None
+            name="MOUTH_CENTER",
+            index=13,
+            number=13,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="NOSE_BOTTOM_RIGHT",
@@ -267,6 +376,7 @@ _FACEANNOTATION_LANDMARK_TYPE = _descriptor.EnumDescriptor(
             number=14,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="NOSE_BOTTOM_LEFT",
@@ -274,6 +384,7 @@ _FACEANNOTATION_LANDMARK_TYPE = _descriptor.EnumDescriptor(
             number=15,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="NOSE_BOTTOM_CENTER",
@@ -281,6 +392,7 @@ _FACEANNOTATION_LANDMARK_TYPE = _descriptor.EnumDescriptor(
             number=16,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="LEFT_EYE_TOP_BOUNDARY",
@@ -288,6 +400,7 @@ _FACEANNOTATION_LANDMARK_TYPE = _descriptor.EnumDescriptor(
             number=17,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="LEFT_EYE_RIGHT_CORNER",
@@ -295,6 +408,7 @@ _FACEANNOTATION_LANDMARK_TYPE = _descriptor.EnumDescriptor(
             number=18,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="LEFT_EYE_BOTTOM_BOUNDARY",
@@ -302,6 +416,7 @@ _FACEANNOTATION_LANDMARK_TYPE = _descriptor.EnumDescriptor(
             number=19,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="LEFT_EYE_LEFT_CORNER",
@@ -309,6 +424,7 @@ _FACEANNOTATION_LANDMARK_TYPE = _descriptor.EnumDescriptor(
             number=20,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="RIGHT_EYE_TOP_BOUNDARY",
@@ -316,6 +432,7 @@ _FACEANNOTATION_LANDMARK_TYPE = _descriptor.EnumDescriptor(
             number=21,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="RIGHT_EYE_RIGHT_CORNER",
@@ -323,6 +440,7 @@ _FACEANNOTATION_LANDMARK_TYPE = _descriptor.EnumDescriptor(
             number=22,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="RIGHT_EYE_BOTTOM_BOUNDARY",
@@ -330,6 +448,7 @@ _FACEANNOTATION_LANDMARK_TYPE = _descriptor.EnumDescriptor(
             number=23,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="RIGHT_EYE_LEFT_CORNER",
@@ -337,6 +456,7 @@ _FACEANNOTATION_LANDMARK_TYPE = _descriptor.EnumDescriptor(
             number=24,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="LEFT_EYEBROW_UPPER_MIDPOINT",
@@ -344,6 +464,7 @@ _FACEANNOTATION_LANDMARK_TYPE = _descriptor.EnumDescriptor(
             number=25,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="RIGHT_EYEBROW_UPPER_MIDPOINT",
@@ -351,6 +472,7 @@ _FACEANNOTATION_LANDMARK_TYPE = _descriptor.EnumDescriptor(
             number=26,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="LEFT_EAR_TRAGION",
@@ -358,6 +480,7 @@ _FACEANNOTATION_LANDMARK_TYPE = _descriptor.EnumDescriptor(
             number=27,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="RIGHT_EAR_TRAGION",
@@ -365,6 +488,7 @@ _FACEANNOTATION_LANDMARK_TYPE = _descriptor.EnumDescriptor(
             number=28,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="LEFT_EYE_PUPIL",
@@ -372,6 +496,7 @@ _FACEANNOTATION_LANDMARK_TYPE = _descriptor.EnumDescriptor(
             number=29,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="RIGHT_EYE_PUPIL",
@@ -379,6 +504,7 @@ _FACEANNOTATION_LANDMARK_TYPE = _descriptor.EnumDescriptor(
             number=30,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="FOREHEAD_GLABELLA",
@@ -386,6 +512,7 @@ _FACEANNOTATION_LANDMARK_TYPE = _descriptor.EnumDescriptor(
             number=31,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="CHIN_GNATHION",
@@ -393,6 +520,7 @@ _FACEANNOTATION_LANDMARK_TYPE = _descriptor.EnumDescriptor(
             number=32,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="CHIN_LEFT_GONION",
@@ -400,6 +528,7 @@ _FACEANNOTATION_LANDMARK_TYPE = _descriptor.EnumDescriptor(
             number=33,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
             name="CHIN_RIGHT_GONION",
@@ -407,6 +536,7 @@ _FACEANNOTATION_LANDMARK_TYPE = _descriptor.EnumDescriptor(
             number=34,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     containing_type=None,
@@ -421,6 +551,7 @@ _OPERATIONMETADATA_STATE = _descriptor.EnumDescriptor(
     full_name="google.cloud.vision.v1p3beta1.OperationMetadata.State",
     filename=None,
     file=DESCRIPTOR,
+    create_key=_descriptor._internal_create_key,
     values=[
         _descriptor.EnumValueDescriptor(
             name="STATE_UNSPECIFIED",
@@ -428,18 +559,39 @@ _OPERATIONMETADATA_STATE = _descriptor.EnumDescriptor(
             number=0,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="CREATED", index=1, number=1, serialized_options=None, type=None
+            name="CREATED",
+            index=1,
+            number=1,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="RUNNING", index=2, number=2, serialized_options=None, type=None
+            name="RUNNING",
+            index=2,
+            number=2,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="DONE", index=3, number=3, serialized_options=None, type=None
+            name="DONE",
+            index=3,
+            number=3,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="CANCELLED", index=4, number=4, serialized_options=None, type=None
+            name="CANCELLED",
+            index=4,
+            number=4,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     containing_type=None,
@@ -456,6 +608,7 @@ _FEATURE = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="type",
@@ -474,6 +627,7 @@ _FEATURE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="max_results",
@@ -492,6 +646,7 @@ _FEATURE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="model",
@@ -510,6 +665,7 @@ _FEATURE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -531,6 +687,7 @@ _IMAGESOURCE = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="gcs_image_uri",
@@ -549,6 +706,7 @@ _IMAGESOURCE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="image_uri",
@@ -567,6 +725,7 @@ _IMAGESOURCE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -588,6 +747,7 @@ _IMAGE = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="content",
@@ -606,6 +766,7 @@ _IMAGE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="source",
@@ -624,6 +785,7 @@ _IMAGE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -645,6 +807,7 @@ _FACEANNOTATION_LANDMARK = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="type",
@@ -663,6 +826,7 @@ _FACEANNOTATION_LANDMARK = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="position",
@@ -681,6 +845,7 @@ _FACEANNOTATION_LANDMARK = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -701,6 +866,7 @@ _FACEANNOTATION = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="bounding_poly",
@@ -719,6 +885,7 @@ _FACEANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="fd_bounding_poly",
@@ -737,6 +904,7 @@ _FACEANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="landmarks",
@@ -755,6 +923,7 @@ _FACEANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="roll_angle",
@@ -773,6 +942,7 @@ _FACEANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="pan_angle",
@@ -791,6 +961,7 @@ _FACEANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="tilt_angle",
@@ -809,6 +980,7 @@ _FACEANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="detection_confidence",
@@ -827,6 +999,7 @@ _FACEANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="landmarking_confidence",
@@ -845,6 +1018,7 @@ _FACEANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="joy_likelihood",
@@ -863,6 +1037,7 @@ _FACEANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="sorrow_likelihood",
@@ -881,6 +1056,7 @@ _FACEANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="anger_likelihood",
@@ -899,6 +1075,7 @@ _FACEANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="surprise_likelihood",
@@ -917,6 +1094,7 @@ _FACEANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="under_exposed_likelihood",
@@ -935,6 +1113,7 @@ _FACEANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="blurred_likelihood",
@@ -953,6 +1132,7 @@ _FACEANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="headwear_likelihood",
@@ -971,6 +1151,7 @@ _FACEANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -992,6 +1173,7 @@ _LOCATIONINFO = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="lat_lng",
@@ -1010,6 +1192,7 @@ _LOCATIONINFO = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -1031,6 +1214,7 @@ _PROPERTY = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="name",
@@ -1049,6 +1233,7 @@ _PROPERTY = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="value",
@@ -1067,6 +1252,7 @@ _PROPERTY = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="uint64_value",
@@ -1085,6 +1271,7 @@ _PROPERTY = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -1106,6 +1293,7 @@ _ENTITYANNOTATION = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="mid",
@@ -1124,6 +1312,7 @@ _ENTITYANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="locale",
@@ -1142,6 +1331,7 @@ _ENTITYANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="description",
@@ -1160,6 +1350,7 @@ _ENTITYANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="score",
@@ -1178,6 +1369,7 @@ _ENTITYANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="confidence",
@@ -1196,6 +1388,7 @@ _ENTITYANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="topicality",
@@ -1214,6 +1407,7 @@ _ENTITYANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="bounding_poly",
@@ -1232,6 +1426,7 @@ _ENTITYANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="locations",
@@ -1250,6 +1445,7 @@ _ENTITYANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="properties",
@@ -1268,6 +1464,7 @@ _ENTITYANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -1289,6 +1486,7 @@ _LOCALIZEDOBJECTANNOTATION = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="mid",
@@ -1307,6 +1505,7 @@ _LOCALIZEDOBJECTANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="language_code",
@@ -1325,6 +1524,7 @@ _LOCALIZEDOBJECTANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="name",
@@ -1343,6 +1543,7 @@ _LOCALIZEDOBJECTANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="score",
@@ -1361,6 +1562,7 @@ _LOCALIZEDOBJECTANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="bounding_poly",
@@ -1379,6 +1581,7 @@ _LOCALIZEDOBJECTANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -1400,6 +1603,7 @@ _SAFESEARCHANNOTATION = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="adult",
@@ -1418,6 +1622,7 @@ _SAFESEARCHANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="spoof",
@@ -1436,6 +1641,7 @@ _SAFESEARCHANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="medical",
@@ -1454,6 +1660,7 @@ _SAFESEARCHANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="violence",
@@ -1472,6 +1679,7 @@ _SAFESEARCHANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="racy",
@@ -1490,6 +1698,7 @@ _SAFESEARCHANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -1511,6 +1720,7 @@ _LATLONGRECT = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="min_lat_lng",
@@ -1529,6 +1739,7 @@ _LATLONGRECT = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="max_lat_lng",
@@ -1547,6 +1758,7 @@ _LATLONGRECT = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -1568,6 +1780,7 @@ _COLORINFO = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="color",
@@ -1586,6 +1799,7 @@ _COLORINFO = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="score",
@@ -1604,6 +1818,7 @@ _COLORINFO = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="pixel_fraction",
@@ -1622,6 +1837,7 @@ _COLORINFO = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -1643,6 +1859,7 @@ _DOMINANTCOLORSANNOTATION = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="colors",
@@ -1661,6 +1878,7 @@ _DOMINANTCOLORSANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -1682,6 +1900,7 @@ _IMAGEPROPERTIES = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="dominant_colors",
@@ -1700,6 +1919,7 @@ _IMAGEPROPERTIES = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -1721,6 +1941,7 @@ _CROPHINT = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="bounding_poly",
@@ -1739,6 +1960,7 @@ _CROPHINT = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="confidence",
@@ -1757,6 +1979,7 @@ _CROPHINT = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="importance_fraction",
@@ -1775,6 +1998,7 @@ _CROPHINT = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -1796,6 +2020,7 @@ _CROPHINTSANNOTATION = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="crop_hints",
@@ -1814,6 +2039,7 @@ _CROPHINTSANNOTATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -1835,6 +2061,7 @@ _CROPHINTSPARAMS = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="aspect_ratios",
@@ -1853,6 +2080,7 @@ _CROPHINTSPARAMS = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -1874,6 +2102,7 @@ _WEBDETECTIONPARAMS = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="include_geo_results",
@@ -1892,6 +2121,7 @@ _WEBDETECTIONPARAMS = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -1913,6 +2143,7 @@ _IMAGECONTEXT = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="lat_long_rect",
@@ -1931,6 +2162,7 @@ _IMAGECONTEXT = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="language_hints",
@@ -1949,6 +2181,7 @@ _IMAGECONTEXT = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="crop_hints_params",
@@ -1967,6 +2200,7 @@ _IMAGECONTEXT = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="product_search_params",
@@ -1985,6 +2219,7 @@ _IMAGECONTEXT = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="web_detection_params",
@@ -2003,6 +2238,7 @@ _IMAGECONTEXT = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -2024,6 +2260,7 @@ _ANNOTATEIMAGEREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="image",
@@ -2042,6 +2279,7 @@ _ANNOTATEIMAGEREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="features",
@@ -2060,6 +2298,7 @@ _ANNOTATEIMAGEREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="image_context",
@@ -2078,6 +2317,7 @@ _ANNOTATEIMAGEREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -2099,6 +2339,7 @@ _IMAGEANNOTATIONCONTEXT = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="uri",
@@ -2117,6 +2358,7 @@ _IMAGEANNOTATIONCONTEXT = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="page_number",
@@ -2135,6 +2377,7 @@ _IMAGEANNOTATIONCONTEXT = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -2156,6 +2399,7 @@ _ANNOTATEIMAGERESPONSE = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="face_annotations",
@@ -2174,6 +2418,7 @@ _ANNOTATEIMAGERESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="landmark_annotations",
@@ -2192,6 +2437,7 @@ _ANNOTATEIMAGERESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="logo_annotations",
@@ -2210,6 +2456,7 @@ _ANNOTATEIMAGERESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="label_annotations",
@@ -2228,6 +2475,7 @@ _ANNOTATEIMAGERESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="localized_object_annotations",
@@ -2246,6 +2494,7 @@ _ANNOTATEIMAGERESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="text_annotations",
@@ -2264,6 +2513,7 @@ _ANNOTATEIMAGERESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="full_text_annotation",
@@ -2282,6 +2532,7 @@ _ANNOTATEIMAGERESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="safe_search_annotation",
@@ -2300,6 +2551,7 @@ _ANNOTATEIMAGERESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="image_properties_annotation",
@@ -2318,6 +2570,7 @@ _ANNOTATEIMAGERESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="crop_hints_annotation",
@@ -2336,6 +2589,7 @@ _ANNOTATEIMAGERESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="web_detection",
@@ -2354,6 +2608,7 @@ _ANNOTATEIMAGERESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="product_search_results",
@@ -2372,6 +2627,7 @@ _ANNOTATEIMAGERESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="error",
@@ -2390,6 +2646,7 @@ _ANNOTATEIMAGERESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="context",
@@ -2408,6 +2665,7 @@ _ANNOTATEIMAGERESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -2429,6 +2687,7 @@ _ANNOTATEFILERESPONSE = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="input_config",
@@ -2447,6 +2706,7 @@ _ANNOTATEFILERESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="responses",
@@ -2465,6 +2725,7 @@ _ANNOTATEFILERESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -2486,6 +2747,7 @@ _BATCHANNOTATEIMAGESREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="requests",
@@ -2504,6 +2766,7 @@ _BATCHANNOTATEIMAGESREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -2525,6 +2788,7 @@ _BATCHANNOTATEIMAGESRESPONSE = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="responses",
@@ -2543,6 +2807,7 @@ _BATCHANNOTATEIMAGESRESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -2564,6 +2829,7 @@ _ASYNCANNOTATEFILEREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="input_config",
@@ -2582,6 +2848,7 @@ _ASYNCANNOTATEFILEREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="features",
@@ -2600,6 +2867,7 @@ _ASYNCANNOTATEFILEREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="image_context",
@@ -2618,6 +2886,7 @@ _ASYNCANNOTATEFILEREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="output_config",
@@ -2636,6 +2905,7 @@ _ASYNCANNOTATEFILEREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -2657,6 +2927,7 @@ _ASYNCANNOTATEFILERESPONSE = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="output_config",
@@ -2675,6 +2946,7 @@ _ASYNCANNOTATEFILERESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -2696,6 +2968,7 @@ _ASYNCBATCHANNOTATEFILESREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="requests",
@@ -2714,6 +2987,7 @@ _ASYNCBATCHANNOTATEFILESREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -2735,6 +3009,7 @@ _ASYNCBATCHANNOTATEFILESRESPONSE = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="responses",
@@ -2753,6 +3028,7 @@ _ASYNCBATCHANNOTATEFILESRESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -2774,6 +3050,7 @@ _INPUTCONFIG = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="gcs_source",
@@ -2792,6 +3069,7 @@ _INPUTCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="mime_type",
@@ -2810,6 +3088,7 @@ _INPUTCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -2831,6 +3110,7 @@ _OUTPUTCONFIG = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="gcs_destination",
@@ -2849,6 +3129,7 @@ _OUTPUTCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="batch_size",
@@ -2867,6 +3148,7 @@ _OUTPUTCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -2888,6 +3170,7 @@ _GCSSOURCE = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="uri",
@@ -2906,6 +3189,7 @@ _GCSSOURCE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -2927,6 +3211,7 @@ _GCSDESTINATION = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="uri",
@@ -2945,6 +3230,7 @@ _GCSDESTINATION = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -2966,6 +3252,7 @@ _OPERATIONMETADATA = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="state",
@@ -2984,6 +3271,7 @@ _OPERATIONMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="create_time",
@@ -3002,6 +3290,7 @@ _OPERATIONMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="update_time",
@@ -3020,6 +3309,7 @@ _OPERATIONMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -4069,6 +4359,7 @@ _IMAGEANNOTATOR = _descriptor.ServiceDescriptor(
     file=DESCRIPTOR,
     index=0,
     serialized_options=b"\312A\025vision.googleapis.com\322A[https://www.googleapis.com/auth/cloud-platform,https://www.googleapis.com/auth/cloud-vision",
+    create_key=_descriptor._internal_create_key,
     serialized_start=7836,
     serialized_end=8401,
     methods=[
@@ -4080,6 +4371,7 @@ _IMAGEANNOTATOR = _descriptor.ServiceDescriptor(
             input_type=_BATCHANNOTATEIMAGESREQUEST,
             output_type=_BATCHANNOTATEIMAGESRESPONSE,
             serialized_options=b'\202\323\344\223\002\037"\032/v1p3beta1/images:annotate:\001*\332A\010requests',
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="AsyncBatchAnnotateFiles",
@@ -4089,6 +4381,7 @@ _IMAGEANNOTATOR = _descriptor.ServiceDescriptor(
             input_type=_ASYNCBATCHANNOTATEFILESREQUEST,
             output_type=google_dot_longrunning_dot_operations__pb2._OPERATION,
             serialized_options=b'\202\323\344\223\002("#/v1p3beta1/files:asyncBatchAnnotate:\001*\332A\010requests\312A4\n\037AsyncBatchAnnotateFilesResponse\022\021OperationMetadata',
+            create_key=_descriptor._internal_create_key,
         ),
     ],
 )

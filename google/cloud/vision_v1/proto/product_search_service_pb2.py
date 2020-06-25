@@ -33,6 +33,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
     package="google.cloud.vision.v1",
     syntax="proto3",
     serialized_options=b"\n\032com.google.cloud.vision.v1B\031ProductSearchServiceProtoP\001Z<google.golang.org/genproto/googleapis/cloud/vision/v1;vision\370\001\001\242\002\004GCVN",
+    create_key=_descriptor._internal_create_key,
     serialized_pb=b'\n9google/cloud/vision_v1/proto/product_search_service.proto\x12\x16google.cloud.vision.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x17google/api/client.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a\x19google/api/resource.proto\x1a+google/cloud/vision_v1/proto/geometry.proto\x1a#google/longrunning/operations.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a google/protobuf/field_mask.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x17google/rpc/status.proto"\xab\x02\n\x07Product\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x14\n\x0c\x64isplay_name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x1d\n\x10product_category\x18\x04 \x01(\tB\x03\xe0\x41\x05\x12@\n\x0eproduct_labels\x18\x05 \x03(\x0b\x32(.google.cloud.vision.v1.Product.KeyValue\x1a&\n\x08KeyValue\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:^\xea\x41[\n\x1dvision.googleapis.com/Product\x12:projects/{project}/locations/{location}/products/{product}"\xfd\x01\n\nProductSet\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x14\n\x0c\x64isplay_name\x18\x02 \x01(\t\x12\x33\n\nindex_time\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x03\xe0\x41\x03\x12,\n\x0bindex_error\x18\x04 \x01(\x0b\x32\x12.google.rpc.StatusB\x03\xe0\x41\x03:h\xea\x41\x65\n vision.googleapis.com/ProductSet\x12\x41projects/{project}/locations/{location}/productSets/{product_set}"\xfe\x01\n\x0eReferenceImage\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x10\n\x03uri\x18\x02 \x01(\tB\x03\xe0\x41\x02\x12\x41\n\x0e\x62ounding_polys\x18\x03 \x03(\x0b\x32$.google.cloud.vision.v1.BoundingPolyB\x03\xe0\x41\x01:\x88\x01\xea\x41\x84\x01\n$vision.googleapis.com/ReferenceImage\x12\\projects/{project}/locations/{location}/products/{product}/referenceImages/{reference_image}"\x9c\x01\n\x14\x43reateProductRequest\x12\x39\n\x06parent\x18\x01 \x01(\tB)\xe0\x41\x02\xfa\x41#\n!locations.googleapis.com/Location\x12\x35\n\x07product\x18\x02 \x01(\x0b\x32\x1f.google.cloud.vision.v1.ProductB\x03\xe0\x41\x02\x12\x12\n\nproduct_id\x18\x03 \x01(\t"w\n\x13ListProductsRequest\x12\x39\n\x06parent\x18\x01 \x01(\tB)\xe0\x41\x02\xfa\x41#\n!locations.googleapis.com/Location\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t"b\n\x14ListProductsResponse\x12\x31\n\x08products\x18\x01 \x03(\x0b\x32\x1f.google.cloud.vision.v1.Product\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t"H\n\x11GetProductRequest\x12\x33\n\x04name\x18\x01 \x01(\tB%\xe0\x41\x02\xfa\x41\x1f\n\x1dvision.googleapis.com/Product"~\n\x14UpdateProductRequest\x12\x35\n\x07product\x18\x01 \x01(\x0b\x32\x1f.google.cloud.vision.v1.ProductB\x03\xe0\x41\x02\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask"K\n\x14\x44\x65leteProductRequest\x12\x33\n\x04name\x18\x01 \x01(\tB%\xe0\x41\x02\xfa\x41\x1f\n\x1dvision.googleapis.com/Product"\xaa\x01\n\x17\x43reateProductSetRequest\x12\x39\n\x06parent\x18\x01 \x01(\tB)\xe0\x41\x02\xfa\x41#\n!locations.googleapis.com/Location\x12<\n\x0bproduct_set\x18\x02 \x01(\x0b\x32".google.cloud.vision.v1.ProductSetB\x03\xe0\x41\x02\x12\x16\n\x0eproduct_set_id\x18\x03 \x01(\t"z\n\x16ListProductSetsRequest\x12\x39\n\x06parent\x18\x01 \x01(\tB)\xe0\x41\x02\xfa\x41#\n!locations.googleapis.com/Location\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t"l\n\x17ListProductSetsResponse\x12\x38\n\x0cproduct_sets\x18\x01 \x03(\x0b\x32".google.cloud.vision.v1.ProductSet\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t"N\n\x14GetProductSetRequest\x12\x36\n\x04name\x18\x01 \x01(\tB(\xe0\x41\x02\xfa\x41"\n vision.googleapis.com/ProductSet"\x88\x01\n\x17UpdateProductSetRequest\x12<\n\x0bproduct_set\x18\x01 \x01(\x0b\x32".google.cloud.vision.v1.ProductSetB\x03\xe0\x41\x02\x12/\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMask"Q\n\x17\x44\x65leteProductSetRequest\x12\x36\n\x04name\x18\x01 \x01(\tB(\xe0\x41\x02\xfa\x41"\n vision.googleapis.com/ProductSet"\xb6\x01\n\x1b\x43reateReferenceImageRequest\x12\x35\n\x06parent\x18\x01 \x01(\tB%\xe0\x41\x02\xfa\x41\x1f\n\x1dvision.googleapis.com/Product\x12\x44\n\x0freference_image\x18\x02 \x01(\x0b\x32&.google.cloud.vision.v1.ReferenceImageB\x03\xe0\x41\x02\x12\x1a\n\x12reference_image_id\x18\x03 \x01(\t"z\n\x1aListReferenceImagesRequest\x12\x35\n\x06parent\x18\x01 \x01(\tB%\xe0\x41\x02\xfa\x41\x1f\n\x1dvision.googleapis.com/Product\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t"\x8b\x01\n\x1bListReferenceImagesResponse\x12@\n\x10reference_images\x18\x01 \x03(\x0b\x32&.google.cloud.vision.v1.ReferenceImage\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x17\n\x0fnext_page_token\x18\x03 \x01(\t"V\n\x18GetReferenceImageRequest\x12:\n\x04name\x18\x01 \x01(\tB,\xe0\x41\x02\xfa\x41&\n$vision.googleapis.com/ReferenceImage"Y\n\x1b\x44\x65leteReferenceImageRequest\x12:\n\x04name\x18\x01 \x01(\tB,\xe0\x41\x02\xfa\x41&\n$vision.googleapis.com/ReferenceImage"\x8f\x01\n\x1d\x41\x64\x64ProductToProductSetRequest\x12\x36\n\x04name\x18\x01 \x01(\tB(\xe0\x41\x02\xfa\x41"\n vision.googleapis.com/ProductSet\x12\x36\n\x07product\x18\x02 \x01(\tB%\xe0\x41\x02\xfa\x41\x1f\n\x1dvision.googleapis.com/Product"\x94\x01\n"RemoveProductFromProductSetRequest\x12\x36\n\x04name\x18\x01 \x01(\tB(\xe0\x41\x02\xfa\x41"\n vision.googleapis.com/ProductSet\x12\x36\n\x07product\x18\x02 \x01(\tB%\xe0\x41\x02\xfa\x41\x1f\n\x1dvision.googleapis.com/Product"\x80\x01\n\x1fListProductsInProductSetRequest\x12\x36\n\x04name\x18\x01 \x01(\tB(\xe0\x41\x02\xfa\x41"\n vision.googleapis.com/ProductSet\x12\x11\n\tpage_size\x18\x02 \x01(\x05\x12\x12\n\npage_token\x18\x03 \x01(\t"n\n ListProductsInProductSetResponse\x12\x31\n\x08products\x18\x01 \x03(\x0b\x32\x1f.google.cloud.vision.v1.Product\x12\x17\n\x0fnext_page_token\x18\x02 \x01(\t"2\n\x1aImportProductSetsGcsSource\x12\x14\n\x0c\x63sv_file_uri\x18\x01 \x01(\t"r\n\x1cImportProductSetsInputConfig\x12H\n\ngcs_source\x18\x01 \x01(\x0b\x32\x32.google.cloud.vision.v1.ImportProductSetsGcsSourceH\x00\x42\x08\n\x06source"\xa6\x01\n\x18ImportProductSetsRequest\x12\x39\n\x06parent\x18\x01 \x01(\tB)\xe0\x41\x02\xfa\x41#\n!locations.googleapis.com/Location\x12O\n\x0cinput_config\x18\x02 \x01(\x0b\x32\x34.google.cloud.vision.v1.ImportProductSetsInputConfigB\x03\xe0\x41\x02"\x83\x01\n\x19ImportProductSetsResponse\x12@\n\x10reference_images\x18\x01 \x03(\x0b\x32&.google.cloud.vision.v1.ReferenceImage\x12$\n\x08statuses\x18\x02 \x03(\x0b\x32\x12.google.rpc.Status"\x97\x02\n\x16\x42\x61tchOperationMetadata\x12\x43\n\x05state\x18\x01 \x01(\x0e\x32\x34.google.cloud.vision.v1.BatchOperationMetadata.State\x12/\n\x0bsubmit_time\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\x12,\n\x08\x65nd_time\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp"Y\n\x05State\x12\x15\n\x11STATE_UNSPECIFIED\x10\x00\x12\x0e\n\nPROCESSING\x10\x01\x12\x0e\n\nSUCCESSFUL\x10\x02\x12\n\n\x06\x46\x41ILED\x10\x03\x12\r\n\tCANCELLED\x10\x04"/\n\x15ProductSetPurgeConfig\x12\x16\n\x0eproduct_set_id\x18\x01 \x01(\t"\xdf\x01\n\x14PurgeProductsRequest\x12Q\n\x18product_set_purge_config\x18\x02 \x01(\x0b\x32-.google.cloud.vision.v1.ProductSetPurgeConfigH\x00\x12 \n\x16\x64\x65lete_orphan_products\x18\x03 \x01(\x08H\x00\x12\x39\n\x06parent\x18\x01 \x01(\tB)\xe0\x41\x02\xfa\x41#\n!locations.googleapis.com/Location\x12\r\n\x05\x66orce\x18\x04 \x01(\x08\x42\x08\n\x06target2\xf4\x1d\n\rProductSearch\x12\xd1\x01\n\x10\x43reateProductSet\x12/.google.cloud.vision.v1.CreateProductSetRequest\x1a".google.cloud.vision.v1.ProductSet"h\x82\xd3\xe4\x93\x02>"//v1/{parent=projects/*/locations/*}/productSets:\x0bproduct_set\xda\x41!parent,product_set,product_set_id\x12\xb4\x01\n\x0fListProductSets\x12..google.cloud.vision.v1.ListProductSetsRequest\x1a/.google.cloud.vision.v1.ListProductSetsResponse"@\x82\xd3\xe4\x93\x02\x31\x12//v1/{parent=projects/*/locations/*}/productSets\xda\x41\x06parent\x12\xa1\x01\n\rGetProductSet\x12,.google.cloud.vision.v1.GetProductSetRequest\x1a".google.cloud.vision.v1.ProductSet">\x82\xd3\xe4\x93\x02\x31\x12//v1/{name=projects/*/locations/*/productSets/*}\xda\x41\x04name\x12\xd3\x01\n\x10UpdateProductSet\x12/.google.cloud.vision.v1.UpdateProductSetRequest\x1a".google.cloud.vision.v1.ProductSet"j\x82\xd3\xe4\x93\x02J2;/v1/{product_set.name=projects/*/locations/*/productSets/*}:\x0bproduct_set\xda\x41\x17product_set,update_mask\x12\x9b\x01\n\x10\x44\x65leteProductSet\x12/.google.cloud.vision.v1.DeleteProductSetRequest\x1a\x16.google.protobuf.Empty">\x82\xd3\xe4\x93\x02\x31*//v1/{name=projects/*/locations/*/productSets/*}\xda\x41\x04name\x12\xb9\x01\n\rCreateProduct\x12,.google.cloud.vision.v1.CreateProductRequest\x1a\x1f.google.cloud.vision.v1.Product"Y\x82\xd3\xe4\x93\x02\x37",/v1/{parent=projects/*/locations/*}/products:\x07product\xda\x41\x19parent,product,product_id\x12\xa8\x01\n\x0cListProducts\x12+.google.cloud.vision.v1.ListProductsRequest\x1a,.google.cloud.vision.v1.ListProductsResponse"=\x82\xd3\xe4\x93\x02.\x12,/v1/{parent=projects/*/locations/*}/products\xda\x41\x06parent\x12\x95\x01\n\nGetProduct\x12).google.cloud.vision.v1.GetProductRequest\x1a\x1f.google.cloud.vision.v1.Product";\x82\xd3\xe4\x93\x02.\x12,/v1/{name=projects/*/locations/*/products/*}\xda\x41\x04name\x12\xbb\x01\n\rUpdateProduct\x12,.google.cloud.vision.v1.UpdateProductRequest\x1a\x1f.google.cloud.vision.v1.Product"[\x82\xd3\xe4\x93\x02?24/v1/{product.name=projects/*/locations/*/products/*}:\x07product\xda\x41\x13product,update_mask\x12\x92\x01\n\rDeleteProduct\x12,.google.cloud.vision.v1.DeleteProductRequest\x1a\x16.google.protobuf.Empty";\x82\xd3\xe4\x93\x02.*,/v1/{name=projects/*/locations/*/products/*}\xda\x41\x04name\x12\xf9\x01\n\x14\x43reateReferenceImage\x12\x33.google.cloud.vision.v1.CreateReferenceImageRequest\x1a&.google.cloud.vision.v1.ReferenceImage"\x83\x01\x82\xd3\xe4\x93\x02Q">/v1/{parent=projects/*/locations/*/products/*}/referenceImages:\x0freference_image\xda\x41)parent,reference_image,reference_image_id\x12\xb2\x01\n\x14\x44\x65leteReferenceImage\x12\x33.google.cloud.vision.v1.DeleteReferenceImageRequest\x1a\x16.google.protobuf.Empty"M\x82\xd3\xe4\x93\x02@*>/v1/{name=projects/*/locations/*/products/*/referenceImages/*}\xda\x41\x04name\x12\xcf\x01\n\x13ListReferenceImages\x12\x32.google.cloud.vision.v1.ListReferenceImagesRequest\x1a\x33.google.cloud.vision.v1.ListReferenceImagesResponse"O\x82\xd3\xe4\x93\x02@\x12>/v1/{parent=projects/*/locations/*/products/*}/referenceImages\xda\x41\x06parent\x12\xbc\x01\n\x11GetReferenceImage\x12\x30.google.cloud.vision.v1.GetReferenceImageRequest\x1a&.google.cloud.vision.v1.ReferenceImage"M\x82\xd3\xe4\x93\x02@\x12>/v1/{name=projects/*/locations/*/products/*/referenceImages/*}\xda\x41\x04name\x12\xbd\x01\n\x16\x41\x64\x64ProductToProductSet\x12\x35.google.cloud.vision.v1.AddProductToProductSetRequest\x1a\x16.google.protobuf.Empty"T\x82\xd3\xe4\x93\x02?":/v1/{name=projects/*/locations/*/productSets/*}:addProduct:\x01*\xda\x41\x0cname,product\x12\xca\x01\n\x1bRemoveProductFromProductSet\x12:.google.cloud.vision.v1.RemoveProductFromProductSetRequest\x1a\x16.google.protobuf.Empty"W\x82\xd3\xe4\x93\x02\x42"=/v1/{name=projects/*/locations/*/productSets/*}:removeProduct:\x01*\xda\x41\x0cname,product\x12\xd6\x01\n\x18ListProductsInProductSet\x12\x37.google.cloud.vision.v1.ListProductsInProductSetRequest\x1a\x38.google.cloud.vision.v1.ListProductsInProductSetResponse"G\x82\xd3\xe4\x93\x02:\x12\x38/v1/{name=projects/*/locations/*/productSets/*}/products\xda\x41\x04name\x12\xf4\x01\n\x11ImportProductSets\x12\x30.google.cloud.vision.v1.ImportProductSetsRequest\x1a\x1d.google.longrunning.Operation"\x8d\x01\x82\xd3\xe4\x93\x02;"6/v1/{parent=projects/*/locations/*}/productSets:import:\x01*\xda\x41\x13parent,input_config\xca\x41\x33\n\x19ImportProductSetsResponse\x12\x16\x42\x61tchOperationMetadata\x12\xd6\x01\n\rPurgeProducts\x12,.google.cloud.vision.v1.PurgeProductsRequest\x1a\x1d.google.longrunning.Operation"x\x82\xd3\xe4\x93\x02\x37"2/v1/{parent=projects/*/locations/*}/products:purge:\x01*\xda\x41\x06parent\xca\x41/\n\x15google.protobuf.Empty\x12\x16\x42\x61tchOperationMetadata\x1av\xca\x41\x15vision.googleapis.com\xd2\x41[https://www.googleapis.com/auth/cloud-platform,https://www.googleapis.com/auth/cloud-visionB\x81\x01\n\x1a\x63om.google.cloud.vision.v1B\x19ProductSearchServiceProtoP\x01Z<google.golang.org/genproto/googleapis/cloud/vision/v1;vision\xf8\x01\x01\xa2\x02\x04GCVNb\x06proto3',
     dependencies=[
         google_dot_api_dot_annotations__pb2.DESCRIPTOR,
@@ -54,6 +55,7 @@ _BATCHOPERATIONMETADATA_STATE = _descriptor.EnumDescriptor(
     full_name="google.cloud.vision.v1.BatchOperationMetadata.State",
     filename=None,
     file=DESCRIPTOR,
+    create_key=_descriptor._internal_create_key,
     values=[
         _descriptor.EnumValueDescriptor(
             name="STATE_UNSPECIFIED",
@@ -61,18 +63,39 @@ _BATCHOPERATIONMETADATA_STATE = _descriptor.EnumDescriptor(
             number=0,
             serialized_options=None,
             type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="PROCESSING", index=1, number=1, serialized_options=None, type=None
+            name="PROCESSING",
+            index=1,
+            number=1,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="SUCCESSFUL", index=2, number=2, serialized_options=None, type=None
+            name="SUCCESSFUL",
+            index=2,
+            number=2,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="FAILED", index=3, number=3, serialized_options=None, type=None
+            name="FAILED",
+            index=3,
+            number=3,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.EnumValueDescriptor(
-            name="CANCELLED", index=4, number=4, serialized_options=None, type=None
+            name="CANCELLED",
+            index=4,
+            number=4,
+            serialized_options=None,
+            type=None,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     containing_type=None,
@@ -89,6 +112,7 @@ _PRODUCT_KEYVALUE = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="key",
@@ -107,6 +131,7 @@ _PRODUCT_KEYVALUE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="value",
@@ -125,6 +150,7 @@ _PRODUCT_KEYVALUE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -145,6 +171,7 @@ _PRODUCT = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="name",
@@ -163,6 +190,7 @@ _PRODUCT = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="display_name",
@@ -181,6 +209,7 @@ _PRODUCT = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="description",
@@ -199,6 +228,7 @@ _PRODUCT = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="product_category",
@@ -217,6 +247,7 @@ _PRODUCT = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\005",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="product_labels",
@@ -235,6 +266,7 @@ _PRODUCT = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -256,6 +288,7 @@ _PRODUCTSET = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="name",
@@ -274,6 +307,7 @@ _PRODUCTSET = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="display_name",
@@ -292,6 +326,7 @@ _PRODUCTSET = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="index_time",
@@ -310,6 +345,7 @@ _PRODUCTSET = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\003",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="index_error",
@@ -328,6 +364,7 @@ _PRODUCTSET = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\003",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -349,6 +386,7 @@ _REFERENCEIMAGE = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="name",
@@ -367,6 +405,7 @@ _REFERENCEIMAGE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="uri",
@@ -385,6 +424,7 @@ _REFERENCEIMAGE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="bounding_polys",
@@ -403,6 +443,7 @@ _REFERENCEIMAGE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\001",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -424,6 +465,7 @@ _CREATEPRODUCTREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="parent",
@@ -442,6 +484,7 @@ _CREATEPRODUCTREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A#\n!locations.googleapis.com/Location",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="product",
@@ -460,6 +503,7 @@ _CREATEPRODUCTREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="product_id",
@@ -478,6 +522,7 @@ _CREATEPRODUCTREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -499,6 +544,7 @@ _LISTPRODUCTSREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="parent",
@@ -517,6 +563,7 @@ _LISTPRODUCTSREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A#\n!locations.googleapis.com/Location",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="page_size",
@@ -535,6 +582,7 @@ _LISTPRODUCTSREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="page_token",
@@ -553,6 +601,7 @@ _LISTPRODUCTSREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -574,6 +623,7 @@ _LISTPRODUCTSRESPONSE = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="products",
@@ -592,6 +642,7 @@ _LISTPRODUCTSRESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="next_page_token",
@@ -610,6 +661,7 @@ _LISTPRODUCTSRESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -631,6 +683,7 @@ _GETPRODUCTREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="name",
@@ -649,6 +702,7 @@ _GETPRODUCTREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A\037\n\035vision.googleapis.com/Product",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -670,6 +724,7 @@ _UPDATEPRODUCTREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="product",
@@ -688,6 +743,7 @@ _UPDATEPRODUCTREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="update_mask",
@@ -706,6 +762,7 @@ _UPDATEPRODUCTREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -727,6 +784,7 @@ _DELETEPRODUCTREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="name",
@@ -745,6 +803,7 @@ _DELETEPRODUCTREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A\037\n\035vision.googleapis.com/Product",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -766,6 +825,7 @@ _CREATEPRODUCTSETREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="parent",
@@ -784,6 +844,7 @@ _CREATEPRODUCTSETREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A#\n!locations.googleapis.com/Location",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="product_set",
@@ -802,6 +863,7 @@ _CREATEPRODUCTSETREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="product_set_id",
@@ -820,6 +882,7 @@ _CREATEPRODUCTSETREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -841,6 +904,7 @@ _LISTPRODUCTSETSREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="parent",
@@ -859,6 +923,7 @@ _LISTPRODUCTSETSREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A#\n!locations.googleapis.com/Location",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="page_size",
@@ -877,6 +942,7 @@ _LISTPRODUCTSETSREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="page_token",
@@ -895,6 +961,7 @@ _LISTPRODUCTSETSREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -916,6 +983,7 @@ _LISTPRODUCTSETSRESPONSE = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="product_sets",
@@ -934,6 +1002,7 @@ _LISTPRODUCTSETSRESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="next_page_token",
@@ -952,6 +1021,7 @@ _LISTPRODUCTSETSRESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -973,6 +1043,7 @@ _GETPRODUCTSETREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="name",
@@ -991,6 +1062,7 @@ _GETPRODUCTSETREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b'\340A\002\372A"\n vision.googleapis.com/ProductSet',
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -1012,6 +1084,7 @@ _UPDATEPRODUCTSETREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="product_set",
@@ -1030,6 +1103,7 @@ _UPDATEPRODUCTSETREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="update_mask",
@@ -1048,6 +1122,7 @@ _UPDATEPRODUCTSETREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -1069,6 +1144,7 @@ _DELETEPRODUCTSETREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="name",
@@ -1087,6 +1163,7 @@ _DELETEPRODUCTSETREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b'\340A\002\372A"\n vision.googleapis.com/ProductSet',
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -1108,6 +1185,7 @@ _CREATEREFERENCEIMAGEREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="parent",
@@ -1126,6 +1204,7 @@ _CREATEREFERENCEIMAGEREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A\037\n\035vision.googleapis.com/Product",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="reference_image",
@@ -1144,6 +1223,7 @@ _CREATEREFERENCEIMAGEREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="reference_image_id",
@@ -1162,6 +1242,7 @@ _CREATEREFERENCEIMAGEREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -1183,6 +1264,7 @@ _LISTREFERENCEIMAGESREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="parent",
@@ -1201,6 +1283,7 @@ _LISTREFERENCEIMAGESREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A\037\n\035vision.googleapis.com/Product",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="page_size",
@@ -1219,6 +1302,7 @@ _LISTREFERENCEIMAGESREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="page_token",
@@ -1237,6 +1321,7 @@ _LISTREFERENCEIMAGESREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -1258,6 +1343,7 @@ _LISTREFERENCEIMAGESRESPONSE = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="reference_images",
@@ -1276,6 +1362,7 @@ _LISTREFERENCEIMAGESRESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="page_size",
@@ -1294,6 +1381,7 @@ _LISTREFERENCEIMAGESRESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="next_page_token",
@@ -1312,6 +1400,7 @@ _LISTREFERENCEIMAGESRESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -1333,6 +1422,7 @@ _GETREFERENCEIMAGEREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="name",
@@ -1351,6 +1441,7 @@ _GETREFERENCEIMAGEREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A&\n$vision.googleapis.com/ReferenceImage",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -1372,6 +1463,7 @@ _DELETEREFERENCEIMAGEREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="name",
@@ -1390,6 +1482,7 @@ _DELETEREFERENCEIMAGEREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A&\n$vision.googleapis.com/ReferenceImage",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -1411,6 +1504,7 @@ _ADDPRODUCTTOPRODUCTSETREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="name",
@@ -1429,6 +1523,7 @@ _ADDPRODUCTTOPRODUCTSETREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b'\340A\002\372A"\n vision.googleapis.com/ProductSet',
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="product",
@@ -1447,6 +1542,7 @@ _ADDPRODUCTTOPRODUCTSETREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A\037\n\035vision.googleapis.com/Product",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -1468,6 +1564,7 @@ _REMOVEPRODUCTFROMPRODUCTSETREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="name",
@@ -1486,6 +1583,7 @@ _REMOVEPRODUCTFROMPRODUCTSETREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b'\340A\002\372A"\n vision.googleapis.com/ProductSet',
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="product",
@@ -1504,6 +1602,7 @@ _REMOVEPRODUCTFROMPRODUCTSETREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A\037\n\035vision.googleapis.com/Product",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -1525,6 +1624,7 @@ _LISTPRODUCTSINPRODUCTSETREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="name",
@@ -1543,6 +1643,7 @@ _LISTPRODUCTSINPRODUCTSETREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b'\340A\002\372A"\n vision.googleapis.com/ProductSet',
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="page_size",
@@ -1561,6 +1662,7 @@ _LISTPRODUCTSINPRODUCTSETREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="page_token",
@@ -1579,6 +1681,7 @@ _LISTPRODUCTSINPRODUCTSETREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -1600,6 +1703,7 @@ _LISTPRODUCTSINPRODUCTSETRESPONSE = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="products",
@@ -1618,6 +1722,7 @@ _LISTPRODUCTSINPRODUCTSETRESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="next_page_token",
@@ -1636,6 +1741,7 @@ _LISTPRODUCTSINPRODUCTSETRESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -1657,6 +1763,7 @@ _IMPORTPRODUCTSETSGCSSOURCE = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="csv_file_uri",
@@ -1675,6 +1782,7 @@ _IMPORTPRODUCTSETSGCSSOURCE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -1696,6 +1804,7 @@ _IMPORTPRODUCTSETSINPUTCONFIG = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="gcs_source",
@@ -1714,6 +1823,7 @@ _IMPORTPRODUCTSETSINPUTCONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -1729,6 +1839,7 @@ _IMPORTPRODUCTSETSINPUTCONFIG = _descriptor.Descriptor(
             full_name="google.cloud.vision.v1.ImportProductSetsInputConfig.source",
             index=0,
             containing_type=None,
+            create_key=_descriptor._internal_create_key,
             fields=[],
         )
     ],
@@ -1743,6 +1854,7 @@ _IMPORTPRODUCTSETSREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="parent",
@@ -1761,6 +1873,7 @@ _IMPORTPRODUCTSETSREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A#\n!locations.googleapis.com/Location",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="input_config",
@@ -1779,6 +1892,7 @@ _IMPORTPRODUCTSETSREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -1800,6 +1914,7 @@ _IMPORTPRODUCTSETSRESPONSE = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="reference_images",
@@ -1818,6 +1933,7 @@ _IMPORTPRODUCTSETSRESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="statuses",
@@ -1836,6 +1952,7 @@ _IMPORTPRODUCTSETSRESPONSE = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -1857,6 +1974,7 @@ _BATCHOPERATIONMETADATA = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="state",
@@ -1875,6 +1993,7 @@ _BATCHOPERATIONMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="submit_time",
@@ -1893,6 +2012,7 @@ _BATCHOPERATIONMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="end_time",
@@ -1911,6 +2031,7 @@ _BATCHOPERATIONMETADATA = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -1932,6 +2053,7 @@ _PRODUCTSETPURGECONFIG = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="product_set_id",
@@ -1950,6 +2072,7 @@ _PRODUCTSETPURGECONFIG = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         )
     ],
     extensions=[],
@@ -1971,6 +2094,7 @@ _PURGEPRODUCTSREQUEST = _descriptor.Descriptor(
     filename=None,
     file=DESCRIPTOR,
     containing_type=None,
+    create_key=_descriptor._internal_create_key,
     fields=[
         _descriptor.FieldDescriptor(
             name="product_set_purge_config",
@@ -1989,6 +2113,7 @@ _PURGEPRODUCTSREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="delete_orphan_products",
@@ -2007,6 +2132,7 @@ _PURGEPRODUCTSREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="parent",
@@ -2025,6 +2151,7 @@ _PURGEPRODUCTSREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=b"\340A\002\372A#\n!locations.googleapis.com/Location",
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.FieldDescriptor(
             name="force",
@@ -2043,6 +2170,7 @@ _PURGEPRODUCTSREQUEST = _descriptor.Descriptor(
             extension_scope=None,
             serialized_options=None,
             file=DESCRIPTOR,
+            create_key=_descriptor._internal_create_key,
         ),
     ],
     extensions=[],
@@ -2058,6 +2186,7 @@ _PURGEPRODUCTSREQUEST = _descriptor.Descriptor(
             full_name="google.cloud.vision.v1.PurgeProductsRequest.target",
             index=0,
             containing_type=None,
+            create_key=_descriptor._internal_create_key,
             fields=[],
         )
     ],
@@ -3004,6 +3133,7 @@ _PRODUCTSEARCH = _descriptor.ServiceDescriptor(
     file=DESCRIPTOR,
     index=0,
     serialized_options=b"\312A\025vision.googleapis.com\322A[https://www.googleapis.com/auth/cloud-platform,https://www.googleapis.com/auth/cloud-vision",
+    create_key=_descriptor._internal_create_key,
     serialized_start=4785,
     serialized_end=8613,
     methods=[
@@ -3015,6 +3145,7 @@ _PRODUCTSEARCH = _descriptor.ServiceDescriptor(
             input_type=_CREATEPRODUCTSETREQUEST,
             output_type=_PRODUCTSET,
             serialized_options=b'\202\323\344\223\002>"//v1/{parent=projects/*/locations/*}/productSets:\013product_set\332A!parent,product_set,product_set_id',
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="ListProductSets",
@@ -3024,6 +3155,7 @@ _PRODUCTSEARCH = _descriptor.ServiceDescriptor(
             input_type=_LISTPRODUCTSETSREQUEST,
             output_type=_LISTPRODUCTSETSRESPONSE,
             serialized_options=b"\202\323\344\223\0021\022//v1/{parent=projects/*/locations/*}/productSets\332A\006parent",
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="GetProductSet",
@@ -3033,6 +3165,7 @@ _PRODUCTSEARCH = _descriptor.ServiceDescriptor(
             input_type=_GETPRODUCTSETREQUEST,
             output_type=_PRODUCTSET,
             serialized_options=b"\202\323\344\223\0021\022//v1/{name=projects/*/locations/*/productSets/*}\332A\004name",
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="UpdateProductSet",
@@ -3042,6 +3175,7 @@ _PRODUCTSEARCH = _descriptor.ServiceDescriptor(
             input_type=_UPDATEPRODUCTSETREQUEST,
             output_type=_PRODUCTSET,
             serialized_options=b"\202\323\344\223\002J2;/v1/{product_set.name=projects/*/locations/*/productSets/*}:\013product_set\332A\027product_set,update_mask",
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="DeleteProductSet",
@@ -3051,6 +3185,7 @@ _PRODUCTSEARCH = _descriptor.ServiceDescriptor(
             input_type=_DELETEPRODUCTSETREQUEST,
             output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
             serialized_options=b"\202\323\344\223\0021*//v1/{name=projects/*/locations/*/productSets/*}\332A\004name",
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="CreateProduct",
@@ -3060,6 +3195,7 @@ _PRODUCTSEARCH = _descriptor.ServiceDescriptor(
             input_type=_CREATEPRODUCTREQUEST,
             output_type=_PRODUCT,
             serialized_options=b'\202\323\344\223\0027",/v1/{parent=projects/*/locations/*}/products:\007product\332A\031parent,product,product_id',
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="ListProducts",
@@ -3069,6 +3205,7 @@ _PRODUCTSEARCH = _descriptor.ServiceDescriptor(
             input_type=_LISTPRODUCTSREQUEST,
             output_type=_LISTPRODUCTSRESPONSE,
             serialized_options=b"\202\323\344\223\002.\022,/v1/{parent=projects/*/locations/*}/products\332A\006parent",
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="GetProduct",
@@ -3078,6 +3215,7 @@ _PRODUCTSEARCH = _descriptor.ServiceDescriptor(
             input_type=_GETPRODUCTREQUEST,
             output_type=_PRODUCT,
             serialized_options=b"\202\323\344\223\002.\022,/v1/{name=projects/*/locations/*/products/*}\332A\004name",
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="UpdateProduct",
@@ -3087,6 +3225,7 @@ _PRODUCTSEARCH = _descriptor.ServiceDescriptor(
             input_type=_UPDATEPRODUCTREQUEST,
             output_type=_PRODUCT,
             serialized_options=b"\202\323\344\223\002?24/v1/{product.name=projects/*/locations/*/products/*}:\007product\332A\023product,update_mask",
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="DeleteProduct",
@@ -3096,6 +3235,7 @@ _PRODUCTSEARCH = _descriptor.ServiceDescriptor(
             input_type=_DELETEPRODUCTREQUEST,
             output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
             serialized_options=b"\202\323\344\223\002.*,/v1/{name=projects/*/locations/*/products/*}\332A\004name",
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="CreateReferenceImage",
@@ -3105,6 +3245,7 @@ _PRODUCTSEARCH = _descriptor.ServiceDescriptor(
             input_type=_CREATEREFERENCEIMAGEREQUEST,
             output_type=_REFERENCEIMAGE,
             serialized_options=b'\202\323\344\223\002Q">/v1/{parent=projects/*/locations/*/products/*}/referenceImages:\017reference_image\332A)parent,reference_image,reference_image_id',
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="DeleteReferenceImage",
@@ -3114,6 +3255,7 @@ _PRODUCTSEARCH = _descriptor.ServiceDescriptor(
             input_type=_DELETEREFERENCEIMAGEREQUEST,
             output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
             serialized_options=b"\202\323\344\223\002@*>/v1/{name=projects/*/locations/*/products/*/referenceImages/*}\332A\004name",
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="ListReferenceImages",
@@ -3123,6 +3265,7 @@ _PRODUCTSEARCH = _descriptor.ServiceDescriptor(
             input_type=_LISTREFERENCEIMAGESREQUEST,
             output_type=_LISTREFERENCEIMAGESRESPONSE,
             serialized_options=b"\202\323\344\223\002@\022>/v1/{parent=projects/*/locations/*/products/*}/referenceImages\332A\006parent",
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="GetReferenceImage",
@@ -3132,6 +3275,7 @@ _PRODUCTSEARCH = _descriptor.ServiceDescriptor(
             input_type=_GETREFERENCEIMAGEREQUEST,
             output_type=_REFERENCEIMAGE,
             serialized_options=b"\202\323\344\223\002@\022>/v1/{name=projects/*/locations/*/products/*/referenceImages/*}\332A\004name",
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="AddProductToProductSet",
@@ -3141,6 +3285,7 @@ _PRODUCTSEARCH = _descriptor.ServiceDescriptor(
             input_type=_ADDPRODUCTTOPRODUCTSETREQUEST,
             output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
             serialized_options=b'\202\323\344\223\002?":/v1/{name=projects/*/locations/*/productSets/*}:addProduct:\001*\332A\014name,product',
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="RemoveProductFromProductSet",
@@ -3150,6 +3295,7 @@ _PRODUCTSEARCH = _descriptor.ServiceDescriptor(
             input_type=_REMOVEPRODUCTFROMPRODUCTSETREQUEST,
             output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
             serialized_options=b'\202\323\344\223\002B"=/v1/{name=projects/*/locations/*/productSets/*}:removeProduct:\001*\332A\014name,product',
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="ListProductsInProductSet",
@@ -3159,6 +3305,7 @@ _PRODUCTSEARCH = _descriptor.ServiceDescriptor(
             input_type=_LISTPRODUCTSINPRODUCTSETREQUEST,
             output_type=_LISTPRODUCTSINPRODUCTSETRESPONSE,
             serialized_options=b"\202\323\344\223\002:\0228/v1/{name=projects/*/locations/*/productSets/*}/products\332A\004name",
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="ImportProductSets",
@@ -3168,6 +3315,7 @@ _PRODUCTSEARCH = _descriptor.ServiceDescriptor(
             input_type=_IMPORTPRODUCTSETSREQUEST,
             output_type=google_dot_longrunning_dot_operations__pb2._OPERATION,
             serialized_options=b'\202\323\344\223\002;"6/v1/{parent=projects/*/locations/*}/productSets:import:\001*\332A\023parent,input_config\312A3\n\031ImportProductSetsResponse\022\026BatchOperationMetadata',
+            create_key=_descriptor._internal_create_key,
         ),
         _descriptor.MethodDescriptor(
             name="PurgeProducts",
@@ -3177,6 +3325,7 @@ _PRODUCTSEARCH = _descriptor.ServiceDescriptor(
             input_type=_PURGEPRODUCTSREQUEST,
             output_type=google_dot_longrunning_dot_operations__pb2._OPERATION,
             serialized_options=b'\202\323\344\223\0027"2/v1/{parent=projects/*/locations/*}/products:purge:\001*\332A\006parent\312A/\n\025google.protobuf.Empty\022\026BatchOperationMetadata',
+            create_key=_descriptor._internal_create_key,
         ),
     ],
 )
