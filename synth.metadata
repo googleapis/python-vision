@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/python-vision.git",
-        "sha": "39c16522f7bc97544c361f8e14dbc9a2a5d4c0e4"
+        "sha": "03fc1727e97ef90343225cdd2658c0747ae32a42"
       }
     },
     {
@@ -19,7 +19,7 @@
       "git": {
         "name": "synthtool",
         "remote": "https://github.com/googleapis/synthtool.git",
-        "sha": "303271797a360f8a439203413f13a160f2f5b3b4"
+        "sha": "f07cb4446192952f19be3056957f56d180586055"
       }
     }
   ],

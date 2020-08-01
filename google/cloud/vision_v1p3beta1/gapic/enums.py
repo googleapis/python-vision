@@ -32,7 +32,6 @@ class Likelihood(enum.IntEnum):
       LIKELY (int): It is likely that the image belongs to the specified vertical.
       VERY_LIKELY (int): It is very likely that the image belongs to the specified vertical.
     """
-
     UNKNOWN = 0
     VERY_UNLIKELY = 1
     UNLIKELY = 2
@@ -50,7 +49,6 @@ class ProductSearchCategory(enum.IntEnum):
       SHOES (int): Shoes category.
       BAGS (int): Bags category.
     """
-
     PRODUCT_SEARCH_CATEGORY_UNSPECIFIED = 0
     SHOES = 1
     BAGS = 2
@@ -66,7 +64,6 @@ class ProductSearchResultsView(enum.IntEnum):
       FULL (int): Product search results contain ``product_category``, ``product_id``,
       ``image_uri``, and ``score``.
     """
-
     BASIC = 0
     FULL = 1
 
@@ -86,7 +83,6 @@ class BatchOperationMetadata(object):
           been called by the user.  Any records that were processed before the
           cancel command are output as specified in the request.
         """
-
         STATE_UNSPECIFIED = 0
         PROCESSING = 1
         SUCCESSFUL = 2
@@ -107,7 +103,6 @@ class Block(object):
           RULER (int): Horizontal/vertical line box.
           BARCODE (int): Barcode block.
         """
-
         UNKNOWN = 0
         TEXT = 1
         TABLE = 2
@@ -162,7 +157,6 @@ class FaceAnnotation(object):
               CHIN_LEFT_GONION (int): Chin left gonion.
               CHIN_RIGHT_GONION (int): Chin right gonion.
             """
-
             UNKNOWN_LANDMARK = 0
             LEFT_EYE = 1
             RIGHT_EYE = 2
@@ -225,7 +219,6 @@ class Feature(object):
           PRODUCT_SEARCH (int): Run Product Search.
           OBJECT_LOCALIZATION (int): Run localizer for object detection.
         """
-
         TYPE_UNSPECIFIED = 0
         FACE_DETECTION = 1
         LANDMARK_DETECTION = 2
@@ -253,7 +246,6 @@ class OperationMetadata(object):
           DONE (int): The batch processing is done.
           CANCELLED (int): The batch processing was cancelled.
         """
-
         STATE_UNSPECIFIED = 0
         CREATED = 1
         RUNNING = 2
@@ -276,10 +268,10 @@ class TextAnnotation(object):
               ``SPACE``, ``LEADER_SPACE``, or ``LINE_BREAK``.
               LINE_BREAK (int): Line break that ends a paragraph.
             """
-
             UNKNOWN = 0
             SPACE = 1
             SURE_SPACE = 2
             EOL_SURE_SPACE = 3
             HYPHEN = 4
             LINE_BREAK = 5
+        
