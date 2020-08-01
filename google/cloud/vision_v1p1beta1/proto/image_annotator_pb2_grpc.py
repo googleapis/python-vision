@@ -2,7 +2,9 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from google.cloud.vision_v1p1beta1.proto import image_annotator_pb2 as google_dot_cloud_dot_vision__v1p1beta1_dot_proto_dot_image__annotator__pb2
+from google.cloud.vision_v1p1beta1.proto import (
+    image_annotator_pb2 as google_dot_cloud_dot_vision__v1p1beta1_dot_proto_dot_image__annotator__pb2,
+)
 
 
 class ImageAnnotatorStub(object):
@@ -18,10 +20,10 @@ class ImageAnnotatorStub(object):
             channel: A grpc.Channel.
         """
         self.BatchAnnotateImages = channel.unary_unary(
-                '/google.cloud.vision.v1p1beta1.ImageAnnotator/BatchAnnotateImages',
-                request_serializer=google_dot_cloud_dot_vision__v1p1beta1_dot_proto_dot_image__annotator__pb2.BatchAnnotateImagesRequest.SerializeToString,
-                response_deserializer=google_dot_cloud_dot_vision__v1p1beta1_dot_proto_dot_image__annotator__pb2.BatchAnnotateImagesResponse.FromString,
-                )
+            "/google.cloud.vision.v1p1beta1.ImageAnnotator/BatchAnnotateImages",
+            request_serializer=google_dot_cloud_dot_vision__v1p1beta1_dot_proto_dot_image__annotator__pb2.BatchAnnotateImagesRequest.SerializeToString,
+            response_deserializer=google_dot_cloud_dot_vision__v1p1beta1_dot_proto_dot_image__annotator__pb2.BatchAnnotateImagesResponse.FromString,
+        )
 
 
 class ImageAnnotatorServicer(object):
@@ -34,24 +36,25 @@ class ImageAnnotatorServicer(object):
         """Run image detection and annotation for a batch of images.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
+        context.set_details("Method not implemented!")
+        raise NotImplementedError("Method not implemented!")
 
 
 def add_ImageAnnotatorServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'BatchAnnotateImages': grpc.unary_unary_rpc_method_handler(
-                    servicer.BatchAnnotateImages,
-                    request_deserializer=google_dot_cloud_dot_vision__v1p1beta1_dot_proto_dot_image__annotator__pb2.BatchAnnotateImagesRequest.FromString,
-                    response_serializer=google_dot_cloud_dot_vision__v1p1beta1_dot_proto_dot_image__annotator__pb2.BatchAnnotateImagesResponse.SerializeToString,
-            ),
+        "BatchAnnotateImages": grpc.unary_unary_rpc_method_handler(
+            servicer.BatchAnnotateImages,
+            request_deserializer=google_dot_cloud_dot_vision__v1p1beta1_dot_proto_dot_image__annotator__pb2.BatchAnnotateImagesRequest.FromString,
+            response_serializer=google_dot_cloud_dot_vision__v1p1beta1_dot_proto_dot_image__annotator__pb2.BatchAnnotateImagesResponse.SerializeToString,
+        ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'google.cloud.vision.v1p1beta1.ImageAnnotator', rpc_method_handlers)
+        "google.cloud.vision.v1p1beta1.ImageAnnotator", rpc_method_handlers
+    )
     server.add_generic_rpc_handlers((generic_handler,))
 
 
- # This class is part of an EXPERIMENTAL API.
+# This class is part of an EXPERIMENTAL API.
 class ImageAnnotator(object):
     """Service that performs Google Cloud Vision API detection tasks over client
     images, such as face, landmark, logo, label, and text detection. The
@@ -59,17 +62,28 @@ class ImageAnnotator(object):
     """
 
     @staticmethod
-    def BatchAnnotateImages(request,
+    def BatchAnnotateImages(
+        request,
+        target,
+        options=(),
+        channel_credentials=None,
+        call_credentials=None,
+        compression=None,
+        wait_for_ready=None,
+        timeout=None,
+        metadata=None,
+    ):
+        return grpc.experimental.unary_unary(
+            request,
             target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/google.cloud.vision.v1p1beta1.ImageAnnotator/BatchAnnotateImages',
+            "/google.cloud.vision.v1p1beta1.ImageAnnotator/BatchAnnotateImages",
             google_dot_cloud_dot_vision__v1p1beta1_dot_proto_dot_image__annotator__pb2.BatchAnnotateImagesRequest.SerializeToString,
             google_dot_cloud_dot_vision__v1p1beta1_dot_proto_dot_image__annotator__pb2.BatchAnnotateImagesResponse.FromString,
-            options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+        )

@@ -29,11 +29,12 @@ from google.cloud.vision_v1p2beta1.gapic import image_annotator_client as iac
 
 if sys.version_info[:2] == (2, 7):
     message = (
-        'A future version of this library will drop support for Python 2.7. '
-        'More details about Python 2 support for Google Cloud Client Libraries '
-        'can be found at https://cloud.google.com/python/docs/python2-sunset/'
+        "A future version of this library will drop support for Python 2.7. "
+        "More details about Python 2 support for Google Cloud Client Libraries "
+        "can be found at https://cloud.google.com/python/docs/python2-sunset/"
     )
     warnings.warn(message, DeprecationWarning)
+
 
 @add_single_feature_methods
 class ImageAnnotatorClient(VisionHelpers, iac.ImageAnnotatorClient):
@@ -42,7 +43,7 @@ class ImageAnnotatorClient(VisionHelpers, iac.ImageAnnotatorClient):
 
 
 __all__ = (
-    'enums',
-    'types',
-    'ImageAnnotatorClient',
+    "enums",
+    "types",
+    "ImageAnnotatorClient",
 )

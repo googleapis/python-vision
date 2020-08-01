@@ -2,8 +2,12 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from google.cloud.vision_v1.proto import image_annotator_pb2 as google_dot_cloud_dot_vision__v1_dot_proto_dot_image__annotator__pb2
-from google.longrunning import operations_pb2 as google_dot_longrunning_dot_operations__pb2
+from google.cloud.vision_v1.proto import (
+    image_annotator_pb2 as google_dot_cloud_dot_vision__v1_dot_proto_dot_image__annotator__pb2,
+)
+from google.longrunning import (
+    operations_pb2 as google_dot_longrunning_dot_operations__pb2,
+)
 
 
 class ImageAnnotatorStub(object):
@@ -19,25 +23,25 @@ class ImageAnnotatorStub(object):
             channel: A grpc.Channel.
         """
         self.BatchAnnotateImages = channel.unary_unary(
-                '/google.cloud.vision.v1.ImageAnnotator/BatchAnnotateImages',
-                request_serializer=google_dot_cloud_dot_vision__v1_dot_proto_dot_image__annotator__pb2.BatchAnnotateImagesRequest.SerializeToString,
-                response_deserializer=google_dot_cloud_dot_vision__v1_dot_proto_dot_image__annotator__pb2.BatchAnnotateImagesResponse.FromString,
-                )
+            "/google.cloud.vision.v1.ImageAnnotator/BatchAnnotateImages",
+            request_serializer=google_dot_cloud_dot_vision__v1_dot_proto_dot_image__annotator__pb2.BatchAnnotateImagesRequest.SerializeToString,
+            response_deserializer=google_dot_cloud_dot_vision__v1_dot_proto_dot_image__annotator__pb2.BatchAnnotateImagesResponse.FromString,
+        )
         self.BatchAnnotateFiles = channel.unary_unary(
-                '/google.cloud.vision.v1.ImageAnnotator/BatchAnnotateFiles',
-                request_serializer=google_dot_cloud_dot_vision__v1_dot_proto_dot_image__annotator__pb2.BatchAnnotateFilesRequest.SerializeToString,
-                response_deserializer=google_dot_cloud_dot_vision__v1_dot_proto_dot_image__annotator__pb2.BatchAnnotateFilesResponse.FromString,
-                )
+            "/google.cloud.vision.v1.ImageAnnotator/BatchAnnotateFiles",
+            request_serializer=google_dot_cloud_dot_vision__v1_dot_proto_dot_image__annotator__pb2.BatchAnnotateFilesRequest.SerializeToString,
+            response_deserializer=google_dot_cloud_dot_vision__v1_dot_proto_dot_image__annotator__pb2.BatchAnnotateFilesResponse.FromString,
+        )
         self.AsyncBatchAnnotateImages = channel.unary_unary(
-                '/google.cloud.vision.v1.ImageAnnotator/AsyncBatchAnnotateImages',
-                request_serializer=google_dot_cloud_dot_vision__v1_dot_proto_dot_image__annotator__pb2.AsyncBatchAnnotateImagesRequest.SerializeToString,
-                response_deserializer=google_dot_longrunning_dot_operations__pb2.Operation.FromString,
-                )
+            "/google.cloud.vision.v1.ImageAnnotator/AsyncBatchAnnotateImages",
+            request_serializer=google_dot_cloud_dot_vision__v1_dot_proto_dot_image__annotator__pb2.AsyncBatchAnnotateImagesRequest.SerializeToString,
+            response_deserializer=google_dot_longrunning_dot_operations__pb2.Operation.FromString,
+        )
         self.AsyncBatchAnnotateFiles = channel.unary_unary(
-                '/google.cloud.vision.v1.ImageAnnotator/AsyncBatchAnnotateFiles',
-                request_serializer=google_dot_cloud_dot_vision__v1_dot_proto_dot_image__annotator__pb2.AsyncBatchAnnotateFilesRequest.SerializeToString,
-                response_deserializer=google_dot_longrunning_dot_operations__pb2.Operation.FromString,
-                )
+            "/google.cloud.vision.v1.ImageAnnotator/AsyncBatchAnnotateFiles",
+            request_serializer=google_dot_cloud_dot_vision__v1_dot_proto_dot_image__annotator__pb2.AsyncBatchAnnotateFilesRequest.SerializeToString,
+            response_deserializer=google_dot_longrunning_dot_operations__pb2.Operation.FromString,
+        )
 
 
 class ImageAnnotatorServicer(object):
@@ -50,8 +54,8 @@ class ImageAnnotatorServicer(object):
         """Run image detection and annotation for a batch of images.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
+        context.set_details("Method not implemented!")
+        raise NotImplementedError("Method not implemented!")
 
     def BatchAnnotateFiles(self, request, context):
         """Service that performs image detection and annotation for a batch of files.
@@ -63,8 +67,8 @@ class ImageAnnotatorServicer(object):
         extracted.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
+        context.set_details("Method not implemented!")
+        raise NotImplementedError("Method not implemented!")
 
     def AsyncBatchAnnotateImages(self, request, context):
         """Run asynchronous image detection and annotation for a list of images.
@@ -78,8 +82,8 @@ class ImageAnnotatorServicer(object):
         GCS bucket, each json file containing BatchAnnotateImagesResponse proto.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
+        context.set_details("Method not implemented!")
+        raise NotImplementedError("Method not implemented!")
 
     def AsyncBatchAnnotateFiles(self, request, context):
         """Run asynchronous image detection and annotation for a list of generic
@@ -90,39 +94,40 @@ class ImageAnnotatorServicer(object):
         `Operation.response` contains `AsyncBatchAnnotateFilesResponse` (results).
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
+        context.set_details("Method not implemented!")
+        raise NotImplementedError("Method not implemented!")
 
 
 def add_ImageAnnotatorServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'BatchAnnotateImages': grpc.unary_unary_rpc_method_handler(
-                    servicer.BatchAnnotateImages,
-                    request_deserializer=google_dot_cloud_dot_vision__v1_dot_proto_dot_image__annotator__pb2.BatchAnnotateImagesRequest.FromString,
-                    response_serializer=google_dot_cloud_dot_vision__v1_dot_proto_dot_image__annotator__pb2.BatchAnnotateImagesResponse.SerializeToString,
-            ),
-            'BatchAnnotateFiles': grpc.unary_unary_rpc_method_handler(
-                    servicer.BatchAnnotateFiles,
-                    request_deserializer=google_dot_cloud_dot_vision__v1_dot_proto_dot_image__annotator__pb2.BatchAnnotateFilesRequest.FromString,
-                    response_serializer=google_dot_cloud_dot_vision__v1_dot_proto_dot_image__annotator__pb2.BatchAnnotateFilesResponse.SerializeToString,
-            ),
-            'AsyncBatchAnnotateImages': grpc.unary_unary_rpc_method_handler(
-                    servicer.AsyncBatchAnnotateImages,
-                    request_deserializer=google_dot_cloud_dot_vision__v1_dot_proto_dot_image__annotator__pb2.AsyncBatchAnnotateImagesRequest.FromString,
-                    response_serializer=google_dot_longrunning_dot_operations__pb2.Operation.SerializeToString,
-            ),
-            'AsyncBatchAnnotateFiles': grpc.unary_unary_rpc_method_handler(
-                    servicer.AsyncBatchAnnotateFiles,
-                    request_deserializer=google_dot_cloud_dot_vision__v1_dot_proto_dot_image__annotator__pb2.AsyncBatchAnnotateFilesRequest.FromString,
-                    response_serializer=google_dot_longrunning_dot_operations__pb2.Operation.SerializeToString,
-            ),
+        "BatchAnnotateImages": grpc.unary_unary_rpc_method_handler(
+            servicer.BatchAnnotateImages,
+            request_deserializer=google_dot_cloud_dot_vision__v1_dot_proto_dot_image__annotator__pb2.BatchAnnotateImagesRequest.FromString,
+            response_serializer=google_dot_cloud_dot_vision__v1_dot_proto_dot_image__annotator__pb2.BatchAnnotateImagesResponse.SerializeToString,
+        ),
+        "BatchAnnotateFiles": grpc.unary_unary_rpc_method_handler(
+            servicer.BatchAnnotateFiles,
+            request_deserializer=google_dot_cloud_dot_vision__v1_dot_proto_dot_image__annotator__pb2.BatchAnnotateFilesRequest.FromString,
+            response_serializer=google_dot_cloud_dot_vision__v1_dot_proto_dot_image__annotator__pb2.BatchAnnotateFilesResponse.SerializeToString,
+        ),
+        "AsyncBatchAnnotateImages": grpc.unary_unary_rpc_method_handler(
+            servicer.AsyncBatchAnnotateImages,
+            request_deserializer=google_dot_cloud_dot_vision__v1_dot_proto_dot_image__annotator__pb2.AsyncBatchAnnotateImagesRequest.FromString,
+            response_serializer=google_dot_longrunning_dot_operations__pb2.Operation.SerializeToString,
+        ),
+        "AsyncBatchAnnotateFiles": grpc.unary_unary_rpc_method_handler(
+            servicer.AsyncBatchAnnotateFiles,
+            request_deserializer=google_dot_cloud_dot_vision__v1_dot_proto_dot_image__annotator__pb2.AsyncBatchAnnotateFilesRequest.FromString,
+            response_serializer=google_dot_longrunning_dot_operations__pb2.Operation.SerializeToString,
+        ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'google.cloud.vision.v1.ImageAnnotator', rpc_method_handlers)
+        "google.cloud.vision.v1.ImageAnnotator", rpc_method_handlers
+    )
     server.add_generic_rpc_handlers((generic_handler,))
 
 
- # This class is part of an EXPERIMENTAL API.
+# This class is part of an EXPERIMENTAL API.
 class ImageAnnotator(object):
     """Service that performs Google Cloud Vision API detection tasks over client
     images, such as face, landmark, logo, label, and text detection. The
@@ -130,65 +135,109 @@ class ImageAnnotator(object):
     """
 
     @staticmethod
-    def BatchAnnotateImages(request,
+    def BatchAnnotateImages(
+        request,
+        target,
+        options=(),
+        channel_credentials=None,
+        call_credentials=None,
+        compression=None,
+        wait_for_ready=None,
+        timeout=None,
+        metadata=None,
+    ):
+        return grpc.experimental.unary_unary(
+            request,
             target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/google.cloud.vision.v1.ImageAnnotator/BatchAnnotateImages',
+            "/google.cloud.vision.v1.ImageAnnotator/BatchAnnotateImages",
             google_dot_cloud_dot_vision__v1_dot_proto_dot_image__annotator__pb2.BatchAnnotateImagesRequest.SerializeToString,
             google_dot_cloud_dot_vision__v1_dot_proto_dot_image__annotator__pb2.BatchAnnotateImagesResponse.FromString,
-            options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+        )
 
     @staticmethod
-    def BatchAnnotateFiles(request,
+    def BatchAnnotateFiles(
+        request,
+        target,
+        options=(),
+        channel_credentials=None,
+        call_credentials=None,
+        compression=None,
+        wait_for_ready=None,
+        timeout=None,
+        metadata=None,
+    ):
+        return grpc.experimental.unary_unary(
+            request,
             target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/google.cloud.vision.v1.ImageAnnotator/BatchAnnotateFiles',
+            "/google.cloud.vision.v1.ImageAnnotator/BatchAnnotateFiles",
             google_dot_cloud_dot_vision__v1_dot_proto_dot_image__annotator__pb2.BatchAnnotateFilesRequest.SerializeToString,
             google_dot_cloud_dot_vision__v1_dot_proto_dot_image__annotator__pb2.BatchAnnotateFilesResponse.FromString,
-            options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+        )
 
     @staticmethod
-    def AsyncBatchAnnotateImages(request,
+    def AsyncBatchAnnotateImages(
+        request,
+        target,
+        options=(),
+        channel_credentials=None,
+        call_credentials=None,
+        compression=None,
+        wait_for_ready=None,
+        timeout=None,
+        metadata=None,
+    ):
+        return grpc.experimental.unary_unary(
+            request,
             target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/google.cloud.vision.v1.ImageAnnotator/AsyncBatchAnnotateImages',
+            "/google.cloud.vision.v1.ImageAnnotator/AsyncBatchAnnotateImages",
             google_dot_cloud_dot_vision__v1_dot_proto_dot_image__annotator__pb2.AsyncBatchAnnotateImagesRequest.SerializeToString,
             google_dot_longrunning_dot_operations__pb2.Operation.FromString,
-            options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+        )
 
     @staticmethod
-    def AsyncBatchAnnotateFiles(request,
+    def AsyncBatchAnnotateFiles(
+        request,
+        target,
+        options=(),
+        channel_credentials=None,
+        call_credentials=None,
+        compression=None,
+        wait_for_ready=None,
+        timeout=None,
+        metadata=None,
+    ):
+        return grpc.experimental.unary_unary(
+            request,
             target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/google.cloud.vision.v1.ImageAnnotator/AsyncBatchAnnotateFiles',
+            "/google.cloud.vision.v1.ImageAnnotator/AsyncBatchAnnotateFiles",
             google_dot_cloud_dot_vision__v1_dot_proto_dot_image__annotator__pb2.AsyncBatchAnnotateFilesRequest.SerializeToString,
             google_dot_longrunning_dot_operations__pb2.Operation.FromString,
-            options, channel_credentials,
-            call_credentials, compression, wait_for_ready, timeout, metadata)
+            options,
+            channel_credentials,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+        )
