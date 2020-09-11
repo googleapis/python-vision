@@ -141,14 +141,16 @@ class TestVisionClientLogo(VisionSystemTestBase):
                     )
                 }
             },
-            "features": [{"type": vision.enums.Feature.Type.LOGO_DETECTION}],
+            "features": [{"type": vision.Feature.Type.LOGO_DETECTION}],
         }
         method_name = "test_detect_logos_async"
         output_gcs_uri_prefix = "gs://{bucket}/{method_name}".format(
             bucket=self.test_bucket.name, method_name=method_name
         )
         output_config = {"gcs_destination": {"uri": output_gcs_uri_prefix}}
-        response = self.client.async_batch_annotate_images([request], output_config)
+        response = self.client.async_batch_annotate_images(
+            requests=[request], output_config=output_config
+        )
 
         # Wait for the operation to complete.
         lro_waiting_seconds = 90
@@ -204,10 +206,10 @@ class TestVisionClientFiles(VisionSystemTestBase):
                 },
                 "mime_type": "application/pdf",
             },
-            "features": [{"type": vision.enums.Feature.Type.DOCUMENT_TEXT_DETECTION}],
+            "features": [{"type": vision.Feature.Type.DOCUMENT_TEXT_DETECTION}],
             "output_config": {"gcs_destination": {"uri": output_gcs_uri_prefix}},
         }
-        response = self.client.async_batch_annotate_files([request])
+        response = self.client.async_batch_annotate_files(requests=[request])
 
         # Wait for the operation to complete.
         lro_waiting_seconds = 90
@@ -810,7 +812,7 @@ class TestVisionClientVpcsc(VisionSystemTestBase):
                 "gcs_source": {"uri": self.gcs_uri_blocked_file},
                 "mime_type": "application/pdf",
             },
-            "features": [{"type": vision.enums.Feature.Type.DOCUMENT_TEXT_DETECTION}],
+            "features": [{"type": vision.Feature.Type.DOCUMENT_TEXT_DETECTION}],
             "output_config": {"gcs_destination": {"uri": output_gcs_uri_prefix}},
         }
         with pytest.raises(exceptions.Forbidden) as exc:
@@ -840,7 +842,7 @@ class TestVisionClientVpcsc(VisionSystemTestBase):
                 },
                 "mime_type": "application/pdf",
             },
-            "features": [{"type": vision.enums.Feature.Type.DOCUMENT_TEXT_DETECTION}],
+            "features": [{"type": vision.Feature.Type.DOCUMENT_TEXT_DETECTION}],
             "output_config": {"gcs_destination": {"uri": output_gcs_uri_prefix}},
         }
         response = self.client.async_batch_annotate_files([request])
@@ -860,7 +862,7 @@ class TestVisionClientVpcsc(VisionSystemTestBase):
     def test_async_batch_annotate_images_read_blocked(self):
         request = {
             "image": {"source": {"image_uri": self.gcs_uri_blocked_file}},
-            "features": [{"type": vision.enums.Feature.Type.LOGO_DETECTION}],
+            "features": [{"type": vision.Feature.Type.LOGO_DETECTION}],
         }
         method_name = "test_async_batch_annotate_images_read_blocked"
         output_gcs_uri_prefix = "gs://{bucket}/{method_name}".format(
@@ -895,7 +897,7 @@ class TestVisionClientVpcsc(VisionSystemTestBase):
     def test_async_batch_annotate_images_write_blocked(self):
         request = {
             "image": {"source": {"image_uri": self.gcs_uri_blocked_file}},
-            "features": [{"type": vision.enums.Feature.Type.LOGO_DETECTION}],
+            "features": [{"type": vision.Feature.Type.LOGO_DETECTION}],
         }
         method_name = "test_async_batch_annotate_images_write_blocked"
 
