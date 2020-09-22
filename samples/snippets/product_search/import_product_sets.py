@@ -44,9 +44,9 @@ def import_product_sets(project_id, location, gcs_uri):
         project=project_id, location=location)
 
     # Set the input configuration along with Google Cloud Storage URI
-    gcs_source = vision.types.ImportProductSetsGcsSource(
+    gcs_source = vision.ImportProductSetsGcsSource(
         csv_file_uri=gcs_uri)
-    input_config = vision.types.ImportProductSetsInputConfig(
+    input_config = vision.ImportProductSetsInputConfig(
         gcs_source=gcs_source)
 
     # Import the product sets from the input URI.

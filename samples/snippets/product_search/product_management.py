@@ -58,7 +58,7 @@ def create_product(
 
     # Create a product with the product specification in the region.
     # Set product display name and product category.
-    product = vision.types.Product(
+    product = vision.Product(
         display_name=product_display_name,
         product_category=product_category)
 
@@ -145,13 +145,13 @@ def update_product_labels(
 
     # Set product name, product label and product display name.
     # Multiple labels are also supported.
-    key_value = vision.types.Product.KeyValue(key=key, value=value)
-    product = vision.types.Product(
+    key_value = vision.Product.KeyValue(key=key, value=value)
+    product = vision.Product(
         name=product_path,
         product_labels=[key_value])
 
     # Updating only the product_labels field here.
-    update_mask = vision.types.FieldMask(paths=['product_labels'])
+    update_mask = vision.FieldMask(paths=['product_labels'])
 
     # This overwrites the product_labels.
     updated_product = client.update_product(

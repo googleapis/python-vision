@@ -52,7 +52,7 @@ def create_product_set(
         project=project_id, location=location)
 
     # Create a product set with the product set specification in the region.
-    product_set = vision.types.ProductSet(
+    product_set = vision.ProductSet(
             display_name=product_set_display_name)
 
     # The response is the product set with `name` populated.

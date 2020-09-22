@@ -134,7 +134,7 @@ def purge_products_in_product_set(
     parent = client.location_path(
         project=project_id, location=location)
 
-    product_set_purge_config = vision.types.ProductSetPurgeConfig(
+    product_set_purge_config = vision.ProductSetPurgeConfig(
         product_set_id=product_set_id)
 
     # The purge operation is async.
