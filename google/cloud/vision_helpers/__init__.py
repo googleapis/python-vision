@@ -54,18 +54,19 @@ class VisionHelpers(object):
         if not isinstance(request, proto.Message):
             # If the image is a file handler, set the content.
             image = protobuf.get(request, "image")
-            if hasattr(image, "read"):
-                img_bytes = image.read()
-                protobuf.set(request, "image", {})
-                protobuf.set(request, "image.content", img_bytes)
-                image = protobuf.get(request, "image")
+            if not isinstance(image, proto.Message):
+                if hasattr(image, "read"):
+                    img_bytes = image.read()
+                    protobuf.set(request, "image", {})
+                    protobuf.set(request, "image.content", img_bytes)
+                    image = protobuf.get(request, "image")
 
-            # If a filename is provided, read the file.
-            filename = protobuf.get(image, "source.filename", default=None)
-            if filename:
-                with io.open(filename, "rb") as img_file:
-                    protobuf.set(request, "image.content", img_file.read())
-                    protobuf.set(request, "image.source", None)
+                # If a filename is provided, read the file.
+                filename = protobuf.get(image, "source.filename", default=None)
+                if filename:
+                    with io.open(filename, "rb") as img_file:
+                        protobuf.set(request, "image.content", img_file.read())
+                        protobuf.set(request, "image.source", None)
 
         # This method allows features not to be specified, and you get all
         # of them.
