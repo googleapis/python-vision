@@ -54,7 +54,7 @@ def create_product(
     client = vision.ProductSearchClient()
 
     # A resource that represents Google Cloud Platform location.
-    location_path = client.location_path(project=project_id, location=location)
+    location_path = f"projects/{project_id}/locations/{location}"
 
     # Create a product with the product specification in the region.
     # Set product display name and product category.
@@ -83,7 +83,7 @@ def list_products(project_id, location):
     client = vision.ProductSearchClient()
 
     # A resource that represents Google Cloud Platform location.
-    location_path = client.location_path(project=project_id, location=location)
+    location_path = f"projects/{project_id}/locations/{location}"
 
     # List all the products available in the region.
     products = client.list_products(parent=location_path)
@@ -192,8 +192,7 @@ def purge_orphan_products(project_id, location, force):
     """
     client = vision.ProductSearchClient()
 
-    parent = client.location_path(
-        project=project_id, location=location)
+    parent = f"projects/{project_id}/locations/{location}"
 
     # The purge operation is async.
     operation = client.purge_products(

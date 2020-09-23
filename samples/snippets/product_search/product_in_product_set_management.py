@@ -131,8 +131,7 @@ def purge_products_in_product_set(
     """
     client = vision.ProductSearchClient()
 
-    parent = client.location_path(
-        project=project_id, location=location)
+    parent = f"projects/{project_id}/locations/{location}"
 
     product_set_purge_config = vision.ProductSetPurgeConfig(
         product_set_id=product_set_id)

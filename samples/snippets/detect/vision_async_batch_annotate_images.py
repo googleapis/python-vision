@@ -42,7 +42,7 @@ def sample_async_batch_annotate_images(
     output_config = {"gcs_destination": gcs_destination,
                      "batch_size": batch_size}
 
-    operation = client.async_batch_annotate_images(requests, output_config)
+    operation = client.async_batch_annotate_images(requests=requests, output_config=output_config)
 
     print("Waiting for operation to complete...")
     response = operation.result(90)

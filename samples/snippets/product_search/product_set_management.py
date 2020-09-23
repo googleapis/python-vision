@@ -48,8 +48,7 @@ def create_product_set(
     client = vision.ProductSearchClient()
 
     # A resource that represents Google Cloud Platform location.
-    location_path = client.location_path(
-        project=project_id, location=location)
+    location_path = f"projects/{project_id}/locations/{location}"
 
     # Create a product set with the product set specification in the region.
     product_set = vision.ProductSet(
@@ -76,8 +75,7 @@ def list_product_sets(project_id, location):
     client = vision.ProductSearchClient()
 
     # A resource that represents Google Cloud Platform location.
-    location_path = client.location_path(
-        project=project_id, location=location)
+    location_path = f"projects/{project_id}/locations/{location}"
 
     # List all the product sets available in the region.
     product_sets = client.list_product_sets(parent=location_path)

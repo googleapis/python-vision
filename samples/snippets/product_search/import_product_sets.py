@@ -40,8 +40,7 @@ def import_product_sets(project_id, location, gcs_uri):
     client = vision.ProductSearchClient()
 
     # A resource that represents Google Cloud Platform location.
-    location_path = client.location_path(
-        project=project_id, location=location)
+    location_path = f"projects/{project_id}/locations/{location}"
 
     # Set the input configuration along with Google Cloud Storage URI
     gcs_source = vision.ImportProductSetsGcsSource(
