@@ -15,7 +15,6 @@
 # [START vision_batch_annotate_files_gcs]
 
 from google.cloud import vision_v1
-from google.cloud.vision_v1 import enums
 
 
 def sample_batch_annotate_files(
@@ -28,7 +27,7 @@ def sample_batch_annotate_files(
 
     gcs_source = {"uri": storage_uri}
     input_config = {"gcs_source": gcs_source, "mime_type": mime_type}
-    features = [{"type": enums.Feature.Type.DOCUMENT_TEXT_DETECTION}]
+    features = [{"type": vision_v1.Feature.Type.DOCUMENT_TEXT_DETECTION}]
 
     # The service can process up to 5 pages per document file.
     # Here we specify the first, second, and last page of the document to be
