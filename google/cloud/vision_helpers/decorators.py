@@ -91,7 +91,7 @@ def _create_single_feature_method(feature):
 
     # Define the function to be returned.
     def inner(
-        self, image, max_results=None, retry=None, timeout=None, metadata=(), **kwargs
+        self, image, *, max_results=None, retry=None, timeout=None, metadata=(), **kwargs
     ):
         """Return a single feature annotation for the given image.
 

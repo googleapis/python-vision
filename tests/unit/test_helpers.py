@@ -13,6 +13,7 @@
 # limitations under the License.
 
 from __future__ import absolute_import
+import builtins
 import io
 import unittest
 
@@ -103,7 +104,7 @@ class TestSingleImageHelper(unittest.TestCase):
         assert request_sent["image"]["content"] == b"bogus=="
 
     @mock.patch.object(ImageAnnotatorClient, "batch_annotate_images")
-    @mock.patch.object(io, "open")
+    @mock.patch.object(builtins, "open")
     def test_image_filename(self, io_open, batch_annotate):
         # Make io.open send back a mock with a read method.
         file_ = mock.MagicMock(spec=io.BytesIO)

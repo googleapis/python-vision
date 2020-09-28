@@ -13,7 +13,6 @@
 # limitations under the License.
 
 from __future__ import absolute_import
-import io
 import proto
 
 from google.api_core import protobuf_helpers as protobuf
@@ -27,7 +26,7 @@ class VisionHelpers(object):
     See the :class:`~google.cloud.vision_v1.ImageAnnotatorClient`.
     """
 
-    def annotate_image(self, request, retry=None, timeout=None, metadata=()):
+    def annotate_image(self, request, *, retry=None, timeout=None, metadata=()):
         """Run image detection and annotation for an image.
 
         Example:
@@ -64,7 +63,7 @@ class VisionHelpers(object):
                 # If a filename is provided, read the file.
                 filename = protobuf.get(image, "source.filename", default=None)
                 if filename:
-                    with io.open(filename, "rb") as img_file:
+                    with open(filename, "rb") as img_file:
                         protobuf.set(request, "image.content", img_file.read())
                         protobuf.set(request, "image.source", None)
 
