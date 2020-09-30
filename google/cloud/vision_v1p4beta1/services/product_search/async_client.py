@@ -311,7 +311,7 @@ class ProductSearchAsyncClient:
                 maximum=60.0,
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded, exceptions.ServiceUnavailable,
+                    exceptions.ServiceUnavailable, exceptions.DeadlineExceeded,
                 ),
             ),
             default_timeout=600.0,
@@ -405,7 +405,7 @@ class ProductSearchAsyncClient:
                 maximum=60.0,
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded, exceptions.ServiceUnavailable,
+                    exceptions.ServiceUnavailable, exceptions.DeadlineExceeded,
                 ),
             ),
             default_timeout=600.0,
@@ -584,7 +584,7 @@ class ProductSearchAsyncClient:
                 maximum=60.0,
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded, exceptions.ServiceUnavailable,
+                    exceptions.ServiceUnavailable, exceptions.DeadlineExceeded,
                 ),
             ),
             default_timeout=600.0,
@@ -777,7 +777,7 @@ class ProductSearchAsyncClient:
                 maximum=60.0,
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded, exceptions.ServiceUnavailable,
+                    exceptions.ServiceUnavailable, exceptions.DeadlineExceeded,
                 ),
             ),
             default_timeout=600.0,
@@ -866,7 +866,7 @@ class ProductSearchAsyncClient:
                 maximum=60.0,
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded, exceptions.ServiceUnavailable,
+                    exceptions.ServiceUnavailable, exceptions.DeadlineExceeded,
                 ),
             ),
             default_timeout=600.0,
@@ -1051,7 +1051,7 @@ class ProductSearchAsyncClient:
                 maximum=60.0,
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded, exceptions.ServiceUnavailable,
+                    exceptions.ServiceUnavailable, exceptions.DeadlineExceeded,
                 ),
             ),
             default_timeout=600.0,
@@ -1256,7 +1256,7 @@ class ProductSearchAsyncClient:
                 maximum=60.0,
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded, exceptions.ServiceUnavailable,
+                    exceptions.ServiceUnavailable, exceptions.DeadlineExceeded,
                 ),
             ),
             default_timeout=600.0,
@@ -1345,7 +1345,7 @@ class ProductSearchAsyncClient:
                 maximum=60.0,
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded, exceptions.ServiceUnavailable,
+                    exceptions.ServiceUnavailable, exceptions.DeadlineExceeded,
                 ),
             ),
             default_timeout=600.0,
@@ -1438,7 +1438,7 @@ class ProductSearchAsyncClient:
                 maximum=60.0,
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded, exceptions.ServiceUnavailable,
+                    exceptions.ServiceUnavailable, exceptions.DeadlineExceeded,
                 ),
             ),
             default_timeout=600.0,
@@ -1708,7 +1708,7 @@ class ProductSearchAsyncClient:
                 maximum=60.0,
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
-                    exceptions.DeadlineExceeded, exceptions.ServiceUnavailable,
+                    exceptions.ServiceUnavailable, exceptions.DeadlineExceeded,
                 ),
             ),
             default_timeout=600.0,

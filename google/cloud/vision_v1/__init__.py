@@ -151,6 +151,7 @@ __all__ = (
     "GetReferenceImageRequest",
     "Image",
     "ImageAnnotationContext",
+    "ImageAnnotatorClient",
     "ImageContext",
     "ImageProperties",
     "ImageSource",
@@ -178,7 +179,6 @@ __all__ = (
     "Paragraph",
     "Position",
     "Product",
-    "ProductSearchClient",
     "ProductSearchParams",
     "ProductSearchResults",
     "ProductSet",
@@ -196,5 +196,5 @@ __all__ = (
     "WebDetection",
     "WebDetectionParams",
     "Word",
-    "ImageAnnotatorClient",
+    "ProductSearchClient",
 )
