@@ -905,7 +905,7 @@ class TestVisionClientVpcsc(VisionSystemTestBase):
             bucket=vpcsc_config.bucket_outside, method_name=method_name
         )
         output_config = {"gcs_destination": {"uri": output_gcs_uri_prefix}}
-        response = self.client.async_batch_annotate_images([request], output_config)
+        response = self.client.async_batch_annotate_images(requests=[request], output_config=output_config)
         # Wait for the operation to complete.
         lro_waiting_seconds = 90
         start_time = time.time()
