@@ -869,7 +869,8 @@ class TestVisionClientVpcsc(VisionSystemTestBase):
         )
         output_config = {"gcs_destination": {"uri": output_gcs_uri_prefix}}
         response = self.client.async_batch_annotate_images(
-            requests=[request], output_config=output_config)
+            requests=[request], output_config=output_config
+        )
         # Wait for the operation to complete.
         lro_waiting_seconds = 90
         start_time = time.time()
@@ -907,7 +908,8 @@ class TestVisionClientVpcsc(VisionSystemTestBase):
         )
         output_config = {"gcs_destination": {"uri": output_gcs_uri_prefix}}
         response = self.client.async_batch_annotate_images(
-            requests=[request], output_config=output_config)
+            requests=[request], output_config=output_config
+        )
         # Wait for the operation to complete.
         lro_waiting_seconds = 90
         start_time = time.time()
