@@ -401,7 +401,7 @@ class ProductSearchAsyncClient:
                 Required. Resource name of the ProductSet to get.
 
                 Format is:
-                ``projects/PROJECT_ID/locations/LOG_ID/productSets/PRODUCT_SET_ID``
+                ``projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID``
 
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -1287,7 +1287,6 @@ class ProductSearchAsyncClient:
                 delete.
 
                 Format is:
-
                 ``projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID``
 
                 This corresponds to the ``name`` field
@@ -1467,7 +1466,6 @@ class ProductSearchAsyncClient:
                 get.
 
                 Format is:
-
                 ``projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID``.
 
                 This corresponds to the ``name`` field

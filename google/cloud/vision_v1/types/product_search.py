@@ -35,8 +35,8 @@ class ProductSearchParams(proto.Message):
     Attributes:
         bounding_poly (google.cloud.vision_v1.types.BoundingPoly):
             The bounding polygon around the area of
-            interest in the image. Optional. If it is not
-            specified, system discretion will be applied.
+            interest in the image. If it is not specified,
+            system discretion will be applied.
         product_set (str):
             The resource name of a
             [ProductSet][google.cloud.vision.v1.ProductSet] to be

@@ -83,10 +83,11 @@ class Product(proto.Message):
         product_category (str):
             Immutable. The category for the product
             identified by the reference image. This should
-            be either "homegoods-v2", "apparel-v2", or
-            "toys-v2". The legacy categories "homegoods",
-            "apparel", and "toys" are still supported, but
-            these should not be used for new products.
+            be one of "homegoods-v2", "apparel-v2",
+            "toys-v2", "packagedgoods-v1" or "general-v1".
+            The legacy categories "homegoods", "apparel",
+            and "toys" are still supported, but these should
+            not be used for new products.
         product_labels (Sequence[google.cloud.vision_v1.types.Product.KeyValue]):
             Key-value pairs that can be attached to a product. At query
             time, constraints can be specified based on the
@@ -186,7 +187,6 @@ class ReferenceImage(proto.Message):
             The resource name of the reference image.
 
             Format is:
-
             ``projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID``.
 
             This field is ignored when creating a reference image.
@@ -415,7 +415,7 @@ class GetProductSetRequest(proto.Message):
             Required. Resource name of the ProductSet to get.
 
             Format is:
-            ``projects/PROJECT_ID/locations/LOG_ID/productSets/PRODUCT_SET_ID``
+            ``projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID``
     """
 
     name = proto.Field(proto.STRING, number=1)
@@ -545,7 +545,6 @@ class GetReferenceImageRequest(proto.Message):
             Required. The resource name of the ReferenceImage to get.
 
             Format is:
-
             ``projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID``.
     """
 
@@ -561,7 +560,6 @@ class DeleteReferenceImageRequest(proto.Message):
             delete.
 
             Format is:
-
             ``projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID``
     """
 

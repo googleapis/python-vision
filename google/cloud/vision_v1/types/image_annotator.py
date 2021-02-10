@@ -176,6 +176,10 @@ class Image(proto.Message):
             Image content, represented as a stream of bytes. Note: As
             with all ``bytes`` fields, protobuffers use a pure binary
             representation, whereas JSON representations use base64.
+
+            Currently, this field only works for BatchAnnotateImages
+            requests. It does not work for AsyncBatchAnnotateImages
+            requests.
         source (google.cloud.vision_v1.types.ImageSource):
             Google Cloud Storage image location, or publicly-accessible
             image URL. If both ``content`` and ``source`` are provided
@@ -295,6 +299,8 @@ class FaceAnnotation(proto.Message):
             CHIN_GNATHION = 32
             CHIN_LEFT_GONION = 33
             CHIN_RIGHT_GONION = 34
+            LEFT_CHEEK_CENTER = 35
+            RIGHT_CHEEK_CENTER = 36
 
         type_ = proto.Field(proto.ENUM, number=3, enum="FaceAnnotation.Landmark.Type",)
 
