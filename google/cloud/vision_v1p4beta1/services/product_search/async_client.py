@@ -109,7 +109,6 @@ class ProductSearchAsyncClient:
         ProductSearchClient.parse_common_location_path
     )
 
-    from_service_account_info = ProductSearchClient.from_service_account_info
     from_service_account_file = ProductSearchClient.from_service_account_file
     from_service_account_json = from_service_account_file
 
@@ -193,7 +192,7 @@ class ProductSearchAsyncClient:
            longer than 4096 characters.
 
         Args:
-            request (:class:`google.cloud.vision_v1p4beta1.types.CreateProductSetRequest`):
+            request (:class:`~.product_search_service.CreateProductSetRequest`):
                 The request object. Request message for the
                 `CreateProductSet` method.
             parent (:class:`str`):
@@ -201,11 +200,10 @@ class ProductSearchAsyncClient:
                 created.
 
                 Format is ``projects/PROJECT_ID/locations/LOC_ID``.
-
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            product_set (:class:`google.cloud.vision_v1p4beta1.types.ProductSet`):
+            product_set (:class:`~.product_search_service.ProductSet`):
                 Required. The ProductSet to create.
                 This corresponds to the ``product_set`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -216,7 +214,6 @@ class ProductSearchAsyncClient:
                 resource id. If it is already in use, an error is
                 returned with code ALREADY_EXISTS. Must be at most 128
                 characters long. It cannot contain the character ``/``.
-
                 This corresponds to the ``product_set_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -228,7 +225,7 @@ class ProductSearchAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.vision_v1p4beta1.types.ProductSet:
+            ~.product_search_service.ProductSet:
                 A ProductSet contains Products. A
                 ProductSet can contain a maximum of 1
                 million reference images. If the limit
@@ -301,7 +298,7 @@ class ProductSearchAsyncClient:
            less than 1.
 
         Args:
-            request (:class:`google.cloud.vision_v1p4beta1.types.ListProductSetsRequest`):
+            request (:class:`~.product_search_service.ListProductSetsRequest`):
                 The request object. Request message for the
                 `ListProductSets` method.
             parent (:class:`str`):
@@ -309,7 +306,6 @@ class ProductSearchAsyncClient:
                 listed.
 
                 Format is ``projects/PROJECT_ID/locations/LOC_ID``.
-
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -321,8 +317,8 @@ class ProductSearchAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.vision_v1p4beta1.services.product_search.pagers.ListProductSetsAsyncPager:
-                Response message for the ListProductSets method.
+            ~.pagers.ListProductSetsAsyncPager:
+                Response message for the ``ListProductSets`` method.
 
                 Iterating over this object will yield results and
                 resolve additional pages automatically.
@@ -396,7 +392,7 @@ class ProductSearchAsyncClient:
         -  Returns NOT_FOUND if the ProductSet does not exist.
 
         Args:
-            request (:class:`google.cloud.vision_v1p4beta1.types.GetProductSetRequest`):
+            request (:class:`~.product_search_service.GetProductSetRequest`):
                 The request object. Request message for the
                 `GetProductSet` method.
             name (:class:`str`):
@@ -404,7 +400,6 @@ class ProductSearchAsyncClient:
 
                 Format is:
                 ``projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID``
-
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -416,7 +411,7 @@ class ProductSearchAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.vision_v1p4beta1.types.ProductSet:
+            ~.product_search_service.ProductSet:
                 A ProductSet contains Products. A
                 ProductSet can contain a maximum of 1
                 million reference images. If the limit
@@ -491,22 +486,20 @@ class ProductSearchAsyncClient:
            characters.
 
         Args:
-            request (:class:`google.cloud.vision_v1p4beta1.types.UpdateProductSetRequest`):
+            request (:class:`~.product_search_service.UpdateProductSetRequest`):
                 The request object. Request message for the
                 `UpdateProductSet` method.
-            product_set (:class:`google.cloud.vision_v1p4beta1.types.ProductSet`):
+            product_set (:class:`~.product_search_service.ProductSet`):
                 Required. The ProductSet resource
                 which replaces the one on the server.
-
                 This corresponds to the ``product_set`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            update_mask (:class:`google.protobuf.field_mask_pb2.FieldMask`):
+            update_mask (:class:`~.field_mask.FieldMask`):
                 The [FieldMask][google.protobuf.FieldMask] that
                 specifies which fields to update. If update_mask isn't
                 specified, all mutable fields are to be updated. Valid
                 mask path is ``display_name``.
-
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -518,7 +511,7 @@ class ProductSearchAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.vision_v1p4beta1.types.ProductSet:
+            ~.product_search_service.ProductSet:
                 A ProductSet contains Products. A
                 ProductSet can contain a maximum of 1
                 million reference images. If the limit
@@ -589,7 +582,7 @@ class ProductSearchAsyncClient:
         Storage.
 
         Args:
-            request (:class:`google.cloud.vision_v1p4beta1.types.DeleteProductSetRequest`):
+            request (:class:`~.product_search_service.DeleteProductSetRequest`):
                 The request object. Request message for the
                 `DeleteProductSet` method.
             name (:class:`str`):
@@ -597,7 +590,6 @@ class ProductSearchAsyncClient:
 
                 Format is:
                 ``projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID``
-
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -676,7 +668,7 @@ class ProductSearchAsyncClient:
            invalid.
 
         Args:
-            request (:class:`google.cloud.vision_v1p4beta1.types.CreateProductRequest`):
+            request (:class:`~.product_search_service.CreateProductRequest`):
                 The request object. Request message for the
                 `CreateProduct` method.
             parent (:class:`str`):
@@ -684,11 +676,10 @@ class ProductSearchAsyncClient:
                 created.
 
                 Format is ``projects/PROJECT_ID/locations/LOC_ID``.
-
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            product (:class:`google.cloud.vision_v1p4beta1.types.Product`):
+            product (:class:`~.product_search_service.Product`):
                 Required. The product to create.
                 This corresponds to the ``product`` field
                 on the ``request`` instance; if ``request`` is provided, this
@@ -699,7 +690,6 @@ class ProductSearchAsyncClient:
                 resource id. If it is already in use, an error is
                 returned with code ALREADY_EXISTS. Must be at most 128
                 characters long. It cannot contain the character ``/``.
-
                 This corresponds to the ``product_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -711,7 +701,7 @@ class ProductSearchAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.vision_v1p4beta1.types.Product:
+            ~.product_search_service.Product:
                 A Product contains ReferenceImages.
         """
         # Create or coerce a protobuf request object.
@@ -779,7 +769,7 @@ class ProductSearchAsyncClient:
            less than 1.
 
         Args:
-            request (:class:`google.cloud.vision_v1p4beta1.types.ListProductsRequest`):
+            request (:class:`~.product_search_service.ListProductsRequest`):
                 The request object. Request message for the
                 `ListProducts` method.
             parent (:class:`str`):
@@ -787,7 +777,6 @@ class ProductSearchAsyncClient:
                 should be listed.
 
                 Format: ``projects/PROJECT_ID/locations/LOC_ID``
-
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -799,8 +788,8 @@ class ProductSearchAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.vision_v1p4beta1.services.product_search.pagers.ListProductsAsyncPager:
-                Response message for the ListProducts method.
+            ~.pagers.ListProductsAsyncPager:
+                Response message for the ``ListProducts`` method.
 
                 Iterating over this object will yield results and
                 resolve additional pages automatically.
@@ -874,7 +863,7 @@ class ProductSearchAsyncClient:
         -  Returns NOT_FOUND if the Product does not exist.
 
         Args:
-            request (:class:`google.cloud.vision_v1p4beta1.types.GetProductRequest`):
+            request (:class:`~.product_search_service.GetProductRequest`):
                 The request object. Request message for the `GetProduct`
                 method.
             name (:class:`str`):
@@ -882,7 +871,6 @@ class ProductSearchAsyncClient:
 
                 Format is:
                 ``projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID``
-
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -894,7 +882,7 @@ class ProductSearchAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.vision_v1p4beta1.types.Product:
+            ~.product_search_service.Product:
                 A Product contains ReferenceImages.
         """
         # Create or coerce a protobuf request object.
@@ -971,24 +959,22 @@ class ProductSearchAsyncClient:
            update_mask.
 
         Args:
-            request (:class:`google.cloud.vision_v1p4beta1.types.UpdateProductRequest`):
+            request (:class:`~.product_search_service.UpdateProductRequest`):
                 The request object. Request message for the
                 `UpdateProduct` method.
-            product (:class:`google.cloud.vision_v1p4beta1.types.Product`):
+            product (:class:`~.product_search_service.Product`):
                 Required. The Product resource which
                 replaces the one on the server.
                 product.name is immutable.
-
                 This corresponds to the ``product`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            update_mask (:class:`google.protobuf.field_mask_pb2.FieldMask`):
+            update_mask (:class:`~.field_mask.FieldMask`):
                 The [FieldMask][google.protobuf.FieldMask] that
                 specifies which fields to update. If update_mask isn't
                 specified, all mutable fields are to be updated. Valid
                 mask paths include ``product_labels``, ``display_name``,
                 and ``description``.
-
                 This corresponds to the ``update_mask`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -1000,7 +986,7 @@ class ProductSearchAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.vision_v1p4beta1.types.Product:
+            ~.product_search_service.Product:
                 A Product contains ReferenceImages.
         """
         # Create or coerce a protobuf request object.
@@ -1068,7 +1054,7 @@ class ProductSearchAsyncClient:
         all related caches are refreshed.
 
         Args:
-            request (:class:`google.cloud.vision_v1p4beta1.types.DeleteProductRequest`):
+            request (:class:`~.product_search_service.DeleteProductRequest`):
                 The request object. Request message for the
                 `DeleteProduct` method.
             name (:class:`str`):
@@ -1076,7 +1062,6 @@ class ProductSearchAsyncClient:
 
                 Format is:
                 ``projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID``
-
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -1167,7 +1152,7 @@ class ProductSearchAsyncClient:
            10 polygons.
 
         Args:
-            request (:class:`google.cloud.vision_v1p4beta1.types.CreateReferenceImageRequest`):
+            request (:class:`~.product_search_service.CreateReferenceImageRequest`):
                 The request object. Request message for the
                 `CreateReferenceImage` method.
             parent (:class:`str`):
@@ -1176,15 +1161,13 @@ class ProductSearchAsyncClient:
 
                 Format is
                 ``projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID``.
-
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            reference_image (:class:`google.cloud.vision_v1p4beta1.types.ReferenceImage`):
+            reference_image (:class:`~.product_search_service.ReferenceImage`):
                 Required. The reference image to
                 create. If an image ID is specified, it
                 is ignored.
-
                 This corresponds to the ``reference_image`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -1194,7 +1177,6 @@ class ProductSearchAsyncClient:
                 as the resource id. If it is already in use, an error is
                 returned with code ALREADY_EXISTS. Must be at most 128
                 characters long. It cannot contain the character ``/``.
-
                 This corresponds to the ``reference_image_id`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -1206,9 +1188,9 @@ class ProductSearchAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.vision_v1p4beta1.types.ReferenceImage:
-                A ReferenceImage represents a product image and its associated metadata,
-                   such as bounding boxes.
+            ~.product_search_service.ReferenceImage:
+                A ``ReferenceImage`` represents a product image and its
+                associated metadata, such as bounding boxes.
 
         """
         # Create or coerce a protobuf request object.
@@ -1277,7 +1259,7 @@ class ProductSearchAsyncClient:
         Storage.
 
         Args:
-            request (:class:`google.cloud.vision_v1p4beta1.types.DeleteReferenceImageRequest`):
+            request (:class:`~.product_search_service.DeleteReferenceImageRequest`):
                 The request object. Request message for the
                 `DeleteReferenceImage` method.
             name (:class:`str`):
@@ -1287,7 +1269,6 @@ class ProductSearchAsyncClient:
                 Format is:
 
                 ``projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID``
-
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -1361,7 +1342,7 @@ class ProductSearchAsyncClient:
            100, or less than 1.
 
         Args:
-            request (:class:`google.cloud.vision_v1p4beta1.types.ListReferenceImagesRequest`):
+            request (:class:`~.product_search_service.ListReferenceImagesRequest`):
                 The request object. Request message for the
                 `ListReferenceImages` method.
             parent (:class:`str`):
@@ -1370,7 +1351,6 @@ class ProductSearchAsyncClient:
 
                 Format is
                 ``projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID``.
-
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -1382,8 +1362,8 @@ class ProductSearchAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.vision_v1p4beta1.services.product_search.pagers.ListReferenceImagesAsyncPager:
-                Response message for the ListReferenceImages method.
+            ~.pagers.ListReferenceImagesAsyncPager:
+                Response message for the ``ListReferenceImages`` method.
 
                 Iterating over this object will yield results and
                 resolve additional pages automatically.
@@ -1457,7 +1437,7 @@ class ProductSearchAsyncClient:
         -  Returns NOT_FOUND if the specified image does not exist.
 
         Args:
-            request (:class:`google.cloud.vision_v1p4beta1.types.GetReferenceImageRequest`):
+            request (:class:`~.product_search_service.GetReferenceImageRequest`):
                 The request object. Request message for the
                 `GetReferenceImage` method.
             name (:class:`str`):
@@ -1467,7 +1447,6 @@ class ProductSearchAsyncClient:
                 Format is:
 
                 ``projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID/referenceImages/IMAGE_ID``.
-
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -1479,9 +1458,9 @@ class ProductSearchAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.vision_v1p4beta1.types.ReferenceImage:
-                A ReferenceImage represents a product image and its associated metadata,
-                   such as bounding boxes.
+            ~.product_search_service.ReferenceImage:
+                A ``ReferenceImage`` represents a product image and its
+                associated metadata, such as bounding boxes.
 
         """
         # Create or coerce a protobuf request object.
@@ -1551,7 +1530,7 @@ class ProductSearchAsyncClient:
            exist.
 
         Args:
-            request (:class:`google.cloud.vision_v1p4beta1.types.AddProductToProductSetRequest`):
+            request (:class:`~.product_search_service.AddProductToProductSetRequest`):
                 The request object. Request message for the
                 `AddProductToProductSet` method.
             name (:class:`str`):
@@ -1560,7 +1539,6 @@ class ProductSearchAsyncClient:
 
                 Format is:
                 ``projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID``
-
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -1570,7 +1548,6 @@ class ProductSearchAsyncClient:
 
                 Format is:
                 ``projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID``
-
                 This corresponds to the ``product`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -1639,7 +1616,7 @@ class ProductSearchAsyncClient:
         r"""Removes a Product from the specified ProductSet.
 
         Args:
-            request (:class:`google.cloud.vision_v1p4beta1.types.RemoveProductFromProductSetRequest`):
+            request (:class:`~.product_search_service.RemoveProductFromProductSetRequest`):
                 The request object. Request message for the
                 `RemoveProductFromProductSet` method.
             name (:class:`str`):
@@ -1648,7 +1625,6 @@ class ProductSearchAsyncClient:
 
                 Format is:
                 ``projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID``
-
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -1658,7 +1634,6 @@ class ProductSearchAsyncClient:
 
                 Format is:
                 ``projects/PROJECT_ID/locations/LOC_ID/products/PRODUCT_ID``
-
                 This corresponds to the ``product`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -1733,7 +1708,7 @@ class ProductSearchAsyncClient:
            less than 1.
 
         Args:
-            request (:class:`google.cloud.vision_v1p4beta1.types.ListProductsInProductSetRequest`):
+            request (:class:`~.product_search_service.ListProductsInProductSetRequest`):
                 The request object. Request message for the
                 `ListProductsInProductSet` method.
             name (:class:`str`):
@@ -1742,7 +1717,6 @@ class ProductSearchAsyncClient:
 
                 Format is:
                 ``projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID``
-
                 This corresponds to the ``name`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -1754,8 +1728,8 @@ class ProductSearchAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.vision_v1p4beta1.services.product_search.pagers.ListProductsInProductSetAsyncPager:
-                Response message for the ListProductsInProductSet
+            ~.pagers.ListProductsInProductSetAsyncPager:
+                Response message for the ``ListProductsInProductSet``
                 method.
 
                 Iterating over this object will yield results and
@@ -1838,7 +1812,7 @@ class ProductSearchAsyncClient:
         [ImportProductSetsGcsSource.csv_file_uri][google.cloud.vision.v1p4beta1.ImportProductSetsGcsSource.csv_file_uri].
 
         Args:
-            request (:class:`google.cloud.vision_v1p4beta1.types.ImportProductSetsRequest`):
+            request (:class:`~.product_search_service.ImportProductSetsRequest`):
                 The request object. Request message for the
                 `ImportProductSets` method.
             parent (:class:`str`):
@@ -1846,14 +1820,12 @@ class ProductSearchAsyncClient:
                 imported.
 
                 Format is ``projects/PROJECT_ID/locations/LOC_ID``.
-
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            input_config (:class:`google.cloud.vision_v1p4beta1.types.ImportProductSetsInputConfig`):
+            input_config (:class:`~.product_search_service.ImportProductSetsInputConfig`):
                 Required. The input content for the
                 list of requests.
-
                 This corresponds to the ``input_config`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -1865,18 +1837,18 @@ class ProductSearchAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.api_core.operation_async.AsyncOperation:
+            ~.operation_async.AsyncOperation:
                 An object representing a long-running operation.
 
                 The result type for the operation will be
-                :class:`google.cloud.vision_v1p4beta1.types.ImportProductSetsResponse`
-                Response message for the ImportProductSets method.
+                :class:``~.product_search_service.ImportProductSetsResponse``:
+                Response message for the ``ImportProductSets`` method.
 
-                   This message is returned by the
-                   [google.longrunning.Operations.GetOperation][google.longrunning.Operations.GetOperation]
-                   method in the returned
-                   [google.longrunning.Operation.response][google.longrunning.Operation.response]
-                   field.
+                This message is returned by the
+                [google.longrunning.Operations.GetOperation][google.longrunning.Operations.GetOperation]
+                method in the returned
+                [google.longrunning.Operation.response][google.longrunning.Operation.response]
+                field.
 
         """
         # Create or coerce a protobuf request object.
@@ -1971,7 +1943,7 @@ class ProductSearchAsyncClient:
         ``BatchOperationMetadata``. (progress)
 
         Args:
-            request (:class:`google.cloud.vision_v1p4beta1.types.PurgeProductsRequest`):
+            request (:class:`~.product_search_service.PurgeProductsRequest`):
                 The request object. Request message for the
                 `PurgeProducts` method.
             parent (:class:`str`):
@@ -1979,7 +1951,6 @@ class ProductSearchAsyncClient:
                 should be deleted.
 
                 Format is ``projects/PROJECT_ID/locations/LOC_ID``.
-
                 This corresponds to the ``parent`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -1991,22 +1962,24 @@ class ProductSearchAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            google.api_core.operation_async.AsyncOperation:
+            ~.operation_async.AsyncOperation:
                 An object representing a long-running operation.
 
-                The result type for the operation will be :class:`google.protobuf.empty_pb2.Empty` A generic empty message that you can re-use to avoid defining duplicated
-                   empty messages in your APIs. A typical example is to
-                   use it as the request or the response type of an API
-                   method. For instance:
+                The result type for the operation will be
+                :class:``~.empty.Empty``: A generic empty message that
+                you can re-use to avoid defining duplicated empty
+                messages in your APIs. A typical example is to use it as
+                the request or the response type of an API method. For
+                instance:
 
-                      service Foo {
-                         rpc Bar(google.protobuf.Empty) returns
-                         (google.protobuf.Empty);
+                ::
 
-                      }
+                    service Foo {
+                      rpc Bar(google.protobuf.Empty) returns (google.protobuf.Empty);
+                    }
 
-                   The JSON representation for Empty is empty JSON
-                   object {}.
+                The JSON representation for ``Empty`` is empty JSON
+                object ``{}``.
 
         """
         # Create or coerce a protobuf request object.

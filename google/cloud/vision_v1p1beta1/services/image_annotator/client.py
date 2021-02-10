@@ -114,22 +114,6 @@ class ImageAnnotatorClient(metaclass=ImageAnnotatorClientMeta):
     )
 
     @classmethod
-    def from_service_account_info(cls, info: dict, *args, **kwargs):
-        """Creates an instance of this client using the provided credentials info.
-
-        Args:
-            info (dict): The service account private key info.
-            args: Additional arguments to pass to the constructor.
-            kwargs: Additional arguments to pass to the constructor.
-
-        Returns:
-            ImageAnnotatorClient: The constructed client.
-        """
-        credentials = service_account.Credentials.from_service_account_info(info)
-        kwargs["credentials"] = credentials
-        return cls(*args, **kwargs)
-
-    @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
         file.
@@ -141,7 +125,7 @@ class ImageAnnotatorClient(metaclass=ImageAnnotatorClientMeta):
             kwargs: Additional arguments to pass to the constructor.
 
         Returns:
-            ImageAnnotatorClient: The constructed client.
+            {@api.name}: The constructed client.
         """
         credentials = service_account.Credentials.from_service_account_file(filename)
         kwargs["credentials"] = credentials
@@ -233,10 +217,10 @@ class ImageAnnotatorClient(metaclass=ImageAnnotatorClientMeta):
                 credentials identify the application to the service; if none
                 are specified, the client will attempt to ascertain the
                 credentials from the environment.
-            transport (Union[str, ImageAnnotatorTransport]): The
+            transport (Union[str, ~.ImageAnnotatorTransport]): The
                 transport to use. If set to None, a transport is chosen
                 automatically.
-            client_options (google.api_core.client_options.ClientOptions): Custom options for the
+            client_options (client_options_lib.ClientOptions): Custom options for the
                 client. It won't take effect if a ``transport`` instance is provided.
                 (1) The ``api_endpoint`` property can be used to override the
                 default endpoint provided by the client. GOOGLE_API_USE_MTLS_ENDPOINT
@@ -347,13 +331,12 @@ class ImageAnnotatorClient(metaclass=ImageAnnotatorClientMeta):
         images.
 
         Args:
-            request (google.cloud.vision_v1p1beta1.types.BatchAnnotateImagesRequest):
+            request (:class:`~.image_annotator.BatchAnnotateImagesRequest`):
                 The request object. Multiple image annotation requests
                 are batched into a single service call.
-            requests (Sequence[google.cloud.vision_v1p1beta1.types.AnnotateImageRequest]):
+            requests (:class:`Sequence[~.image_annotator.AnnotateImageRequest]`):
                 Required. Individual image annotation
                 requests for this batch.
-
                 This corresponds to the ``requests`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -365,7 +348,7 @@ class ImageAnnotatorClient(metaclass=ImageAnnotatorClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            google.cloud.vision_v1p1beta1.types.BatchAnnotateImagesResponse:
+            ~.image_annotator.BatchAnnotateImagesResponse:
                 Response to a batch image annotation
                 request.
 

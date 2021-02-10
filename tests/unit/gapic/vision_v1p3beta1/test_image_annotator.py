@@ -92,21 +92,8 @@ def test__get_default_mtls_endpoint():
     )
 
 
-def test_image_annotator_client_from_service_account_info():
-    creds = credentials.AnonymousCredentials()
-    with mock.patch.object(
-        service_account.Credentials, "from_service_account_info"
-    ) as factory:
-        factory.return_value = creds
-        info = {"valid": True}
-        client = ImageAnnotatorClient.from_service_account_info(info)
-        assert client.transport._credentials == creds
-
-        assert client.transport._host == "vision.googleapis.com:443"
-
-
 @pytest.mark.parametrize(
-    "client_class", [ImageAnnotatorClient, ImageAnnotatorAsyncClient,]
+    "client_class", [ImageAnnotatorClient, ImageAnnotatorAsyncClient]
 )
 def test_image_annotator_client_from_service_account_file(client_class):
     creds = credentials.AnonymousCredentials()
@@ -125,10 +112,7 @@ def test_image_annotator_client_from_service_account_file(client_class):
 
 def test_image_annotator_client_get_transport_class():
     transport = ImageAnnotatorClient.get_transport_class()
-    available_transports = [
-        transports.ImageAnnotatorGrpcTransport,
-    ]
-    assert transport in available_transports
+    assert transport == transports.ImageAnnotatorGrpcTransport
 
     transport = ImageAnnotatorClient.get_transport_class("grpc")
     assert transport == transports.ImageAnnotatorGrpcTransport
@@ -1017,7 +1001,7 @@ def test_image_annotator_host_with_port():
 
 
 def test_image_annotator_grpc_transport_channel():
-    channel = grpc.secure_channel("http://localhost/", grpc.local_channel_credentials())
+    channel = grpc.insecure_channel("http://localhost/")
 
     # Check that channel is used if provided.
     transport = transports.ImageAnnotatorGrpcTransport(
@@ -1029,7 +1013,7 @@ def test_image_annotator_grpc_transport_channel():
 
 
 def test_image_annotator_grpc_asyncio_transport_channel():
-    channel = aio.secure_channel("http://localhost/", grpc.local_channel_credentials())
+    channel = aio.insecure_channel("http://localhost/")
 
     # Check that channel is used if provided.
     transport = transports.ImageAnnotatorGrpcAsyncIOTransport(
@@ -1054,7 +1038,7 @@ def test_image_annotator_transport_channel_mtls_with_client_cert_source(
         "grpc.ssl_channel_credentials", autospec=True
     ) as grpc_ssl_channel_cred:
         with mock.patch.object(
-            transport_class, "create_channel"
+            transport_class, "create_channel", autospec=True
         ) as grpc_create_channel:
             mock_ssl_cred = mock.Mock()
             grpc_ssl_channel_cred.return_value = mock_ssl_cred
@@ -1110,7 +1094,7 @@ def test_image_annotator_transport_channel_mtls_with_adc(transport_class):
         ssl_credentials=mock.PropertyMock(return_value=mock_ssl_cred),
     ):
         with mock.patch.object(
-            transport_class, "create_channel"
+            transport_class, "create_channel", autospec=True
         ) as grpc_create_channel:
             mock_grpc_channel = mock.Mock()
             grpc_create_channel.return_value = mock_grpc_channel

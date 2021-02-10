@@ -1,7 +1,9 @@
 Services for Google Cloud Vision v1 API
 =======================================
-.. toctree::
-    :maxdepth: 2
 
-    image_annotator
-    product_search
+.. automodule:: google.cloud.vision_v1.services.image_annotator
+    :members:
+    :inherited-members:
+.. automodule:: google.cloud.vision_v1.services.product_search
+    :members:
+    :inherited-members:

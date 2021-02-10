@@ -24,7 +24,7 @@ class ListProductSetsPager:
     """A pager for iterating through ``list_product_sets`` requests.
 
     This class thinly wraps an initial
-    :class:`google.cloud.vision_v1p4beta1.types.ListProductSetsResponse` object, and
+    :class:`~.product_search_service.ListProductSetsResponse` object, and
     provides an ``__iter__`` method to iterate through its
     ``product_sets`` field.
 
@@ -33,7 +33,7 @@ class ListProductSetsPager:
     through the ``product_sets`` field on the
     corresponding responses.
 
-    All the usual :class:`google.cloud.vision_v1p4beta1.types.ListProductSetsResponse`
+    All the usual :class:`~.product_search_service.ListProductSetsResponse`
     attributes are available on the pager. If multiple requests are made, only
     the most recent response is retained, and thus used for attribute lookup.
     """
@@ -51,9 +51,9 @@ class ListProductSetsPager:
         Args:
             method (Callable): The method that was originally called, and
                 which instantiated this pager.
-            request (google.cloud.vision_v1p4beta1.types.ListProductSetsRequest):
+            request (:class:`~.product_search_service.ListProductSetsRequest`):
                 The initial request object.
-            response (google.cloud.vision_v1p4beta1.types.ListProductSetsResponse):
+            response (:class:`~.product_search_service.ListProductSetsResponse`):
                 The initial response object.
             metadata (Sequence[Tuple[str, str]]): Strings which should be
                 sent along with the request as metadata.
@@ -86,7 +86,7 @@ class ListProductSetsAsyncPager:
     """A pager for iterating through ``list_product_sets`` requests.
 
     This class thinly wraps an initial
-    :class:`google.cloud.vision_v1p4beta1.types.ListProductSetsResponse` object, and
+    :class:`~.product_search_service.ListProductSetsResponse` object, and
     provides an ``__aiter__`` method to iterate through its
     ``product_sets`` field.
 
@@ -95,7 +95,7 @@ class ListProductSetsAsyncPager:
     through the ``product_sets`` field on the
     corresponding responses.
 
-    All the usual :class:`google.cloud.vision_v1p4beta1.types.ListProductSetsResponse`
+    All the usual :class:`~.product_search_service.ListProductSetsResponse`
     attributes are available on the pager. If multiple requests are made, only
     the most recent response is retained, and thus used for attribute lookup.
     """
@@ -115,9 +115,9 @@ class ListProductSetsAsyncPager:
         Args:
             method (Callable): The method that was originally called, and
                 which instantiated this pager.
-            request (google.cloud.vision_v1p4beta1.types.ListProductSetsRequest):
+            request (:class:`~.product_search_service.ListProductSetsRequest`):
                 The initial request object.
-            response (google.cloud.vision_v1p4beta1.types.ListProductSetsResponse):
+            response (:class:`~.product_search_service.ListProductSetsResponse`):
                 The initial response object.
             metadata (Sequence[Tuple[str, str]]): Strings which should be
                 sent along with the request as metadata.
@@ -156,7 +156,7 @@ class ListProductsPager:
     """A pager for iterating through ``list_products`` requests.
 
     This class thinly wraps an initial
-    :class:`google.cloud.vision_v1p4beta1.types.ListProductsResponse` object, and
+    :class:`~.product_search_service.ListProductsResponse` object, and
     provides an ``__iter__`` method to iterate through its
     ``products`` field.
 
@@ -165,7 +165,7 @@ class ListProductsPager:
     through the ``products`` field on the
     corresponding responses.
 
-    All the usual :class:`google.cloud.vision_v1p4beta1.types.ListProductsResponse`
+    All the usual :class:`~.product_search_service.ListProductsResponse`
     attributes are available on the pager. If multiple requests are made, only
     the most recent response is retained, and thus used for attribute lookup.
     """
@@ -183,9 +183,9 @@ class ListProductsPager:
         Args:
             method (Callable): The method that was originally called, and
                 which instantiated this pager.
-            request (google.cloud.vision_v1p4beta1.types.ListProductsRequest):
+            request (:class:`~.product_search_service.ListProductsRequest`):
                 The initial request object.
-            response (google.cloud.vision_v1p4beta1.types.ListProductsResponse):
+            response (:class:`~.product_search_service.ListProductsResponse`):
                 The initial response object.
             metadata (Sequence[Tuple[str, str]]): Strings which should be
                 sent along with the request as metadata.
@@ -218,7 +218,7 @@ class ListProductsAsyncPager:
     """A pager for iterating through ``list_products`` requests.
 
     This class thinly wraps an initial
-    :class:`google.cloud.vision_v1p4beta1.types.ListProductsResponse` object, and
+    :class:`~.product_search_service.ListProductsResponse` object, and
     provides an ``__aiter__`` method to iterate through its
     ``products`` field.
 
@@ -227,7 +227,7 @@ class ListProductsAsyncPager:
     through the ``products`` field on the
     corresponding responses.
 
-    All the usual :class:`google.cloud.vision_v1p4beta1.types.ListProductsResponse`
+    All the usual :class:`~.product_search_service.ListProductsResponse`
     attributes are available on the pager. If multiple requests are made, only
     the most recent response is retained, and thus used for attribute lookup.
     """
@@ -245,9 +245,9 @@ class ListProductsAsyncPager:
         Args:
             method (Callable): The method that was originally called, and
                 which instantiated this pager.
-            request (google.cloud.vision_v1p4beta1.types.ListProductsRequest):
+            request (:class:`~.product_search_service.ListProductsRequest`):
                 The initial request object.
-            response (google.cloud.vision_v1p4beta1.types.ListProductsResponse):
+            response (:class:`~.product_search_service.ListProductsResponse`):
                 The initial response object.
             metadata (Sequence[Tuple[str, str]]): Strings which should be
                 sent along with the request as metadata.
@@ -284,7 +284,7 @@ class ListReferenceImagesPager:
     """A pager for iterating through ``list_reference_images`` requests.
 
     This class thinly wraps an initial
-    :class:`google.cloud.vision_v1p4beta1.types.ListReferenceImagesResponse` object, and
+    :class:`~.product_search_service.ListReferenceImagesResponse` object, and
     provides an ``__iter__`` method to iterate through its
     ``reference_images`` field.
 
@@ -293,7 +293,7 @@ class ListReferenceImagesPager:
     through the ``reference_images`` field on the
     corresponding responses.
 
-    All the usual :class:`google.cloud.vision_v1p4beta1.types.ListReferenceImagesResponse`
+    All the usual :class:`~.product_search_service.ListReferenceImagesResponse`
     attributes are available on the pager. If multiple requests are made, only
     the most recent response is retained, and thus used for attribute lookup.
     """
@@ -311,9 +311,9 @@ class ListReferenceImagesPager:
         Args:
             method (Callable): The method that was originally called, and
                 which instantiated this pager.
-            request (google.cloud.vision_v1p4beta1.types.ListReferenceImagesRequest):
+            request (:class:`~.product_search_service.ListReferenceImagesRequest`):
                 The initial request object.
-            response (google.cloud.vision_v1p4beta1.types.ListReferenceImagesResponse):
+            response (:class:`~.product_search_service.ListReferenceImagesResponse`):
                 The initial response object.
             metadata (Sequence[Tuple[str, str]]): Strings which should be
                 sent along with the request as metadata.
@@ -346,7 +346,7 @@ class ListReferenceImagesAsyncPager:
     """A pager for iterating through ``list_reference_images`` requests.
 
     This class thinly wraps an initial
-    :class:`google.cloud.vision_v1p4beta1.types.ListReferenceImagesResponse` object, and
+    :class:`~.product_search_service.ListReferenceImagesResponse` object, and
     provides an ``__aiter__`` method to iterate through its
     ``reference_images`` field.
 
@@ -355,7 +355,7 @@ class ListReferenceImagesAsyncPager:
     through the ``reference_images`` field on the
     corresponding responses.
 
-    All the usual :class:`google.cloud.vision_v1p4beta1.types.ListReferenceImagesResponse`
+    All the usual :class:`~.product_search_service.ListReferenceImagesResponse`
     attributes are available on the pager. If multiple requests are made, only
     the most recent response is retained, and thus used for attribute lookup.
     """
@@ -375,9 +375,9 @@ class ListReferenceImagesAsyncPager:
         Args:
             method (Callable): The method that was originally called, and
                 which instantiated this pager.
-            request (google.cloud.vision_v1p4beta1.types.ListReferenceImagesRequest):
+            request (:class:`~.product_search_service.ListReferenceImagesRequest`):
                 The initial request object.
-            response (google.cloud.vision_v1p4beta1.types.ListReferenceImagesResponse):
+            response (:class:`~.product_search_service.ListReferenceImagesResponse`):
                 The initial response object.
             metadata (Sequence[Tuple[str, str]]): Strings which should be
                 sent along with the request as metadata.
@@ -416,7 +416,7 @@ class ListProductsInProductSetPager:
     """A pager for iterating through ``list_products_in_product_set`` requests.
 
     This class thinly wraps an initial
-    :class:`google.cloud.vision_v1p4beta1.types.ListProductsInProductSetResponse` object, and
+    :class:`~.product_search_service.ListProductsInProductSetResponse` object, and
     provides an ``__iter__`` method to iterate through its
     ``products`` field.
 
@@ -425,7 +425,7 @@ class ListProductsInProductSetPager:
     through the ``products`` field on the
     corresponding responses.
 
-    All the usual :class:`google.cloud.vision_v1p4beta1.types.ListProductsInProductSetResponse`
+    All the usual :class:`~.product_search_service.ListProductsInProductSetResponse`
     attributes are available on the pager. If multiple requests are made, only
     the most recent response is retained, and thus used for attribute lookup.
     """
@@ -443,9 +443,9 @@ class ListProductsInProductSetPager:
         Args:
             method (Callable): The method that was originally called, and
                 which instantiated this pager.
-            request (google.cloud.vision_v1p4beta1.types.ListProductsInProductSetRequest):
+            request (:class:`~.product_search_service.ListProductsInProductSetRequest`):
                 The initial request object.
-            response (google.cloud.vision_v1p4beta1.types.ListProductsInProductSetResponse):
+            response (:class:`~.product_search_service.ListProductsInProductSetResponse`):
                 The initial response object.
             metadata (Sequence[Tuple[str, str]]): Strings which should be
                 sent along with the request as metadata.
@@ -480,7 +480,7 @@ class ListProductsInProductSetAsyncPager:
     """A pager for iterating through ``list_products_in_product_set`` requests.
 
     This class thinly wraps an initial
-    :class:`google.cloud.vision_v1p4beta1.types.ListProductsInProductSetResponse` object, and
+    :class:`~.product_search_service.ListProductsInProductSetResponse` object, and
     provides an ``__aiter__`` method to iterate through its
     ``products`` field.
 
@@ -489,7 +489,7 @@ class ListProductsInProductSetAsyncPager:
     through the ``products`` field on the
     corresponding responses.
 
-    All the usual :class:`google.cloud.vision_v1p4beta1.types.ListProductsInProductSetResponse`
+    All the usual :class:`~.product_search_service.ListProductsInProductSetResponse`
     attributes are available on the pager. If multiple requests are made, only
     the most recent response is retained, and thus used for attribute lookup.
     """
@@ -509,9 +509,9 @@ class ListProductsInProductSetAsyncPager:
         Args:
             method (Callable): The method that was originally called, and
                 which instantiated this pager.
-            request (google.cloud.vision_v1p4beta1.types.ListProductsInProductSetRequest):
+            request (:class:`~.product_search_service.ListProductsInProductSetRequest`):
                 The initial request object.
-            response (google.cloud.vision_v1p4beta1.types.ListProductsInProductSetResponse):
+            response (:class:`~.product_search_service.ListProductsInProductSetResponse`):
                 The initial response object.
             metadata (Sequence[Tuple[str, str]]): Strings which should be
                 sent along with the request as metadata.
