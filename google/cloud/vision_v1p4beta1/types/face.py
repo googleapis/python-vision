@@ -64,14 +64,14 @@ class FaceRecognitionResult(proto.Message):
     r"""Information about a face's identity.
 
     Attributes:
-        celebrity (~.face.Celebrity):
+        celebrity (google.cloud.vision_v1p4beta1.types.Celebrity):
             The [Celebrity][google.cloud.vision.v1p4beta1.Celebrity]
             that this face was matched to.
         confidence (float):
             Recognition confidence. Range [0, 1].
     """
 
-    celebrity = proto.Field(proto.MESSAGE, number=1, message=Celebrity,)
+    celebrity = proto.Field(proto.MESSAGE, number=1, message="Celebrity",)
 
     confidence = proto.Field(proto.FLOAT, number=2)
 

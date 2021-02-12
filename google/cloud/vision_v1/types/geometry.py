@@ -62,16 +62,16 @@ class BoundingPoly(proto.Message):
     r"""A bounding polygon for the detected image annotation.
 
     Attributes:
-        vertices (Sequence[~.geometry.Vertex]):
+        vertices (Sequence[google.cloud.vision_v1.types.Vertex]):
             The bounding polygon vertices.
-        normalized_vertices (Sequence[~.geometry.NormalizedVertex]):
+        normalized_vertices (Sequence[google.cloud.vision_v1.types.NormalizedVertex]):
             The bounding polygon normalized vertices.
     """
 
-    vertices = proto.RepeatedField(proto.MESSAGE, number=1, message=Vertex,)
+    vertices = proto.RepeatedField(proto.MESSAGE, number=1, message="Vertex",)
 
     normalized_vertices = proto.RepeatedField(
-        proto.MESSAGE, number=2, message=NormalizedVertex,
+        proto.MESSAGE, number=2, message="NormalizedVertex",
     )
 
 

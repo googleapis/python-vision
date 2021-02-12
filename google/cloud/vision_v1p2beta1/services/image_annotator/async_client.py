@@ -49,8 +49,47 @@ class ImageAnnotatorAsyncClient:
     DEFAULT_ENDPOINT = ImageAnnotatorClient.DEFAULT_ENDPOINT
     DEFAULT_MTLS_ENDPOINT = ImageAnnotatorClient.DEFAULT_MTLS_ENDPOINT
 
+    common_billing_account_path = staticmethod(
+        ImageAnnotatorClient.common_billing_account_path
+    )
+    parse_common_billing_account_path = staticmethod(
+        ImageAnnotatorClient.parse_common_billing_account_path
+    )
+
+    common_folder_path = staticmethod(ImageAnnotatorClient.common_folder_path)
+    parse_common_folder_path = staticmethod(
+        ImageAnnotatorClient.parse_common_folder_path
+    )
+
+    common_organization_path = staticmethod(
+        ImageAnnotatorClient.common_organization_path
+    )
+    parse_common_organization_path = staticmethod(
+        ImageAnnotatorClient.parse_common_organization_path
+    )
+
+    common_project_path = staticmethod(ImageAnnotatorClient.common_project_path)
+    parse_common_project_path = staticmethod(
+        ImageAnnotatorClient.parse_common_project_path
+    )
+
+    common_location_path = staticmethod(ImageAnnotatorClient.common_location_path)
+    parse_common_location_path = staticmethod(
+        ImageAnnotatorClient.parse_common_location_path
+    )
+
+    from_service_account_info = ImageAnnotatorClient.from_service_account_info
     from_service_account_file = ImageAnnotatorClient.from_service_account_file
     from_service_account_json = from_service_account_file
+
+    @property
+    def transport(self) -> ImageAnnotatorTransport:
+        """Return the transport used by the client instance.
+
+        Returns:
+            ImageAnnotatorTransport: The transport used by the client instance.
+        """
+        return self._client.transport
 
     get_transport_class = functools.partial(
         type(ImageAnnotatorClient).get_transport_class, type(ImageAnnotatorClient)
@@ -117,12 +156,13 @@ class ImageAnnotatorAsyncClient:
         images.
 
         Args:
-            request (:class:`~.image_annotator.BatchAnnotateImagesRequest`):
+            request (:class:`google.cloud.vision_v1p2beta1.types.BatchAnnotateImagesRequest`):
                 The request object. Multiple image annotation requests
                 are batched into a single service call.
-            requests (:class:`Sequence[~.image_annotator.AnnotateImageRequest]`):
+            requests (:class:`Sequence[google.cloud.vision_v1p2beta1.types.AnnotateImageRequest]`):
                 Required. Individual image annotation
                 requests for this batch.
+
                 This corresponds to the ``requests`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -134,7 +174,7 @@ class ImageAnnotatorAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            ~.image_annotator.BatchAnnotateImagesResponse:
+            google.cloud.vision_v1p2beta1.types.BatchAnnotateImagesResponse:
                 Response to a batch image annotation
                 request.
 
@@ -142,7 +182,8 @@ class ImageAnnotatorAsyncClient:
         # Create or coerce a protobuf request object.
         # Sanity check: If we got a request object, we should *not* have
         # gotten any keyword arguments that map to the request.
-        if request is not None and any([requests]):
+        has_flattened_params = any([requests])
+        if request is not None and has_flattened_params:
             raise ValueError(
                 "If the `request` argument is set, then none of "
                 "the individual field arguments should be set."
@@ -153,8 +194,8 @@ class ImageAnnotatorAsyncClient:
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
 
-        if requests is not None:
-            request.requests = requests
+        if requests:
+            request.requests.extend(requests)
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
@@ -165,7 +206,7 @@ class ImageAnnotatorAsyncClient:
                 maximum=60.0,
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
-                    exceptions.ServiceUnavailable, exceptions.DeadlineExceeded,
+                    exceptions.DeadlineExceeded, exceptions.ServiceUnavailable,
                 ),
             ),
             default_timeout=600.0,
@@ -196,12 +237,13 @@ class ImageAnnotatorAsyncClient:
         ``AsyncBatchAnnotateFilesResponse`` (results).
 
         Args:
-            request (:class:`~.image_annotator.AsyncBatchAnnotateFilesRequest`):
+            request (:class:`google.cloud.vision_v1p2beta1.types.AsyncBatchAnnotateFilesRequest`):
                 The request object. Multiple async file annotation
                 requests are batched into a single service call.
-            requests (:class:`Sequence[~.image_annotator.AsyncAnnotateFileRequest]`):
+            requests (:class:`Sequence[google.cloud.vision_v1p2beta1.types.AsyncAnnotateFileRequest]`):
                 Required. Individual async file
                 annotation requests for this batch.
+
                 This corresponds to the ``requests`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -213,18 +255,19 @@ class ImageAnnotatorAsyncClient:
                 sent along with the request as metadata.
 
         Returns:
-            ~.operation_async.AsyncOperation:
+            google.api_core.operation_async.AsyncOperation:
                 An object representing a long-running operation.
 
                 The result type for the operation will be
-                :class:``~.image_annotator.AsyncBatchAnnotateFilesResponse``:
+                :class:`google.cloud.vision_v1p2beta1.types.AsyncBatchAnnotateFilesResponse`
                 Response to an async batch file annotation request.
 
         """
         # Create or coerce a protobuf request object.
         # Sanity check: If we got a request object, we should *not* have
         # gotten any keyword arguments that map to the request.
-        if request is not None and any([requests]):
+        has_flattened_params = any([requests])
+        if request is not None and has_flattened_params:
             raise ValueError(
                 "If the `request` argument is set, then none of "
                 "the individual field arguments should be set."
@@ -235,8 +278,8 @@ class ImageAnnotatorAsyncClient:
         # If we have keyword arguments corresponding to fields on the
         # request, apply these.
 
-        if requests is not None:
-            request.requests = requests
+        if requests:
+            request.requests.extend(requests)
 
         # Wrap the RPC method; this adds retry and timeout information,
         # and friendly error handling.
@@ -247,7 +290,7 @@ class ImageAnnotatorAsyncClient:
                 maximum=60.0,
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
-                    exceptions.ServiceUnavailable, exceptions.DeadlineExceeded,
+                    exceptions.DeadlineExceeded, exceptions.ServiceUnavailable,
                 ),
             ),
             default_timeout=600.0,

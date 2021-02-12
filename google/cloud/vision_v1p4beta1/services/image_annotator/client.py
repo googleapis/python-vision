@@ -116,6 +116,22 @@ class ImageAnnotatorClient(metaclass=ImageAnnotatorClientMeta):
     )
 
     @classmethod
+    def from_service_account_info(cls, info: dict, *args, **kwargs):
+        """Creates an instance of this client using the provided credentials info.
+
+        Args:
+            info (dict): The service account private key info.
+            args: Additional arguments to pass to the constructor.
+            kwargs: Additional arguments to pass to the constructor.
+
+        Returns:
+            ImageAnnotatorClient: The constructed client.
+        """
+        credentials = service_account.Credentials.from_service_account_info(info)
+        kwargs["credentials"] = credentials
+        return cls(*args, **kwargs)
+
+    @classmethod
     def from_service_account_file(cls, filename: str, *args, **kwargs):
         """Creates an instance of this client using the provided credentials
         file.
@@ -127,13 +143,113 @@ class ImageAnnotatorClient(metaclass=ImageAnnotatorClientMeta):
             kwargs: Additional arguments to pass to the constructor.
 
         Returns:
-            {@api.name}: The constructed client.
+            ImageAnnotatorClient: The constructed client.
         """
         credentials = service_account.Credentials.from_service_account_file(filename)
         kwargs["credentials"] = credentials
         return cls(*args, **kwargs)
 
     from_service_account_json = from_service_account_file
+
+    @property
+    def transport(self) -> ImageAnnotatorTransport:
+        """Return the transport used by the client instance.
+
+        Returns:
+            ImageAnnotatorTransport: The transport used by the client instance.
+        """
+        return self._transport
+
+    @staticmethod
+    def product_path(project: str, location: str, product: str,) -> str:
+        """Return a fully-qualified product string."""
+        return "projects/{project}/locations/{location}/products/{product}".format(
+            project=project, location=location, product=product,
+        )
+
+    @staticmethod
+    def parse_product_path(path: str) -> Dict[str, str]:
+        """Parse a product path into its component segments."""
+        m = re.match(
+            r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/products/(?P<product>.+?)$",
+            path,
+        )
+        return m.groupdict() if m else {}
+
+    @staticmethod
+    def product_set_path(project: str, location: str, product_set: str,) -> str:
+        """Return a fully-qualified product_set string."""
+        return "projects/{project}/locations/{location}/productSets/{product_set}".format(
+            project=project, location=location, product_set=product_set,
+        )
+
+    @staticmethod
+    def parse_product_set_path(path: str) -> Dict[str, str]:
+        """Parse a product_set path into its component segments."""
+        m = re.match(
+            r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)/productSets/(?P<product_set>.+?)$",
+            path,
+        )
+        return m.groupdict() if m else {}
+
+    @staticmethod
+    def common_billing_account_path(billing_account: str,) -> str:
+        """Return a fully-qualified billing_account string."""
+        return "billingAccounts/{billing_account}".format(
+            billing_account=billing_account,
+        )
+
+    @staticmethod
+    def parse_common_billing_account_path(path: str) -> Dict[str, str]:
+        """Parse a billing_account path into its component segments."""
+        m = re.match(r"^billingAccounts/(?P<billing_account>.+?)$", path)
+        return m.groupdict() if m else {}
+
+    @staticmethod
+    def common_folder_path(folder: str,) -> str:
+        """Return a fully-qualified folder string."""
+        return "folders/{folder}".format(folder=folder,)
+
+    @staticmethod
+    def parse_common_folder_path(path: str) -> Dict[str, str]:
+        """Parse a folder path into its component segments."""
+        m = re.match(r"^folders/(?P<folder>.+?)$", path)
+        return m.groupdict() if m else {}
+
+    @staticmethod
+    def common_organization_path(organization: str,) -> str:
+        """Return a fully-qualified organization string."""
+        return "organizations/{organization}".format(organization=organization,)
+
+    @staticmethod
+    def parse_common_organization_path(path: str) -> Dict[str, str]:
+        """Parse a organization path into its component segments."""
+        m = re.match(r"^organizations/(?P<organization>.+?)$", path)
+        return m.groupdict() if m else {}
+
+    @staticmethod
+    def common_project_path(project: str,) -> str:
+        """Return a fully-qualified project string."""
+        return "projects/{project}".format(project=project,)
+
+    @staticmethod
+    def parse_common_project_path(path: str) -> Dict[str, str]:
+        """Parse a project path into its component segments."""
+        m = re.match(r"^projects/(?P<project>.+?)$", path)
+        return m.groupdict() if m else {}
+
+    @staticmethod
+    def common_location_path(project: str, location: str,) -> str:
+        """Return a fully-qualified location string."""
+        return "projects/{project}/locations/{location}".format(
+            project=project, location=location,
+        )
+
+    @staticmethod
+    def parse_common_location_path(path: str) -> Dict[str, str]:
+        """Parse a location path into its component segments."""
+        m = re.match(r"^projects/(?P<project>.+?)/locations/(?P<location>.+?)$", path)
+        return m.groupdict() if m else {}
 
     def __init__(
         self,
@@ -151,10 +267,10 @@ class ImageAnnotatorClient(metaclass=ImageAnnotatorClientMeta):
                 credentials identify the application to the service; if none
                 are specified, the client will attempt to ascertain the
                 credentials from the environment.
-            transport (Union[str, ~.ImageAnnotatorTransport]): The
+            transport (Union[str, ImageAnnotatorTransport]): The
                 transport to use. If set to None, a transport is chosen
                 automatically.
-            client_options (client_options_lib.ClientOptions): Custom options for the
+            client_options (google.api_core.client_options.ClientOptions): Custom options for the
                 client. It won't take effect if a ``transport`` instance is provided.
                 (1) The ``api_endpoint`` property can be used to override the
                 default endpoint provided by the client. GOOGLE_API_USE_MTLS_ENDPOINT
@@ -170,10 +286,10 @@ class ImageAnnotatorClient(metaclass=ImageAnnotatorClientMeta):
                 not provided, the default SSL client certificate will be used if
                 present. If GOOGLE_API_USE_CLIENT_CERTIFICATE is "false" or not
                 set, no client certificate will be used.
-            client_info (google.api_core.gapic_v1.client_info.ClientInfo):	
-                The client info used to send a user-agent string along with	
-                API requests. If ``None``, then default info will be used.	
-                Generally, you only need to set this if you're developing	
+            client_info (google.api_core.gapic_v1.client_info.ClientInfo):
+                The client info used to send a user-agent string along with
+                API requests. If ``None``, then default info will be used.
+                Generally, you only need to set this if you're developing
                 your own client library.
 
         Raises:
@@ -190,21 +306,17 @@ class ImageAnnotatorClient(metaclass=ImageAnnotatorClientMeta):
             util.strtobool(os.getenv("GOOGLE_API_USE_CLIENT_CERTIFICATE", "false"))
         )
 
-        ssl_credentials = None
+        client_cert_source_func = None
         is_mtls = False
         if use_client_cert:
             if client_options.client_cert_source:
-                import grpc  # type: ignore
-
-                cert, key = client_options.client_cert_source()
-                ssl_credentials = grpc.ssl_channel_credentials(
-                    certificate_chain=cert, private_key=key
-                )
                 is_mtls = True
+                client_cert_source_func = client_options.client_cert_source
             else:
-                creds = SslCredentials()
-                is_mtls = creds.is_mtls
-                ssl_credentials = creds.ssl_credentials if is_mtls else None
+                is_mtls = mtls.has_default_client_cert_source()
+                client_cert_source_func = (
+                    mtls.default_client_cert_source() if is_mtls else None
+                )
 
         # Figure out which api endpoint to use.
         if client_options.api_endpoint is not None:
@@ -247,7 +359,7 @@ class ImageAnnotatorClient(metaclass=ImageAnnotatorClientMeta):
                 credentials_file=client_options.credentials_file,
                 host=api_endpoint,
                 scopes=client_options.scopes,
-                ssl_channel_credentials=ssl_credentials,
+                client_cert_source_for_mtls=client_cert_source_func,
                 quota_project_id=client_options.quota_project_id,
                 client_info=client_info,
             )
@@ -265,12 +377,13 @@ class ImageAnnotatorClient(metaclass=ImageAnnotatorClientMeta):
         images.
 
         Args:
-            request (:class:`~.image_annotator.BatchAnnotateImagesRequest`):
+            request (google.cloud.vision_v1p4beta1.types.BatchAnnotateImagesRequest):
                 The request object. Multiple image annotation requests
                 are batched into a single service call.
-            requests (:class:`Sequence[~.image_annotator.AnnotateImageRequest]`):
+            requests (Sequence[google.cloud.vision_v1p4beta1.types.AnnotateImageRequest]):
                 Required. Individual image annotation
                 requests for this batch.
+
                 This corresponds to the ``requests`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -282,7 +395,7 @@ class ImageAnnotatorClient(metaclass=ImageAnnotatorClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            ~.image_annotator.BatchAnnotateImagesResponse:
+            google.cloud.vision_v1p4beta1.types.BatchAnnotateImagesResponse:
                 Response to a batch image annotation
                 request.
 
@@ -342,14 +455,15 @@ class ImageAnnotatorClient(metaclass=ImageAnnotatorClientMeta):
         extracted.
 
         Args:
-            request (:class:`~.image_annotator.BatchAnnotateFilesRequest`):
+            request (google.cloud.vision_v1p4beta1.types.BatchAnnotateFilesRequest):
                 The request object. A list of requests to annotate files
                 using the BatchAnnotateFiles API.
-            requests (:class:`Sequence[~.image_annotator.AnnotateFileRequest]`):
+            requests (Sequence[google.cloud.vision_v1p4beta1.types.AnnotateFileRequest]):
                 Required. The list of file annotation
                 requests. Right now we support only one
                 AnnotateFileRequest in
                 BatchAnnotateFilesRequest.
+
                 This corresponds to the ``requests`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -361,7 +475,7 @@ class ImageAnnotatorClient(metaclass=ImageAnnotatorClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            ~.image_annotator.BatchAnnotateFilesResponse:
+            google.cloud.vision_v1p4beta1.types.BatchAnnotateFilesResponse:
                 A list of file annotation responses.
         """
         # Create or coerce a protobuf request object.
@@ -424,18 +538,20 @@ class ImageAnnotatorClient(metaclass=ImageAnnotatorClientMeta):
         BatchAnnotateImagesResponse proto.
 
         Args:
-            request (:class:`~.image_annotator.AsyncBatchAnnotateImagesRequest`):
+            request (google.cloud.vision_v1p4beta1.types.AsyncBatchAnnotateImagesRequest):
                 The request object. Request for async image annotation
                 for a list of images.
-            requests (:class:`Sequence[~.image_annotator.AnnotateImageRequest]`):
+            requests (Sequence[google.cloud.vision_v1p4beta1.types.AnnotateImageRequest]):
                 Required. Individual image annotation
                 requests for this batch.
+
                 This corresponds to the ``requests`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
-            output_config (:class:`~.image_annotator.OutputConfig`):
+            output_config (google.cloud.vision_v1p4beta1.types.OutputConfig):
                 Required. The desired output location
                 and metadata (e.g. format).
+
                 This corresponds to the ``output_config`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -447,11 +563,11 @@ class ImageAnnotatorClient(metaclass=ImageAnnotatorClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            ~.operation.Operation:
+            google.api_core.operation.Operation:
                 An object representing a long-running operation.
 
                 The result type for the operation will be
-                :class:``~.image_annotator.AsyncBatchAnnotateImagesResponse``:
+                :class:`google.cloud.vision_v1p4beta1.types.AsyncBatchAnnotateImagesResponse`
                 Response to an async batch image annotation request.
 
         """
@@ -521,12 +637,13 @@ class ImageAnnotatorClient(metaclass=ImageAnnotatorClientMeta):
         ``AsyncBatchAnnotateFilesResponse`` (results).
 
         Args:
-            request (:class:`~.image_annotator.AsyncBatchAnnotateFilesRequest`):
+            request (google.cloud.vision_v1p4beta1.types.AsyncBatchAnnotateFilesRequest):
                 The request object. Multiple async file annotation
                 requests are batched into a single service call.
-            requests (:class:`Sequence[~.image_annotator.AsyncAnnotateFileRequest]`):
+            requests (Sequence[google.cloud.vision_v1p4beta1.types.AsyncAnnotateFileRequest]):
                 Required. Individual async file
                 annotation requests for this batch.
+
                 This corresponds to the ``requests`` field
                 on the ``request`` instance; if ``request`` is provided, this
                 should not be set.
@@ -538,11 +655,11 @@ class ImageAnnotatorClient(metaclass=ImageAnnotatorClientMeta):
                 sent along with the request as metadata.
 
         Returns:
-            ~.operation.Operation:
+            google.api_core.operation.Operation:
                 An object representing a long-running operation.
 
                 The result type for the operation will be
-                :class:``~.image_annotator.AsyncBatchAnnotateFilesResponse``:
+                :class:`google.cloud.vision_v1p4beta1.types.AsyncBatchAnnotateFilesResponse`
                 Response to an async batch file annotation request.
 
         """

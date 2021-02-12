@@ -45,11 +45,11 @@ class BoundingPoly(proto.Message):
     r"""A bounding polygon for the detected image annotation.
 
     Attributes:
-        vertices (Sequence[~.geometry.Vertex]):
+        vertices (Sequence[google.cloud.vision_v1p1beta1.types.Vertex]):
             The bounding polygon vertices.
     """
 
-    vertices = proto.RepeatedField(proto.MESSAGE, number=1, message=Vertex,)
+    vertices = proto.RepeatedField(proto.MESSAGE, number=1, message="Vertex",)
 
 
 class Position(proto.Message):
