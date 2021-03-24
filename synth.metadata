@@ -4,7 +4,7 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/python-vision.git",
-        "sha": "b992a295c3f1634518d8b38bc12052b66c03c1dc"
+        "sha": "1cf3816c84802fc6871a5059c5c795a1c1a8dc9e"
       }
     },
     {
