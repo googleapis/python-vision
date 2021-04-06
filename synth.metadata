@@ -4,15 +4,15 @@
       "git": {
         "name": ".",
         "remote": "https://github.com/googleapis/python-vision.git",
-        "sha": "ace604680ff0f2d1b0d458aa5c3eb1e98b4e81b0"
+        "sha": "44c0bf5749a2cd8197b04905e4299b97e38357d3"
       }
     },
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "c539b9b08b3366ee00c0ec1950f4df711552a269",
-        "internalRef": "365759522"
+        "sha": "fa7915f8d43926de5effb815129a274579fa84df",
+        "internalRef": "366869955"
       }
     },
     {
