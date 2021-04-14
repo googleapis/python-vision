@@ -26,7 +26,7 @@ python3 -m pip install --upgrade twine wheel setuptools
 export PYTHONUNBUFFERED=1
 
 # Move into the package, build the distribution and upload.
-TWINE_PASSWORD=$(cat "${KOKORO_GFILE_DIR}/secret_manager/google-cloud-pypi-password")
+TWINE_PASSWORD=$(cat "${KOKORO_GFILE_DIR}/secret_manager/google-cloud-pypi-token")
 cd github/python-vision
 python3 setup.py sdist bdist_wheel
 twine upload --username __token__ --password "${TWINE_PASSWORD}" dist/*
