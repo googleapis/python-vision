@@ -4,6 +4,13 @@
 
 [1]: https://pypi.org/project/google-cloud-vision/#history
 
+### [2.3.3](https://www.github.com/googleapis/python-vision/compare/v2.3.2...v2.3.3) (2021-06-23)
+
+
+### Documentation
+
+* omit mention of Python 2.7 in 'CONTRIBUTING.rst' ([#1127](https://www.github.com/googleapis/python-vision/issues/1127)) ([#161](https://www.github.com/googleapis/python-vision/issues/161)) ([78740ad](https://www.github.com/googleapis/python-vision/commit/78740ade95bf3eb7a2c613383e6ed602dfd1f1db)), closes [#1126](https://www.github.com/googleapis/python-vision/issues/1126)
+
 ### [2.3.2](https://www.github.com/googleapis/python-vision/compare/v2.3.1...v2.3.2) (2021-06-02)
 
 
