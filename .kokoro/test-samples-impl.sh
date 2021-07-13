@@ -21,7 +21,7 @@ set -eo pipefail
 shopt -s globstar
 
 # Exit early if samples don't exist
-if ! compgen -G  "./samples/**/requirements.txt" > /dev/null; then
+if ! find samples -name 'requirements.txt' | grep -q .; then
   echo "No tests run. './samples/**/requirements.txt' not found"
   exit 0
 fi
