@@ -4,6 +4,13 @@
 
 [1]: https://pypi.org/project/google-cloud-vision/#history
 
+### [2.5.1](https://www.github.com/googleapis/python-vision/compare/v2.5.0...v2.5.1) (2021-10-14)
+
+
+### Documentation
+
+* **readme:** add pylint limitations ([#246](https://www.github.com/googleapis/python-vision/issues/246)) ([e4fb61f](https://www.github.com/googleapis/python-vision/commit/e4fb61f276f4540149884e8098fc4575f30ec9a6))
+
 ## [2.5.0](https://www.github.com/googleapis/python-vision/compare/v2.4.4...v2.5.0) (2021-10-08)
 
 
