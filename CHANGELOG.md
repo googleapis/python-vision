@@ -4,6 +4,26 @@
 
 [1]: https://pypi.org/project/google-cloud-vision/#history
 
+### [2.6.2](https://www.github.com/googleapis/python-vision/compare/v2.6.1...v2.6.2) (2021-11-01)
+
+
+### Bug Fixes
+
+* **deps:** drop packaging dependency ([b6bf6ab](https://www.github.com/googleapis/python-vision/commit/b6bf6abb9114ffbf426ad3aca49d76190a421e3e))
+* **deps:** require google-api-core >= 1.28.0 ([b6bf6ab](https://www.github.com/googleapis/python-vision/commit/b6bf6abb9114ffbf426ad3aca49d76190a421e3e))
+
+
+### Documentation
+
+* list oneofs in docstring ([b6bf6ab](https://www.github.com/googleapis/python-vision/commit/b6bf6abb9114ffbf426ad3aca49d76190a421e3e))
+
+### [2.6.1](https://www.github.com/googleapis/python-vision/compare/v2.6.0...v2.6.1) (2021-10-26)
+
+
+### Documentation
+
+* update async_detect_document() sample ([#260](https://www.github.com/googleapis/python-vision/issues/260)) ([b044537](https://www.github.com/googleapis/python-vision/commit/b044537fb49794ba988ffd8324b50d5cdbac6678))
+
 ## [2.6.0](https://www.github.com/googleapis/python-vision/compare/v2.5.0...v2.6.0) (2021-10-20)
 
 
