@@ -34,11 +34,11 @@ from google.cloud import vision
 
 # [START vision_product_search_get_similar_products]
 def get_similar_products_file(
-        project_id, 
-        location, 
-        product_set_id, 
+        project_id,
+        location,
+        product_set_id,
         product_category,
-        file_path, 
+        file_path,
         filter,
         max_results
 ):
