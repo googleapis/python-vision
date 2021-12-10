@@ -55,7 +55,7 @@ def test_get_similar_products_uri(capsys):
 def test_get_similar_products_file_with_filter(capsys):
     get_similar_products_file(
         PROJECT_ID, LOCATION, PRODUCT_SET_ID, PRODUCT_CATEGORY, FILE_PATH_1,
-        FILTER)
+        FILTER, MAX_RESULTS)
     out, _ = capsys.readouterr()
     assert PRODUCT_ID_1 in out
     assert PRODUCT_ID_2 not in out
