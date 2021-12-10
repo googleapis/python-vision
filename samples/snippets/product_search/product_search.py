@@ -80,9 +80,10 @@ def get_similar_products_file(
 
     # Search products similar to the image.
     response = image_annotator_client.product_search(
-        image, 
+        image,
         image_context=image_context,
-        max_results=max_results)
+        max_results=max_results
+    )
 
     index_time = response.product_search_results.index_time
     print('Product set index time: ')
