@@ -4,6 +4,13 @@
 
 [1]: https://pypi.org/project/google-cloud-vision/#history
 
+### [1.0.1](https://github.com/googleapis/python-vision/compare/v1.0.0...v1.0.1) (2022-04-01)
+
+
+### Bug Fixes
+
+* **deps:** require google-api-core >= 1.31.5, >= 2.3.2 on v1 release ([#324](https://github.com/googleapis/python-vision/issues/324)) ([a3d3d66](https://github.com/googleapis/python-vision/commit/a3d3d665b7982598eb816c8fcfb3a66078c93a06))
+
 ## [1.0.0](https://www.github.com/googleapis/python-vision/compare/v0.42.0...v1.0.0) (2020-02-28)
 
 
