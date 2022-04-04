@@ -11,16 +11,16 @@ from google.longrunning import (
 
 class ImageAnnotatorStub(object):
     """Service that performs Google Cloud Vision API detection tasks over client
-  images, such as face, landmark, logo, label, and text detection. The
-  ImageAnnotator service returns detected entities from the images.
-  """
+    images, such as face, landmark, logo, label, and text detection. The
+    ImageAnnotator service returns detected entities from the images.
+    """
 
     def __init__(self, channel):
         """Constructor.
 
-    Args:
-      channel: A grpc.Channel.
-    """
+        Args:
+          channel: A grpc.Channel.
+        """
         self.BatchAnnotateImages = channel.unary_unary(
             "/google.cloud.vision.v1p2beta1.ImageAnnotator/BatchAnnotateImages",
             request_serializer=google_dot_cloud_dot_vision__v1p2beta1_dot_proto_dot_image__annotator__pb2.BatchAnnotateImagesRequest.SerializeToString,
@@ -35,25 +35,24 @@ class ImageAnnotatorStub(object):
 
 class ImageAnnotatorServicer(object):
     """Service that performs Google Cloud Vision API detection tasks over client
-  images, such as face, landmark, logo, label, and text detection. The
-  ImageAnnotator service returns detected entities from the images.
-  """
+    images, such as face, landmark, logo, label, and text detection. The
+    ImageAnnotator service returns detected entities from the images.
+    """
 
     def BatchAnnotateImages(self, request, context):
-        """Run image detection and annotation for a batch of images.
-    """
+        """Run image detection and annotation for a batch of images."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details("Method not implemented!")
         raise NotImplementedError("Method not implemented!")
 
     def AsyncBatchAnnotateFiles(self, request, context):
         """Run async image detection and annotation for a list of generic files (e.g.
-    PDF) which may contain multiple pages and multiple images per page.
-    Progress and results can be retrieved through the
-    `google.longrunning.Operations` interface.
-    `Operation.metadata` contains `OperationMetadata` (metadata).
-    `Operation.response` contains `AsyncBatchAnnotateFilesResponse` (results).
-    """
+        PDF) which may contain multiple pages and multiple images per page.
+        Progress and results can be retrieved through the
+        `google.longrunning.Operations` interface.
+        `Operation.metadata` contains `OperationMetadata` (metadata).
+        `Operation.response` contains `AsyncBatchAnnotateFilesResponse` (results).
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details("Method not implemented!")
         raise NotImplementedError("Method not implemented!")

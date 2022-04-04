@@ -12,27 +12,27 @@ from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 class ProductSearchStub(object):
     """Manages Products and ProductSets of reference images for use in product
-  search. It uses the following resource model:
+    search. It uses the following resource model:
 
-  - The API has a collection of [ProductSet][google.cloud.vision.v1p3beta1.ProductSet] resources, named
-  `projects/*/locations/*/productSets/*`, which acts as a way to put different
-  products into groups to limit identification.
+    - The API has a collection of [ProductSet][google.cloud.vision.v1p3beta1.ProductSet] resources, named
+    `projects/*/locations/*/productSets/*`, which acts as a way to put different
+    products into groups to limit identification.
 
-  In parallel,
+    In parallel,
 
-  - The API has a collection of [Product][google.cloud.vision.v1p3beta1.Product] resources, named
-  `projects/*/locations/*/products/*`
+    - The API has a collection of [Product][google.cloud.vision.v1p3beta1.Product] resources, named
+    `projects/*/locations/*/products/*`
 
-  - Each [Product][google.cloud.vision.v1p3beta1.Product] has a collection of [ReferenceImage][google.cloud.vision.v1p3beta1.ReferenceImage] resources, named
-  `projects/*/locations/*/products/*/referenceImages/*`
-  """
+    - Each [Product][google.cloud.vision.v1p3beta1.Product] has a collection of [ReferenceImage][google.cloud.vision.v1p3beta1.ReferenceImage] resources, named
+    `projects/*/locations/*/products/*/referenceImages/*`
+    """
 
     def __init__(self, channel):
         """Constructor.
 
-    Args:
-      channel: A grpc.Channel.
-    """
+        Args:
+          channel: A grpc.Channel.
+        """
         self.CreateProductSet = channel.unary_unary(
             "/google.cloud.vision.v1p3beta1.ProductSearch/CreateProductSet",
             request_serializer=google_dot_cloud_dot_vision__v1p3beta1_dot_proto_dot_product__search__service__pb2.CreateProductSetRequest.SerializeToString,
@@ -127,29 +127,29 @@ class ProductSearchStub(object):
 
 class ProductSearchServicer(object):
     """Manages Products and ProductSets of reference images for use in product
-  search. It uses the following resource model:
+    search. It uses the following resource model:
 
-  - The API has a collection of [ProductSet][google.cloud.vision.v1p3beta1.ProductSet] resources, named
-  `projects/*/locations/*/productSets/*`, which acts as a way to put different
-  products into groups to limit identification.
+    - The API has a collection of [ProductSet][google.cloud.vision.v1p3beta1.ProductSet] resources, named
+    `projects/*/locations/*/productSets/*`, which acts as a way to put different
+    products into groups to limit identification.
 
-  In parallel,
+    In parallel,
 
-  - The API has a collection of [Product][google.cloud.vision.v1p3beta1.Product] resources, named
-  `projects/*/locations/*/products/*`
+    - The API has a collection of [Product][google.cloud.vision.v1p3beta1.Product] resources, named
+    `projects/*/locations/*/products/*`
 
-  - Each [Product][google.cloud.vision.v1p3beta1.Product] has a collection of [ReferenceImage][google.cloud.vision.v1p3beta1.ReferenceImage] resources, named
-  `projects/*/locations/*/products/*/referenceImages/*`
-  """
+    - Each [Product][google.cloud.vision.v1p3beta1.Product] has a collection of [ReferenceImage][google.cloud.vision.v1p3beta1.ReferenceImage] resources, named
+    `projects/*/locations/*/products/*/referenceImages/*`
+    """
 
     def CreateProductSet(self, request, context):
         """Creates and returns a new ProductSet resource.
 
-    Possible errors:
+        Possible errors:
 
-    * Returns INVALID_ARGUMENT if display_name is missing, or is longer than
-    4096 characters.
-    """
+        * Returns INVALID_ARGUMENT if display_name is missing, or is longer than
+        4096 characters.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details("Method not implemented!")
         raise NotImplementedError("Method not implemented!")
@@ -157,11 +157,11 @@ class ProductSearchServicer(object):
     def ListProductSets(self, request, context):
         """Lists ProductSets in an unspecified order.
 
-    Possible errors:
+        Possible errors:
 
-    * Returns INVALID_ARGUMENT if page_size is greater than 100, or less
-    than 1.
-    """
+        * Returns INVALID_ARGUMENT if page_size is greater than 100, or less
+        than 1.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details("Method not implemented!")
         raise NotImplementedError("Method not implemented!")
@@ -169,38 +169,38 @@ class ProductSearchServicer(object):
     def GetProductSet(self, request, context):
         """Gets information associated with a ProductSet.
 
-    Possible errors:
+        Possible errors:
 
-    * Returns NOT_FOUND if the ProductSet does not exist.
-    """
+        * Returns NOT_FOUND if the ProductSet does not exist.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details("Method not implemented!")
         raise NotImplementedError("Method not implemented!")
 
     def UpdateProductSet(self, request, context):
         """Makes changes to a ProductSet resource.
-    Only display_name can be updated currently.
+        Only display_name can be updated currently.
 
-    Possible errors:
+        Possible errors:
 
-    * Returns NOT_FOUND if the ProductSet does not exist.
-    * Returns INVALID_ARGUMENT if display_name is present in update_mask but
-    missing from the request or longer than 4096 characters.
-    """
+        * Returns NOT_FOUND if the ProductSet does not exist.
+        * Returns INVALID_ARGUMENT if display_name is present in update_mask but
+        missing from the request or longer than 4096 characters.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details("Method not implemented!")
         raise NotImplementedError("Method not implemented!")
 
     def DeleteProductSet(self, request, context):
         """Permanently deletes a ProductSet. All Products and ReferenceImages in the
-    ProductSet will be deleted.
+        ProductSet will be deleted.
 
-    The actual image files are not deleted from Google Cloud Storage.
+        The actual image files are not deleted from Google Cloud Storage.
 
-    Possible errors:
+        Possible errors:
 
-    * Returns NOT_FOUND if the ProductSet does not exist.
-    """
+        * Returns NOT_FOUND if the ProductSet does not exist.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details("Method not implemented!")
         raise NotImplementedError("Method not implemented!")
@@ -208,13 +208,13 @@ class ProductSearchServicer(object):
     def CreateProduct(self, request, context):
         """Creates and returns a new product resource.
 
-    Possible errors:
+        Possible errors:
 
-    * Returns INVALID_ARGUMENT if display_name is missing or longer than 4096
-    characters.
-    * Returns INVALID_ARGUMENT if description is longer than 4096 characters.
-    * Returns INVALID_ARGUMENT if product_category is missing or invalid.
-    """
+        * Returns INVALID_ARGUMENT if display_name is missing or longer than 4096
+        characters.
+        * Returns INVALID_ARGUMENT if description is longer than 4096 characters.
+        * Returns INVALID_ARGUMENT if product_category is missing or invalid.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details("Method not implemented!")
         raise NotImplementedError("Method not implemented!")
@@ -222,10 +222,10 @@ class ProductSearchServicer(object):
     def ListProducts(self, request, context):
         """Lists products in an unspecified order.
 
-    Possible errors:
+        Possible errors:
 
-    * Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
-    """
+        * Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details("Method not implemented!")
         raise NotImplementedError("Method not implemented!")
@@ -233,30 +233,30 @@ class ProductSearchServicer(object):
     def GetProduct(self, request, context):
         """Gets information associated with a Product.
 
-    Possible errors:
+        Possible errors:
 
-    * Returns NOT_FOUND if the Product does not exist.
-    """
+        * Returns NOT_FOUND if the Product does not exist.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details("Method not implemented!")
         raise NotImplementedError("Method not implemented!")
 
     def UpdateProduct(self, request, context):
         """Makes changes to a Product resource.
-    Only display_name, description and labels can be updated right now.
+        Only display_name, description and labels can be updated right now.
 
-    If labels are updated, the change will not be reflected in queries until
-    the next index time.
+        If labels are updated, the change will not be reflected in queries until
+        the next index time.
 
-    Possible errors:
+        Possible errors:
 
-    * Returns NOT_FOUND if the Product does not exist.
-    * Returns INVALID_ARGUMENT if display_name is present in update_mask but is
-    missing from the request or longer than 4096 characters.
-    * Returns INVALID_ARGUMENT if description is present in update_mask but is
-    longer than 4096 characters.
-    * Returns INVALID_ARGUMENT if product_category is present in update_mask.
-    """
+        * Returns NOT_FOUND if the Product does not exist.
+        * Returns INVALID_ARGUMENT if display_name is present in update_mask but is
+        missing from the request or longer than 4096 characters.
+        * Returns INVALID_ARGUMENT if description is present in update_mask but is
+        longer than 4096 characters.
+        * Returns INVALID_ARGUMENT if product_category is present in update_mask.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details("Method not implemented!")
         raise NotImplementedError("Method not implemented!")
@@ -264,14 +264,14 @@ class ProductSearchServicer(object):
     def DeleteProduct(self, request, context):
         """Permanently deletes a product and its reference images.
 
-    Metadata of the product and all its images will be deleted right away, but
-    search queries against ProductSets containing the product may still work
-    until all related caches are refreshed.
+        Metadata of the product and all its images will be deleted right away, but
+        search queries against ProductSets containing the product may still work
+        until all related caches are refreshed.
 
-    Possible errors:
+        Possible errors:
 
-    * Returns NOT_FOUND if the product does not exist.
-    """
+        * Returns NOT_FOUND if the product does not exist.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details("Method not implemented!")
         raise NotImplementedError("Method not implemented!")
@@ -279,24 +279,24 @@ class ProductSearchServicer(object):
     def CreateReferenceImage(self, request, context):
         """Creates and returns a new ReferenceImage resource.
 
-    The `bounding_poly` field is optional. If `bounding_poly` is not specified,
-    the system will try to detect regions of interest in the image that are
-    compatible with the product_category on the parent product. If it is
-    specified, detection is ALWAYS skipped. The system converts polygons into
-    non-rotated rectangles.
+        The `bounding_poly` field is optional. If `bounding_poly` is not specified,
+        the system will try to detect regions of interest in the image that are
+        compatible with the product_category on the parent product. If it is
+        specified, detection is ALWAYS skipped. The system converts polygons into
+        non-rotated rectangles.
 
-    Note that the pipeline will resize the image if the image resolution is too
-    large to process (above 50MP).
+        Note that the pipeline will resize the image if the image resolution is too
+        large to process (above 50MP).
 
-    Possible errors:
+        Possible errors:
 
-    * Returns INVALID_ARGUMENT if the image_uri is missing or longer than 4096
-    characters.
-    * Returns INVALID_ARGUMENT if the product does not exist.
-    * Returns INVALID_ARGUMENT if bounding_poly is not provided, and nothing
-    compatible with the parent product's product_category is detected.
-    * Returns INVALID_ARGUMENT if bounding_poly contains more than 10 polygons.
-    """
+        * Returns INVALID_ARGUMENT if the image_uri is missing or longer than 4096
+        characters.
+        * Returns INVALID_ARGUMENT if the product does not exist.
+        * Returns INVALID_ARGUMENT if bounding_poly is not provided, and nothing
+        compatible with the parent product's product_category is detected.
+        * Returns INVALID_ARGUMENT if bounding_poly contains more than 10 polygons.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details("Method not implemented!")
         raise NotImplementedError("Method not implemented!")
@@ -304,16 +304,16 @@ class ProductSearchServicer(object):
     def DeleteReferenceImage(self, request, context):
         """Permanently deletes a reference image.
 
-    The image metadata will be deleted right away, but search queries
-    against ProductSets containing the image may still work until all related
-    caches are refreshed.
+        The image metadata will be deleted right away, but search queries
+        against ProductSets containing the image may still work until all related
+        caches are refreshed.
 
-    The actual image files are not deleted from Google Cloud Storage.
+        The actual image files are not deleted from Google Cloud Storage.
 
-    Possible errors:
+        Possible errors:
 
-    * Returns NOT_FOUND if the reference image does not exist.
-    """
+        * Returns NOT_FOUND if the reference image does not exist.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details("Method not implemented!")
         raise NotImplementedError("Method not implemented!")
@@ -321,12 +321,12 @@ class ProductSearchServicer(object):
     def ListReferenceImages(self, request, context):
         """Lists reference images.
 
-    Possible errors:
+        Possible errors:
 
-    * Returns NOT_FOUND if the parent product does not exist.
-    * Returns INVALID_ARGUMENT if the page_size is greater than 100, or less
-    than 1.
-    """
+        * Returns NOT_FOUND if the parent product does not exist.
+        * Returns INVALID_ARGUMENT if the page_size is greater than 100, or less
+        than 1.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details("Method not implemented!")
         raise NotImplementedError("Method not implemented!")
@@ -334,24 +334,24 @@ class ProductSearchServicer(object):
     def GetReferenceImage(self, request, context):
         """Gets information associated with a ReferenceImage.
 
-    Possible errors:
+        Possible errors:
 
-    * Returns NOT_FOUND if the specified image does not exist.
-    """
+        * Returns NOT_FOUND if the specified image does not exist.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details("Method not implemented!")
         raise NotImplementedError("Method not implemented!")
 
     def AddProductToProductSet(self, request, context):
         """Adds a Product to the specified ProductSet. If the Product is already
-    present, no change is made.
+        present, no change is made.
 
-    One Product can be added to at most 100 ProductSets.
+        One Product can be added to at most 100 ProductSets.
 
-    Possible errors:
+        Possible errors:
 
-    * Returns NOT_FOUND if the Product or the ProductSet doesn't exist.
-    """
+        * Returns NOT_FOUND if the Product or the ProductSet doesn't exist.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details("Method not implemented!")
         raise NotImplementedError("Method not implemented!")
@@ -359,40 +359,40 @@ class ProductSearchServicer(object):
     def RemoveProductFromProductSet(self, request, context):
         """Removes a Product from the specified ProductSet.
 
-    Possible errors:
+        Possible errors:
 
-    * Returns NOT_FOUND If the Product is not found under the ProductSet.
-    """
+        * Returns NOT_FOUND If the Product is not found under the ProductSet.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details("Method not implemented!")
         raise NotImplementedError("Method not implemented!")
 
     def ListProductsInProductSet(self, request, context):
         """Lists the Products in a ProductSet, in an unspecified order. If the
-    ProductSet does not exist, the products field of the response will be
-    empty.
+        ProductSet does not exist, the products field of the response will be
+        empty.
 
-    Possible errors:
+        Possible errors:
 
-    * Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
-    """
+        * Returns INVALID_ARGUMENT if page_size is greater than 100 or less than 1.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details("Method not implemented!")
         raise NotImplementedError("Method not implemented!")
 
     def ImportProductSets(self, request, context):
         """Asynchronous API that imports a list of reference images to specified
-    product sets based on a list of image information.
+        product sets based on a list of image information.
 
-    The [google.longrunning.Operation][google.longrunning.Operation] API can be
-    used to keep track of the progress and results of the request.
-    `Operation.metadata` contains `BatchOperationMetadata`. (progress)
-    `Operation.response` contains `ImportProductSetsResponse`. (results)
+        The [google.longrunning.Operation][google.longrunning.Operation] API can be
+        used to keep track of the progress and results of the request.
+        `Operation.metadata` contains `BatchOperationMetadata`. (progress)
+        `Operation.response` contains `ImportProductSetsResponse`. (results)
 
-    The input source of this method is a csv file on Google Cloud Storage.
-    For the format of the csv file please see
-    [ImportProductSetsGcsSource.csv_file_uri][google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource.csv_file_uri].
-    """
+        The input source of this method is a csv file on Google Cloud Storage.
+        For the format of the csv file please see
+        [ImportProductSetsGcsSource.csv_file_uri][google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource.csv_file_uri].
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details("Method not implemented!")
         raise NotImplementedError("Method not implemented!")

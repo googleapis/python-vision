@@ -733,8 +733,10 @@ class TestProductSearchClient(object):
         client.remove_product_from_product_set(name, product)
 
         assert len(channel.requests) == 1
-        expected_request = product_search_service_pb2.RemoveProductFromProductSetRequest(
-            name=name, product=product
+        expected_request = (
+            product_search_service_pb2.RemoveProductFromProductSetRequest(
+                name=name, product=product
+            )
         )
         actual_request = channel.requests[0][1]
         assert expected_request == actual_request

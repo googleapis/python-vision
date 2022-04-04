@@ -65,9 +65,9 @@ source_suffix = [".rst", ".md"]
 master_doc = "index"
 
 # General information about the project.
-project = u"google-cloud-vision"
-copyright = u"2019, Google"
-author = u"Google APIs"
+project = "google-cloud-vision"
+copyright = "2019, Google"
+author = "Google APIs"
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -261,7 +261,7 @@ latex_documents = [
     (
         master_doc,
         "google-cloud-vision.tex",
-        u"google-cloud-vision Documentation",
+        "google-cloud-vision Documentation",
         author,
         "manual",
     )
@@ -296,7 +296,7 @@ man_pages = [
     (
         master_doc,
         "google-cloud-vision",
-        u"google-cloud-vision Documentation",
+        "google-cloud-vision Documentation",
         [author],
         1,
     )
@@ -315,7 +315,7 @@ texinfo_documents = [
     (
         master_doc,
         "google-cloud-vision",
-        u"google-cloud-vision Documentation",
+        "google-cloud-vision Documentation",
         author,
         "google-cloud-vision",
         "google-cloud-vision Library",
