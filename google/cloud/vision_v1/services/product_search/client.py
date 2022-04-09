@@ -16,7 +16,7 @@
 from collections import OrderedDict
 import os
 import re
-from typing import Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Mapping, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib
@@ -518,7 +518,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import vision_v1
+                    from google.cloud import vision_v1
 
             def sample_create_product_set():
                 # Create a client
@@ -643,7 +643,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import vision_v1
+                    from google.cloud import vision_v1
 
             def sample_list_product_sets():
                 # Create a client
@@ -757,7 +757,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import vision_v1
+                    from google.cloud import vision_v1
 
             def sample_get_product_set():
                 # Create a client
@@ -867,7 +867,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import vision_v1
+                    from google.cloud import vision_v1
 
             def sample_update_product_set():
                 # Create a client
@@ -981,7 +981,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import vision_v1
+                    from google.cloud import vision_v1
 
             def sample_delete_product_set():
                 # Create a client
@@ -1078,7 +1078,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import vision_v1
+                    from google.cloud import vision_v1
 
             def sample_create_product():
                 # Create a client
@@ -1198,7 +1198,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import vision_v1
+                    from google.cloud import vision_v1
 
             def sample_list_products():
                 # Create a client
@@ -1312,7 +1312,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import vision_v1
+                    from google.cloud import vision_v1
 
             def sample_get_product():
                 # Create a client
@@ -1424,7 +1424,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import vision_v1
+                    from google.cloud import vision_v1
 
             def sample_update_product():
                 # Create a client
@@ -1537,7 +1537,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import vision_v1
+                    from google.cloud import vision_v1
 
             def sample_delete_product():
                 # Create a client
@@ -1646,7 +1646,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import vision_v1
+                    from google.cloud import vision_v1
 
             def sample_create_reference_image():
                 # Create a client
@@ -1777,7 +1777,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import vision_v1
+                    from google.cloud import vision_v1
 
             def sample_delete_reference_image():
                 # Create a client
@@ -1870,7 +1870,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import vision_v1
+                    from google.cloud import vision_v1
 
             def sample_list_reference_images():
                 # Create a client
@@ -1985,7 +1985,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import vision_v1
+                    from google.cloud import vision_v1
 
             def sample_get_reference_image():
                 # Create a client
@@ -2095,7 +2095,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import vision_v1
+                    from google.cloud import vision_v1
 
             def sample_add_product_to_product_set():
                 # Create a client
@@ -2201,7 +2201,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import vision_v1
+                    from google.cloud import vision_v1
 
             def sample_remove_product_from_product_set():
                 # Create a client
@@ -2314,7 +2314,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import vision_v1
+                    from google.cloud import vision_v1
 
             def sample_list_products_in_product_set():
                 # Create a client
@@ -2442,7 +2442,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import vision_v1
+                    from google.cloud import vision_v1
 
             def sample_import_product_sets():
                 # Create a client
@@ -2596,7 +2596,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
         .. code-block:: python
 
-            from google.cloud import vision_v1
+                    from google.cloud import vision_v1
 
             def sample_purge_products():
                 # Create a client
