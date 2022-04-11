@@ -16,7 +16,7 @@
 from collections import OrderedDict
 import functools
 import re
-from typing import Dict, Optional, Sequence, Tuple, Type, Union
+from typing import Dict, Mapping, Optional, Sequence, Tuple, Type, Union
 import pkg_resources
 
 from google.api_core.client_options import ClientOptions
@@ -252,7 +252,6 @@ class ProductSearchAsyncClient:
         -  Returns INVALID_ARGUMENT if display_name is missing, or is
            longer than 4096 characters.
 
-
         .. code-block:: python
 
             from google.cloud import vision_v1p3beta1
@@ -384,7 +383,6 @@ class ProductSearchAsyncClient:
         -  Returns INVALID_ARGUMENT if page_size is greater than 100, or
            less than 1.
 
-
         .. code-block:: python
 
             from google.cloud import vision_v1p3beta1
@@ -458,8 +456,7 @@ class ProductSearchAsyncClient:
                 maximum=60.0,
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
-                    core_exceptions.ServiceUnavailable,
+                    core_exceptions.GoogleAPICallError,
                 ),
                 deadline=600.0,
             ),
@@ -507,7 +504,6 @@ class ProductSearchAsyncClient:
         Possible errors:
 
         -  Returns NOT_FOUND if the ProductSet does not exist.
-
 
         .. code-block:: python
 
@@ -582,8 +578,7 @@ class ProductSearchAsyncClient:
                 maximum=60.0,
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
-                    core_exceptions.ServiceUnavailable,
+                    core_exceptions.GoogleAPICallError,
                 ),
                 deadline=600.0,
             ),
@@ -627,7 +622,6 @@ class ProductSearchAsyncClient:
         -  Returns INVALID_ARGUMENT if display_name is present in
            update_mask but missing from the request or longer than 4096
            characters.
-
 
         .. code-block:: python
 
@@ -754,7 +748,6 @@ class ProductSearchAsyncClient:
 
         -  Returns NOT_FOUND if the ProductSet does not exist.
 
-
         .. code-block:: python
 
             from google.cloud import vision_v1p3beta1
@@ -816,8 +809,7 @@ class ProductSearchAsyncClient:
                 maximum=60.0,
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
-                    core_exceptions.ServiceUnavailable,
+                    core_exceptions.GoogleAPICallError,
                 ),
                 deadline=600.0,
             ),
@@ -860,7 +852,6 @@ class ProductSearchAsyncClient:
            characters.
         -  Returns INVALID_ARGUMENT if product_category is missing or
            invalid.
-
 
         .. code-block:: python
 
@@ -988,7 +979,6 @@ class ProductSearchAsyncClient:
         -  Returns INVALID_ARGUMENT if page_size is greater than 100 or
            less than 1.
 
-
         .. code-block:: python
 
             from google.cloud import vision_v1p3beta1
@@ -1062,8 +1052,7 @@ class ProductSearchAsyncClient:
                 maximum=60.0,
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
-                    core_exceptions.ServiceUnavailable,
+                    core_exceptions.GoogleAPICallError,
                 ),
                 deadline=600.0,
             ),
@@ -1111,7 +1100,6 @@ class ProductSearchAsyncClient:
         Possible errors:
 
         -  Returns NOT_FOUND if the Product does not exist.
-
 
         .. code-block:: python
 
@@ -1181,8 +1169,7 @@ class ProductSearchAsyncClient:
                 maximum=60.0,
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
-                    core_exceptions.ServiceUnavailable,
+                    core_exceptions.GoogleAPICallError,
                 ),
                 deadline=600.0,
             ),
@@ -1233,7 +1220,6 @@ class ProductSearchAsyncClient:
            update_mask but is longer than 4096 characters.
         -  Returns INVALID_ARGUMENT if product_category is present in
            update_mask.
-
 
         .. code-block:: python
 
@@ -1357,7 +1343,6 @@ class ProductSearchAsyncClient:
 
         -  Returns NOT_FOUND if the product does not exist.
 
-
         .. code-block:: python
 
             from google.cloud import vision_v1p3beta1
@@ -1419,8 +1404,7 @@ class ProductSearchAsyncClient:
                 maximum=60.0,
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
-                    core_exceptions.ServiceUnavailable,
+                    core_exceptions.GoogleAPICallError,
                 ),
                 deadline=600.0,
             ),
@@ -1475,7 +1459,6 @@ class ProductSearchAsyncClient:
            product_category is detected.
         -  Returns INVALID_ARGUMENT if bounding_poly contains more than
            10 polygons.
-
 
         .. code-block:: python
 
@@ -1619,7 +1602,6 @@ class ProductSearchAsyncClient:
 
         -  Returns NOT_FOUND if the reference image does not exist.
 
-
         .. code-block:: python
 
             from google.cloud import vision_v1p3beta1
@@ -1683,8 +1665,7 @@ class ProductSearchAsyncClient:
                 maximum=60.0,
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
-                    core_exceptions.ServiceUnavailable,
+                    core_exceptions.GoogleAPICallError,
                 ),
                 deadline=600.0,
             ),
@@ -1722,7 +1703,6 @@ class ProductSearchAsyncClient:
         -  Returns NOT_FOUND if the parent product does not exist.
         -  Returns INVALID_ARGUMENT if the page_size is greater than
            100, or less than 1.
-
 
         .. code-block:: python
 
@@ -1798,8 +1778,7 @@ class ProductSearchAsyncClient:
                 maximum=60.0,
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
-                    core_exceptions.ServiceUnavailable,
+                    core_exceptions.GoogleAPICallError,
                 ),
                 deadline=600.0,
             ),
@@ -1847,7 +1826,6 @@ class ProductSearchAsyncClient:
         Possible errors:
 
         -  Returns NOT_FOUND if the specified image does not exist.
-
 
         .. code-block:: python
 
@@ -1921,8 +1899,7 @@ class ProductSearchAsyncClient:
                 maximum=60.0,
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
-                    core_exceptions.ServiceUnavailable,
+                    core_exceptions.GoogleAPICallError,
                 ),
                 deadline=600.0,
             ),
@@ -1968,7 +1945,6 @@ class ProductSearchAsyncClient:
 
         -  Returns NOT_FOUND if the Product or the ProductSet doesn't
            exist.
-
 
         .. code-block:: python
 
@@ -2083,7 +2059,6 @@ class ProductSearchAsyncClient:
 
         -  Returns NOT_FOUND If the Product is not found under the
            ProductSet.
-
 
         .. code-block:: python
 
@@ -2200,7 +2175,6 @@ class ProductSearchAsyncClient:
         -  Returns INVALID_ARGUMENT if page_size is greater than 100 or
            less than 1.
 
-
         .. code-block:: python
 
             from google.cloud import vision_v1p3beta1
@@ -2276,8 +2250,7 @@ class ProductSearchAsyncClient:
                 maximum=60.0,
                 multiplier=1.3,
                 predicate=retries.if_exception_type(
-                    core_exceptions.DeadlineExceeded,
-                    core_exceptions.ServiceUnavailable,
+                    core_exceptions.GoogleAPICallError,
                 ),
                 deadline=600.0,
             ),
@@ -2333,7 +2306,6 @@ class ProductSearchAsyncClient:
         The input source of this method is a csv file on Google Cloud
         Storage. For the format of the csv file please see
         [ImportProductSetsGcsSource.csv_file_uri][google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource.csv_file_uri].
-
 
         .. code-block:: python
 
