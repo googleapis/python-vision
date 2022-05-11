@@ -61,11 +61,9 @@ def draw_boxes(image, bounds, color):
 
 
 # [START vision_document_text_tutorial_detect_bounds]
-def get_document_bounds(image_file, feature):
-    """Returns document bounds given an image."""
-    client = vision.ImageAnnotatorClient()
-
-    bounds = []
+def request_full_text_annotation(image_file):
+    """Request a full text annotation."""
+    client = vision.ImageAnnotatorClient(credentials=creds)
 
     with io.open(image_file, "rb") as image_file:
         content = image_file.read()
@@ -73,7 +71,12 @@ def get_document_bounds(image_file, feature):
     image = vision.Image(content=content)
 
     response = client.document_text_detection(image=image)
-    document = response.full_text_annotation
+    return response.full_text_annotation
+
+
+def get_document_bounds(document, feature):
+    """Returns document bounds given a document."""
+    bounds = []
 
     # Collect specified feature bounds by enumerating all document features
     for page in document.pages:
@@ -100,11 +103,12 @@ def get_document_bounds(image_file, feature):
 
 def render_doc_text(filein, fileout):
     image = Image.open(filein)
-    bounds = get_document_bounds(filein, FeatureType.BLOCK)
+    document = request_full_text_annotation(filein)
+    bounds = get_document_bounds(document, FeatureType.BLOCK)
     draw_boxes(image, bounds, "blue")
-    bounds = get_document_bounds(filein, FeatureType.PARA)
+    bounds = get_document_bounds(document, FeatureType.PARA)
     draw_boxes(image, bounds, "red")
-    bounds = get_document_bounds(filein, FeatureType.WORD)
+    bounds = get_document_bounds(document, FeatureType.WORD)
     draw_boxes(image, bounds, "yellow")
 
     if fileout != 0:
