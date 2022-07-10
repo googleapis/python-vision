@@ -46,7 +46,7 @@ In order to use this library, you first need to go through the following steps:
 .. _Setup Authentication.: https://googleapis.dev/python/google-api-core/latest/auth.html
 
 Installation
-~~~~~~~~~~~
+~~~~~~~~~~~~
 
 Install this library in a `virtualenv`_ using pip. `virtualenv`_ is a tool to
 create isolated Python environments. The basic problem it addresses is one of
@@ -96,7 +96,7 @@ Windows
 
 
 Example Usage
-~~~~~~~~~~~~
+~~~~~~~~~~~~~
 
 .. code-block:: python
 
@@ -109,7 +109,7 @@ Example Usage
    })
 
 Known Limitations
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 
 Pylint Does Not Work Out Of The Box
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -133,7 +133,7 @@ disable this error check. For example, if you choose a convention of naming your
 
 
 Next Steps
-~~~~~~~~~
+~~~~~~~~~~
 
 -  Read the `Client Library Documentation`_ for Google Cloud Vision
    API to see other available methods on the client.
