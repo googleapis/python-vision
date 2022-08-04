@@ -1,0 +1,175 @@
+{
+  "clientLibrary": {
+    "apis": [
+      {
+        "id": "google.cloud.vision.v1p1beta1",
+        "version": "v1p1beta1"
+      }
+    ],
+    "language": "PYTHON",
+    "name": "google-cloud-vision"
+  },
+  "snippets": [
+    {
+      "canonical": true,
+      "clientMethod": {
+        "async": true,
+        "client": {
+          "fullName": "google.cloud.vision_v1p1beta1.ImageAnnotatorAsyncClient",
+          "shortName": "ImageAnnotatorAsyncClient"
+        },
+        "fullName": "google.cloud.vision_v1p1beta1.ImageAnnotatorAsyncClient.batch_annotate_images",
+        "method": {
+          "fullName": "google.cloud.vision.v1p1beta1.ImageAnnotator.BatchAnnotateImages",
+          "service": {
+            "fullName": "google.cloud.vision.v1p1beta1.ImageAnnotator",
+            "shortName": "ImageAnnotator"
+          },
+          "shortName": "BatchAnnotateImages"
+        },
+        "parameters": [
+          {
+            "name": "request",
+            "type": "google.cloud.vision_v1p1beta1.types.BatchAnnotateImagesRequest"
+          },
+          {
+            "name": "requests",
+            "type": "Sequence[google.cloud.vision_v1p1beta1.types.AnnotateImageRequest]"
+          },
+          {
+            "name": "retry",
+            "type": "google.api_core.retry.Retry"
+          },
+          {
+            "name": "timeout",
+            "type": "float"
+          },
+          {
+            "name": "metadata",
+            "type": "Sequence[Tuple[str, str]"
+          }
+        ],
+        "resultType": "google.cloud.vision_v1p1beta1.types.BatchAnnotateImagesResponse",
+        "shortName": "batch_annotate_images"
+      },
+      "description": "Sample for BatchAnnotateImages",
+      "file": "vision_v1p1beta1_generated_image_annotator_batch_annotate_images_async.py",
+      "language": "PYTHON",
+      "origin": "API_DEFINITION",
+      "regionTag": "vision_v1p1beta1_generated_ImageAnnotator_BatchAnnotateImages_async",
+      "segments": [
+        {
+          "end": 43,
+          "start": 27,
+          "type": "FULL"
+        },
+        {
+          "end": 43,
+          "start": 27,
+          "type": "SHORT"
+        },
+        {
+          "end": 33,
+          "start": 31,
+          "type": "CLIENT_INITIALIZATION"
+        },
+        {
+          "end": 37,
+          "start": 34,
+          "type": "REQUEST_INITIALIZATION"
+        },
+        {
+          "end": 40,
+          "start": 38,
+          "type": "REQUEST_EXECUTION"
+        },
+        {
+          "end": 44,
+          "start": 41,
+          "type": "RESPONSE_HANDLING"
+        }
+      ],
+      "title": "vision_v1p1beta1_generated_image_annotator_batch_annotate_images_async.py"
+    },
+    {
+      "canonical": true,
+      "clientMethod": {
+        "client": {
+          "fullName": "google.cloud.vision_v1p1beta1.ImageAnnotatorClient",
+          "shortName": "ImageAnnotatorClient"
+        },
+        "fullName": "google.cloud.vision_v1p1beta1.ImageAnnotatorClient.batch_annotate_images",
+        "method": {
+          "fullName": "google.cloud.vision.v1p1beta1.ImageAnnotator.BatchAnnotateImages",
+          "service": {
+            "fullName": "google.cloud.vision.v1p1beta1.ImageAnnotator",
+            "shortName": "ImageAnnotator"
+          },
+          "shortName": "BatchAnnotateImages"
+        },
+        "parameters": [
+          {
+            "name": "request",
+            "type": "google.cloud.vision_v1p1beta1.types.BatchAnnotateImagesRequest"
+          },
+          {
+            "name": "requests",
+            "type": "Sequence[google.cloud.vision_v1p1beta1.types.AnnotateImageRequest]"
+          },
+          {
+            "name": "retry",
+            "type": "google.api_core.retry.Retry"
+          },
+          {
+            "name": "timeout",
+            "type": "float"
+          },
+          {
+            "name": "metadata",
+            "type": "Sequence[Tuple[str, str]"
+          }
+        ],
+        "resultType": "google.cloud.vision_v1p1beta1.types.BatchAnnotateImagesResponse",
+        "shortName": "batch_annotate_images"
+      },
+      "description": "Sample for BatchAnnotateImages",
+      "file": "vision_v1p1beta1_generated_image_annotator_batch_annotate_images_sync.py",
+      "language": "PYTHON",
+      "origin": "API_DEFINITION",
+      "regionTag": "vision_v1p1beta1_generated_ImageAnnotator_BatchAnnotateImages_sync",
+      "segments": [
+        {
+          "end": 43,
+          "start": 27,
+          "type": "FULL"
+        },
+        {
+          "end": 43,
+          "start": 27,
+          "type": "SHORT"
+        },
+        {
+          "end": 33,
+          "start": 31,
+          "type": "CLIENT_INITIALIZATION"
+        },
+        {
+          "end": 37,
+          "start": 34,
+          "type": "REQUEST_INITIALIZATION"
+        },
+        {
+          "end": 40,
+          "start": 38,
+          "type": "REQUEST_EXECUTION"
+        },
+        {
+          "end": 44,
+          "start": 41,
+          "type": "RESPONSE_HANDLING"
+        }
+      ],
+      "title": "vision_v1p1beta1_generated_image_annotator_batch_annotate_images_sync.py"
+    }
+  ]
+}
