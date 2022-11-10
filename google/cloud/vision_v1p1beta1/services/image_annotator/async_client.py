@@ -16,7 +16,17 @@
 from collections import OrderedDict
 import functools
 import re
-from typing import Dict, Mapping, Optional, Sequence, Tuple, Type, Union
+from typing import (
+    Dict,
+    Mapping,
+    MutableMapping,
+    MutableSequence,
+    Optional,
+    Sequence,
+    Tuple,
+    Type,
+    Union,
+)
 import pkg_resources
 
 from google.api_core.client_options import ClientOptions
@@ -159,9 +169,9 @@ class ImageAnnotatorAsyncClient:
     def __init__(
         self,
         *,
-        credentials: ga_credentials.Credentials = None,
+        credentials: Optional[ga_credentials.Credentials] = None,
         transport: Union[str, ImageAnnotatorTransport] = "grpc_asyncio",
-        client_options: ClientOptions = None,
+        client_options: Optional[ClientOptions] = None,
         client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
     ) -> None:
         """Instantiates the image annotator client.
@@ -205,11 +215,15 @@ class ImageAnnotatorAsyncClient:
 
     async def batch_annotate_images(
         self,
-        request: Union[image_annotator.BatchAnnotateImagesRequest, dict] = None,
+        request: Optional[
+            Union[image_annotator.BatchAnnotateImagesRequest, dict]
+        ] = None,
         *,
-        requests: Sequence[image_annotator.AnnotateImageRequest] = None,
+        requests: Optional[
+            MutableSequence[image_annotator.AnnotateImageRequest]
+        ] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> image_annotator.BatchAnnotateImagesResponse:
         r"""Run image detection and annotation for a batch of
@@ -241,10 +255,10 @@ class ImageAnnotatorAsyncClient:
                 print(response)
 
         Args:
-            request (Union[google.cloud.vision_v1p1beta1.types.BatchAnnotateImagesRequest, dict]):
+            request (Optional[Union[google.cloud.vision_v1p1beta1.types.BatchAnnotateImagesRequest, dict]]):
                 The request object. Multiple image annotation requests
                 are batched into a single service call.
-            requests (:class:`Sequence[google.cloud.vision_v1p1beta1.types.AnnotateImageRequest]`):
+            requests (:class:`MutableSequence[google.cloud.vision_v1p1beta1.types.AnnotateImageRequest]`):
                 Required. Individual image annotation
                 requests for this batch.
 

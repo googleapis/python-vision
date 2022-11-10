@@ -16,7 +16,18 @@
 from collections import OrderedDict
 import os
 import re
-from typing import Dict, Mapping, Optional, Sequence, Tuple, Type, Union, cast
+from typing import (
+    Dict,
+    Mapping,
+    MutableMapping,
+    MutableSequence,
+    Optional,
+    Sequence,
+    Tuple,
+    Type,
+    Union,
+    cast,
+)
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib
@@ -61,7 +72,7 @@ class ProductSearchClientMeta(type):
 
     def get_transport_class(
         cls,
-        label: str = None,
+        label: Optional[str] = None,
     ) -> Type[ProductSearchTransport]:
         """Returns an appropriate transport class.
 
@@ -404,7 +415,7 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
         self,
         *,
         credentials: Optional[ga_credentials.Credentials] = None,
-        transport: Union[str, ProductSearchTransport, None] = None,
+        transport: Optional[Union[str, ProductSearchTransport]] = None,
         client_options: Optional[Union[client_options_lib.ClientOptions, dict]] = None,
         client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
     ) -> None:
@@ -502,13 +513,15 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
     def create_product_set(
         self,
-        request: Union[product_search_service.CreateProductSetRequest, dict] = None,
+        request: Optional[
+            Union[product_search_service.CreateProductSetRequest, dict]
+        ] = None,
         *,
-        parent: str = None,
-        product_set: product_search_service.ProductSet = None,
-        product_set_id: str = None,
+        parent: Optional[str] = None,
+        product_set: Optional[product_search_service.ProductSet] = None,
+        product_set_id: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> product_search_service.ProductSet:
         r"""Creates and returns a new ProductSet resource.
@@ -635,11 +648,13 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
     def list_product_sets(
         self,
-        request: Union[product_search_service.ListProductSetsRequest, dict] = None,
+        request: Optional[
+            Union[product_search_service.ListProductSetsRequest, dict]
+        ] = None,
         *,
-        parent: str = None,
+        parent: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> pagers.ListProductSetsPager:
         r"""Lists ProductSets in an unspecified order.
@@ -756,11 +771,13 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
     def get_product_set(
         self,
-        request: Union[product_search_service.GetProductSetRequest, dict] = None,
+        request: Optional[
+            Union[product_search_service.GetProductSetRequest, dict]
+        ] = None,
         *,
-        name: str = None,
+        name: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> product_search_service.ProductSet:
         r"""Gets information associated with a ProductSet.
@@ -867,12 +884,14 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
     def update_product_set(
         self,
-        request: Union[product_search_service.UpdateProductSetRequest, dict] = None,
+        request: Optional[
+            Union[product_search_service.UpdateProductSetRequest, dict]
+        ] = None,
         *,
-        product_set: product_search_service.ProductSet = None,
-        update_mask: field_mask_pb2.FieldMask = None,
+        product_set: Optional[product_search_service.ProductSet] = None,
+        update_mask: Optional[field_mask_pb2.FieldMask] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> product_search_service.ProductSet:
         r"""Makes changes to a ProductSet resource. Only display_name can be
@@ -993,11 +1012,13 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
     def delete_product_set(
         self,
-        request: Union[product_search_service.DeleteProductSetRequest, dict] = None,
+        request: Optional[
+            Union[product_search_service.DeleteProductSetRequest, dict]
+        ] = None,
         *,
-        name: str = None,
+        name: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> None:
         r"""Permanently deletes a ProductSet. All Products and
@@ -1093,13 +1114,15 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
     def create_product(
         self,
-        request: Union[product_search_service.CreateProductRequest, dict] = None,
+        request: Optional[
+            Union[product_search_service.CreateProductRequest, dict]
+        ] = None,
         *,
-        parent: str = None,
-        product: product_search_service.Product = None,
-        product_id: str = None,
+        parent: Optional[str] = None,
+        product: Optional[product_search_service.Product] = None,
+        product_id: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> product_search_service.Product:
         r"""Creates and returns a new product resource.
@@ -1225,11 +1248,13 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
     def list_products(
         self,
-        request: Union[product_search_service.ListProductsRequest, dict] = None,
+        request: Optional[
+            Union[product_search_service.ListProductsRequest, dict]
+        ] = None,
         *,
-        parent: str = None,
+        parent: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> pagers.ListProductsPager:
         r"""Lists products in an unspecified order.
@@ -1346,11 +1371,11 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
     def get_product(
         self,
-        request: Union[product_search_service.GetProductRequest, dict] = None,
+        request: Optional[Union[product_search_service.GetProductRequest, dict]] = None,
         *,
-        name: str = None,
+        name: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> product_search_service.Product:
         r"""Gets information associated with a Product.
@@ -1452,12 +1477,14 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
     def update_product(
         self,
-        request: Union[product_search_service.UpdateProductRequest, dict] = None,
+        request: Optional[
+            Union[product_search_service.UpdateProductRequest, dict]
+        ] = None,
         *,
-        product: product_search_service.Product = None,
-        update_mask: field_mask_pb2.FieldMask = None,
+        product: Optional[product_search_service.Product] = None,
+        update_mask: Optional[field_mask_pb2.FieldMask] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> product_search_service.Product:
         r"""Makes changes to a Product resource. Only display_name,
@@ -1582,11 +1609,13 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
     def delete_product(
         self,
-        request: Union[product_search_service.DeleteProductRequest, dict] = None,
+        request: Optional[
+            Union[product_search_service.DeleteProductRequest, dict]
+        ] = None,
         *,
-        name: str = None,
+        name: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> None:
         r"""Permanently deletes a product and its reference images.
@@ -1682,13 +1711,15 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
     def create_reference_image(
         self,
-        request: Union[product_search_service.CreateReferenceImageRequest, dict] = None,
+        request: Optional[
+            Union[product_search_service.CreateReferenceImageRequest, dict]
+        ] = None,
         *,
-        parent: str = None,
-        reference_image: product_search_service.ReferenceImage = None,
-        reference_image_id: str = None,
+        parent: Optional[str] = None,
+        reference_image: Optional[product_search_service.ReferenceImage] = None,
+        reference_image_id: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> product_search_service.ReferenceImage:
         r"""Creates and returns a new ReferenceImage resource.
@@ -1836,11 +1867,13 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
     def delete_reference_image(
         self,
-        request: Union[product_search_service.DeleteReferenceImageRequest, dict] = None,
+        request: Optional[
+            Union[product_search_service.DeleteReferenceImageRequest, dict]
+        ] = None,
         *,
-        name: str = None,
+        name: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> None:
         r"""Permanently deletes a reference image.
@@ -1941,11 +1974,13 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
     def list_reference_images(
         self,
-        request: Union[product_search_service.ListReferenceImagesRequest, dict] = None,
+        request: Optional[
+            Union[product_search_service.ListReferenceImagesRequest, dict]
+        ] = None,
         *,
-        parent: str = None,
+        parent: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> pagers.ListReferenceImagesPager:
         r"""Lists reference images.
@@ -2064,11 +2099,13 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
     def get_reference_image(
         self,
-        request: Union[product_search_service.GetReferenceImageRequest, dict] = None,
+        request: Optional[
+            Union[product_search_service.GetReferenceImageRequest, dict]
+        ] = None,
         *,
-        name: str = None,
+        name: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> product_search_service.ReferenceImage:
         r"""Gets information associated with a ReferenceImage.
@@ -2174,14 +2211,14 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
     def add_product_to_product_set(
         self,
-        request: Union[
-            product_search_service.AddProductToProductSetRequest, dict
+        request: Optional[
+            Union[product_search_service.AddProductToProductSetRequest, dict]
         ] = None,
         *,
-        name: str = None,
-        product: str = None,
+        name: Optional[str] = None,
+        product: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> None:
         r"""Adds a Product to the specified ProductSet. If the Product is
@@ -2295,14 +2332,14 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
     def remove_product_from_product_set(
         self,
-        request: Union[
-            product_search_service.RemoveProductFromProductSetRequest, dict
+        request: Optional[
+            Union[product_search_service.RemoveProductFromProductSetRequest, dict]
         ] = None,
         *,
-        name: str = None,
-        product: str = None,
+        name: Optional[str] = None,
+        product: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> None:
         r"""Removes a Product from the specified ProductSet.
@@ -2413,13 +2450,13 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
     def list_products_in_product_set(
         self,
-        request: Union[
-            product_search_service.ListProductsInProductSetRequest, dict
+        request: Optional[
+            Union[product_search_service.ListProductsInProductSetRequest, dict]
         ] = None,
         *,
-        name: str = None,
+        name: Optional[str] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> pagers.ListProductsInProductSetPager:
         r"""Lists the Products in a ProductSet, in an unspecified order. If
@@ -2544,12 +2581,16 @@ class ProductSearchClient(metaclass=ProductSearchClientMeta):
 
     def import_product_sets(
         self,
-        request: Union[product_search_service.ImportProductSetsRequest, dict] = None,
+        request: Optional[
+            Union[product_search_service.ImportProductSetsRequest, dict]
+        ] = None,
         *,
-        parent: str = None,
-        input_config: product_search_service.ImportProductSetsInputConfig = None,
+        parent: Optional[str] = None,
+        input_config: Optional[
+            product_search_service.ImportProductSetsInputConfig
+        ] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> operation.Operation:
         r"""Asynchronous API that imports a list of reference images to

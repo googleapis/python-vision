@@ -16,7 +16,18 @@
 from collections import OrderedDict
 import os
 import re
-from typing import Dict, Mapping, Optional, Sequence, Tuple, Type, Union, cast
+from typing import (
+    Dict,
+    Mapping,
+    MutableMapping,
+    MutableSequence,
+    Optional,
+    Sequence,
+    Tuple,
+    Type,
+    Union,
+    cast,
+)
 import pkg_resources
 
 from google.api_core import client_options as client_options_lib
@@ -56,7 +67,7 @@ class ImageAnnotatorClientMeta(type):
 
     def get_transport_class(
         cls,
-        label: str = None,
+        label: Optional[str] = None,
     ) -> Type[ImageAnnotatorTransport]:
         """Returns an appropriate transport class.
 
@@ -313,7 +324,7 @@ class ImageAnnotatorClient(metaclass=ImageAnnotatorClientMeta):
         self,
         *,
         credentials: Optional[ga_credentials.Credentials] = None,
-        transport: Union[str, ImageAnnotatorTransport, None] = None,
+        transport: Optional[Union[str, ImageAnnotatorTransport]] = None,
         client_options: Optional[Union[client_options_lib.ClientOptions, dict]] = None,
         client_info: gapic_v1.client_info.ClientInfo = DEFAULT_CLIENT_INFO,
     ) -> None:
@@ -411,11 +422,15 @@ class ImageAnnotatorClient(metaclass=ImageAnnotatorClientMeta):
 
     def batch_annotate_images(
         self,
-        request: Union[image_annotator.BatchAnnotateImagesRequest, dict] = None,
+        request: Optional[
+            Union[image_annotator.BatchAnnotateImagesRequest, dict]
+        ] = None,
         *,
-        requests: Sequence[image_annotator.AnnotateImageRequest] = None,
+        requests: Optional[
+            MutableSequence[image_annotator.AnnotateImageRequest]
+        ] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: float = None,
+        timeout: Optional[float] = None,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> image_annotator.BatchAnnotateImagesResponse:
         r"""Run image detection and annotation for a batch of
@@ -450,7 +465,7 @@ class ImageAnnotatorClient(metaclass=ImageAnnotatorClientMeta):
             request (Union[google.cloud.vision_v1p1beta1.types.BatchAnnotateImagesRequest, dict]):
                 The request object. Multiple image annotation requests
                 are batched into a single service call.
-            requests (Sequence[google.cloud.vision_v1p1beta1.types.AnnotateImageRequest]):
+            requests (MutableSequence[google.cloud.vision_v1p1beta1.types.AnnotateImageRequest]):
                 Required. Individual image annotation
                 requests for this batch.
 
