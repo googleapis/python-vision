@@ -120,16 +120,3 @@ python.py_samples(skip_readmes=True)
 # run format session for all directories which have a noxfile
 for noxfile in Path(".").glob("**/noxfile.py"):
     s.shell.run(["nox", "-s", "blacken"], cwd=noxfile.parent, hide_output=False)
-
-
-#     s.move(library / f"google/cloud/vision_{library.name}/proto")
-#     s.move(library / f"google/cloud/vision_{library.name}/services")
-#     s.move(library / f"google/cloud/vision_{library.name}/types")
-#     s.move(library / f"google/cloud/vision_{library.name}/__init__.py")
-#     s.move(library / f"google/cloud/vision_{library.name}/py.typed")
-#     s.move(library / f"tests/unit/gapic/vision_{library.name}")
-#     # Move docs configuration
-#     s.move(library / f"docs/conf.py")
-#     s.move(library / "samples")
-
-# s.remove_staging_dirs()
