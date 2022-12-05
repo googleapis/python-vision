@@ -100,7 +100,7 @@ for library in s.get_staging_dirs(default_version):
         "                    requests[i] = image_annotator.AsyncAnnotateFileRequest(requests[i])"
     )
 
-    s.move([library], excludes=["**/gapic_version.py", "README.rst", "docs/index.rst"])
+    s.move([library], excludes=["**/gapic_version.py", "README.rst", "docs/index.rst", "docs/vision_v1p1beta1", "google/cloud/vision/__init__.py"])
 s.remove_staging_dirs()
 
 # ----------------------------------------------------------------------------
@@ -128,11 +128,6 @@ for noxfile in Path(".").glob("**/noxfile.py"):
 #     s.move(library / f"google/cloud/vision_{library.name}/__init__.py")
 #     s.move(library / f"google/cloud/vision_{library.name}/py.typed")
 #     s.move(library / f"tests/unit/gapic/vision_{library.name}")
-
-#     # don't publish docs for these versions
-#     if library.name != "v1p1beta1":
-#         s.move(library / f"docs/vision_{library.name}")
-
 #     # Move docs configuration
 #     s.move(library / f"docs/conf.py")
 #     s.move(library / "samples")
