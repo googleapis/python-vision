@@ -108,7 +108,7 @@ s.remove_staging_dirs()
 # ----------------------------------------------------------------------------
 
 templated_files = gcp.CommonTemplates().py_library(
-    cov_level=100,
+    cov_level=99,
     microgenerator=True,
     versions=gcp.common.detect_versions(path="./google", default_first=True),
     system_test_external_dependencies=["google-cloud-storage"],
