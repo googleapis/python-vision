@@ -28,7 +28,8 @@ from typing import (
     Union,
     cast,
 )
-import pkg_resources
+
+from google.cloud.vision_v1 import gapic_version as package_version
 
 from google.api_core import client_options as client_options_lib
 from google.api_core import exceptions as core_exceptions
@@ -478,7 +479,7 @@ class ImageAnnotatorClient(metaclass=ImageAnnotatorClientMeta):
             MutableSequence[image_annotator.AnnotateImageRequest]
         ] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: Optional[float] = None,
+        timeout: Union[float, object] = gapic_v1.method.DEFAULT,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> image_annotator.BatchAnnotateImagesResponse:
         r"""Run image detection and annotation for a batch of
@@ -579,7 +580,7 @@ class ImageAnnotatorClient(metaclass=ImageAnnotatorClientMeta):
         *,
         requests: Optional[MutableSequence[image_annotator.AnnotateFileRequest]] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: Optional[float] = None,
+        timeout: Union[float, object] = gapic_v1.method.DEFAULT,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> image_annotator.BatchAnnotateFilesResponse:
         r"""Service that performs image detection and annotation
@@ -689,7 +690,7 @@ class ImageAnnotatorClient(metaclass=ImageAnnotatorClientMeta):
         ] = None,
         output_config: Optional[image_annotator.OutputConfig] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: Optional[float] = None,
+        timeout: Union[float, object] = gapic_v1.method.DEFAULT,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> operation.Operation:
         r"""Run asynchronous image detection and annotation for a list of
@@ -828,7 +829,7 @@ class ImageAnnotatorClient(metaclass=ImageAnnotatorClientMeta):
             MutableSequence[image_annotator.AsyncAnnotateFileRequest]
         ] = None,
         retry: OptionalRetry = gapic_v1.method.DEFAULT,
-        timeout: Optional[float] = None,
+        timeout: Union[float, object] = gapic_v1.method.DEFAULT,
         metadata: Sequence[Tuple[str, str]] = (),
     ) -> operation.Operation:
         r"""Run asynchronous image detection and annotation for a list of
@@ -957,14 +958,9 @@ class ImageAnnotatorClient(metaclass=ImageAnnotatorClientMeta):
         self.transport.close()
 
 
-try:
-    DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
-        gapic_version=pkg_resources.get_distribution(
-            "google-cloud-vision",
-        ).version,
-    )
-except pkg_resources.DistributionNotFound:
-    DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo()
+DEFAULT_CLIENT_INFO = gapic_v1.client_info.ClientInfo(
+    gapic_version=package_version.__version__
+)
 
 
 __all__ = ("ImageAnnotatorClient",)
