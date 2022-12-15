@@ -5,6 +5,11 @@
         "release-type": "python",
         "extra-files": [
           "google/cloud/vision/gapic_version.py",
+          "google/cloud/vision_v1/gapic_version.py",
+          "google/cloud/vision_v1p1beta1/gapic_version.py",
+          "google/cloud/vision_v1p2beta1/gapic_version.py",
+          "google/cloud/vision_v1p3beta1/gapic_version.py",
+          "google/cloud/vision_v1p4beta1/gapic_version.py",
           {
             "type": "json",
             "path": "samples/generated_samples/snippet_metadata_google.cloud.vision.v1.json",
