@@ -31,7 +31,7 @@ from google.api_core import operations_v1
 from requests import __version__ as requests_version
 import dataclasses
 import re
-from typing import Callable, Dict, List, Optional, Sequence, Tuple, Union
+from typing import Any, Callable, Dict, List, Optional, Sequence, Tuple, Union
 import warnings
 
 try:
@@ -735,7 +735,7 @@ class ProductSearchRestTransport(ProductSearchTransport):
         def __hash__(self):
             return hash("AddProductToProductSet")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, Any] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
@@ -825,7 +825,7 @@ class ProductSearchRestTransport(ProductSearchTransport):
         def __hash__(self):
             return hash("CreateProduct")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, Any] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
@@ -920,7 +920,7 @@ class ProductSearchRestTransport(ProductSearchTransport):
         def __hash__(self):
             return hash("CreateProductSet")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, Any] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
@@ -1022,7 +1022,7 @@ class ProductSearchRestTransport(ProductSearchTransport):
         def __hash__(self):
             return hash("CreateReferenceImage")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, Any] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
@@ -1121,7 +1121,7 @@ class ProductSearchRestTransport(ProductSearchTransport):
         def __hash__(self):
             return hash("DeleteProduct")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, Any] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
@@ -1195,7 +1195,7 @@ class ProductSearchRestTransport(ProductSearchTransport):
         def __hash__(self):
             return hash("DeleteProductSet")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, Any] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
@@ -1271,7 +1271,7 @@ class ProductSearchRestTransport(ProductSearchTransport):
         def __hash__(self):
             return hash("DeleteReferenceImage")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, Any] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
@@ -1347,7 +1347,7 @@ class ProductSearchRestTransport(ProductSearchTransport):
         def __hash__(self):
             return hash("GetProduct")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, Any] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
@@ -1433,7 +1433,7 @@ class ProductSearchRestTransport(ProductSearchTransport):
         def __hash__(self):
             return hash("GetProductSet")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, Any] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
@@ -1524,7 +1524,7 @@ class ProductSearchRestTransport(ProductSearchTransport):
         def __hash__(self):
             return hash("GetReferenceImage")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, Any] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
@@ -1614,7 +1614,7 @@ class ProductSearchRestTransport(ProductSearchTransport):
         def __hash__(self):
             return hash("ImportProductSets")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, Any] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
@@ -1712,7 +1712,7 @@ class ProductSearchRestTransport(ProductSearchTransport):
         def __hash__(self):
             return hash("ListProducts")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, Any] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
@@ -1798,7 +1798,7 @@ class ProductSearchRestTransport(ProductSearchTransport):
         def __hash__(self):
             return hash("ListProductSets")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, Any] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
@@ -1886,7 +1886,7 @@ class ProductSearchRestTransport(ProductSearchTransport):
         def __hash__(self):
             return hash("ListProductsInProductSet")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, Any] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
@@ -1981,7 +1981,7 @@ class ProductSearchRestTransport(ProductSearchTransport):
         def __hash__(self):
             return hash("ListReferenceImages")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, Any] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
@@ -2069,7 +2069,7 @@ class ProductSearchRestTransport(ProductSearchTransport):
         def __hash__(self):
             return hash("RemoveProductFromProductSet")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, Any] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
@@ -2159,7 +2159,7 @@ class ProductSearchRestTransport(ProductSearchTransport):
         def __hash__(self):
             return hash("UpdateProduct")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, Any] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
@@ -2254,7 +2254,7 @@ class ProductSearchRestTransport(ProductSearchTransport):
         def __hash__(self):
             return hash("UpdateProductSet")
 
-        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, str] = {}
+        __REQUIRED_FIELDS_DEFAULT_VALUES: Dict[str, Any] = {}
 
         @classmethod
         def _get_unset_required_fields(cls, message_dict):
